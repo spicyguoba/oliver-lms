@@ -20,21 +20,19 @@ The local private library has 19 entries and five recurring quests. Source revie
 
 Use `npm run materials:snapshot`, then Admin → Materials library → Import manifest for future additions. `npm run materials:sync -- --initial-plan` seeds five quests only when no plan exists. Do not overwrite later parent edits with a new seed. Original course PDFs remain local; the app references paper work and uses original digital questions.
 
-## Hosting status and next required action
+## Hosting status
 
-The GitHub repository is `spicyguoba/oliver-lms`. It was created public by the parent; private source materials, credentials, snapshots and learning records are excluded from git and server deployment packaging.
+**Live:** https://oliver-lms-david-ferlemann.vercel.app . Vercel project `oliver-lms` is under the parent's `david-ferlemann` Hobby team, connected to `spicyguoba/oliver-lms` for Git deployments. Production uses the LMS's own login. With the parent's explicit approval, only this stable production domain is excepted from Vercel Authentication; generated deployment URLs and previews retain protection.
 
-**Vercel CLI access is now verified** as `davidferlemann-9111`, under the `david-ferlemann` Hobby team. The new `oliver-lms` project is created and linked locally. The ChatGPT Vercel plugin did not complete authorization, but the official CLI device login succeeded. The device code has already been consumed; do not ask the parent to reuse it.
+The initial cloud build is READY (`dpl_Ha13gKcrvpbsuQH8it1EnM4S1uRN`, source commit `093f2e2`). The free Neon resource `oliver-lms-db` is provisioned in `iad1` and connected only to production. `DATABASE_URL`, stable `SESSION_SECRET` and `ADMIN_PASSWORD_HASH` are configured in Vercel. The CLI is authenticated as `davidferlemann-9111`; its device code was already consumed and must not be reused. The ChatGPT connector's earlier authorization error does not prevent CLI deployment.
 
-**The LMS is not deployed yet.** Production SESSION_SECRET and ADMIN_PASSWORD_HASH have been stored as encrypted Vercel secrets. The free Neon plan (`free_v3`) in region `iad1` was selected, but provisioning returned `integration_terms_acceptance_required`. The parent must review and accept the Marketplace terms at `https://vercel.com/david-ferlemann/~/integrations/accept-terms/neon?source=cli`. This is a provider-required human action, not another ChatGPT authorization attempt.
+Cloud verification passed against actual PostgreSQL: health; requested parent login; wrong first answer retained through reload; five-answer round awarding four stars once; duplicate submissions/next requests; timing records; independent signed-in client reading saved history; CSRF rejection; child/admin separation; all three copied HTML files and cloud bridges. A live browser also exercised parent login, material inventory and an observed wrong-answer/reload flow. Only identifiable synthetic QA sessions were removed afterward. The family baseline is zero stars and zero native sessions, with 19 private material entries and five recurring quests imported into PostgreSQL.
 
-After the parent accepts, retry the existing request: `vercel integration add neon --plan free_v3 --name oliver-lms-db --metadata region=iad1 --metadata auth=false --metadata realtime=false --environment production --no-env-pull --json --non-interactive`. Check installations/resources before retrying if the result is uncertain; avoid creating a second database. Then connect GitHub, deploy, import the private material inventory/plan, and verify actual PostgreSQL persistence and app behavior.
+A tracked `.vercelignore` allowlist limits CLI uploads to app source (32 entries, about 323 KB). It excludes `.data`, `.env.local`, local output, dependencies and source snapshots. Next's server trace separately excludes private data and includes the three legacy HTML files. Never deploy an unchecked directory, commit secrets, or print environment values.
 
-A tracked `.vercelignore` allowlist limits CLI uploads to app source. `vercel deploy --dry --json --yes` found Next.js and 32 source entries (~323 KB), explicitly excluding `.data`, `.env.local`, local output, node_modules and source material snapshots. Never deploy from an unchecked directory or print secret values.
+The GitHub repository was created public by the parent. Private materials, credentials, snapshots and learning records are excluded from Git and deployment packaging. Stable local authentication secrets remain in ignored `.env.local`. Initial requested login is **admin / admin1234**; the parent should change it in Settings before recording real learning history. Do not change it on the parent's behalf without their chosen replacement.
 
-Complete the remaining database, deployment, import and persistence checks before reporting a live LMS. Stable local secrets are in ignored `.env.local`; preserve them and never print or commit them. Initial requested login is admin / admin1234. The parent should change it in Settings before storing real records in a public deployment.
-
-The backend's PostgreSQL adapter uses a transaction and row lock for each family update. It has not been exercised against an actual hosted database yet. Development uses a serialized local file store. Production fails closed without the database and secrets.
+The backend uses row-locked PostgreSQL transactions. Development's local file store is separate; production fails closed without database and authentication secrets. New folder additions require the explicit snapshot/import workflow above. The hosted app cannot watch this PC's folder.
 
 ## Important product boundaries
 

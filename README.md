@@ -2,6 +2,8 @@
 
 A family LMS for short, encouraging learning adventures. Separate from the original `spicyguoba/mathquest` GitHub Pages site: no changes to its files, URLs, or localStorage.
 
+Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the parent, then choose **Open Oliver’s world** to pair his device and lock the parent area. The production site uses the LMS login; deployment URLs and previews retain Vercel protection. See HANDOFF.md for verified hosting and private material snapshot details.
+
 ## What works
 
 - Child dashboard, daily practice suggestions, star wallet, reward requests, parent approvals, recurring workbook/reading quests, learner profile and parent settings.
