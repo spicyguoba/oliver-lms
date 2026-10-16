@@ -24,9 +24,15 @@ Use `npm run materials:snapshot`, then Admin → Materials library → Import ma
 
 The GitHub repository is `spicyguoba/oliver-lms`. It was created public by the parent; private source materials, credentials, snapshots and learning records are excluded from git and server deployment packaging.
 
-**Vercel is not deployed yet.** The in-app Vercel browser is signed out, no Vercel CLI credentials are available, and the suggested Vercel connector has not been confirmed connected. Do not report a live LMS URL or durable cloud persistence as verified.
+**Vercel CLI access is now verified** as `davidferlemann-9111`, under the `david-ferlemann` Hobby team. The new `oliver-lms` project is created and linked locally. The ChatGPT Vercel plugin did not complete authorization, but the official CLI device login succeeded. The device code has already been consumed; do not ask the parent to reuse it.
 
-Once account access is connected: import the repo, provision/connect PostgreSQL (for example Neon), set DATABASE_URL / SESSION_SECRET / ADMIN_PASSWORD_HASH, deploy, import the private material inventory/initial plan, and verify persistence across reloads, devices and redeployment. Stable local secrets are in ignored `.env.local`; never print or commit them. Initial requested login is admin / admin1234. The parent should change it in Settings before storing real records in a public deployment.
+**The LMS is not deployed yet.** Production SESSION_SECRET and ADMIN_PASSWORD_HASH have been stored as encrypted Vercel secrets. The free Neon plan (`free_v3`) in region `iad1` was selected, but provisioning returned `integration_terms_acceptance_required`. The parent must review and accept the Marketplace terms at `https://vercel.com/david-ferlemann/~/integrations/accept-terms/neon?source=cli`. This is a provider-required human action, not another ChatGPT authorization attempt.
+
+After the parent accepts, retry the existing request: `vercel integration add neon --plan free_v3 --name oliver-lms-db --metadata region=iad1 --metadata auth=false --metadata realtime=false --environment production --no-env-pull --json --non-interactive`. Check installations/resources before retrying if the result is uncertain; avoid creating a second database. Then connect GitHub, deploy, import the private material inventory/plan, and verify actual PostgreSQL persistence and app behavior.
+
+A tracked `.vercelignore` allowlist limits CLI uploads to app source. `vercel deploy --dry --json --yes` found Next.js and 32 source entries (~323 KB), explicitly excluding `.data`, `.env.local`, local output, node_modules and source material snapshots. Never deploy from an unchecked directory or print secret values.
+
+Complete the remaining database, deployment, import and persistence checks before reporting a live LMS. Stable local secrets are in ignored `.env.local`; preserve them and never print or commit them. Initial requested login is admin / admin1234. The parent should change it in Settings before storing real records in a public deployment.
 
 The backend's PostgreSQL adapter uses a transaction and row lock for each family update. It has not been exercised against an actual hosted database yet. Development uses a serialized local file store. Production fails closed without the database and secrets.
 

@@ -1,0 +1,14 @@
+# Upload only application source. Private family records and local secrets
+# are never deployment source, including when deploying from this computer.
+/*
+!/app
+!/components
+!/content
+!/legacy
+!/lib
+!/public
+!/package.json
+!/package-lock.json
+!/next.config.mjs
+!/vercel.json
+!/.vercelignore
