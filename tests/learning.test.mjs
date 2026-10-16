@@ -12,6 +12,8 @@ import {
   createQuestions,
   publicQuestion,
   grade,
+  discoveries,
+  skills,
 } from "../lib/questions.mjs";
 import {
   hashPassword,
@@ -128,4 +130,83 @@ test("equivalent fractions and harmless numeric formatting are accepted", () => 
   assert.equal(grade({ answer: "1/2" }, "2/0"), false);
   assert.equal(grade({ answer: "1/2" }, "1/3"), false);
   assert.equal(grade({ answer: "12" }, "012"), true);
+});
+
+test("every discovery has teachable content, sources, and valid server-private questions", () => {
+  assert.equal(discoveries.length, 21);
+  assert.equal(new Set(discoveries.map((t) => t.id)).size, discoveries.length);
+  for (const topic of discoveries) {
+    assert.ok(topic.lesson.length >= 3);
+    assert.ok(topic.tryIt);
+    assert.ok(topic.sources.every((s) => new URL(s).protocol === "https:"));
+    assert.ok(!("questions" in skills[topic.id]));
+    assert.ok(topic.questions.length >= 8);
+    assert.equal(
+      new Set(topic.questions.map((q) => q.prompt)).size,
+      topic.questions.length,
+    );
+    for (const q of topic.questions) {
+      assert.equal(
+        new Set(q.options).size,
+        q.options.length,
+        topic.id + ": " + q.prompt,
+      );
+      assert.ok(q.options[q.answer]);
+      assert.ok(q.explanation);
+    }
+    for (let trail = 1; trail <= (topic.id === "states" ? 5 : 1); trail++) {
+      const { questions } = createQuestions(topic.id, trail);
+      assert.equal(questions.length, 5);
+      assert.equal(new Set(questions.map((q) => q.prompt)).size, 5);
+      for (const q of questions) {
+        assert.equal(grade(q, q.answer), true);
+        const safe = publicQuestion(q);
+        assert.ok(!("answer" in safe));
+        assert.ok(!("explanation" in safe));
+        if (topic.id === "states") {
+          assert.ok(
+            topic.questions
+              .slice((trail - 1) * 10, trail * 10)
+              .some((x) => x.prompt === q.prompt),
+          );
+          assert.ok(
+            q.options.every((option) =>
+              topic.collection
+                .slice((trail - 1) * 10, trail * 10)
+                .some((c) => c.detail === option),
+            ),
+          );
+        }
+      }
+    }
+  }
+  const stateCards = skills.states.collection;
+  assert.equal(stateCards.length, 50);
+  assert.equal(new Set(stateCards.map((s) => s.name)).size, 50);
+  assert.equal(
+    stateCards.find((s) => s.name === "Virginia").detail,
+    "Richmond",
+  );
+});
+
+test("new discovery rounds preserve existing records and prefer fresh questions", () => {
+  const d = seed();
+  d.stars = 12;
+  const old = beginSession(d, "fractions");
+  const v = beginSession(d, "ice-age");
+  const s = d.sessions.find((x) => x.id === v.id);
+  assert.equal(v.subject, "History");
+  assert.equal(v.title, "Ice Age camp");
+  const q = s.questions[0];
+  submitAnswer(d, s.id, {
+    questionId: q.id,
+    answer: String((Number(q.answer) + 1) % q.options.length),
+    activeMs: 1000,
+  });
+  assert.equal(beginSession(d, "ice-age").feedback.correct, false);
+  assert.equal(d.stars, 12);
+  assert.equal(beginSession(d, "fractions").id, old.id);
+  const recent = s.questions.map((q) => q.prompt);
+  const next = createQuestions("ice-age", 1, [], recent).questions;
+  assert.equal(next.filter((q) => !recent.includes(q.prompt)).length, 3);
 });

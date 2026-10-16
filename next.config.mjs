@@ -2,7 +2,11 @@ export default {
   poweredByHeader: false,
   distDir: process.env.LMS_NEXT_DIST_DIR || ".next",
   outputFileTracingIncludes: {
-    "/api/*": ["./legacy/*.html", "./content/stories.json"],
+    "/api/*": [
+      "./legacy/*.html",
+      "./content/stories.json",
+      "./content/discoveries.json",
+    ],
   },
   outputFileTracingExcludes: {
     "*": [

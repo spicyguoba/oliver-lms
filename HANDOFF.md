@@ -2,6 +2,18 @@
 
 Created 2026-10-16 in a new repository, independent of `spicyguoba/mathquest`.
 
+## Child navigation and discovery expansion (2026-10-16)
+
+The parent reported that Oliver found the professional dashboard confusing. The root route now uses a separate `ChildWorld` component: one large Play/Keep playing action, picture worlds, persistent Home/Games/Stars navigation, large touch targets, short labels, and optional read aloud. Navigation is stored in URL fragments so browser Back works. There is no child-side sign-out control. `/admin` keeps the detailed parent view.
+
+There are 21 new discovery topics and 210 original questions, added to the existing six skills. Science includes space, weather, habitats, and fossils. Geography includes maps, continents/oceans, countries, cultures, the U.S., Virginia, and all 50 state capitals in five alphabetical trails of ten. State cards are browsed one at a time, and both questions and answer choices stay in the selected trail. History includes Ice Age/early people, ancient river cities, European Middle Ages, Qin/Han/Tang/Song/Ming, Native nations, U.S. founding, past presidents, and freedom/civil rights. See `content/SOURCES.md` for sources and teaching boundaries; parent Learning insights includes the references.
+
+New lessons appear before starting the timed round. Questions and feedback can be read aloud; question reading still marks help. Participation stickers are derived from completed rounds at any score, while stars retain correct-answer scoring. New topics prefer questions absent from the preceding completed round where the finite pool permits. Existing question snapshots are never regenerated during resume.
+
+No persisted fields were repurposed or removed: the new topics use existing skill/session/difficulty fields and the same scoring/store format. Existing first answers, stars, legacy saves, story unlocks, materials, quests, passwords, and paired devices must remain intact. A private pre-deployment PostgreSQL snapshot is held in ignored `.data/before-child-upgrade.json`; use `.data/check-progress-upgrade.mjs` to compare immutable prior answers/questions after release. Do not overwrite the cloud row with that snapshot.
+
+Local verification: all 11 unit/domain tests, the expanded isolated HTTP test, and production build pass. Browser exercised a full Ice Age round (one wrong answer, four correct), feedback reload, four-star award and sticker, state flashcard navigation and trail-five quiz, original favorites links, and parent report controls. Child layouts checked at 390×844, 768×1024, and 1024×768 with no horizontal document overflow; these are Chromium checks, not physical iPad/Safari tests. Build trace includes the new content JSON and excludes private data/env files.
+
 ## Verified locally
 
 - Next.js production build, unit/domain tests and isolated HTTP integration tests pass. Dependency audit reports no known vulnerabilities.

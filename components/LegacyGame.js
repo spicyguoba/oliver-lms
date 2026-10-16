@@ -23,7 +23,7 @@ export default function LegacyGame({ game }) {
       <header>
         <Brand />
         <a className="button secondary small" href="/">
-          ← Adventure home
+          🏠 Home
         </a>
       </header>
       <iframe

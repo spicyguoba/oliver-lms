@@ -273,7 +273,11 @@ export async function POST(req, context) {
           beginSession(
             d,
             body.skill,
-            body.difficulty === 2 ? 2 : 1,
+            body.skill === "states" && Number.isInteger(body.difficulty)
+              ? Math.min(5, Math.max(1, body.difficulty))
+              : body.difficulty === 2
+                ? 2
+                : 1,
             role === "admin" && body.mode === "observed"
               ? "observed"
               : "practice",

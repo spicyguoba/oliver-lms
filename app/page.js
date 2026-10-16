@@ -1,4 +1,4 @@
-import Dashboard from "../components/Dashboard";
+import ChildWorld from "../components/ChildWorld";
 export default function Page() {
-  return <Dashboard />;
+  return <ChildWorld />;
 }

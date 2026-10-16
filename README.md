@@ -7,7 +7,8 @@ Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the
 ## What works
 
 - Child dashboard, daily practice suggestions, star wallet, reward requests, parent approvals, recurring workbook/reading quests, learner profile and parent settings.
-- Six server-graded activities: fractions, addition/subtraction, phonics, story comprehension, Chinese characters and science. Five questions per round, explanations, optional help, resume after reload.
+- A child-first home with large Play, Games, and Stars controls, picture worlds, a consistent Home button, read-aloud support, and participation stickers. Parent reports retain their detailed view.
+- 27 server-graded activities: the six original LMS skills plus 21 science, geography, and history adventures (210 new questions). Includes world/country/culture introductions, 50 states in five small trails, Virginia, Ice Age/early people, ancient cities, Middle Ages, Qin/Han/Tang/Song/Ming, Native nations, U.S. founding, past presidents, and freedom/civil rights. See [content sources and teaching choices](content/SOURCES.md).
 - Parent reports retain every first answer, including wrong answers, server elapsed time, browser-reported active time/help/tab changes and parent-started observed mode. Legacy browser-reported events are separate from server-graded insights.
 - Copies of all three original games at `/games/math/`, `/reading/`, `/stories/`, with their original storage keys and cloud save synchronization. Their own stars/unlocks remain separate from the LMS wallet.
 - Story pass requires 4/5. Only three different consecutive passed stories unlock the next rank. Failure clears the current streak; previously earned unlocks remain.

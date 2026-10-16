@@ -81,8 +81,12 @@ export default function Dashboard({ parent = false }) {
       setBusy(false);
     }
   }
-  async function play(skill, mode = "practice") {
-    const s = await act("session/start", { skill, mode, difficulty });
+  async function play(skill, mode = "practice", selectedDifficulty) {
+    const s = await act("session/start", {
+      skill,
+      mode,
+      difficulty: selectedDifficulty ?? difficulty,
+    });
     if (s) window.location.href = "/adventure/" + s.id;
   }
   if (unauthorized) return <Login />;
@@ -331,7 +335,9 @@ export default function Dashboard({ parent = false }) {
                         <span className="subject-tag">{s.subject}</span>
                         <span className="muted">0{i + 1}</span>
                       </div>
-                      <div className="quest-icon">{skillIcons[s.id]}</div>
+                      <div className="quest-icon">
+                        {skillIcons[s.id] || s.icon}
+                      </div>
                       <h3>{s.title}</h3>
                       <p>{s.description}</p>
                       <div className="quest-footer">
@@ -455,7 +461,9 @@ export default function Dashboard({ parent = false }) {
                       onClick={() => play(s.id)}
                     >
                       <span className="subject-tag">{s.subject}</span>
-                      <div className="quest-icon">{skillIcons[s.id]}</div>
+                      <div className="quest-icon">
+                        {skillIcons[s.id] || s.icon}
+                      </div>
                       <h3>{s.title}</h3>
                       <p>{s.description}</p>
                       <div className="quest-footer">
@@ -767,7 +775,9 @@ export default function Dashboard({ parent = false }) {
                   </div>
                   {data.recommendations.map((s) => (
                     <div className="list-row" key={s.id}>
-                      <span className="mini-icon">{skillIcons[s.id]}</span>
+                      <span className="mini-icon">
+                        {skillIcons[s.id] || s.icon}
+                      </span>
                       <div className="grow">
                         <strong>{s.title}</strong>
                         <p>{s.reason}</p>
@@ -1377,7 +1387,7 @@ function SkillTable({ stats }) {
             <tr key={s.id}>
               <td>
                 <strong>
-                  {skillIcons[s.id]} {s.title}
+                  {skillIcons[s.id] || s.icon} {s.title}
                 </strong>
               </td>
               <td>
@@ -1399,6 +1409,7 @@ function SkillTable({ stats }) {
 }
 function Reports({ data, play, busy, difficulty, setDifficulty }) {
   const [selected, setSelected] = useState(null);
+  const [stateTrail, setStateTrail] = useState(1);
   return (
     <>
       <PageTitle
@@ -1434,19 +1445,88 @@ function Reports({ data, play, busy, difficulty, setDifficulty }) {
           hints. Stop whenever he needs a break. These short rounds guide
           practice; they are not standardized benchmarks.
         </p>
+        <label>
+          State capital trail
+          <select
+            value={stateTrail}
+            onChange={(e) => setStateTrail(Number(e.target.value))}
+          >
+            {[1, 2, 3, 4, 5].map((n) => (
+              <option key={n} value={n}>
+                Trail {n} ·{" "}
+                {
+                  data.stats.find((s) => s.id === "states")?.collection[
+                    (n - 1) * 10
+                  ].name
+                }{" "}
+                to{" "}
+                {
+                  data.stats.find((s) => s.id === "states")?.collection[
+                    n * 10 - 1
+                  ].name
+                }
+              </option>
+            ))}
+          </select>
+        </label>
         <div className="row wrap">
           {data.stats.map((s) => (
             <button
               className="button secondary small"
               key={s.id}
               disabled={busy}
-              onClick={() => play(s.id, "observed")}
+              onClick={() =>
+                play(
+                  s.id,
+                  "observed",
+                  s.id === "states" ? stateTrail : difficulty,
+                )
+              }
             >
-              {skillIcons[s.id]} {s.title}
+              {skillIcons[s.id] || s.icon} {s.title}
             </button>
           ))}
         </div>
       </section>
+      <details className="white-card section">
+        <summary>Discovery topics and educator references</summary>
+        <p>
+          These are original introductory activities. Read the short discovery
+          cards before practice. State capitals are grouped into five trails of
+          ten. An earned picture sticker celebrates completing a round, not
+          mastery. History includes different perspectives and overlapping
+          timelines.
+        </p>
+        {data.stats
+          .filter((s) => s.lesson)
+          .map((s) => (
+            <div className="section" key={s.id}>
+              <h3>
+                {s.icon} {s.title}
+              </h3>
+              <p>{s.era || s.description}</p>
+              <ul>
+                {s.lesson.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+              <p>{s.tryIt}</p>
+              <div className="row wrap">
+                {s.sources.map((url, i) => (
+                  <a
+                    className="text-button"
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Reference {i + 1} · {new URL(url).hostname}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+      </details>
       <section className="white-card section">
         <h2>Every attempt, kept honestly</h2>
         <div className="table-scroll">

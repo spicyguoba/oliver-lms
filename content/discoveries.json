@@ -1,0 +1,2103 @@
+[
+  {
+    "id": "space",
+    "title": "Space trip",
+    "subject": "Science",
+    "icon": "🚀",
+    "description": "Meet the Sun, Moon, and planets.",
+    "era": "",
+    "lesson": [
+      "The Sun is our nearest star. Its light and heat help life on Earth.",
+      "Earth spins, making day and night. Earth also travels around the Sun.",
+      "The Moon travels around Earth. Eight planets travel around the Sun."
+    ],
+    "tryIt": "With a grown-up, use a ball and a flashlight to model day and night. Never look at the Sun.",
+    "sources": ["https://spaceplace.nasa.gov/menu/sun/solar-system/"],
+    "questions": [
+      {
+        "prompt": "What is the Sun?",
+        "options": ["A star", "A planet", "A moon"],
+        "answer": 0,
+        "explanation": "The Sun is the star at the center of our solar system."
+      },
+      {
+        "prompt": "Which planet is our home?",
+        "options": ["Earth", "Mars", "Jupiter"],
+        "answer": 0,
+        "explanation": "We live on Earth, the third planet from the Sun."
+      },
+      {
+        "prompt": "What causes day and night on Earth?",
+        "options": [
+          "Earth spinning",
+          "The Sun switching off",
+          "The Moon hiding the Sun every night"
+        ],
+        "answer": 0,
+        "explanation": "Earth spins. The side facing the Sun has day."
+      },
+      {
+        "prompt": "What does the Moon travel around?",
+        "options": ["Earth", "Only Mars", "Only Saturn"],
+        "answer": 0,
+        "explanation": "Our Moon orbits, or travels around, Earth."
+      },
+      {
+        "prompt": "Which planet is famous for its bright rings?",
+        "options": ["Saturn", "Earth", "Mercury"],
+        "answer": 0,
+        "explanation": "Saturn has a large, bright ring system made of ice and rock."
+      },
+      {
+        "prompt": "How many planets are in our solar system?",
+        "options": ["Eight", "Three", "Twelve"],
+        "answer": 0,
+        "explanation": "There are eight planets. Pluto is a dwarf planet."
+      },
+      {
+        "prompt": "Which planet is closest to the Sun?",
+        "options": ["Mercury", "Neptune", "Earth"],
+        "answer": 0,
+        "explanation": "Mercury travels closest to the Sun."
+      },
+      {
+        "prompt": "Which gives Earth light and heat?",
+        "options": ["The Sun", "A dark rock", "The North Pole"],
+        "answer": 0,
+        "explanation": "The Sun supplies energy that warms and lights Earth."
+      }
+    ]
+  },
+  {
+    "id": "weather",
+    "title": "Cloud detectives",
+    "subject": "Science",
+    "icon": "🌦️",
+    "description": "Follow water through the sky.",
+    "era": "",
+    "lesson": [
+      "Weather is what the air is like in a place now: sunny, rainy, windy, or snowy.",
+      "Liquid water can become water vapor in the air. Cooling vapor can form tiny droplets in clouds.",
+      "Rain and snow bring water back down. A thermometer measures temperature."
+    ],
+    "tryIt": "Draw today’s weather. With a grown-up, compare it with tomorrow’s weather.",
+    "sources": [
+      "https://www.noaa.gov/education/resource-collections/freshwater/water-cycle"
+    ],
+    "questions": [
+      {
+        "prompt": "Which tool measures temperature?",
+        "options": ["A thermometer", "A ruler", "A compass"],
+        "answer": 0,
+        "explanation": "A thermometer measures how hot or cold something is."
+      },
+      {
+        "prompt": "What is evaporation?",
+        "options": [
+          "Liquid water becoming vapor",
+          "A rock becoming a bird",
+          "A cloud becoming a mountain"
+        ],
+        "answer": 0,
+        "explanation": "Water can change from a liquid into water vapor in the air."
+      },
+      {
+        "prompt": "Tiny water droplets gather in the sky. What can they form?",
+        "options": ["A cloud", "A moon", "A stone"],
+        "answer": 0,
+        "explanation": "Clouds contain tiny water droplets or ice crystals."
+      },
+      {
+        "prompt": "Which is precipitation?",
+        "options": ["Rain falling", "A leaf growing", "A shadow moving"],
+        "answer": 0,
+        "explanation": "Precipitation is water falling from clouds, including rain and snow."
+      },
+      {
+        "prompt": "What is wind?",
+        "options": ["Moving air", "Moving sunlight", "Still rock"],
+        "answer": 0,
+        "explanation": "Wind is air moving from place to place."
+      },
+      {
+        "prompt": "A puddle shrinks on a warm day. Where can its water go?",
+        "options": [
+          "Into the air as vapor",
+          "Into a star",
+          "It stops being matter"
+        ],
+        "answer": 0,
+        "explanation": "Some liquid water evaporates into water vapor."
+      },
+      {
+        "prompt": "Which tells about weather today?",
+        "options": [
+          "It is rainy this morning",
+          "Our town has many streets",
+          "The Moon is rocky"
+        ],
+        "answer": 0,
+        "explanation": "Weather describes conditions such as rain, wind, and temperature."
+      },
+      {
+        "prompt": "Water cools below its freezing point. What can liquid water become?",
+        "options": ["Ice", "Sand", "Wood"],
+        "answer": 0,
+        "explanation": "When liquid water freezes, it becomes solid ice."
+      }
+    ]
+  },
+  {
+    "id": "habitats",
+    "title": "Animal homes",
+    "subject": "Science",
+    "icon": "🐢",
+    "description": "Find what living things need.",
+    "era": "",
+    "lesson": [
+      "A habitat is a place where a living thing gets what it needs.",
+      "Animals need food, water, air, and a suitable place to live. Plants need water, light, air, and room to grow.",
+      "Living things are connected. Many bees carry pollen between flowers."
+    ],
+    "tryIt": "Watch a plant or an animal without disturbing it. Draw its food, water, and shelter.",
+    "sources": ["https://www.nps.gov/subjects/watchingwildlife/index.htm"],
+    "questions": [
+      {
+        "prompt": "What is a habitat?",
+        "options": [
+          "A place a living thing lives",
+          "Only a toy house",
+          "Only a desert"
+        ],
+        "answer": 0,
+        "explanation": "A habitat provides conditions and resources a living thing needs."
+      },
+      {
+        "prompt": "What does a plant use sunlight to help make?",
+        "options": ["Its food", "Plastic", "Glass"],
+        "answer": 0,
+        "explanation": "Plants use light energy to help make food."
+      },
+      {
+        "prompt": "Which animal has feathers?",
+        "options": ["A robin", "A frog", "A fox"],
+        "answer": 0,
+        "explanation": "Birds have feathers. A robin is a bird."
+      },
+      {
+        "prompt": "Which is a living thing?",
+        "options": ["A growing oak tree", "A metal chair", "A glass cup"],
+        "answer": 0,
+        "explanation": "An oak tree grows and is a living thing."
+      },
+      {
+        "prompt": "Why might a turtle need a pond?",
+        "options": [
+          "For a suitable habitat",
+          "To buy shoes",
+          "To charge a phone"
+        ],
+        "answer": 0,
+        "explanation": "Many turtles find food and shelter in or near water. Different species have different needs."
+      },
+      {
+        "prompt": "What can many bees carry between flowers?",
+        "options": ["Pollen", "Snowballs", "Pebbles"],
+        "answer": 0,
+        "explanation": "Many bees help pollination by moving pollen between flowers."
+      },
+      {
+        "prompt": "What should you do when you see a wild animal?",
+        "options": ["Watch from a safe distance", "Chase it", "Feed it candy"],
+        "answer": 0,
+        "explanation": "Give wild animals space. Observe without touching or feeding them."
+      },
+      {
+        "prompt": "A food chain shows what?",
+        "options": [
+          "How food energy moves between living things",
+          "A list of shoe sizes",
+          "How rocks are painted"
+        ],
+        "answer": 0,
+        "explanation": "A simple food chain might go from grass to a rabbit to a fox."
+      }
+    ]
+  },
+  {
+    "id": "fossils",
+    "title": "Fossil hunt",
+    "subject": "Science",
+    "icon": "🦕",
+    "description": "Look for clues from long ago.",
+    "era": "Deep time",
+    "lesson": [
+      "Fossils are preserved remains or traces of living things from long ago.",
+      "A footprint can be a fossil, too. Scientists use fossils as evidence.",
+      "Non-bird dinosaurs lived long before humans. Birds are living dinosaurs; mammoths were mammals."
+    ],
+    "tryIt": "Press a toy’s foot into play dough. Your print models a trace, not a real fossil.",
+    "sources": ["https://www.nps.gov/subjects/fossils/index.htm"],
+    "questions": [
+      {
+        "prompt": "Which could be a fossil?",
+        "options": [
+          "An ancient footprint in rock",
+          "A fresh sandwich",
+          "A plastic dinosaur"
+        ],
+        "answer": 0,
+        "explanation": "A fossil can be a preserved trace, such as an ancient footprint."
+      },
+      {
+        "prompt": "What do fossils help scientists learn about?",
+        "options": ["Life long ago", "Tomorrow’s lunch", "A toy’s price"],
+        "answer": 0,
+        "explanation": "Fossils are evidence of past living things and environments."
+      },
+      {
+        "prompt": "Did humans live with non-bird dinosaurs such as Triceratops?",
+        "options": [
+          "No, they lived at different times",
+          "Yes, as pets",
+          "Yes, in castles"
+        ],
+        "answer": 0,
+        "explanation": "Non-bird dinosaurs died out millions of years before humans existed."
+      },
+      {
+        "prompt": "Which animals are living dinosaurs?",
+        "options": ["Birds", "Elephants", "Frogs"],
+        "answer": 0,
+        "explanation": "Birds belong to the dinosaur family tree."
+      },
+      {
+        "prompt": "A woolly mammoth was what kind of animal?",
+        "options": ["A mammal", "A non-bird dinosaur", "An insect"],
+        "answer": 0,
+        "explanation": "Mammoths were hairy relatives of elephants, not dinosaurs."
+      },
+      {
+        "prompt": "Which scientist studies ancient life using fossils?",
+        "options": ["A paleontologist", "A chef", "A bus driver"],
+        "answer": 0,
+        "explanation": "Paleontologists study ancient life and its evidence."
+      },
+      {
+        "prompt": "A fossil shell is found in rock high on a mountain. What might it show?",
+        "options": [
+          "That rock formed in an old watery environment",
+          "Shellfish always fly",
+          "The mountain was built yesterday"
+        ],
+        "answer": 0,
+        "explanation": "Places change over very long times. The rock may record an ancient sea."
+      },
+      {
+        "prompt": "Which is evidence of how an ancient animal moved?",
+        "options": [
+          "A trackway of footprints",
+          "Its made-up nickname",
+          "A cartoon hat"
+        ],
+        "answer": 0,
+        "explanation": "A line of footprints can give clues about movement."
+      }
+    ]
+  },
+  {
+    "id": "maps",
+    "title": "Map treasure",
+    "subject": "Geography",
+    "icon": "🧭",
+    "description": "Use directions to find your way.",
+    "era": "",
+    "lesson": [
+      "A globe models Earth. A map shows a place on a flat surface.",
+      "A map key tells what symbols mean. A compass rose shows directions.",
+      "North, south, east, and west help us describe places. A map can show land and water."
+    ],
+    "tryIt": "Make a map of one room. Add a key for a chair, a door, and a hidden paper star.",
+    "sources": ["https://education.nationalgeographic.org/resource/map/"],
+    "questions": [
+      {
+        "prompt": "What does a map key explain?",
+        "options": [
+          "The map’s symbols",
+          "A lock’s shape",
+          "The weather tomorrow"
+        ],
+        "answer": 0,
+        "explanation": "A key, or legend, explains symbols and colors on a map."
+      },
+      {
+        "prompt": "What is a globe a model of?",
+        "options": ["Earth", "Only Virginia", "Only the Moon"],
+        "answer": 0,
+        "explanation": "A globe is a round model of Earth."
+      },
+      {
+        "prompt": "Which direction is opposite north?",
+        "options": ["South", "East", "West"],
+        "answer": 0,
+        "explanation": "North and south are opposite directions."
+      },
+      {
+        "prompt": "Which direction is opposite east?",
+        "options": ["West", "North", "South"],
+        "answer": 0,
+        "explanation": "East and west are opposite directions."
+      },
+      {
+        "prompt": "What helps you find directions on a map?",
+        "options": ["A compass rose", "A shopping bag", "A clock face"],
+        "answer": 0,
+        "explanation": "A compass rose labels directions."
+      },
+      {
+        "prompt": "A blue shape is marked lake in the key. What does it show?",
+        "options": ["Water", "A road", "A school"],
+        "answer": 0,
+        "explanation": "Read the key to learn what each map symbol means."
+      },
+      {
+        "prompt": "Which map would best help you find your classroom?",
+        "options": ["A school map", "A map of the Moon", "A map of all oceans"],
+        "answer": 0,
+        "explanation": "Use a map of the place you need to explore."
+      },
+      {
+        "prompt": "Why is a flat map useful?",
+        "options": [
+          "It helps show where places are",
+          "It makes places move",
+          "It changes every ocean into land"
+        ],
+        "answer": 0,
+        "explanation": "Maps help us find and compare locations."
+      }
+    ]
+  },
+  {
+    "id": "continents",
+    "title": "Around Earth",
+    "subject": "Geography",
+    "icon": "🌍",
+    "description": "Meet seven continents and five oceans.",
+    "era": "",
+    "lesson": [
+      "In our seven-continent model: Africa, Antarctica, Asia, Europe, North America, South America, and Australia.",
+      "Countries are places with governments. A continent is a large land area. One continent can contain many countries.",
+      "Five named oceans connect around Earth: Pacific, Atlantic, Indian, Arctic, and Southern."
+    ],
+    "tryIt": "On a globe, find North America, then trace across an ocean to another continent.",
+    "sources": [
+      "https://kids.nationalgeographic.com/geography/countries/",
+      "https://oceanservice.noaa.gov/facts/howmanyoceans.html"
+    ],
+    "questions": [
+      {
+        "prompt": "Which continent contains the United States?",
+        "options": ["North America", "Antarctica", "Africa"],
+        "answer": 0,
+        "explanation": "The United States is in North America."
+      },
+      {
+        "prompt": "Which continent contains China and India?",
+        "options": ["Asia", "South America", "Antarctica"],
+        "answer": 0,
+        "explanation": "China and India are countries in Asia."
+      },
+      {
+        "prompt": "Which continent contains Brazil?",
+        "options": ["South America", "Europe", "Asia"],
+        "answer": 0,
+        "explanation": "Brazil is a country in South America."
+      },
+      {
+        "prompt": "Which continent contains Kenya?",
+        "options": ["Africa", "Australia", "Europe"],
+        "answer": 0,
+        "explanation": "Kenya is a country in Africa."
+      },
+      {
+        "prompt": "Which continent is around the South Pole?",
+        "options": ["Antarctica", "Europe", "North America"],
+        "answer": 0,
+        "explanation": "Antarctica is an icy continent around the South Pole."
+      },
+      {
+        "prompt": "Which is an ocean?",
+        "options": ["The Pacific", "Virginia", "Brazil"],
+        "answer": 0,
+        "explanation": "The Pacific is an ocean; Virginia is a state and Brazil is a country."
+      },
+      {
+        "prompt": "Which continent contains France?",
+        "options": ["Europe", "Australia", "Antarctica"],
+        "answer": 0,
+        "explanation": "France is a country in Europe."
+      },
+      {
+        "prompt": "Which is both a country and the name used for a continent?",
+        "options": ["Australia", "Virginia", "Paris"],
+        "answer": 0,
+        "explanation": "Australia is a country and a continent in the model used here. The wider region is called Oceania."
+      }
+    ],
+    "visual": "world"
+  },
+  {
+    "id": "countries",
+    "title": "Country postcards",
+    "subject": "Geography",
+    "icon": "🌎",
+    "description": "Visit places around the world.",
+    "era": "",
+    "lesson": [
+      "A country is different from a continent. Many countries share one continent.",
+      "China and Japan are in Asia. Kenya and Egypt are in Africa. Brazil is in South America.",
+      "Mexico and Canada share North America with the United States. People in every country have many different lives."
+    ],
+    "tryIt": "Choose a country on a globe. Tell a grown-up its continent and one thing you wonder about.",
+    "sources": ["https://kids.nationalgeographic.com/geography/countries/"],
+    "questions": [
+      {
+        "prompt": "Where is Japan?",
+        "options": ["Asia", "South America", "Antarctica"],
+        "answer": 0,
+        "explanation": "Japan is an island country in Asia."
+      },
+      {
+        "prompt": "Which country is north of the main connected part of the United States?",
+        "options": ["Canada", "Brazil", "Egypt"],
+        "answer": 0,
+        "explanation": "Canada is the northern neighbor of the contiguous United States."
+      },
+      {
+        "prompt": "Which country is south of the United States and shares a border with it?",
+        "options": ["Mexico", "Japan", "France"],
+        "answer": 0,
+        "explanation": "Mexico and the United States share a border."
+      },
+      {
+        "prompt": "Which country is in South America?",
+        "options": ["Brazil", "India", "Italy"],
+        "answer": 0,
+        "explanation": "Brazil is the largest country by area in South America."
+      },
+      {
+        "prompt": "Which country is in Africa?",
+        "options": ["Kenya", "Canada", "Japan"],
+        "answer": 0,
+        "explanation": "Kenya is in eastern Africa."
+      },
+      {
+        "prompt": "Which country is in Europe?",
+        "options": ["Italy", "Brazil", "China"],
+        "answer": 0,
+        "explanation": "Italy is a country in Europe."
+      },
+      {
+        "prompt": "The Nile River runs through Egypt. Which continent is most of Egypt in?",
+        "options": ["Africa", "South America", "Australia"],
+        "answer": 0,
+        "explanation": "Most of Egypt is in Africa. Its Sinai Peninsula is in Asia."
+      },
+      {
+        "prompt": "Which is a country rather than a continent?",
+        "options": ["India", "Asia", "Africa"],
+        "answer": 0,
+        "explanation": "India is one of the countries in Asia."
+      }
+    ]
+  },
+  {
+    "id": "cultures",
+    "title": "Hello, neighbors!",
+    "subject": "Geography",
+    "icon": "🤝",
+    "description": "Explore traditions with curiosity.",
+    "era": "",
+    "lesson": [
+      "Culture includes languages, stories, music, food, art, and traditions. People within one country can have different cultures.",
+      "Some families celebrate Lunar New Year. Some celebrate Diwali. People choose different traditions, even in the same town.",
+      "Ask kindly instead of guessing about someone. We can enjoy differences and still share needs for care and friendship."
+    ],
+    "tryIt": "Ask a grown-up about a family tradition. Draw it, then ask what a friend’s family enjoys.",
+    "sources": [
+      "https://festival.si.edu/",
+      "https://asia.si.edu/whats-on/events/celebrations/lunar-new-year-celebration/",
+      "https://asia.si.edu/whats-on/events/celebrations/diwali/"
+    ],
+    "questions": [
+      {
+        "prompt": "Which is part of culture?",
+        "options": [
+          "Stories, languages, and traditions",
+          "Only a person’s height",
+          "Only the weather"
+        ],
+        "answer": 0,
+        "explanation": "Culture includes many learned and shared ways of life."
+      },
+      {
+        "prompt": "Do all people in one country follow the same traditions?",
+        "options": [
+          "No, people and families differ",
+          "Yes, always",
+          "Only children differ"
+        ],
+        "answer": 0,
+        "explanation": "Every country includes many kinds of people and traditions."
+      },
+      {
+        "prompt": "What is a kind way to learn about a friend’s tradition?",
+        "options": [
+          "Ask if they would like to tell you",
+          "Guess from their appearance",
+          "Tell them they are wrong"
+        ],
+        "answer": 0,
+        "explanation": "Ask respectfully, listen, and let people choose what to share."
+      },
+      {
+        "prompt": "Some families celebrate Lunar New Year. Who celebrates it?",
+        "options": [
+          "People in several countries and communities",
+          "Only one family in the world",
+          "Every person in Asia"
+        ],
+        "answer": 0,
+        "explanation": "Lunar New Year traditions are celebrated in different ways in several cultures."
+      },
+      {
+        "prompt": "Diwali is often called a festival of what?",
+        "options": ["Lights", "Snow", "Dinosaurs"],
+        "answer": 0,
+        "explanation": "Many communities celebrate Diwali with light. Traditions and meanings vary."
+      },
+      {
+        "prompt": "Which is true about languages?",
+        "options": [
+          "One country can have many languages",
+          "Each country has exactly one",
+          "Everyone speaks the same language at home"
+        ],
+        "answer": 0,
+        "explanation": "Languages and countries do not match one to one."
+      },
+      {
+        "prompt": "Which is a welcoming action?",
+        "options": [
+          "Include a new child in a game",
+          "Laugh at their name",
+          "Say only your food is good"
+        ],
+        "answer": 0,
+        "explanation": "Kindness helps people feel welcome. Learn how to say someone’s name."
+      },
+      {
+        "prompt": "Can families share a tradition and celebrate it differently?",
+        "options": ["Yes", "Never", "Only on maps"],
+        "answer": 0,
+        "explanation": "Traditions can be shared and still vary from family to family."
+      }
+    ]
+  },
+  {
+    "id": "usa",
+    "title": "Across America",
+    "subject": "Geography",
+    "icon": "🗽",
+    "description": "Explore our country.",
+    "era": "",
+    "lesson": [
+      "The United States is a country in North America. It has 50 states.",
+      "Washington, D.C., is the national capital. It is a federal district, not a state.",
+      "Alaska and Hawaii are states, too. The Atlantic is east of the mainland, and the Pacific is west."
+    ],
+    "tryIt": "Find Virginia, Alaska, and Hawaii on a U.S. map. Notice that map boxes can move Alaska and Hawaii to fit.",
+    "sources": [
+      "https://kids.nationalgeographic.com/geography/states",
+      "https://data.census.gov/map?mode=thematic&q=United+States"
+    ],
+    "questions": [
+      {
+        "prompt": "How many states are in the United States?",
+        "options": ["50", "13", "7"],
+        "answer": 0,
+        "explanation": "The United States has 50 states."
+      },
+      {
+        "prompt": "What is the national capital of the United States?",
+        "options": ["Washington, D.C.", "Richmond", "New York City"],
+        "answer": 0,
+        "explanation": "Washington, D.C., is the national capital."
+      },
+      {
+        "prompt": "Is Washington, D.C., one of the 50 states?",
+        "options": [
+          "No, it is a federal district",
+          "Yes, it is Virginia",
+          "Yes, it is Alaska"
+        ],
+        "answer": 0,
+        "explanation": "Washington, D.C., is a federal district separate from the states."
+      },
+      {
+        "prompt": "Which ocean is east of Virginia?",
+        "options": ["Atlantic", "Pacific", "Arctic"],
+        "answer": 0,
+        "explanation": "Virginia’s coast faces the Atlantic Ocean."
+      },
+      {
+        "prompt": "Which ocean touches California’s coast?",
+        "options": ["Pacific", "Atlantic", "Indian"],
+        "answer": 0,
+        "explanation": "California is on the Pacific coast."
+      },
+      {
+        "prompt": "Which state is a chain of islands in the Pacific?",
+        "options": ["Hawaii", "Ohio", "Kansas"],
+        "answer": 0,
+        "explanation": "Hawaii is an island state in the Pacific Ocean."
+      },
+      {
+        "prompt": "Which state lies northwest of Canada?",
+        "options": ["Alaska", "Florida", "Maine"],
+        "answer": 0,
+        "explanation": "Alaska is northwest of Canada and is a U.S. state."
+      },
+      {
+        "prompt": "Virginia is part of which country?",
+        "options": ["The United States", "Brazil", "Japan"],
+        "answer": 0,
+        "explanation": "Virginia is one of the United States."
+      }
+    ]
+  },
+  {
+    "id": "virginia",
+    "title": "Hello, Virginia!",
+    "subject": "Geography",
+    "icon": "🏞️",
+    "description": "Discover mountains, rivers, and home.",
+    "era": "",
+    "lesson": [
+      "Virginia is a U.S. state. Richmond is its capital.",
+      "Virginia has an Atlantic coast, the Chesapeake Bay, and the Blue Ridge Mountains.",
+      "Native peoples lived here long before English colonists arrived. Tribal communities are part of Virginia today."
+    ],
+    "tryIt": "With a grown-up, find your town on a Virginia map. Look for one river or mountain nearby.",
+    "sources": [
+      "https://kids.nationalgeographic.com/geography/states",
+      "https://energy.virginia.gov/geology/FossilProvinces.shtml",
+      "https://americanindian.si.edu/nk360/about/essential-understandings"
+    ],
+    "questions": [
+      {
+        "prompt": "What is Virginia’s capital?",
+        "options": ["Richmond", "Boston", "Austin"],
+        "answer": 0,
+        "explanation": "Richmond is the capital of Virginia."
+      },
+      {
+        "prompt": "Which mountain range is in Virginia?",
+        "options": ["The Blue Ridge", "The Himalayas", "The Andes"],
+        "answer": 0,
+        "explanation": "The Blue Ridge Mountains cross part of Virginia."
+      },
+      {
+        "prompt": "Which large bay touches Virginia?",
+        "options": ["Chesapeake Bay", "San Francisco Bay", "Hudson Bay"],
+        "answer": 0,
+        "explanation": "Chesapeake Bay borders part of Virginia and connects to the Atlantic."
+      },
+      {
+        "prompt": "Which ocean is along Virginia’s eastern coast?",
+        "options": ["Atlantic", "Indian", "Pacific"],
+        "answer": 0,
+        "explanation": "The Atlantic Ocean lies along Virginia’s eastern coast."
+      },
+      {
+        "prompt": "Which river flows through Richmond?",
+        "options": ["The James River", "The Nile", "The Amazon"],
+        "answer": 0,
+        "explanation": "The James River flows through Richmond."
+      },
+      {
+        "prompt": "Which is a region of Virginia?",
+        "options": ["Piedmont", "The Sahara", "The Arctic Circle"],
+        "answer": 0,
+        "explanation": "Piedmont is one of Virginia’s five geographic regions."
+      },
+      {
+        "prompt": "Were people living in Virginia before English colonists arrived?",
+        "options": [
+          "Yes, Native peoples",
+          "No people at all",
+          "Only Roman emperors"
+        ],
+        "answer": 0,
+        "explanation": "Native nations lived here long before the English colony. Native communities live here today."
+      },
+      {
+        "prompt": "Which is true?",
+        "options": [
+          "Virginia and West Virginia are different states",
+          "They are the same state",
+          "Virginia is a country"
+        ],
+        "answer": 0,
+        "explanation": "Virginia and West Virginia are two different U.S. states."
+      }
+    ]
+  },
+  {
+    "id": "ice-age",
+    "title": "Ice Age camp",
+    "subject": "History",
+    "icon": "🦣",
+    "description": "Meet mammoths and early people.",
+    "era": "Long before written records",
+    "lesson": [
+      "During the last glacial period, huge ice sheets covered parts of Earth. Not all of Earth was covered in ice.",
+      "Woolly mammoths were hairy relatives of elephants. Humans and mammoths lived at the same time.",
+      "Early people made tools, found food, and cared for one another. Scientists study objects and fossils to learn about them."
+    ],
+    "tryIt": "Wrap two toy cups differently and imagine warm clothing. Ask how shelter and clothing help in cold places.",
+    "sources": [
+      "https://www.nps.gov/bela/learn/nature/ice-age-mammals.htm",
+      "https://humanorigins.si.edu/evidence"
+    ],
+    "questions": [
+      {
+        "prompt": "Which animal lived during the last Ice Age?",
+        "options": [
+          "A woolly mammoth",
+          "A pet Triceratops",
+          "A cartoon dragon"
+        ],
+        "answer": 0,
+        "explanation": "Woolly mammoths lived during the last glacial period."
+      },
+      {
+        "prompt": "What covered parts of Earth during the last glacial period?",
+        "options": ["Huge ice sheets", "One giant roof", "Only flowers"],
+        "answer": 0,
+        "explanation": "Large ice sheets covered some regions, while other places had different climates."
+      },
+      {
+        "prompt": "Was every place on Earth covered in ice?",
+        "options": ["No", "Yes, every place", "Only the oceans were land"],
+        "answer": 0,
+        "explanation": "Ice covered parts of Earth, not the entire planet."
+      },
+      {
+        "prompt": "Mammoths were related to which living animals?",
+        "options": ["Elephants", "Frogs", "Butterflies"],
+        "answer": 0,
+        "explanation": "Mammoths and elephants belong to the same wider family."
+      },
+      {
+        "prompt": "Did humans and mammoths live at the same time?",
+        "options": ["Yes", "No, never", "Only in cartoons"],
+        "answer": 0,
+        "explanation": "There is evidence of humans and mammoths living at the same time."
+      },
+      {
+        "prompt": "What could help people stay warm?",
+        "options": ["Clothing and shelter", "A paper fan", "An ice bath"],
+        "answer": 0,
+        "explanation": "People used knowledge, materials, and teamwork to survive cold conditions."
+      },
+      {
+        "prompt": "Which gives evidence about early people?",
+        "options": [
+          "A stone tool found by archaeologists",
+          "A made-up fairy tale",
+          "A future weather forecast"
+        ],
+        "answer": 0,
+        "explanation": "Objects left behind can help archaeologists study past lives."
+      },
+      {
+        "prompt": "Did people ride non-bird dinosaurs during the Ice Age?",
+        "options": ["No", "Yes, to school", "Only on weekends"],
+        "answer": 0,
+        "explanation": "Non-bird dinosaurs had died out millions of years earlier."
+      }
+    ]
+  },
+  {
+    "id": "early-people",
+    "title": "First makers",
+    "subject": "History",
+    "icon": "🪨",
+    "description": "Discover tools, art, and farming.",
+    "era": "Prehistory",
+    "lesson": [
+      "Prehistory means the time before written records in a place. It ended at different times in different places.",
+      "People made stone tools and art long before writing. They learned from one another.",
+      "Over time, some communities grew crops and kept animals. Farming and gathering did not change everywhere at once."
+    ],
+    "tryIt": "Draw a story without words. Ask someone what clues helped them understand it.",
+    "sources": ["https://humanorigins.si.edu/evidence/behavior"],
+    "questions": [
+      {
+        "prompt": "What does prehistory mean?",
+        "options": [
+          "Time before written records in a place",
+          "Time before any living thing",
+          "Time after next year"
+        ],
+        "answer": 0,
+        "explanation": "Prehistory is about written records, not about people being unimportant."
+      },
+      {
+        "prompt": "Which could early people make from stone?",
+        "options": ["A cutting tool", "A plastic bottle", "An electric tablet"],
+        "answer": 0,
+        "explanation": "People shaped stone into many useful tools."
+      },
+      {
+        "prompt": "What can ancient art tell us?",
+        "options": [
+          "People made images and symbols",
+          "Everyone had phones",
+          "No one had ideas"
+        ],
+        "answer": 0,
+        "explanation": "Art is one kind of evidence of how people expressed ideas."
+      },
+      {
+        "prompt": "What is farming?",
+        "options": [
+          "Growing crops or raising animals",
+          "Only finding stones",
+          "Only sailing a boat"
+        ],
+        "answer": 0,
+        "explanation": "Farming includes growing useful plants and caring for animals."
+      },
+      {
+        "prompt": "Did farming begin in every place on the same day?",
+        "options": ["No", "Yes", "Only at midnight"],
+        "answer": 0,
+        "explanation": "Communities changed food practices at different times."
+      },
+      {
+        "prompt": "What is an archaeologist likely to study?",
+        "options": [
+          "Objects people left behind",
+          "Only tomorrow’s clouds",
+          "Only living stars"
+        ],
+        "answer": 0,
+        "explanation": "Archaeologists study evidence of people’s lives."
+      },
+      {
+        "prompt": "Why was sharing knowledge useful?",
+        "options": [
+          "Others could learn useful skills",
+          "It made rivers vanish",
+          "It stopped all change"
+        ],
+        "answer": 0,
+        "explanation": "Sharing skills helped people solve problems together."
+      },
+      {
+        "prompt": "Which came first?",
+        "options": ["Stone tools", "Smartphones", "Electric trains"],
+        "answer": 0,
+        "explanation": "Stone tools were made long before electric technology."
+      }
+    ]
+  },
+  {
+    "id": "ancient-world",
+    "title": "River cities",
+    "subject": "History",
+    "icon": "🏺",
+    "description": "Visit ancient Egypt and Mesopotamia.",
+    "era": "Thousands of years ago",
+    "lesson": [
+      "Ancient communities grew near rivers that supplied water. The Nile flows through Egypt.",
+      "Mesopotamia lay around the Tigris and Euphrates rivers. Some of its people wrote by pressing marks into clay.",
+      "Ancient Egypt used hieroglyphs. Farmers, builders, traders, and families all helped communities work."
+    ],
+    "tryIt": "Make marks in play dough with a blunt stick. Invent a sign for water and one for food.",
+    "sources": [
+      "https://www.metmuseum.org/art/collection/search/325842",
+      "https://resources.metmuseum.org/resources/metpublications/pdf/The_Art_of_Ancient_Egypt_A_Resource_for_Educators.pdf"
+    ],
+    "questions": [
+      {
+        "prompt": "Which river was important to ancient Egypt?",
+        "options": ["The Nile", "The James", "The Mississippi"],
+        "answer": 0,
+        "explanation": "The Nile supplied water and fertile land to ancient Egyptian communities."
+      },
+      {
+        "prompt": "Why did many ancient communities grow near rivers?",
+        "options": [
+          "They needed water",
+          "Rivers had electric lights",
+          "Rivers were made of gold"
+        ],
+        "answer": 0,
+        "explanation": "Rivers supported drinking, farming, travel, and trade."
+      },
+      {
+        "prompt": "What are hieroglyphs?",
+        "options": [
+          "An ancient Egyptian writing system",
+          "A kind of modern bus",
+          "A kind of dinosaur"
+        ],
+        "answer": 0,
+        "explanation": "Hieroglyphs used signs to write language."
+      },
+      {
+        "prompt": "Some people in Mesopotamia wrote on what?",
+        "options": ["Clay tablets", "Computer screens", "Plastic bags"],
+        "answer": 0,
+        "explanation": "They pressed marks into clay tablets."
+      },
+      {
+        "prompt": "Which rivers are linked with Mesopotamia?",
+        "options": [
+          "Tigris and Euphrates",
+          "James and Potomac",
+          "Amazon and Hudson"
+        ],
+        "answer": 0,
+        "explanation": "Mesopotamia was in the region of the Tigris and Euphrates."
+      },
+      {
+        "prompt": "Who helped ancient cities work?",
+        "options": [
+          "Many people with different jobs",
+          "Only kings",
+          "Only soldiers"
+        ],
+        "answer": 0,
+        "explanation": "Farmers, craftspeople, traders, and families all contributed."
+      },
+      {
+        "prompt": "What could people trade?",
+        "options": [
+          "Grain, pots, and cloth",
+          "Only moonlight",
+          "Only birthdays"
+        ],
+        "answer": 0,
+        "explanation": "Trade let people exchange goods made or grown in different places."
+      },
+      {
+        "prompt": "What is useful evidence about ancient writing?",
+        "options": [
+          "An old tablet with marks",
+          "A new cartoon",
+          "An imagined sound"
+        ],
+        "answer": 0,
+        "explanation": "Surviving written objects are evidence historians can study."
+      }
+    ]
+  },
+  {
+    "id": "middle-ages",
+    "title": "Castle and town",
+    "subject": "History",
+    "icon": "🏰",
+    "description": "Meet farmers, builders, and book makers.",
+    "era": "About 500–1500 CE in European history",
+    "lesson": [
+      "The Middle Ages is a name for a period of European history, roughly 500–1500 CE.",
+      "Many people farmed. Towns also had craftspeople and traders. Castles were fortified homes and strongholds.",
+      "Books could be copied by hand. While Europe had its Middle Ages, China and many other places had their own histories."
+    ],
+    "tryIt": "Fold paper into a little book. Draw how a farmer, a builder, and a book maker help a town.",
+    "sources": [
+      "https://resources.metmuseum.org/resources/metpublications/pdf/Medieval_Art_A_Resource_for_Educators.pdf"
+    ],
+    "questions": [
+      {
+        "prompt": "The Middle Ages usually names a period in whose history?",
+        "options": ["Europe’s", "Only the Moon’s", "Only Antarctica’s"],
+        "answer": 0,
+        "explanation": "It is a period label used especially for European history, not a stage every culture followed."
+      },
+      {
+        "prompt": "What did many people do for food?",
+        "options": ["Farm", "Order with a phone", "Visit a supermarket"],
+        "answer": 0,
+        "explanation": "Farming supported many medieval communities."
+      },
+      {
+        "prompt": "What was a castle built to help do?",
+        "options": [
+          "Protect a stronghold",
+          "Launch rockets",
+          "Store only ice cream"
+        ],
+        "answer": 0,
+        "explanation": "Castles were fortified buildings, often homes and defensive strongholds."
+      },
+      {
+        "prompt": "Who might make pots, cloth, or tools?",
+        "options": ["Craftspeople", "Only astronauts", "Only presidents"],
+        "answer": 0,
+        "explanation": "Craftspeople used skills to make useful objects."
+      },
+      {
+        "prompt": "Before printing spread in Europe, how were many books copied?",
+        "options": ["By hand", "By email", "With home printers"],
+        "answer": 0,
+        "explanation": "Copying a book by hand took time and skill."
+      },
+      {
+        "prompt": "Were medieval towns home only to knights?",
+        "options": [
+          "No, many kinds of people lived there",
+          "Yes",
+          "Only dragons lived there"
+        ],
+        "answer": 0,
+        "explanation": "Families, workers, traders, and many others lived in towns."
+      },
+      {
+        "prompt": "Which two histories overlapped in time?",
+        "options": [
+          "Europe’s Middle Ages and China’s Tang dynasty",
+          "Smartphones and the first stone tools",
+          "The Moon landing and ancient Egypt’s first pyramids"
+        ],
+        "answer": 0,
+        "explanation": "Different places have histories happening at the same time."
+      },
+      {
+        "prompt": "Which was useful to a medieval trader?",
+        "options": [
+          "A route to another town",
+          "A spaceship",
+          "A phone charger"
+        ],
+        "answer": 0,
+        "explanation": "Traders moved goods along roads and waterways."
+      }
+    ]
+  },
+  {
+    "id": "china-early",
+    "title": "China: Qin and Han",
+    "subject": "History",
+    "icon": "🐉",
+    "description": "Meet two early Chinese dynasties.",
+    "era": "Qin 221–206 BCE · Han 206 BCE–220 CE",
+    "lesson": [
+      "A dynasty is a line of rulers, often from one family. Qin came before Han.",
+      "Qin rulers unified several states. The first Qin emperor’s tomb had a huge army of clay figures.",
+      "Han communities farmed, made goods, and traded. Routes now called the Silk Roads connected many places."
+    ],
+    "tryIt": "Draw two time boxes: Qin, then Han. Add a clay figure to one and a trade route to the other.",
+    "sources": [
+      "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/qin-dynasty/",
+      "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/han-dynasty/"
+    ],
+    "questions": [
+      {
+        "prompt": "What is a dynasty?",
+        "options": [
+          "A line of rulers, often from one family",
+          "A kind of planet",
+          "A modern toy"
+        ],
+        "answer": 0,
+        "explanation": "A dynasty is a succession of rulers often linked by family."
+      },
+      {
+        "prompt": "Which came first?",
+        "options": ["Qin", "Han", "Ming"],
+        "answer": 0,
+        "explanation": "Qin came before Han in Chinese history."
+      },
+      {
+        "prompt": "What were the famous Qin tomb soldiers made from?",
+        "options": ["Terracotta clay", "Plastic", "Ice"],
+        "answer": 0,
+        "explanation": "The terracotta figures were made of fired clay."
+      },
+      {
+        "prompt": "What did Qin rulers bring together?",
+        "options": [
+          "Several states into one empire",
+          "All the world’s oceans",
+          "Every country on Earth"
+        ],
+        "answer": 0,
+        "explanation": "Qin rulers unified states in what became an empire."
+      },
+      {
+        "prompt": "What could travel along trade routes?",
+        "options": ["Goods and ideas", "Only stones", "Only rain"],
+        "answer": 0,
+        "explanation": "Trade connected people, products, and ideas."
+      },
+      {
+        "prompt": "Which was a real job during Han times?",
+        "options": ["Farming", "Flying jet planes", "Building smartphones"],
+        "answer": 0,
+        "explanation": "Farming and many crafts supported Han communities."
+      },
+      {
+        "prompt": "Were the Silk Roads just one single road?",
+        "options": [
+          "No, they were many connected routes",
+          "Yes, one straight street",
+          "No, they were on the Moon"
+        ],
+        "answer": 0,
+        "explanation": "The name refers to networks of routes across large regions."
+      },
+      {
+        "prompt": "Which helps us study ancient China?",
+        "options": [
+          "Objects and written records",
+          "Only guesses",
+          "Tomorrow’s news"
+        ],
+        "answer": 0,
+        "explanation": "Historians combine different kinds of evidence."
+      }
+    ]
+  },
+  {
+    "id": "china-later",
+    "title": "China: Tang to Ming",
+    "subject": "History",
+    "icon": "🏮",
+    "description": "Explore poems, printing, and pottery.",
+    "era": "Tang 618–907 · Song 960–1279 · Ming 1368–1644 CE",
+    "lesson": [
+      "Tang came before Song, and Ming came later. Other dynasties came between them, too.",
+      "Tang China had busy cities, poetry, and exchange with other places. Printing helped books spread during Tang and Song times.",
+      "Song craftspeople made fine ceramics. Many surviving sections of the Great Wall were built or rebuilt during Ming rule."
+    ],
+    "tryIt": "Make a paper print by rubbing a crayon over a safe textured surface. Compare printing with drawing each mark again.",
+    "sources": [
+      "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/tang-dynasty/",
+      "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/song-dynasty/",
+      "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/explore-by-dynasty/ming-dynasty/"
+    ],
+    "questions": [
+      {
+        "prompt": "Which of these dynasties came first?",
+        "options": ["Tang", "Song", "Ming"],
+        "answer": 0,
+        "explanation": "Tang was earlier than Song and Ming. There were also other dynasties."
+      },
+      {
+        "prompt": "Which art was important in Tang China?",
+        "options": ["Poetry", "Filmmaking", "Computer animation"],
+        "answer": 0,
+        "explanation": "Tang poets wrote works still read today."
+      },
+      {
+        "prompt": "What did printing help people make?",
+        "options": ["Copies of texts", "Electric cars", "Plastic bottles"],
+        "answer": 0,
+        "explanation": "Printing helped reproduce writing and spread books."
+      },
+      {
+        "prompt": "Ceramics are objects made mainly from what?",
+        "options": ["Clay shaped and fired", "Snow", "Loose feathers"],
+        "answer": 0,
+        "explanation": "Ceramics include pottery and porcelain made with clay and heat."
+      },
+      {
+        "prompt": "Many standing Great Wall sections were built or rebuilt under which dynasty?",
+        "options": ["Ming", "Only Han", "Only Tang"],
+        "answer": 0,
+        "explanation": "Wall building happened over many periods; many well-known surviving sections are Ming."
+      },
+      {
+        "prompt": "Were Qin, Han, Tang, Song, and Ming all the dynasties?",
+        "options": [
+          "No, there were others",
+          "Yes, only five",
+          "No, none were real"
+        ],
+        "answer": 0,
+        "explanation": "These are a few selected dynasties, not the whole history of China."
+      },
+      {
+        "prompt": "Which two existed at overlapping times?",
+        "options": [
+          "Song China and Europe’s Middle Ages",
+          "Qin China and smartphones",
+          "Ming China and the first Moon landing"
+        ],
+        "answer": 0,
+        "explanation": "Song history and part of Europe’s Middle Ages happened at the same time."
+      },
+      {
+        "prompt": "What could visitors to a busy trade city exchange?",
+        "options": ["Goods and ideas", "Only their ages", "Only shadows"],
+        "answer": 0,
+        "explanation": "Cities connected people from different places."
+      }
+    ]
+  },
+  {
+    "id": "first-americans",
+    "title": "America’s first peoples",
+    "subject": "History",
+    "icon": "🌽",
+    "description": "Learn about Native nations, past and present.",
+    "era": "Long ago and today",
+    "lesson": [
+      "Native peoples lived in the Americas long before European colonists arrived.",
+      "There were, and are, many distinct Native nations, languages, and ways of life. There is no single Native culture.",
+      "Native communities are here today. Many have their own governments and keep languages and traditions strong."
+    ],
+    "tryIt": "With a grown-up, learn the name of a Native nation connected with your area from that nation’s own website.",
+    "sources": [
+      "https://americanindian.si.edu/nk360/about/essential-understandings"
+    ],
+    "questions": [
+      {
+        "prompt": "Who lived in the Americas before European colonists arrived?",
+        "options": ["Native peoples", "No people", "Only Roman emperors"],
+        "answer": 0,
+        "explanation": "Many Native peoples had long histories in the Americas before colonization."
+      },
+      {
+        "prompt": "Did every Native nation speak the same language?",
+        "options": ["No", "Yes, always", "Only children used language"],
+        "answer": 0,
+        "explanation": "There were and are many distinct languages and nations."
+      },
+      {
+        "prompt": "Are Native peoples part of life today?",
+        "options": ["Yes", "No, only in the past", "Only in stories"],
+        "answer": 0,
+        "explanation": "Native communities live, work, create, and govern today."
+      },
+      {
+        "prompt": "Which is a respectful way to learn about a Native nation?",
+        "options": [
+          "Listen to that nation’s own people",
+          "Treat every nation as the same",
+          "Use only made-up stories"
+        ],
+        "answer": 0,
+        "explanation": "Learn from Native voices and reliable sources."
+      },
+      {
+        "prompt": "Could different Native communities have different homes and foods?",
+        "options": ["Yes", "Never", "Only after television"],
+        "answer": 0,
+        "explanation": "Ways of life varied with places, resources, and traditions."
+      },
+      {
+        "prompt": "Which crop was grown by many Native communities?",
+        "options": ["Corn, also called maize", "Plastic", "Glass"],
+        "answer": 0,
+        "explanation": "Many Native farmers grew maize and other crops. Not every community farmed."
+      },
+      {
+        "prompt": "Which is true about Native nations?",
+        "options": [
+          "Many have their own governments",
+          "They never had communities",
+          "They all have one leader"
+        ],
+        "answer": 0,
+        "explanation": "Native nations have distinct histories and governments."
+      },
+      {
+        "prompt": "Which sentence avoids a mistaken idea?",
+        "options": [
+          "Native cultures are diverse and continue today",
+          "All Native people lived the same way",
+          "Native people exist only in the past"
+        ],
+        "answer": 0,
+        "explanation": "We learn more accurately by recognizing both diversity and present-day life."
+      }
+    ]
+  },
+  {
+    "id": "founding",
+    "title": "A new United States",
+    "subject": "History",
+    "icon": "📜",
+    "description": "Explore colonies, independence, and rules.",
+    "era": "1600s–1700s",
+    "lesson": [
+      "English colonists built Jamestown in Virginia in 1607 on land already home to Native peoples.",
+      "In 1776, thirteen colonies declared independence from Great Britain. The Constitution later set out a framework for government.",
+      "The promise of equal rights was not shared fairly. Enslaved people were denied freedom, and many people could not vote."
+    ],
+    "tryIt": "Make three fair rules for a pretend club. Ask who should help decide the rules.",
+    "sources": [
+      "https://www.nps.gov/jame/index.htm",
+      "https://www.archives.gov/founding-docs/declaration-transcript",
+      "https://www.archives.gov/founding-docs/constitution"
+    ],
+    "questions": [
+      {
+        "prompt": "Where was Jamestown established in 1607?",
+        "options": ["Virginia", "California", "Hawaii"],
+        "answer": 0,
+        "explanation": "English colonists established Jamestown in Virginia on Native peoples’ homeland."
+      },
+      {
+        "prompt": "How many colonies declared independence in 1776?",
+        "options": ["Thirteen", "Fifty", "Two"],
+        "answer": 0,
+        "explanation": "Thirteen colonies declared independence. The country later grew and changed."
+      },
+      {
+        "prompt": "From which country did those colonies declare independence?",
+        "options": ["Great Britain", "Japan", "Brazil"],
+        "answer": 0,
+        "explanation": "The thirteen colonies declared independence from Great Britain."
+      },
+      {
+        "prompt": "Which document announced independence?",
+        "options": [
+          "The Declaration of Independence",
+          "A map key",
+          "A shopping list"
+        ],
+        "answer": 0,
+        "explanation": "The Declaration announced the colonies’ decision in 1776."
+      },
+      {
+        "prompt": "Which document sets out the U.S. government’s framework?",
+        "options": ["The Constitution", "A recipe book", "A weather chart"],
+        "answer": 0,
+        "explanation": "The Constitution describes how the national government is organized."
+      },
+      {
+        "prompt": "Did everyone have equal rights at the founding?",
+        "options": ["No", "Yes, everyone", "Only on Fridays"],
+        "answer": 0,
+        "explanation": "Many people were denied freedom, voting rights, and fair treatment."
+      },
+      {
+        "prompt": "Was Virginia empty before colonists arrived?",
+        "options": [
+          "No, Native peoples lived there",
+          "Yes",
+          "Only animals lived there"
+        ],
+        "answer": 0,
+        "explanation": "Native nations had communities and histories there already."
+      },
+      {
+        "prompt": "What is a fair rule for a club?",
+        "options": [
+          "Listen to everyone’s ideas",
+          "Only one child may speak forever",
+          "Exclude anyone new"
+        ],
+        "answer": 0,
+        "explanation": "Thinking about fair rules helps us discuss government and rights."
+      }
+    ]
+  },
+  {
+    "id": "presidents",
+    "title": "Meet past presidents",
+    "subject": "History",
+    "icon": "🏛️",
+    "description": "Discover leaders and their jobs.",
+    "era": "Past U.S. presidents",
+    "lesson": [
+      "A U.S. president is an elected leader, not a king. Presidents must follow the Constitution.",
+      "George Washington was the first president. Thomas Jefferson was the third. Abraham Lincoln was president during the Civil War.",
+      "Leaders can do important things and also cause harm. Washington and Jefferson enslaved people; a complete history includes those people’s lives."
+    ],
+    "tryIt": "Draw a good leader listening to other people. Tell a grown-up why listening matters.",
+    "sources": [
+      "https://www.loc.gov/classroom-materials/washington-jefferson-and-lincoln-three-great-presidents/",
+      "https://www.archives.gov/founding-docs/constitution-transcript"
+    ],
+    "questions": [
+      {
+        "prompt": "Who was the first U.S. president?",
+        "options": ["George Washington", "Abraham Lincoln", "Thomas Jefferson"],
+        "answer": 0,
+        "explanation": "George Washington became the first U.S. president in 1789."
+      },
+      {
+        "prompt": "Who was the third U.S. president?",
+        "options": ["Thomas Jefferson", "George Washington", "Abraham Lincoln"],
+        "answer": 0,
+        "explanation": "Thomas Jefferson served after Washington and John Adams."
+      },
+      {
+        "prompt": "Who was president during the American Civil War?",
+        "options": ["Abraham Lincoln", "George Washington", "Thomas Jefferson"],
+        "answer": 0,
+        "explanation": "Lincoln was president during the Civil War."
+      },
+      {
+        "prompt": "Is the U.S. president a king?",
+        "options": ["No", "Yes", "Only in winter"],
+        "answer": 0,
+        "explanation": "The president is an elected leader with powers limited by the Constitution."
+      },
+      {
+        "prompt": "Who else helps make national laws?",
+        "options": [
+          "Congress",
+          "Only the president’s family",
+          "Only a sports team"
+        ],
+        "answer": 0,
+        "explanation": "Congress makes laws. The president has a different role in the government."
+      },
+      {
+        "prompt": "Where does the U.S. president live and work?",
+        "options": [
+          "The White House",
+          "A medieval castle in England",
+          "A pyramid"
+        ],
+        "answer": 0,
+        "explanation": "The White House is in Washington, D.C."
+      },
+      {
+        "prompt": "Should presidents follow the Constitution?",
+        "options": ["Yes", "No", "Only when they want to"],
+        "answer": 0,
+        "explanation": "The Constitution limits the powers of government."
+      },
+      {
+        "prompt": "Why learn about people harmed by past leaders, too?",
+        "options": [
+          "To understand a fuller history",
+          "To pretend nothing happened",
+          "To learn only names"
+        ],
+        "answer": 0,
+        "explanation": "History includes leaders’ actions and the lives of the people those actions affected."
+      }
+    ]
+  },
+  {
+    "id": "freedom",
+    "title": "Working for fairness",
+    "subject": "History",
+    "icon": "🕊️",
+    "description": "Meet people who worked for freedom.",
+    "era": "1800s–1900s",
+    "lesson": [
+      "Slavery treated people as property and denied their freedom. It was wrong. Enslaved people resisted and sought freedom.",
+      "Harriet Tubman escaped slavery and helped others escape. The Underground Railroad was a network of people and routes, not a subway.",
+      "The 13th Amendment ended legal slavery, except as punishment for crime. Later, civil rights activists kept working against unfair laws and treatment."
+    ],
+    "tryIt": "Name one way to make a game fairer. Talk with a grown-up about what to do when a rule is unfair.",
+    "sources": [
+      "https://www.nps.gov/subjects/undergroundrailroad/people.htm",
+      "https://www.archives.gov/milestone-documents/13th-amendment",
+      "https://www.nps.gov/subjects/civilrights/index.htm"
+    ],
+    "questions": [
+      {
+        "prompt": "What did slavery deny people?",
+        "options": ["Freedom", "Only toys", "Only birthday cakes"],
+        "answer": 0,
+        "explanation": "Slavery denied people freedom and treated them as property. It was wrong."
+      },
+      {
+        "prompt": "What did Harriet Tubman help people do?",
+        "options": ["Escape slavery", "Build a subway", "Fly to the Moon"],
+        "answer": 0,
+        "explanation": "After escaping slavery, Tubman returned to help other people reach freedom."
+      },
+      {
+        "prompt": "Was the Underground Railroad a real train line?",
+        "options": [
+          "No, it was a network helping people escape",
+          "Yes, a subway",
+          "Yes, a toy train"
+        ],
+        "answer": 0,
+        "explanation": "People used routes and safe places. The name was a code, not an actual railroad."
+      },
+      {
+        "prompt": "What did the 13th Amendment do?",
+        "options": [
+          "End legal slavery, with a punishment-for-crime exception",
+          "Create the first state",
+          "Name every river"
+        ],
+        "answer": 0,
+        "explanation": "The amendment abolished slavery except as punishment for crime after conviction."
+      },
+      {
+        "prompt": "Did ending slavery immediately end all unfair treatment?",
+        "options": ["No", "Yes, all unfairness ended", "Only for one day"],
+        "answer": 0,
+        "explanation": "People continued fighting racism and unequal treatment."
+      },
+      {
+        "prompt": "What did civil rights activists work for?",
+        "options": [
+          "Equal rights and fair treatment",
+          "Only new toys",
+          "Only faster trains"
+        ],
+        "answer": 0,
+        "explanation": "Civil rights activism challenges unfair laws and discrimination."
+      },
+      {
+        "prompt": "Were enslaved people part of the struggle for freedom?",
+        "options": [
+          "Yes, they resisted and acted for freedom",
+          "No, they never acted",
+          "Only leaders mattered"
+        ],
+        "answer": 0,
+        "explanation": "Enslaved and formerly enslaved people were central to the fight for freedom."
+      },
+      {
+        "prompt": "What helps us learn a fuller history?",
+        "options": [
+          "Listening to different people’s experiences",
+          "Only memorizing one famous name",
+          "Ignoring unfairness"
+        ],
+        "answer": 0,
+        "explanation": "Historical evidence includes the experiences of many people."
+      }
+    ]
+  },
+  {
+    "id": "states",
+    "title": "50-state trail",
+    "subject": "Geography",
+    "icon": "🗺️",
+    "description": "Learn a few states at a time.",
+    "era": "",
+    "lesson": [
+      "Each of the 50 states has a capital, where its state government works.",
+      "A state capital is not always the largest city. Richmond is Virginia’s capital; Washington, D.C., is the national capital.",
+      "Explore the cards first. It is fine to learn just a few today."
+    ],
+    "tryIt": "Pick three state cards. Find those states on a U.S. map with a grown-up.",
+    "sources": ["https://kids.nationalgeographic.com/geography/states"],
+    "questions": [
+      {
+        "prompt": "What is the capital of Alabama?",
+        "options": ["Montgomery", "Atlanta", "Jackson"],
+        "answer": 0,
+        "explanation": "Montgomery is the capital of Alabama. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Alaska?",
+        "options": ["Juneau", "Honolulu", "Jefferson City"],
+        "answer": 0,
+        "explanation": "Juneau is the capital of Alaska. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Arizona?",
+        "options": ["Phoenix", "Boise", "Helena"],
+        "answer": 0,
+        "explanation": "Phoenix is the capital of Arizona. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Arkansas?",
+        "options": ["Little Rock", "Springfield", "Lincoln"],
+        "answer": 0,
+        "explanation": "Little Rock is the capital of Arkansas. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of California?",
+        "options": ["Sacramento", "Indianapolis", "Carson City"],
+        "answer": 0,
+        "explanation": "Sacramento is the capital of California. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Colorado?",
+        "options": ["Denver", "Des Moines", "Concord"],
+        "answer": 0,
+        "explanation": "Denver is the capital of Colorado. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Connecticut?",
+        "options": ["Hartford", "Topeka", "Trenton"],
+        "answer": 0,
+        "explanation": "Hartford is the capital of Connecticut. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Delaware?",
+        "options": ["Dover", "Frankfort", "Santa Fe"],
+        "answer": 0,
+        "explanation": "Dover is the capital of Delaware. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Florida?",
+        "options": ["Tallahassee", "Baton Rouge", "Albany"],
+        "answer": 0,
+        "explanation": "Tallahassee is the capital of Florida. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Georgia?",
+        "options": ["Atlanta", "Augusta", "Raleigh"],
+        "answer": 0,
+        "explanation": "Atlanta is the capital of Georgia. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Hawaii?",
+        "options": ["Honolulu", "Annapolis", "Bismarck"],
+        "answer": 0,
+        "explanation": "Honolulu is the capital of Hawaii. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Idaho?",
+        "options": ["Boise", "Boston", "Columbus"],
+        "answer": 0,
+        "explanation": "Boise is the capital of Idaho. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Illinois?",
+        "options": ["Springfield", "Lansing", "Oklahoma City"],
+        "answer": 0,
+        "explanation": "Springfield is the capital of Illinois. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Indiana?",
+        "options": ["Indianapolis", "Saint Paul", "Salem"],
+        "answer": 0,
+        "explanation": "Indianapolis is the capital of Indiana. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Iowa?",
+        "options": ["Des Moines", "Jackson", "Harrisburg"],
+        "answer": 0,
+        "explanation": "Des Moines is the capital of Iowa. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Kansas?",
+        "options": ["Topeka", "Jefferson City", "Providence"],
+        "answer": 0,
+        "explanation": "Topeka is the capital of Kansas. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Kentucky?",
+        "options": ["Frankfort", "Helena", "Columbia"],
+        "answer": 0,
+        "explanation": "Frankfort is the capital of Kentucky. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Louisiana?",
+        "options": ["Baton Rouge", "Lincoln", "Pierre"],
+        "answer": 0,
+        "explanation": "Baton Rouge is the capital of Louisiana. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Maine?",
+        "options": ["Augusta", "Carson City", "Nashville"],
+        "answer": 0,
+        "explanation": "Augusta is the capital of Maine. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Maryland?",
+        "options": ["Annapolis", "Concord", "Austin"],
+        "answer": 0,
+        "explanation": "Annapolis is the capital of Maryland. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Massachusetts?",
+        "options": ["Boston", "Trenton", "Salt Lake City"],
+        "answer": 0,
+        "explanation": "Boston is the capital of Massachusetts. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Michigan?",
+        "options": ["Lansing", "Santa Fe", "Montpelier"],
+        "answer": 0,
+        "explanation": "Lansing is the capital of Michigan. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Minnesota?",
+        "options": ["Saint Paul", "Albany", "Richmond"],
+        "answer": 0,
+        "explanation": "Saint Paul is the capital of Minnesota. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Mississippi?",
+        "options": ["Jackson", "Raleigh", "Olympia"],
+        "answer": 0,
+        "explanation": "Jackson is the capital of Mississippi. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Missouri?",
+        "options": ["Jefferson City", "Bismarck", "Charleston"],
+        "answer": 0,
+        "explanation": "Jefferson City is the capital of Missouri. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Montana?",
+        "options": ["Helena", "Columbus", "Madison"],
+        "answer": 0,
+        "explanation": "Helena is the capital of Montana. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Nebraska?",
+        "options": ["Lincoln", "Oklahoma City", "Cheyenne"],
+        "answer": 0,
+        "explanation": "Lincoln is the capital of Nebraska. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Nevada?",
+        "options": ["Carson City", "Salem", "Montgomery"],
+        "answer": 0,
+        "explanation": "Carson City is the capital of Nevada. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of New Hampshire?",
+        "options": ["Concord", "Harrisburg", "Juneau"],
+        "answer": 0,
+        "explanation": "Concord is the capital of New Hampshire. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of New Jersey?",
+        "options": ["Trenton", "Providence", "Phoenix"],
+        "answer": 0,
+        "explanation": "Trenton is the capital of New Jersey. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of New Mexico?",
+        "options": ["Santa Fe", "Columbia", "Little Rock"],
+        "answer": 0,
+        "explanation": "Santa Fe is the capital of New Mexico. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of New York?",
+        "options": ["Albany", "Pierre", "Sacramento"],
+        "answer": 0,
+        "explanation": "Albany is the capital of New York. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of North Carolina?",
+        "options": ["Raleigh", "Nashville", "Denver"],
+        "answer": 0,
+        "explanation": "Raleigh is the capital of North Carolina. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of North Dakota?",
+        "options": ["Bismarck", "Austin", "Hartford"],
+        "answer": 0,
+        "explanation": "Bismarck is the capital of North Dakota. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Ohio?",
+        "options": ["Columbus", "Salt Lake City", "Dover"],
+        "answer": 0,
+        "explanation": "Columbus is the capital of Ohio. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Oklahoma?",
+        "options": ["Oklahoma City", "Montpelier", "Tallahassee"],
+        "answer": 0,
+        "explanation": "Oklahoma City is the capital of Oklahoma. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Oregon?",
+        "options": ["Salem", "Richmond", "Atlanta"],
+        "answer": 0,
+        "explanation": "Salem is the capital of Oregon. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Pennsylvania?",
+        "options": ["Harrisburg", "Olympia", "Honolulu"],
+        "answer": 0,
+        "explanation": "Harrisburg is the capital of Pennsylvania. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Rhode Island?",
+        "options": ["Providence", "Charleston", "Boise"],
+        "answer": 0,
+        "explanation": "Providence is the capital of Rhode Island. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of South Carolina?",
+        "options": ["Columbia", "Madison", "Springfield"],
+        "answer": 0,
+        "explanation": "Columbia is the capital of South Carolina. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of South Dakota?",
+        "options": ["Pierre", "Cheyenne", "Indianapolis"],
+        "answer": 0,
+        "explanation": "Pierre is the capital of South Dakota. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Tennessee?",
+        "options": ["Nashville", "Montgomery", "Des Moines"],
+        "answer": 0,
+        "explanation": "Nashville is the capital of Tennessee. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Texas?",
+        "options": ["Austin", "Juneau", "Topeka"],
+        "answer": 0,
+        "explanation": "Austin is the capital of Texas. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Utah?",
+        "options": ["Salt Lake City", "Phoenix", "Frankfort"],
+        "answer": 0,
+        "explanation": "Salt Lake City is the capital of Utah. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Vermont?",
+        "options": ["Montpelier", "Little Rock", "Baton Rouge"],
+        "answer": 0,
+        "explanation": "Montpelier is the capital of Vermont. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Virginia?",
+        "options": ["Richmond", "Sacramento", "Augusta"],
+        "answer": 0,
+        "explanation": "Richmond is the capital of Virginia. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Washington?",
+        "options": ["Olympia", "Denver", "Annapolis"],
+        "answer": 0,
+        "explanation": "Olympia is the capital of Washington. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of West Virginia?",
+        "options": ["Charleston", "Hartford", "Boston"],
+        "answer": 0,
+        "explanation": "Charleston is the capital of West Virginia. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Wisconsin?",
+        "options": ["Madison", "Dover", "Lansing"],
+        "answer": 0,
+        "explanation": "Madison is the capital of Wisconsin. A state capital is a center of state government."
+      },
+      {
+        "prompt": "What is the capital of Wyoming?",
+        "options": ["Cheyenne", "Tallahassee", "Saint Paul"],
+        "answer": 0,
+        "explanation": "Cheyenne is the capital of Wyoming. A state capital is a center of state government."
+      }
+    ],
+    "collection": [
+      {
+        "name": "Alabama",
+        "detail": "Montgomery"
+      },
+      {
+        "name": "Alaska",
+        "detail": "Juneau"
+      },
+      {
+        "name": "Arizona",
+        "detail": "Phoenix"
+      },
+      {
+        "name": "Arkansas",
+        "detail": "Little Rock"
+      },
+      {
+        "name": "California",
+        "detail": "Sacramento"
+      },
+      {
+        "name": "Colorado",
+        "detail": "Denver"
+      },
+      {
+        "name": "Connecticut",
+        "detail": "Hartford"
+      },
+      {
+        "name": "Delaware",
+        "detail": "Dover"
+      },
+      {
+        "name": "Florida",
+        "detail": "Tallahassee"
+      },
+      {
+        "name": "Georgia",
+        "detail": "Atlanta"
+      },
+      {
+        "name": "Hawaii",
+        "detail": "Honolulu"
+      },
+      {
+        "name": "Idaho",
+        "detail": "Boise"
+      },
+      {
+        "name": "Illinois",
+        "detail": "Springfield"
+      },
+      {
+        "name": "Indiana",
+        "detail": "Indianapolis"
+      },
+      {
+        "name": "Iowa",
+        "detail": "Des Moines"
+      },
+      {
+        "name": "Kansas",
+        "detail": "Topeka"
+      },
+      {
+        "name": "Kentucky",
+        "detail": "Frankfort"
+      },
+      {
+        "name": "Louisiana",
+        "detail": "Baton Rouge"
+      },
+      {
+        "name": "Maine",
+        "detail": "Augusta"
+      },
+      {
+        "name": "Maryland",
+        "detail": "Annapolis"
+      },
+      {
+        "name": "Massachusetts",
+        "detail": "Boston"
+      },
+      {
+        "name": "Michigan",
+        "detail": "Lansing"
+      },
+      {
+        "name": "Minnesota",
+        "detail": "Saint Paul"
+      },
+      {
+        "name": "Mississippi",
+        "detail": "Jackson"
+      },
+      {
+        "name": "Missouri",
+        "detail": "Jefferson City"
+      },
+      {
+        "name": "Montana",
+        "detail": "Helena"
+      },
+      {
+        "name": "Nebraska",
+        "detail": "Lincoln"
+      },
+      {
+        "name": "Nevada",
+        "detail": "Carson City"
+      },
+      {
+        "name": "New Hampshire",
+        "detail": "Concord"
+      },
+      {
+        "name": "New Jersey",
+        "detail": "Trenton"
+      },
+      {
+        "name": "New Mexico",
+        "detail": "Santa Fe"
+      },
+      {
+        "name": "New York",
+        "detail": "Albany"
+      },
+      {
+        "name": "North Carolina",
+        "detail": "Raleigh"
+      },
+      {
+        "name": "North Dakota",
+        "detail": "Bismarck"
+      },
+      {
+        "name": "Ohio",
+        "detail": "Columbus"
+      },
+      {
+        "name": "Oklahoma",
+        "detail": "Oklahoma City"
+      },
+      {
+        "name": "Oregon",
+        "detail": "Salem"
+      },
+      {
+        "name": "Pennsylvania",
+        "detail": "Harrisburg"
+      },
+      {
+        "name": "Rhode Island",
+        "detail": "Providence"
+      },
+      {
+        "name": "South Carolina",
+        "detail": "Columbia"
+      },
+      {
+        "name": "South Dakota",
+        "detail": "Pierre"
+      },
+      {
+        "name": "Tennessee",
+        "detail": "Nashville"
+      },
+      {
+        "name": "Texas",
+        "detail": "Austin"
+      },
+      {
+        "name": "Utah",
+        "detail": "Salt Lake City"
+      },
+      {
+        "name": "Vermont",
+        "detail": "Montpelier"
+      },
+      {
+        "name": "Virginia",
+        "detail": "Richmond"
+      },
+      {
+        "name": "Washington",
+        "detail": "Olympia"
+      },
+      {
+        "name": "West Virginia",
+        "detail": "Charleston"
+      },
+      {
+        "name": "Wisconsin",
+        "detail": "Madison"
+      },
+      {
+        "name": "Wyoming",
+        "detail": "Cheyenne"
+      }
+    ],
+    "visual": "states"
+  }
+]

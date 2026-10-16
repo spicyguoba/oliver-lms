@@ -23,6 +23,7 @@ export default function Adventure({ id }) {
         e.status === 401 ? setUnauthorized(true) : setError(e.message),
       );
   }, [id]);
+  useEffect(() => () => window.speechSynthesis?.cancel(), []);
   useEffect(() => {
     timer.current = {
       start: document.hidden ? null : performance.now(),
@@ -92,12 +93,21 @@ export default function Adventure({ id }) {
       if ("speechSynthesis" in window) {
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(
-          (session.question.passage || "") + " " + session.question.prompt,
+          (session.question.passage || "") +
+            " " +
+            session.question.prompt +
+            ". " +
+            (session.question.options || [])
+              .map((o, i) => `Choice ${i + 1}. ${o}.`)
+              .join(" "),
         );
         u.rate = 0.8;
         u.lang = "en-US";
         window.speechSynthesis.speak(u);
-      }
+      } else
+        setError(
+          "Ask your grown-up to read this with you. This browser has no read-aloud voice.",
+        );
     } catch (e) {
       setError(e.message);
     } finally {
@@ -114,11 +124,11 @@ export default function Adventure({ id }) {
     );
   const q = session.question;
   return (
-    <main className="quiz-shell">
+    <main className="quiz-shell kid-quiz">
       <header className="quiz-header">
         <Brand />
         <a className="button secondary small" href="/">
-          <Home size={17} /> Adventure home
+          <Home size={22} /> Home
         </a>
       </header>
       <ErrorBox message={error} />
@@ -131,11 +141,7 @@ export default function Adventure({ id }) {
       {session.finishedAt ? (
         <section className="quiz-card finish-card">
           <div className="big-icon">{session.correct >= 4 ? "🏆" : "🌱"}</div>
-          <div className="eyebrow">EVERY TRY HELPS YOU GROW</div>
-          <h1>
-            A little more learned.
-            <br />A little further along.
-          </h1>
+          <h1>You did it!</h1>
           <p>
             You answered {session.correct} of {session.total} correctly.
             <br />
@@ -155,17 +161,19 @@ export default function Adventure({ id }) {
                 : "A story passes at 4 of 5. This rank’s story streak starts again at zero."}
             </p>
           )}
-          <a className="button" href="/">
-            Back to my adventure <ArrowRight size={18} />
+          <a className="button" href={"/#world-" + (session.subject || "Math")}>
+            Choose another game <ArrowRight size={22} />
+          </a>
+          <a className="button secondary" href="/">
+            {" "}
+            <Home size={22} /> Home
           </a>
         </section>
       ) : (
         <section className="quiz-card">
           <div className="quiz-count">
             <span>
-              {session.skill === "stories"
-                ? "STORY DETECTIVES"
-                : "LET’S MAKE A DISCOVERY"}
+              {session.icon} {session.title || "Let’s play"}
             </span>
             <span>
               {Math.min(session.index + 1, session.total)} / {session.total}
@@ -175,6 +183,26 @@ export default function Adventure({ id }) {
             <div
               style={{ width: (session.index / session.total) * 100 + "%" }}
             />
+          </div>
+          <div
+            className="kid-question-steps"
+            aria-label={`Question ${Math.min(session.index + 1, session.total)} of ${session.total}`}
+          >
+            {Array.from({ length: session.total }, (_, i) => (
+              <span
+                key={i}
+                className={
+                  i < session.index
+                    ? "done"
+                    : i === session.index
+                      ? "current"
+                      : ""
+                }
+                aria-hidden="true"
+              >
+                {i + 1}
+              </span>
+            ))}
           </div>
           {q?.passage && (
             <div className="passage">
@@ -255,7 +283,7 @@ export default function Adventure({ id }) {
                     onClick={speak}
                   >
                     <Volume2 size={19} />
-                    Read aloud with help
+                    Read to me
                   </button>
                 )}
                 <button
@@ -266,7 +294,7 @@ export default function Adventure({ id }) {
                     if (r) window.location.href = "/";
                   }}
                 >
-                  Leave this round
+                  Stop this game
                 </button>
               </div>
             </>
@@ -285,13 +313,29 @@ export default function Adventure({ id }) {
               </h2>
               <p>{session.feedback.explanation}</p>
               <button
+                className="text-button"
+                onClick={() => {
+                  if (!("speechSynthesis" in window)) {
+                    setError("Ask your grown-up to read this with you.");
+                    return;
+                  }
+                  window.speechSynthesis.cancel();
+                  const u = new SpeechSynthesisUtterance(
+                    session.feedback.explanation,
+                  );
+                  u.rate = 0.82;
+                  u.lang = "en-US";
+                  window.speechSynthesis.speak(u);
+                }}
+              >
+                <Volume2 size={22} /> Read this to me
+              </button>
+              <button
                 className="button"
                 disabled={busy}
                 onClick={() => mutate("next", {})}
               >
-                {session.index === session.total - 1
-                  ? "See my stars"
-                  : "Next discovery"}{" "}
+                {session.index === session.total - 1 ? "See my stars" : "Next"}{" "}
                 <ArrowRight size={19} />
               </button>
             </div>

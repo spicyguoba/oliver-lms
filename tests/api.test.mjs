@@ -89,6 +89,30 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     password: "admin1234",
   });
   cookie = relogin.headers.get("set-cookie").split(";")[0];
+  const expanded = (await (await request("admin")).json()).stats;
+  assert.equal(expanded.length, 27);
+  assert.ok(expanded.every((s) => !("questions" in s)));
+  for (const [skill, difficulty] of [
+    ["space", 1],
+    ["china-early", 1],
+    ["states", 5],
+  ]) {
+    const started = await request("session/start", { skill, difficulty });
+    assert.equal(started.status, 200);
+    const activity = await started.json();
+    assert.ok(activity.question.options.length >= 3);
+    assert.ok(!("answer" in activity.question));
+    if (skill === "states")
+      assert.ok(
+        /South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming/.test(
+          activity.question.prompt,
+        ),
+      );
+    assert.equal(
+      (await request("session/" + activity.id + "/leave", {})).status,
+      200,
+    );
+  }
   await request("admin/assignment", {
     id: "test-quest",
     title: "Test paper practice",
