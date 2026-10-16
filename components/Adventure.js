@@ -1,0 +1,308 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowRight,
+  Home,
+  CircleHelp,
+  Volume2,
+  ShieldCheck,
+} from "lucide-react";
+import { api, Brand, ErrorBox, Login, Loading } from "./ui";
+export default function Adventure({ id }) {
+  const [session, setSession] = useState(null),
+    [error, setError] = useState(""),
+    [unauthorized, setUnauthorized] = useState(false),
+    [busy, setBusy] = useState(false),
+    [hint, setHint] = useState(""),
+    [answer, setAnswer] = useState("");
+  const timer = useRef({ start: 0, active: 0, losses: 0, helped: false });
+  useEffect(() => {
+    api("session/" + id)
+      .then(setSession)
+      .catch((e) =>
+        e.status === 401 ? setUnauthorized(true) : setError(e.message),
+      );
+  }, [id]);
+  useEffect(() => {
+    timer.current = {
+      start: document.hidden ? null : performance.now(),
+      active: 0,
+      losses: 0,
+      helped: false,
+    };
+    setHint("");
+    setAnswer("");
+    function visibility() {
+      const t = timer.current;
+      if (document.hidden) {
+        if (t.start !== null) t.active += performance.now() - t.start;
+        t.start = null;
+        t.losses++;
+      } else t.start = performance.now();
+    }
+    document.addEventListener("visibilitychange", visibility);
+    return () => document.removeEventListener("visibilitychange", visibility);
+  }, [session?.question?.id]);
+  async function mutate(endpoint, body) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const s = await api("session/" + id + "/" + endpoint, body);
+      setSession(s);
+      return s;
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function submit(value) {
+    const t = timer.current;
+    await mutate("answer", {
+      questionId: session.question.id,
+      answer: value,
+      activeMs: Math.round(
+        t.active + (t.start === null ? 0 : performance.now() - t.start),
+      ),
+      focusLosses: t.losses,
+      helped: t.helped,
+    });
+  }
+  async function help() {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const h = await api("session/" + id + "/hint", {});
+      setHint(h.hint);
+      timer.current.helped = true;
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function speak() {
+    if (busy) return;
+    setBusy(true);
+    try {
+      await api("session/" + id + "/hint", { kind: "read-aloud" });
+      timer.current.helped = true;
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(
+          (session.question.passage || "") + " " + session.question.prompt,
+        );
+        u.rate = 0.8;
+        u.lang = "en-US";
+        window.speechSynthesis.speak(u);
+      }
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+  if (unauthorized) return <Login />;
+  if (!session)
+    return (
+      <>
+        <Loading />
+        <ErrorBox message={error} />
+      </>
+    );
+  const q = session.question;
+  return (
+    <main className="quiz-shell">
+      <header className="quiz-header">
+        <Brand />
+        <a className="button secondary small" href="/">
+          <Home size={17} /> Adventure home
+        </a>
+      </header>
+      <ErrorBox message={error} />
+      {session.mode === "observed" && (
+        <p className="quiz-info">
+          <ShieldCheck size={15} /> Parent-observed round · work independently,
+          with your grown-up nearby.
+        </p>
+      )}
+      {session.finishedAt ? (
+        <section className="quiz-card finish-card">
+          <div className="big-icon">{session.correct >= 4 ? "🏆" : "🌱"}</div>
+          <div className="eyebrow">EVERY TRY HELPS YOU GROW</div>
+          <h1>
+            A little more learned.
+            <br />A little further along.
+          </h1>
+          <p>
+            You answered {session.correct} of {session.total} correctly.
+            <br />
+            {session.correct >= 4
+              ? "Look at those discoveries!"
+              : "Your next try is another chance to learn."}
+          </p>
+          <div className="earned-stars">
+            {"★".repeat(session.stars)}
+            {"☆".repeat(Math.max(0, 5 - session.stars))}
+          </div>
+          <p>{session.stars} stars added to your collection.</p>
+          {session.skill === "stories" && (
+            <p>
+              {session.correct >= 4
+                ? "Story passed! Three different, consecutive passed stories unlock the next rank."
+                : "A story passes at 4 of 5. This rank’s story streak starts again at zero."}
+            </p>
+          )}
+          <a className="button" href="/">
+            Back to my adventure <ArrowRight size={18} />
+          </a>
+        </section>
+      ) : (
+        <section className="quiz-card">
+          <div className="quiz-count">
+            <span>
+              {session.skill === "stories"
+                ? "STORY DETECTIVES"
+                : "LET’S MAKE A DISCOVERY"}
+            </span>
+            <span>
+              {Math.min(session.index + 1, session.total)} / {session.total}
+            </span>
+          </div>
+          <div className="quiz-progress">
+            <div
+              style={{ width: (session.index / session.total) * 100 + "%" }}
+            />
+          </div>
+          {q?.passage && (
+            <div className="passage">
+              <h2>{q.title}</h2>
+              {q.passage}
+            </div>
+          )}
+          {q && (
+            <>
+              <h1>{q.prompt}</h1>
+              {q.diagram && (
+                <div
+                  role="img"
+                  aria-label={`${q.diagram.numerator} of ${q.diagram.denominator} equal pieces are shaded`}
+                  className="fraction-visual"
+                >
+                  {Array.from({ length: q.diagram.denominator }, (_, i) => (
+                    <span
+                      key={i}
+                      className={i < q.diagram.numerator ? "filled" : ""}
+                    />
+                  ))}
+                </div>
+              )}
+              {q.options ? (
+                <div className="question-options">
+                  {q.options.map((o, i) => (
+                    <button
+                      key={i}
+                      disabled={busy}
+                      onClick={() => submit(String(i))}
+                    >
+                      {o}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <form
+                  className="numeric-form"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    submit(answer);
+                  }}
+                >
+                  <input
+                    aria-label="Your answer"
+                    autoComplete="off"
+                    inputMode={
+                      session.skill === "fractions" ? "text" : "numeric"
+                    }
+                    value={answer}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    placeholder={
+                      session.skill === "fractions" ? "Like 1/2" : "Your answer"
+                    }
+                    maxLength="40"
+                    required
+                  />
+                  <button className="button" disabled={busy || !answer.trim()}>
+                    Check my answer <ArrowRight size={18} />
+                  </button>
+                </form>
+              )}
+              {hint && (
+                <div className="focus-message" role="status">
+                  {hint}
+                </div>
+              )}
+              <div className="quiz-actions">
+                <button className="text-button" disabled={busy} onClick={help}>
+                  <CircleHelp size={19} />
+                  Show me how
+                </button>
+                {session.skill !== "chinese" && (
+                  <button
+                    className="text-button"
+                    disabled={busy}
+                    onClick={speak}
+                  >
+                    <Volume2 size={19} />
+                    Read aloud with help
+                  </button>
+                )}
+                <button
+                  className="text-button muted"
+                  disabled={busy}
+                  onClick={async () => {
+                    const r = await mutate("leave", {});
+                    if (r) window.location.href = "/";
+                  }}
+                >
+                  Leave this round
+                </button>
+              </div>
+            </>
+          )}
+          {session.feedback && (
+            <div
+              className={
+                "feedback " + (session.feedback.correct ? "" : "try-again")
+              }
+              role="status"
+            >
+              <h2>
+                {session.feedback.correct
+                  ? "You found it! ✨"
+                  : "Good try. Let’s work it out. 🌱"}
+              </h2>
+              <p>{session.feedback.explanation}</p>
+              <button
+                className="button"
+                disabled={busy}
+                onClick={() => mutate("next", {})}
+              >
+                {session.index === session.total - 1
+                  ? "See my stars"
+                  : "Next discovery"}{" "}
+                <ArrowRight size={19} />
+              </button>
+            </div>
+          )}
+        </section>
+      )}
+      <p className="quiz-info">
+        No hurry. Think it through. It’s always okay to ask for help.
+        <br />
+        Your progress saves after every answer.
+      </p>
+    </main>
+  );
+}

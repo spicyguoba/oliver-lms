@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.next-http-test/
+.env*
+!.env.example
+.vercel/
+.data/
+test-results/
+playwright-report/
+output/
+materials-private/
+*.log

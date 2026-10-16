@@ -73,4 +73,3 @@ npm run build
 Unit tests cover the three-different-consecutive story rule, failure reset, terminal rank, private answer keys, immutable first answers, idempotent scoring, hints/resume, content validity and session tampering/expiration. HTTP integration tests launch an isolated development server and check authentication, CSRF, child/admin separation, server-owned scoring, role restrictions and legacy game serving. Test data is separate from the family records.
 
 Before delivery, exercise the UI at iPad and phone sizes, verify copies of all three games, and check the original production URLs still respond. The local preview is not evidence of a Vercel deployment. See `HANDOFF.md` for actual verified status.
-

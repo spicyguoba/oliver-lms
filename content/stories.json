@@ -1,0 +1,1282 @@
+[
+  {
+    "level": 0,
+    "title": "Pip and the Red Ball",
+    "scene": "park",
+    "icon": "🐶",
+    "text": "Pip the puppy found a red ball in the yard. He pushed it with his nose. The ball rolled under a bench. Mia reached under the bench and gave it back. Pip wagged his tail.",
+    "questions": [
+      {
+        "q": "What did Pip find?",
+        "options": [
+          "A red ball",
+          "A blue kite",
+          "A yellow hat",
+          "A green book"
+        ],
+        "answer": 0,
+        "why": "The first sentence says Pip found a red ball."
+      },
+      {
+        "q": "Where did the ball roll?",
+        "options": [
+          "Under a bench",
+          "Into a pond",
+          "Behind a door",
+          "Onto a roof"
+        ],
+        "answer": 0,
+        "why": "The ball rolled under a bench."
+      },
+      {
+        "q": "Who helped Pip?",
+        "options": [
+          "Mia",
+          "A bird",
+          "Dad",
+          "Nobody"
+        ],
+        "answer": 0,
+        "why": "Mia reached under the bench."
+      },
+      {
+        "q": "How did Pip push the ball?",
+        "options": [
+          "With his nose",
+          "With his paw",
+          "With a stick",
+          "With his tail"
+        ],
+        "answer": 0,
+        "why": "The story says he pushed it with his nose."
+      },
+      {
+        "q": "What did Pip do at the end?",
+        "options": [
+          "Wagged his tail",
+          "Went to sleep",
+          "Dug a hole",
+          "Barked at a cat"
+        ],
+        "answer": 0,
+        "why": "The last sentence says Pip wagged his tail."
+      }
+    ]
+  },
+  {
+    "level": 0,
+    "title": "The Tiny Seed",
+    "scene": "garden",
+    "icon": "🌱",
+    "text": "Nora planted a seed in a small pot. She put the pot by the window. Every day, she gave it a little water. One morning, a green sprout popped up. Nora smiled.",
+    "questions": [
+      {
+        "q": "What did Nora plant?",
+        "options": [
+          "A seed",
+          "A tree",
+          "A flower crown",
+          "A stone"
+        ],
+        "answer": 0,
+        "why": "Nora planted a seed."
+      },
+      {
+        "q": "Where did she put the pot?",
+        "options": [
+          "By the window",
+          "In a closet",
+          "Under her bed",
+          "On the stairs"
+        ],
+        "answer": 0,
+        "why": "She put it by the window."
+      },
+      {
+        "q": "What did Nora give the seed?",
+        "options": [
+          "Water",
+          "Juice",
+          "Milk",
+          "Paint"
+        ],
+        "answer": 0,
+        "why": "She watered it every day."
+      },
+      {
+        "q": "What grew from the seed?",
+        "options": [
+          "A green sprout",
+          "A red apple",
+          "A tall chair",
+          "A blue shell"
+        ],
+        "answer": 0,
+        "why": "A green sprout popped up."
+      },
+      {
+        "q": "How did Nora feel?",
+        "options": [
+          "Happy",
+          "Angry",
+          "Scared",
+          "Bored"
+        ],
+        "answer": 0,
+        "why": "Nora smiled when she saw the sprout."
+      }
+    ]
+  },
+  {
+    "level": 0,
+    "title": "A Rainy Walk",
+    "scene": "rain",
+    "icon": "☔",
+    "text": "Owen looked outside and saw rain. He put on his yellow boots and blue coat. He took an umbrella to the bus stop. A big puddle was by the curb. Owen walked around it.",
+    "questions": [
+      {
+        "q": "What was the weather like?",
+        "options": [
+          "Rainy",
+          "Snowy",
+          "Sunny",
+          "Windless"
+        ],
+        "answer": 0,
+        "why": "Owen saw rain outside."
+      },
+      {
+        "q": "What color were his boots?",
+        "options": [
+          "Yellow",
+          "Red",
+          "Blue",
+          "Green"
+        ],
+        "answer": 0,
+        "why": "The boots were yellow."
+      },
+      {
+        "q": "Where was Owen going?",
+        "options": [
+          "To the bus stop",
+          "To the beach",
+          "To a farm",
+          "To the zoo"
+        ],
+        "answer": 0,
+        "why": "He took an umbrella to the bus stop."
+      },
+      {
+        "q": "What was by the curb?",
+        "options": [
+          "A big puddle",
+          "A lost book",
+          "A tiny frog",
+          "A bike"
+        ],
+        "answer": 0,
+        "why": "The story mentions a big puddle."
+      },
+      {
+        "q": "What did Owen do about the puddle?",
+        "options": [
+          "Walked around it",
+          "Jumped in it",
+          "Sat beside it",
+          "Drank it"
+        ],
+        "answer": 0,
+        "why": "Owen walked around the puddle."
+      }
+    ]
+  },
+  {
+    "level": 0,
+    "title": "The Lost Mittens",
+    "scene": "snow",
+    "icon": "🧤",
+    "text": "It was a cold day. Ava had two pink mittens. She took them off to build a snowman. Later, she could find only one mitten. Her brother Leo saw the other mitten near a tree. He brought it to Ava.",
+    "questions": [
+      {
+        "q": "What did Ava lose?",
+        "options": [
+          "A mitten",
+          "A scarf",
+          "A boot",
+          "A hat"
+        ],
+        "answer": 0,
+        "why": "She could find only one mitten."
+      },
+      {
+        "q": "What color were the mittens?",
+        "options": [
+          "Pink",
+          "Black",
+          "Yellow",
+          "Orange"
+        ],
+        "answer": 0,
+        "why": "They were pink mittens."
+      },
+      {
+        "q": "What did Ava build?",
+        "options": [
+          "A snowman",
+          "A sandcastle",
+          "A boat",
+          "A tower"
+        ],
+        "answer": 0,
+        "why": "Ava built a snowman."
+      },
+      {
+        "q": "Who found the missing mitten?",
+        "options": [
+          "Leo",
+          "Owen",
+          "Mia",
+          "Nora"
+        ],
+        "answer": 0,
+        "why": "Her brother Leo saw it."
+      },
+      {
+        "q": "Where was the mitten?",
+        "options": [
+          "Near a tree",
+          "In a bag",
+          "On a chair",
+          "Under the snowman"
+        ],
+        "answer": 0,
+        "why": "Leo saw it near a tree."
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "title": "The Library Surprise",
+    "scene": "library",
+    "icon": "📚",
+    "text": "Ella wanted a book about whales. At the library, she first looked on the animal shelf. She could not find it, so she asked Ms. Kim for help. Ms. Kim showed her a new shelf of ocean books. Ella borrowed a whale book and read it with Dad that night.",
+    "questions": [
+      {
+        "q": "What kind of book did Ella want?",
+        "options": [
+          "A book about whales",
+          "A book about trains",
+          "A cookbook",
+          "A book about stars"
+        ],
+        "answer": 0,
+        "why": "She wanted a whale book."
+      },
+      {
+        "q": "Where did Ella look first?",
+        "options": [
+          "On the animal shelf",
+          "By the door",
+          "On the floor",
+          "At home"
+        ],
+        "answer": 0,
+        "why": "She first checked the animal shelf."
+      },
+      {
+        "q": "Why did Ella ask Ms. Kim for help?",
+        "options": [
+          "She could not find the book",
+          "She lost her shoes",
+          "She wanted a snack",
+          "The library was closed"
+        ],
+        "answer": 0,
+        "why": "She could not find what she wanted."
+      },
+      {
+        "q": "What did Ms. Kim show her?",
+        "options": [
+          "Ocean books",
+          "A toy box",
+          "A map of town",
+          "A pet rabbit"
+        ],
+        "answer": 0,
+        "why": "Ms. Kim showed her the ocean books."
+      },
+      {
+        "q": "What happened last?",
+        "options": [
+          "Ella read with Dad",
+          "Ella entered the library",
+          "Ella checked the animal shelf",
+          "Ella asked for help"
+        ],
+        "answer": 0,
+        "why": "That night she read with Dad."
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "title": "The Picnic Plan",
+    "scene": "park",
+    "icon": "🧺",
+    "text": "Theo and his sister planned a picnic. In the morning, they made cheese sandwiches and filled a bottle with water. At noon, they carried their basket to the park. Dark clouds gathered, so they sat under the picnic shelter. When the rain stopped, they played tag.",
+    "questions": [
+      {
+        "q": "What did they make to eat?",
+        "options": [
+          "Cheese sandwiches",
+          "Pizza",
+          "Pancakes",
+          "Soup"
+        ],
+        "answer": 0,
+        "why": "They made cheese sandwiches."
+      },
+      {
+        "q": "When did they go to the park?",
+        "options": [
+          "At noon",
+          "At midnight",
+          "At sunrise",
+          "After dinner"
+        ],
+        "answer": 0,
+        "why": "They went at noon."
+      },
+      {
+        "q": "Why did they sit under the shelter?",
+        "options": [
+          "Dark clouds brought rain",
+          "They wanted to sleep",
+          "They heard music",
+          "They were lost"
+        ],
+        "answer": 0,
+        "why": "The shelter helped when it rained."
+      },
+      {
+        "q": "What did they do after the rain?",
+        "options": [
+          "Played tag",
+          "Built a fire",
+          "Went swimming",
+          "Made sandwiches"
+        ],
+        "answer": 0,
+        "why": "They played tag when the rain stopped."
+      },
+      {
+        "q": "Which happened first?",
+        "options": [
+          "They made sandwiches",
+          "They played tag",
+          "The rain stopped",
+          "They reached the park"
+        ],
+        "answer": 0,
+        "why": "They prepared food before leaving."
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "title": "The Blue Birdhouse",
+    "scene": "garden",
+    "icon": "🐦",
+    "text": "Ben and Grandpa made a birdhouse from wood. Ben painted it blue while Grandpa fixed the roof. They hung it on an old apple tree. For three days, no birds came. On the fourth morning, a little bird landed on the roof. Ben was excited but stayed quiet so he would not scare it.",
+    "questions": [
+      {
+        "q": "What did Ben and Grandpa build?",
+        "options": [
+          "A birdhouse",
+          "A doghouse",
+          "A treehouse",
+          "A boat"
+        ],
+        "answer": 0,
+        "why": "They built a birdhouse."
+      },
+      {
+        "q": "What color was it?",
+        "options": [
+          "Blue",
+          "Red",
+          "Green",
+          "Purple"
+        ],
+        "answer": 0,
+        "why": "Ben painted it blue."
+      },
+      {
+        "q": "Where did they hang it?",
+        "options": [
+          "On an apple tree",
+          "On a door",
+          "On a fence",
+          "In a kitchen"
+        ],
+        "answer": 0,
+        "why": "They hung it on an apple tree."
+      },
+      {
+        "q": "When did a bird finally come?",
+        "options": [
+          "The fourth morning",
+          "The first hour",
+          "That night",
+          "After ten days"
+        ],
+        "answer": 0,
+        "why": "The bird landed on the fourth morning."
+      },
+      {
+        "q": "Why did Ben stay quiet?",
+        "options": [
+          "He did not want to scare the bird",
+          "He was sleeping",
+          "He was angry",
+          "He had lost his voice"
+        ],
+        "answer": 0,
+        "why": "Staying quiet would keep the bird calm."
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "title": "The Missing Lunchbox",
+    "scene": "school",
+    "icon": "🥪",
+    "text": "Jules put a green lunchbox beside his backpack before school. At lunchtime, it was missing. He checked his desk and the coat hooks. Then he remembered that he had visited the art room that morning. His lunchbox was on a table there. He thanked the teacher and returned to class.",
+    "questions": [
+      {
+        "q": "What color was the lunchbox?",
+        "options": [
+          "Green",
+          "Yellow",
+          "Purple",
+          "Red"
+        ],
+        "answer": 0,
+        "why": "It was green."
+      },
+      {
+        "q": "When did Jules notice it was missing?",
+        "options": [
+          "At lunchtime",
+          "Before breakfast",
+          "At bedtime",
+          "During recess"
+        ],
+        "answer": 0,
+        "why": "He noticed at lunchtime."
+      },
+      {
+        "q": "Where did he look before the art room?",
+        "options": [
+          "Desk and coat hooks",
+          "Gym and playground",
+          "Library and bus",
+          "Kitchen and garden"
+        ],
+        "answer": 0,
+        "why": "He checked his desk and the coat hooks."
+      },
+      {
+        "q": "Where was the lunchbox found?",
+        "options": [
+          "In the art room",
+          "In the hallway",
+          "On the bus",
+          "Outside"
+        ],
+        "answer": 0,
+        "why": "It was on a table in the art room."
+      },
+      {
+        "q": "What helped Jules find it?",
+        "options": [
+          "Remembering his morning visit",
+          "A loud alarm",
+          "A note on the door",
+          "A map"
+        ],
+        "answer": 0,
+        "why": "He remembered being in the art room."
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "title": "The Bridge of Stones",
+    "scene": "river",
+    "icon": "🪨",
+    "text": "Maya and Sol walked beside a narrow stream. The wooden footbridge was closed for repairs. They noticed a row of large flat stones across the shallow water. Sol wanted to jump across, but Maya suggested they use the marked trail to a second bridge. The trail took longer, yet their shoes stayed dry and they crossed safely.",
+    "questions": [
+      {
+        "q": "Why was the first bridge unavailable?",
+        "options": [
+          "It was being repaired",
+          "It was too tall",
+          "It was painted red",
+          "It was under water"
+        ],
+        "answer": 0,
+        "why": "The bridge was closed for repairs."
+      },
+      {
+        "q": "What did Sol first want to do?",
+        "options": [
+          "Jump across the stones",
+          "Go home",
+          "Swim downstream",
+          "Build a boat"
+        ],
+        "answer": 0,
+        "why": "Sol wanted to jump across."
+      },
+      {
+        "q": "Why was Maya’s idea safer?",
+        "options": [
+          "They used a marked bridge",
+          "They ran faster",
+          "The stones were warmer",
+          "They walked barefoot"
+        ],
+        "answer": 0,
+        "why": "They crossed on a marked route instead of jumping."
+      },
+      {
+        "q": "What does “yet” signal in the last sentence?",
+        "options": [
+          "A contrast",
+          "A list",
+          "A question",
+          "A time"
+        ],
+        "answer": 0,
+        "why": "The path took longer, but they stayed safe."
+      },
+      {
+        "q": "Which trait best describes Maya?",
+        "options": [
+          "Careful",
+          "Reckless",
+          "Forgetful",
+          "Unkind"
+        ],
+        "answer": 0,
+        "why": "Maya considered safety before speed."
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "title": "A Light in the Window",
+    "scene": "town",
+    "icon": "🕯️",
+    "text": "Each evening, Mr. Chen placed a lamp in his front window. A new neighbor, Amira, wondered why. One foggy evening, she saw a mail carrier use the warm light to find the right house. The next day, Amira asked Mr. Chen about the lamp. He explained that his street had few bright signs, so the lamp helped visitors find their way.",
+    "questions": [
+      {
+        "q": "When did Mr. Chen put out the lamp?",
+        "options": [
+          "Each evening",
+          "Every morning",
+          "Only on weekends",
+          "At noon"
+        ],
+        "answer": 0,
+        "why": "He placed it in the window each evening."
+      },
+      {
+        "q": "Why did Amira become curious?",
+        "options": [
+          "She wondered about the lamp",
+          "She wanted a new chair",
+          "She heard loud music",
+          "She lost a key"
+        ],
+        "answer": 0,
+        "why": "Amira wondered why the lamp was there."
+      },
+      {
+        "q": "Who used the light during the fog?",
+        "options": [
+          "A mail carrier",
+          "A firefighter",
+          "A teacher",
+          "A baker"
+        ],
+        "answer": 0,
+        "why": "A mail carrier used the light."
+      },
+      {
+        "q": "Why was the light helpful?",
+        "options": [
+          "The street had few bright signs",
+          "The lamp made food",
+          "The light stopped rain",
+          "The street was flooded"
+        ],
+        "answer": 0,
+        "why": "Visitors needed an easy way to find the house."
+      },
+      {
+        "q": "What can you infer about Mr. Chen?",
+        "options": [
+          "He is thoughtful",
+          "He dislikes visitors",
+          "He is always late",
+          "He is afraid of lamps"
+        ],
+        "answer": 0,
+        "why": "He keeps the lamp on to help people."
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "title": "The Garden Contest",
+    "scene": "garden",
+    "icon": "🌻",
+    "text": "Two classes entered a school garden contest. Class A planted many flowers close together. Class B left spaces between their seedlings and added compost. A month later, some of Class A’s plants looked weak, while Class B had sturdy stems and bright leaves. The classes discussed their methods and decided to share ideas before next year’s contest.",
+    "questions": [
+      {
+        "q": "What did both classes enter?",
+        "options": [
+          "A garden contest",
+          "A spelling bee",
+          "A cooking class",
+          "A race"
+        ],
+        "answer": 0,
+        "why": "They entered a school garden contest."
+      },
+      {
+        "q": "How did Class B plant differently?",
+        "options": [
+          "They left space between plants",
+          "They used no soil",
+          "They kept plants indoors",
+          "They planted only rocks"
+        ],
+        "answer": 0,
+        "why": "Class B left spaces and added compost."
+      },
+      {
+        "q": "Which plants looked stronger?",
+        "options": [
+          "Class B’s plants",
+          "All plants equally",
+          "Class A’s plants",
+          "No plants grew"
+        ],
+        "answer": 0,
+        "why": "Class B had sturdy stems and bright leaves."
+      },
+      {
+        "q": "Why might space between plants help?",
+        "options": [
+          "Plants have room to grow",
+          "Plants cannot get sunlight",
+          "It stops all rain",
+          "It changes their color"
+        ],
+        "answer": 0,
+        "why": "Plants compete less for space and resources."
+      },
+      {
+        "q": "What did the students decide to do next?",
+        "options": [
+          "Share gardening ideas",
+          "Quit gardening forever",
+          "Hide their methods",
+          "Move the school"
+        ],
+        "answer": 0,
+        "why": "The classes decided to share ideas."
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "title": "The Noisy Attic",
+    "scene": "house",
+    "icon": "🐈",
+    "text": "At bedtime, Rowan heard tapping above his room. He imagined a giant bird on the roof. The next day, he told Aunt May, who brought a flashlight and climbed the attic stairs. They found a loose window latch moving in the wind. Aunt May fastened the latch, and that night the tapping stopped. Rowan laughed at his earlier guess.",
+    "questions": [
+      {
+        "q": "What sound did Rowan hear?",
+        "options": [
+          "Tapping",
+          "Singing",
+          "Barking",
+          "A bell"
+        ],
+        "answer": 0,
+        "why": "He heard tapping above his room."
+      },
+      {
+        "q": "What did Rowan first imagine?",
+        "options": [
+          "A giant bird",
+          "A kitten",
+          "A marching band",
+          "A train"
+        ],
+        "answer": 0,
+        "why": "He imagined a giant bird."
+      },
+      {
+        "q": "What actually caused the noise?",
+        "options": [
+          "A loose window latch",
+          "A clock",
+          "A leaking pipe",
+          "A bouncing ball"
+        ],
+        "answer": 0,
+        "why": "The latch moved in the wind."
+      },
+      {
+        "q": "Why did the tapping stop?",
+        "options": [
+          "Aunt May fastened the latch",
+          "The house moved",
+          "The bird flew away",
+          "Rowan wore headphones"
+        ],
+        "answer": 0,
+        "why": "Fixing the latch stopped the sound."
+      },
+      {
+        "q": "What is the best lesson?",
+        "options": [
+          "Check evidence before deciding",
+          "Every strange sound is dangerous",
+          "Always stay awake",
+          "Never open windows"
+        ],
+        "answer": 0,
+        "why": "The real cause was different from Rowan’s guess."
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "title": "The Midnight Telescope",
+    "scene": "night",
+    "icon": "🔭",
+    "text": "On Saturday, Celia visited the science club to watch a meteor shower. At first, clouds covered the sky, and several children wanted to leave. Their guide explained that meteor showers are easier to see after the sky clears and our eyes adjust to darkness. The group waited quietly, turned off their flashlights, and told stories. Soon the clouds drifted away. Celia spotted a bright streak and understood why patience mattered.",
+    "questions": [
+      {
+        "q": "What was the group hoping to see?",
+        "options": [
+          "A meteor shower",
+          "A solar eclipse",
+          "A parade",
+          "A sunrise"
+        ],
+        "answer": 0,
+        "why": "They came to watch a meteor shower."
+      },
+      {
+        "q": "Why did some children want to leave?",
+        "options": [
+          "Clouds blocked the sky",
+          "They ran out of food",
+          "Their guide was absent",
+          "It was too bright"
+        ],
+        "answer": 0,
+        "why": "The sky was cloudy at first."
+      },
+      {
+        "q": "Why did they turn off their flashlights?",
+        "options": [
+          "To help their eyes adjust to darkness",
+          "To save batteries for a game",
+          "To call the guide",
+          "To make clouds vanish"
+        ],
+        "answer": 0,
+        "why": "Dark adaptation can help people see faint lights."
+      },
+      {
+        "q": "What changed their experience?",
+        "options": [
+          "The clouds drifted away",
+          "The club closed",
+          "It began snowing",
+          "The telescope broke"
+        ],
+        "answer": 0,
+        "why": "After waiting, the sky cleared."
+      },
+      {
+        "q": "What is a main theme of the story?",
+        "options": [
+          "Patience can reward us",
+          "Giving up is best",
+          "Stories cause meteors",
+          "Clouds are always bad"
+        ],
+        "answer": 0,
+        "why": "Celia learned the value of waiting."
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "title": "The Map in the Bottle",
+    "scene": "beach",
+    "icon": "🗺️",
+    "text": "During a beach cleanup, Hana discovered a sealed bottle caught in seaweed. Inside was a hand-drawn map of the nearby dunes. She hoped it led to treasure, but a note beside the map read, “Follow the marked path to protect nesting birds.” Hana brought it to a park ranger. The ranger explained that volunteers had created the map years earlier to show visitors a safe route. Hana felt proud that her discovery might help protect wildlife.",
+    "questions": [
+      {
+        "q": "Where did Hana find the bottle?",
+        "options": [
+          "In seaweed on the beach",
+          "Inside a cave",
+          "On a school desk",
+          "At the zoo"
+        ],
+        "answer": 0,
+        "why": "It was caught in seaweed during cleanup."
+      },
+      {
+        "q": "What did Hana first hope the map showed?",
+        "options": [
+          "A path to treasure",
+          "The weather forecast",
+          "A bus route",
+          "A food recipe"
+        ],
+        "answer": 0,
+        "why": "She hoped the map led to treasure."
+      },
+      {
+        "q": "What was the map really for?",
+        "options": [
+          "Protecting nesting birds",
+          "Finding buried coins",
+          "Measuring waves",
+          "Naming shells"
+        ],
+        "answer": 0,
+        "why": "It showed a safe route to avoid the birds."
+      },
+      {
+        "q": "Why did Hana bring it to a ranger?",
+        "options": [
+          "To learn what it meant",
+          "To sell the bottle",
+          "To ask for lunch",
+          "To hide the map"
+        ],
+        "answer": 0,
+        "why": "A ranger could explain the map."
+      },
+      {
+        "q": "How does Hana’s view change?",
+        "options": [
+          "From treasure hunting to protecting wildlife",
+          "From liking birds to hating birds",
+          "From being afraid of sand to water",
+          "From loving maps to hating them"
+        ],
+        "answer": 0,
+        "why": "She discovers a different, meaningful kind of treasure."
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "title": "The Team with No Captain",
+    "scene": "school",
+    "icon": "🏀",
+    "text": "At recess, a group of children wanted to organize a basketball game. Everyone argued about who should be captain, and the clock kept ticking. Priya suggested rotating the role each time they played. That way, every player could lead and everyone could spend more time playing. The group agreed. They finished two games before the bell, and even the quietest player volunteered to be captain next time.",
+    "questions": [
+      {
+        "q": "What stopped the game from starting?",
+        "options": [
+          "An argument over who would lead",
+          "A broken hoop",
+          "A rainstorm",
+          "No basketball"
+        ],
+        "answer": 0,
+        "why": "The children argued about the captain."
+      },
+      {
+        "q": "What solution did Priya suggest?",
+        "options": [
+          "Taking turns as captain",
+          "Canceling recess",
+          "Letting one person always lead",
+          "Choosing at random once forever"
+        ],
+        "answer": 0,
+        "why": "She suggested rotating the role."
+      },
+      {
+        "q": "Why did the idea work?",
+        "options": [
+          "Everyone got a chance to lead",
+          "It made the bell ring later",
+          "They bought more balls",
+          "It removed all rules"
+        ],
+        "answer": 0,
+        "why": "Rotation made the role fair."
+      },
+      {
+        "q": "What detail shows the team became more confident?",
+        "options": [
+          "A quiet player volunteered next time",
+          "The basketball got bigger",
+          "They stopped playing",
+          "The clock stopped"
+        ],
+        "answer": 0,
+        "why": "The quietest player volunteered."
+      },
+      {
+        "q": "What is the central message?",
+        "options": [
+          "Cooperation makes a team stronger",
+          "Leaders should never change",
+          "Arguments help games begin",
+          "Only one person matters"
+        ],
+        "answer": 0,
+        "why": "Sharing leadership got the game moving."
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "title": "The River After Rain",
+    "scene": "river",
+    "icon": "🦦",
+    "text": "After heavy rain, a local stream turned brown and rushed faster than usual. Devon planned to photograph otters on the opposite bank, but the usual stepping stones were underwater. His friend Lila reminded him that fast water can hide deep spots. Instead of crossing, they stayed on the safe trail and used binoculars. They still captured several wonderful photos, including one of an otter carrying a fish.",
+    "questions": [
+      {
+        "q": "What changed after the rain?",
+        "options": [
+          "The stream became faster and muddy",
+          "The stream dried up",
+          "The trees disappeared",
+          "Snow covered the bank"
+        ],
+        "answer": 0,
+        "why": "The stream turned brown and rushed faster."
+      },
+      {
+        "q": "Why were the stepping stones unusable?",
+        "options": [
+          "They were underwater",
+          "They were painted",
+          "They were too hot",
+          "They were on the other bank"
+        ],
+        "answer": 0,
+        "why": "The stones were covered by water."
+      },
+      {
+        "q": "What danger did Lila recognize?",
+        "options": [
+          "Fast water may hide deep places",
+          "Binoculars can float away",
+          "Otters dislike rain",
+          "Photos make water rise"
+        ],
+        "answer": 0,
+        "why": "She warned about unseen deep spots."
+      },
+      {
+        "q": "How did they still get photos?",
+        "options": [
+          "They watched from a safe trail",
+          "They swam across",
+          "They built a raft",
+          "They waited for snow"
+        ],
+        "answer": 0,
+        "why": "They used binoculars and stayed safe."
+      },
+      {
+        "q": "Which summary is best?",
+        "options": [
+          "The friends chose safety and still succeeded",
+          "The friends gave up all hope",
+          "Otters blocked a bridge",
+          "A storm ruined a camera"
+        ],
+        "answer": 0,
+        "why": "Safety did not stop them from enjoying wildlife."
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "title": "The Clockmaker’s Promise",
+    "scene": "town",
+    "icon": "⏰",
+    "text": "For decades, Mr. Vale repaired the clock in the town square. When he became ill, the clock stopped, and people began arriving late to meetings. A young apprentice named Iris offered to help. She studied the gears and found one worn wheel, but the replacement would take a week to arrive. Instead of pretending she could fix everything at once, Iris posted a clear notice explaining the delay. Neighbors began carrying small watches and helping visitors find their way. When the wheel arrived, Iris repaired the clock with Mr. Vale watching proudly. The town had learned to solve problems together.",
+    "questions": [
+      {
+        "q": "What first caused a problem in town?",
+        "options": [
+          "The square clock stopped",
+          "A parade was canceled",
+          "The square was flooded",
+          "The shops closed"
+        ],
+        "answer": 0,
+        "why": "The stopped clock led people to arrive late."
+      },
+      {
+        "q": "What did Iris discover?",
+        "options": [
+          "One worn gear wheel",
+          "A missing bell",
+          "A broken window",
+          "A lost key"
+        ],
+        "answer": 0,
+        "why": "She found a worn wheel inside the clock."
+      },
+      {
+        "q": "Why did Iris post a notice?",
+        "options": [
+          "To explain the repair delay honestly",
+          "To announce a party",
+          "To ask everyone to leave",
+          "To hide the problem"
+        ],
+        "answer": 0,
+        "why": "The new wheel would take time to arrive."
+      },
+      {
+        "q": "What does the neighbors’ response show?",
+        "options": [
+          "People can cooperate during a setback",
+          "Everyone stopped caring",
+          "No one needed time",
+          "The clock was unimportant"
+        ],
+        "answer": 0,
+        "why": "They helped one another while waiting."
+      },
+      {
+        "q": "Which theme fits best?",
+        "options": [
+          "Honesty and teamwork build trust",
+          "Machines never break",
+          "Waiting always makes things worse",
+          "Only experts can help"
+        ],
+        "answer": 0,
+        "why": "Iris explained the issue and the community worked together."
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "title": "The Hidden Meadow",
+    "scene": "forest",
+    "icon": "🦋",
+    "text": "During a nature walk, Soren noticed bright butterflies gathering near a patch of wildflowers. His friend Wren wanted to pick a bouquet to take home. Their guide pointed out that the flowers provided food for butterflies and bees, and that many insects relied on the meadow throughout the summer. Wren decided to sketch the flowers instead. Later, the friends showed their drawings at school and suggested planting native flowers in an empty courtyard. Soon other classmates volunteered to help. A small choice in the meadow had grown into a project for the whole school.",
+    "questions": [
+      {
+        "q": "Why were butterflies near the meadow?",
+        "options": [
+          "The flowers provided food",
+          "A loud bell rang",
+          "They lived underwater",
+          "They were hiding from snow"
+        ],
+        "answer": 0,
+        "why": "The guide says the flowers feed insects."
+      },
+      {
+        "q": "What did Wren decide to do instead of picking flowers?",
+        "options": [
+          "Draw the flowers",
+          "Cut the grass",
+          "Take the insects home",
+          "Plant plastic trees"
+        ],
+        "answer": 0,
+        "why": "Wren chose to sketch them."
+      },
+      {
+        "q": "What inspired the school project?",
+        "options": [
+          "Learning why the meadow mattered",
+          "A homework contest",
+          "A broken sprinkler",
+          "A sports game"
+        ],
+        "answer": 0,
+        "why": "The friends shared what they had learned."
+      },
+      {
+        "q": "What does “A small choice ... had grown” mean?",
+        "options": [
+          "One thoughtful action inspired a bigger change",
+          "The drawings turned into plants",
+          "The meadow moved to school",
+          "Butterflies built the courtyard"
+        ],
+        "answer": 0,
+        "why": "A personal choice inspired classmates."
+      },
+      {
+        "q": "Which evidence best supports caring for habitats?",
+        "options": [
+          "Many insects rely on flowers for food",
+          "Soren had a pencil",
+          "The walk happened in summer",
+          "The school had a courtyard"
+        ],
+        "answer": 0,
+        "why": "Food for insects is the key reason not to pick them."
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "title": "The Last Piece of the Puzzle",
+    "scene": "house",
+    "icon": "🧩",
+    "text": "A family spent the weekend assembling a thousand-piece puzzle of a snowy mountain. On Sunday evening, the last piece was missing. Tessa blamed her brother for losing it, although she had not seen him touch the puzzle. Her brother quietly searched beneath the table and found nothing. Later, Tessa noticed the missing piece stuck inside the folded puzzle box. She apologized for making an unfair guess. Her brother accepted the apology, and they placed the final piece together. Tessa realized that being certain is not the same as having proof.",
+    "questions": [
+      {
+        "q": "What was the family doing?",
+        "options": [
+          "Assembling a mountain puzzle",
+          "Building a birdhouse",
+          "Baking a cake",
+          "Painting a room"
+        ],
+        "answer": 0,
+        "why": "They worked on a thousand-piece puzzle."
+      },
+      {
+        "q": "Why was Tessa’s accusation unfair?",
+        "options": [
+          "She had no evidence her brother lost it",
+          "Her brother was away all weekend",
+          "They had two puzzles",
+          "She did not like mountains"
+        ],
+        "answer": 0,
+        "why": "She had not seen him touch the missing piece."
+      },
+      {
+        "q": "Where was the final piece?",
+        "options": [
+          "Inside the folded box",
+          "Under the table",
+          "In her brother’s pocket",
+          "Outside in the snow"
+        ],
+        "answer": 0,
+        "why": "Tessa found it in the box."
+      },
+      {
+        "q": "How did Tessa repair the situation?",
+        "options": [
+          "She apologized",
+          "She hid the puzzle",
+          "She left the room",
+          "She blamed someone else"
+        ],
+        "answer": 0,
+        "why": "She said sorry for the unfair guess."
+      },
+      {
+        "q": "What is the main lesson?",
+        "options": [
+          "Look for evidence before blaming someone",
+          "Never build puzzles",
+          "A missing item is always stolen",
+          "An apology is unnecessary"
+        ],
+        "answer": 0,
+        "why": "Being sure does not mean having proof."
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "title": "A Message Across the Bay",
+    "scene": "beach",
+    "icon": "⛵",
+    "text": "The sailing club planned a race across a quiet bay. Just before the start, the wind shifted and thick fog rolled in. Some sailors argued that delaying the race would disappoint the crowd. Coach Ana explained that the markers on the far shore were difficult to see and that boats might stray into deeper shipping lanes. She postponed the start and invited everyone to study weather maps together. By afternoon, the fog lifted, but the club still shortened the route. The racers finished safely, and several young sailors said they had learned more from the decision than from the race itself.",
+    "questions": [
+      {
+        "q": "What changed right before the race?",
+        "options": [
+          "Wind shifted and fog appeared",
+          "The tide disappeared",
+          "The boats sank",
+          "A storm ended"
+        ],
+        "answer": 0,
+        "why": "The weather changed unexpectedly."
+      },
+      {
+        "q": "Why did some people oppose delaying?",
+        "options": [
+          "They worried the crowd would be disappointed",
+          "They wanted new sails",
+          "They lost the maps",
+          "They did not like racing"
+        ],
+        "answer": 0,
+        "why": "They feared upsetting the crowd."
+      },
+      {
+        "q": "What specific risk did Coach Ana identify?",
+        "options": [
+          "Boats could enter shipping lanes",
+          "Sailors would get bored",
+          "The water could disappear",
+          "The crowd might leave"
+        ],
+        "answer": 0,
+        "why": "Fog hid markers and could send boats off course."
+      },
+      {
+        "q": "Why did they shorten the route even after fog lifted?",
+        "options": [
+          "They kept a cautious plan",
+          "They forgot the finish line",
+          "The bay became smaller",
+          "They wanted no winners"
+        ],
+        "answer": 0,
+        "why": "They adjusted the race for safety."
+      },
+      {
+        "q": "What is the strongest inference?",
+        "options": [
+          "Good leaders put safety ahead of pressure",
+          "Leaders should never change plans",
+          "Crowds know more than coaches",
+          "Weather maps are never useful"
+        ],
+        "answer": 0,
+        "why": "Ana resisted pressure and made an informed choice."
+      }
+    ]
+  }
+]
