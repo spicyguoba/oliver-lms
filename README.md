@@ -6,6 +6,8 @@ Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the
 
 ## What works
 
+- **Oliver / Test1 / Test2** learner picker on the child home and parent dashboard. Each has independent answers, scores, stars, calendars, daily plans, story unlocks, legacy saves, quests and rewards. Devices still use the family's parent sign-in/pairing; no extra learner password is required. Source materials and parent authentication settings are shared. The admin export includes all three learners.
+
 - Completion cards show the latest finished score/date with a green shade and text badge; world and vocabulary category cards show total/finished/left. Replays do not inflate completed counts. Abandoned rounds do not count.
 - 377 native exercise cards: 320 vocabulary meaning/sentence activities (2,000 English and 1,200 Chinese words with examples), sixteen additional procedural math activities, thirty-five discovery topics, and the six original skills. Word packs have twenty flashcards and short five-question rounds, with Starter/Growing/Challenge filters, search, paging, pinyin, and Mandarin read aloud. See [word-bank provenance and practice limits](content/VOCABULARY.md).
 

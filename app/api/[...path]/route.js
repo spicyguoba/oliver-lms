@@ -14,6 +14,11 @@ import {
 import { validMonth } from "../../../lib/dates.mjs";
 import { sanitizeLegacyMap } from "../../../lib/legacy-save.mjs";
 import {
+  learnerData,
+  learnerList,
+  validLearner,
+} from "../../../lib/learners.mjs";
+import {
   verifyPassword,
   hashPassword,
   signSession,
@@ -36,7 +41,7 @@ const secret = () => process.env.SESSION_SECRET || devSecret;
 function fail(message, status = 400) {
   throw Object.assign(new Error(message), { status });
 }
-function actor(req, data) {
+function authenticatedSession(req, data) {
   for (const role of ["admin", "child"]) {
     const s = readSession(
       req.cookies.get(`oliver-${role}`)?.value || "",
@@ -49,9 +54,19 @@ function actor(req, data) {
           ? data.settings.authVersion
           : data.settings.childVersion)
     )
-      return role;
+      return validLearner(s.learnerId || "oliver")
+        ? { ...s, learnerId: s.learnerId || "oliver" }
+        : null;
   }
   return null;
+}
+function actor(req, data) {
+  return authenticatedSession(req, data)?.role || null;
+}
+function checkLearner(req, d, body) {
+  const expected = req.headers.get("x-lms-learner") || body?.learnerId;
+  if (expected && expected !== d.learnerId)
+    fail("The learner changed in another tab. Reload before continuing.", 409);
 }
 function requireRole(req, data, admin = false) {
   const role = actor(req, data);
@@ -62,7 +77,7 @@ function requireRole(req, data, admin = false) {
     );
   return role;
 }
-function setCookie(res, role, data, clear = false) {
+function setCookie(res, role, data, clear = false, learnerId = "oliver") {
   res.cookies.set(
     `oliver-${role}`,
     clear
@@ -70,6 +85,7 @@ function setCookie(res, role, data, clear = false) {
       : signSession(
           {
             role,
+            learnerId,
             v:
               role === "admin"
                 ? data.settings.authVersion
@@ -87,9 +103,18 @@ function setCookie(res, role, data, clear = false) {
     },
   );
 }
-function safeState(d, role) {
+function sessionResponse(d, view) {
+  return NextResponse.json({
+    ...view,
+    learnerId: d.learnerId,
+    learnerName: d.profile.name,
+  });
+}
+function safeState(d, role, family) {
   return {
     role,
+    learnerId: d.learnerId,
+    learners: learnerList(family),
     timezone: d.settings.timezone,
     legacyProgress: legacyProgress(d),
     profile: d.profile,
@@ -136,7 +161,11 @@ export async function GET(req, context) {
   try {
     const { path: p } = await context.params;
     const route = p.join("/");
-    return await transact(async (d) => {
+    return await transact(async (family) => {
+      const d = learnerData(
+        family,
+        authenticatedSession(req, family)?.learnerId || "oliver",
+      );
       if (route === "health")
         return NextResponse.json({ ok: true, storage: databaseMode() });
       const role = requireRole(
@@ -144,7 +173,9 @@ export async function GET(req, context) {
         d,
         route === "admin" || route === "admin/export",
       );
-      if (route === "state") return NextResponse.json(safeState(d, role));
+      checkLearner(req, d);
+      if (route === "state")
+        return NextResponse.json(safeState(d, role, family));
       if (route === "calendar") {
         const month =
           req.nextUrl.searchParams.get("month") ||
@@ -161,7 +192,7 @@ export async function GET(req, context) {
       }
       if (route === "admin")
         return NextResponse.json({
-          ...safeState(d, role),
+          ...safeState(d, role, family),
           materials: d.materials,
           history: d.sessions
             .map(({ questions, ...s }) => s)
@@ -177,7 +208,7 @@ export async function GET(req, context) {
       if (route === "admin/export")
         return new NextResponse(
           JSON.stringify(
-            { ...d, settings: { timezone: d.settings.timezone } },
+            { ...family, settings: { timezone: family.settings.timezone } },
             null,
             2,
           ),
@@ -192,7 +223,7 @@ export async function GET(req, context) {
       if (p[0] === "session") {
         const s = d.sessions.find((x) => x.id === p[1]);
         if (!s) fail("Adventure not found.", 404);
-        return NextResponse.json(sessionView(s));
+        return sessionResponse(d, sessionView(s));
       }
       if (p[0] === "game" && ["math", "reading", "stories"].includes(p[1])) {
         const game = p[1];
@@ -207,7 +238,7 @@ export async function GET(req, context) {
           .replace("<head>", '<head><base target="_self">')
           .replace(
             "<script>",
-            `<script>window.__LMS_GAME__=${JSON.stringify(game)};window.__LMS_SAVED__=${saved};</script><script src="/game-bridge.js"></script><script>`,
+            `<script>window.__LMS_LEARNER__=${JSON.stringify(d.learnerId)};window.__LMS_GAME__=${JSON.stringify(game)};window.__LMS_SAVED__=${saved};</script><script src="/game-bridge.js"></script><script>`,
           );
         return new NextResponse(html, {
           headers: {
@@ -249,7 +280,11 @@ export async function POST(req, context) {
       fail("Expected a JSON object.");
     const { path: p } = await context.params;
     const route = p.join("/");
-    return await transact(async (d) => {
+    return await transact(async (family) => {
+      const d = learnerData(
+        family,
+        authenticatedSession(req, family)?.learnerId || "oliver",
+      );
       if (route === "login") {
         const ip = createHash("sha256")
           .update(
@@ -292,9 +327,16 @@ export async function POST(req, context) {
         return res;
       }
       const role = requireRole(req, d, p[0] === "admin" || route === "launch");
+      if (route === "learner/select") {
+        if (!validLearner(body.id)) fail("Choose Oliver, Test1, or Test2.");
+        const res = NextResponse.json({ ok: true, learnerId: body.id });
+        setCookie(res, role, family, false, body.id);
+        return res;
+      }
+      checkLearner(req, d, body);
       if (route === "launch") {
         const res = NextResponse.json({ ok: true });
-        setCookie(res, "child", d);
+        setCookie(res, "child", d, false, d.learnerId);
         setCookie(res, "admin", d, true);
         return res;
       }
@@ -308,13 +350,15 @@ export async function POST(req, context) {
           fail("Today's plan has changed. Go home and try again.");
         const slot = plan.slots[body.slot];
         if (slot.completed)
-          return NextResponse.json(
+          return sessionResponse(
+            d,
             sessionView(d.sessions.find((s) => s.id === slot.sessionId)),
           );
-        return NextResponse.json(beginSession(d, slot.skill, slot.difficulty));
+        return sessionResponse(d, beginSession(d, slot.skill, slot.difficulty));
       }
       if (route === "session/start")
-        return NextResponse.json(
+        return sessionResponse(
+          d,
           beginSession(
             d,
             body.skill,
@@ -329,9 +373,9 @@ export async function POST(req, context) {
           ),
         );
       if (p[0] === "session" && p[2] === "answer")
-        return NextResponse.json(submitAnswer(d, p[1], body));
+        return sessionResponse(d, submitAnswer(d, p[1], body));
       if (p[0] === "session" && p[2] === "next")
-        return NextResponse.json(nextQuestion(d, p[1]));
+        return sessionResponse(d, nextQuestion(d, p[1]));
       if (p[0] === "session" && p[2] === "hint") {
         const s = d.sessions.find((s) => s.id === p[1]);
         if (!s || s.finishedAt || s.pending) fail("Question unavailable.");
@@ -394,6 +438,12 @@ export async function POST(req, context) {
         return NextResponse.json({ ok: true });
       }
       if (route === "legacy") {
+        // Old Oliver clients remain compatible; an old tab cannot write test saves.
+        if ((body.learnerId || "oliver") !== d.learnerId)
+          fail(
+            "The learner changed. Return to adventure home before playing.",
+            409,
+          );
         if (!["math", "reading", "stories"].includes(body.game))
           fail("Unknown game.");
         if (
@@ -480,7 +530,7 @@ export async function POST(req, context) {
         d.settings.authVersion++;
         d.settings.defaultPassword = false;
         const res = NextResponse.json({ ok: true });
-        setCookie(res, "admin", d);
+        setCookie(res, "admin", d, false, d.learnerId);
         return res;
       }
       if (route === "admin/revoke") {

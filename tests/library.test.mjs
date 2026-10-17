@@ -26,7 +26,7 @@ import {
   legacyProgress,
 } from "../lib/progress.mjs";
 
-test("version three migration is additive and idempotent with existing family progress", () => {
+test("version four migration is additive and idempotent with existing family progress", () => {
   const old = seed();
   old.version = 1;
   delete old.legacyCompletions;
@@ -37,7 +37,7 @@ test("version three migration is additive and idempotent with existing family pr
   beginSession(old, "phonics");
   const original = structuredClone(old);
   assert.strictEqual(migrateFamily(old), old);
-  assert.equal(old.version, 3);
+  assert.equal(old.version, 4);
   assert.deepEqual(old.legacyCompletions, []);
   assert.deepEqual(
     { ...old, version: 1, legacyCompletions: undefined },

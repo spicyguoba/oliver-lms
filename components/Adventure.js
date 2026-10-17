@@ -144,7 +144,7 @@ export default function Adventure({ id }) {
   return (
     <main className="quiz-shell kid-quiz">
       <header className="quiz-header">
-        <Brand />
+        <Brand name={session.learnerName} />
         <a className="button secondary small" href="/">
           <Home size={22} /> Home
         </a>

@@ -190,7 +190,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 3);
+  assert.equal(exportData.version, 4);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
@@ -301,4 +301,162 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
       .flatMap((d) => d.events)
       .every((e) => !("attempts" in e)),
   );
+});
+
+test("three learner profiles isolate all progress, cookies, stale tabs, approvals and legacy saves", async () => {
+  const login = await request("login", {
+    username: "admin",
+    password: "admin1234",
+  });
+  cookie = login.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  const before = await (await request("admin/export")).json();
+  const rootOnly = ({ learners, loginLimits, ...rest }) => rest;
+  const rootStars = before.stars,
+    rootId = before.sessions[0].id;
+  async function select(id, role = "admin") {
+    const r = await request("learner/select", { id });
+    assert.equal(r.status, 200);
+    cookie = r.headers
+      .getSetCookie()
+      .find((c) => c.startsWith(`oliver-${role}=`))
+      .split(";")[0];
+  }
+  await select("test1");
+  let state = await (await request("admin")).json();
+  assert.equal(state.learnerId, "test1");
+  assert.equal(state.profile.name, "Test1");
+  assert.equal(state.stars, 0);
+  assert.equal(state.history.length, 0);
+  assert.deepEqual(
+    state.learners.map((x) => x.id),
+    ["oliver", "test1", "test2"],
+  );
+  assert.equal((await request("session/" + rootId)).status, 404);
+  assert.equal(
+    (await request("state", undefined, { "x-lms-learner": "oliver" })).status,
+    409,
+  );
+  assert.equal(
+    (await request("redeem", { id: "test-reward", learnerId: "oliver" }))
+      .status,
+    409,
+  );
+  assert.equal(
+    (await request("learner/select", { id: "__proto__" })).status,
+    400,
+  );
+  assert.equal(
+    (
+      await request(
+        "learner/select",
+        { id: "test2" },
+        { Origin: "https://other.example" },
+      )
+    ).status,
+    403,
+  );
+  await request("admin/profile", {
+    name: "Test1",
+    age: 8,
+    grade: "3",
+    dailyGoal: 10,
+  });
+  let round = await (
+    await request("session/start", { skill: "regrouping" })
+  ).json();
+  const testSessionId = round.id;
+  for (let i = 0; i < 5; i++) {
+    await request(`session/${round.id}/answer`, {
+      questionId: round.question.id,
+      answer: "999999",
+    });
+    round = await (await request(`session/${round.id}/next`, {})).json();
+  }
+  assert.equal((await (await request("state")).json()).stars, 2);
+  await request("admin/assignment", {
+    id: "test1-only",
+    title: "Test1 quest",
+    stars: 4,
+    days: [1],
+  });
+  await request("assignment/request", { id: "test1-only" });
+  const pending = (await (await request("admin")).json()).completions[0];
+  await request("admin/approve", { id: pending.id, approve: true });
+  await request("admin/reward", {
+    id: "test1-only",
+    title: "Test1 reward",
+    cost: 1,
+  });
+  await request("redeem", { id: "test1-only" });
+  const legacy = {
+    game: "reading",
+    saved: {
+      "reading-rangers-v1": JSON.stringify({
+        stars: 3,
+        best: { "0-0": 3 },
+        attempts: {},
+        unlocked: {},
+      }),
+    },
+    completion: {
+      id: "11111111-2222-3333-4444-555555555555",
+      correct: 3,
+      total: 5,
+    },
+  };
+  assert.equal((await request("legacy", legacy)).status, 409);
+  assert.equal(
+    (await request("legacy", { ...legacy, learnerId: "test1" })).status,
+    200,
+  );
+  await select("test2");
+  state = await (await request("admin")).json();
+  assert.equal(state.stars, 0);
+  assert.equal(state.history.length, 0);
+  assert.equal(state.completions.length, 0);
+  assert.equal(state.redemptions.length, 0);
+  assert.ok(!state.assignments.some((a) => a.id === "test1-only"));
+  assert.ok(!state.rewards.some((r) => r.id === "test1-only"));
+  assert.equal(state.legacyProgress.reading, null);
+  assert.equal((await request("session/" + testSessionId)).status, 404);
+  const calendar = await (await request("calendar")).json();
+  assert.equal(calendar.days.length, 0);
+  await request("admin/approve", { id: pending.id, approve: true });
+  assert.equal((await (await request("state")).json()).stars, 0);
+  await select("test1");
+  state = await (await request("admin")).json();
+  assert.equal(state.profile.age, 8);
+  assert.equal(state.stars, 5);
+  assert.equal(state.history[0].attempts.length, 5);
+  assert.equal(state.legacyProgress.reading.correct, 3);
+  const paired = await request("launch", {});
+  cookie = paired.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-child="))
+    .split(";")[0];
+  assert.equal((await (await request("state")).json()).learnerId, "test1");
+  assert.equal((await request("admin")).status, 401);
+  await select("test2", "child");
+  assert.equal((await (await request("state")).json()).role, "child");
+  assert.equal(
+    (await request("admin/profile", { name: "changed" })).status,
+    401,
+  );
+  await select("oliver", "child");
+  assert.equal((await (await request("state")).json()).stars, rootStars);
+  const relogin = await request("login", {
+    username: "admin",
+    password: "admin1234",
+  });
+  cookie = relogin.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  const after = await (await request("admin/export")).json();
+  assert.deepEqual(rootOnly(after), rootOnly(before));
+  assert.equal(after.learners.test1.stars, 5);
+  assert.equal(after.learners.test2.stars, 0);
 });

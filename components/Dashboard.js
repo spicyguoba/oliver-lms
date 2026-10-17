@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { api, Brand, Fox, Landscape, Login, Loading, ErrorBox } from "./ui";
 import LearningCalendar, { DailyFive } from "./LearningCalendar";
+import LearnerPicker from "./LearnerPicker";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -140,7 +141,7 @@ export default function Dashboard({ parent = false }) {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <Brand />
+        <Brand name={data.profile.name} />
         <div className="sidebar-profile">
           <div className="avatar">
             <Fox />
@@ -217,6 +218,7 @@ export default function Dashboard({ parent = false }) {
           </div>
         </header>
         <main className="content">
+          {parent && <LearnerPicker data={data} parent />}
           <ErrorBox message={error} />
           {notice && (
             <div className="notice" role="status">
@@ -742,7 +744,7 @@ export default function Dashboard({ parent = false }) {
                     if (r) window.location.href = "/";
                   }}
                 >
-                  Open Oliver’s world <ArrowRight size={18} />
+                  Open {data.profile.name}’s world <ArrowRight size={18} />
                 </button>
                 <a className="button secondary" href="/api/admin/export">
                   <Download size={17} />
@@ -902,7 +904,7 @@ export default function Dashboard({ parent = false }) {
               <PageTitle
                 eyebrow="THE MATERIALS YOU ALREADY HAVE, ALL ACCOUNTED FOR"
                 title="A library for little discoveries."
-                text="Import a dated snapshot manifest. New files enter review; existing notes and quests stay in place."
+                text="Source materials are shared by all family profiles. Import a dated snapshot manifest; new files enter review and existing notes stay in place. Each learner has separate study quests."
               />
               <div className="white-card import-card">
                 <div>
@@ -1081,7 +1083,7 @@ export default function Dashboard({ parent = false }) {
                       act(
                         "admin/revoke",
                         {},
-                        "Child devices signed out. Open Oliver’s world again to pair this device.",
+                        "Child devices signed out. Open a learner’s world again to pair this device.",
                       )
                     }
                   >
@@ -1279,7 +1281,7 @@ function AssignmentForm({ data, act, busy, initial, onDone }) {
         </select>
       </label>
       <label>
-        What should Oliver do?
+        What should the learner do?
         <textarea
           name="instructions"
           defaultValue={initial?.instructions || ""}

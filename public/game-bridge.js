@@ -1,11 +1,26 @@
 (function () {
   const game = window.__LMS_GAME__,
     saved = window.__LMS_SAVED__ || {};
+  const learnerId = window.__LMS_LEARNER__ || "oliver";
   const prefix = /^(mathquest-|reading-rangers-|rr-previous-|story-star-)/;
   const original = Storage.prototype.setItem;
+  const originalGet = Storage.prototype.getItem;
+  const originalRemove = Storage.prototype.removeItem;
+  const namespace = learnerId === "oliver" ? "" : `lms-${learnerId}:`;
+  const physicalKey = (k) =>
+    namespace && prefix.test(String(k)) ? namespace + k : k;
+  Storage.prototype.getItem = function (k) {
+    return originalGet.call(this, this === localStorage ? physicalKey(k) : k);
+  };
+  Storage.prototype.removeItem = function (k) {
+    return originalRemove.call(
+      this,
+      this === localStorage ? physicalKey(k) : k,
+    );
+  };
   for (const [k, v] of Object.entries(saved)) {
     try {
-      original.call(localStorage, k, v);
+      original.call(localStorage, physicalKey(k), v);
     } catch {}
   }
   let timer,
@@ -15,7 +30,9 @@
   function snapshot() {
     const out = {};
     for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
+      const stored = localStorage.key(i);
+      if (namespace && !stored.startsWith(namespace)) continue;
+      const k = namespace ? stored.slice(namespace.length) : stored;
       if (prefix.test(k)) out[k] = localStorage.getItem(k);
     }
     return out;
@@ -23,7 +40,10 @@
   let retry,
     roundId = crypto.randomUUID(),
     roundEnded = false;
-  const pendingKey = "lms-pending-completions-" + game;
+  const pendingKey =
+    "lms-pending-completions-" +
+    (learnerId === "oliver" ? "" : learnerId + "-") +
+    game;
   let pending = [];
   try {
     pending = JSON.parse(localStorage.getItem(pendingKey) || "[]");
@@ -45,8 +65,18 @@
         const r = await fetch("/api/legacy", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ game, saved: snapshot(), event, completion }),
+          body: JSON.stringify({
+            learnerId,
+            game,
+            saved: snapshot(),
+            event,
+            completion,
+          }),
         });
+        if (r.status === 409) {
+          status("Learner changed · return to adventure home");
+          return;
+        }
         if (!r.ok) throw Error();
         event = undefined;
         if (completion) {
@@ -62,7 +92,7 @@
     }
   }
   Storage.prototype.setItem = function (k, v) {
-    original.call(this, k, v);
+    original.call(this, this === localStorage ? physicalKey(k) : k, v);
     if (this === localStorage && prefix.test(k)) {
       clearTimeout(timer);
       timer = setTimeout(() => sync(), 400);
@@ -107,7 +137,7 @@
     fetch("/api/legacy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ game, saved: snapshot() }),
+      body: JSON.stringify({ learnerId, game, saved: snapshot() }),
       keepalive: true,
     }).catch(() => {});
   });

@@ -21,6 +21,7 @@ import {
 import WordLesson from "./WordLesson";
 import LearningCalendar, { DailyFive, StreakTrail } from "./LearningCalendar";
 import { localDay } from "../lib/dates.mjs";
+import LearnerPicker from "./LearnerPicker";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -202,6 +203,7 @@ export default function ChildWorld() {
         </a>
       </header>
       <main className="kid-main" id="kid-main">
+        <LearnerPicker data={data} />
         {screen !== "home" && (
           <a
             className="kid-back"

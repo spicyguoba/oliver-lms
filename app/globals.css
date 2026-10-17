@@ -3245,3 +3245,62 @@ legend {
     height: 36px;
   }
 }
+/* Family learner selector: test activity has its own wallet and history. */
+.learner-picker {
+  margin: 0 0 24px;
+  padding: 16px;
+  border: 2px solid #dce4d7;
+  border-radius: 20px;
+  background: #fffdf7;
+}
+.learner-picker > p {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #385444;
+}
+.learner-picker > div:not(.error) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.learner-picker button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 12px 18px;
+  flex: 1;
+  border: 2px solid #d9dfd1;
+  border-radius: 16px;
+  background: #fff;
+  color: #344b3e;
+  cursor: pointer;
+  font: inherit;
+}
+.learner-picker button[aria-pressed="true"] {
+  border-color: #568247;
+  background: #e6f2de;
+}
+.learner-picker button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.learner-picker .test-profile-note {
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: #674e80;
+}
+@media (max-width: 540px) {
+  .learner-picker {
+    padding: 12px;
+  }
+  .learner-picker > div:not(.error) {
+    gap: 6px;
+  }
+  .learner-picker button {
+    padding: 10px 6px;
+    gap: 5px;
+    font-size: 15px;
+  }
+}

@@ -1,5 +1,15 @@
 # Adventure Club handoff
 
+## Test learner profiles (2026-10-17)
+
+Schema 4 adds `learners.test1` and `learners.test2`, preserving all of Oliver's existing root fields. `lib/learners.mjs` provides a transaction-local view that directs learner-specific reads/writes to the selected record. Tests start with zero stars and no answers/calendar history/unlocks; quests and rewards are independent copies of the existing definitions. Only source materials and parent auth/settings remain family-wide. Admin export retains the complete family structure and redacts authentication settings as before.
+
+The child home and admin dashboard show Oliver, Test1 and Test2 side by side. These are paired family profiles using the existing parent login, not new password accounts. `POST /api/learner/select` changes the signed session's learner ID without changing its role. Old signed cookies without a learner ID continue to mean Oliver. Pairing opens the selected learner and locks admin. Unknown learner IDs are rejected; session lookup, answers, approvals, wallets and calendars are scoped to the signed selection. New UI requests include their page's learner ID, rejecting stale tabs with HTTP 409 after a switch.
+
+Legacy HTML injects a fixed learner ID. The bridge stores Test1/Test2 game keys and pending queues under separate namespaces; Oliver's original localStorage keys stay untouched. Every legacy save includes its page's learner ID, preventing an older tab from writing into a newly selected profile. Source GitHub Pages games are unchanged. The unit/HTTP tests cover migration preservation, separate wallets/quests/rewards/answers/calendars, cookie selection/role restrictions, cross-profile session access, stale tabs, legacy payloads and localStorage namespaces.
+
+Fresh private cloud snapshot: `.data/before-learners-upgrade.json`. Do not restore it over active family data. Browser QA uses `.data/learners-preview/` only. After release, verify each profile renders, the production family row migrates to schema 4, and Oliver's prior questions, first answers, wallet, assignments/rewards, legacy state and auth versions remain preserved.
+
 ## Learning calendar and daily-five path (2026-10-17)
 
 Schema 3 adds a versioned learning-program start day, saved daily plans and an idempotent consistency-award ledger. Migration leaves all prior data in place and does not back-pay bonuses. Both roles can use `/api/calendar?month=YYYY-MM`; only admin receives first-answer/timing details. Finished rounds qualify on completion day; partial practice appears on each answer's actual local day. Approved quests qualify on requested learning day; older unsaved quest award amounts are explicitly unknown. Legacy scores remain separately labeled and do not qualify for bonuses.
@@ -76,4 +86,4 @@ The backend uses row-locked PostgreSQL transactions. Development's local file st
 - Native first answers are immutable. Help/tab changes/active time are recorded, while server elapsed time controls timing. Legacy events stay explicitly client-reported and separate from native insights.
 - Timing and tab changes cannot prove calculator use or measure actual ability. Use supervised parent-started rounds for better context. These are supplemental practice activities, not school screening measures or diagnoses.
 - Stars are encouragement, including helped correct answers. Independent accuracy excludes recorded help, tab changes and questions left open for ten minutes. No cash conversion or penalties from the BBCoin concept are enabled.
-- The implementation is one family/one learner, with parent settings, editable quests/rewards, approvals, material reviews and exports. It is not a multi-school service, automatic folder watcher, full PDF hosting system or offline PWA.
+- The implementation is one family with Oliver and two test learner profiles, parent settings, editable quests/rewards, approvals, material reviews and exports. It is not a multi-school service, automatic folder watcher, full PDF hosting system or offline PWA.

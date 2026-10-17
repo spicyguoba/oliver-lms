@@ -14,6 +14,94 @@ function source(game) {
     .join("\n");
 }
 
+test("legacy browser storage, pending completions and cloud payloads stay isolated by learner", async () => {
+  const values = new Map([
+    ["reading-rangers-v1", JSON.stringify({ stars: 9 })],
+  ]);
+  const bridge = fs.readFileSync(
+    new URL("../public/game-bridge.js", import.meta.url),
+    "utf8",
+  );
+  function open(learnerId) {
+    class Storage {
+      get length() {
+        return values.size;
+      }
+      key(i) {
+        return [...values.keys()][i];
+      }
+      getItem(k) {
+        return values.get(k) || null;
+      }
+      setItem(k, v) {
+        values.set(k, String(v));
+      }
+      removeItem(k) {
+        values.delete(k);
+      }
+    }
+    const localStorage = new Storage(),
+      posts = [];
+    const window = {
+      __LMS_GAME__: "reading",
+      __LMS_LEARNER__: learnerId,
+      __LMS_SAVED__: {},
+      addEventListener() {},
+    };
+    const context = vm.createContext({
+      window,
+      localStorage,
+      Storage,
+      crypto: { randomUUID },
+      performance: { now: () => 1000 },
+      setTimeout: () => 1,
+      clearTimeout() {},
+      document: { addEventListener() {}, getElementById: () => null },
+      fetch: async (url, r) => {
+        posts.push(JSON.parse(r.body));
+        return { ok: true, status: 200 };
+      },
+    });
+    vm.runInContext(bridge, context);
+    return { window, localStorage, posts };
+  }
+  const oliver = open("oliver"),
+    one = open("test1"),
+    two = open("test2");
+  assert.equal(one.localStorage.getItem("reading-rangers-v1"), null);
+  one.localStorage.setItem("reading-rangers-v1", JSON.stringify({ stars: 2 }));
+  two.localStorage.setItem("reading-rangers-v1", JSON.stringify({ stars: 3 }));
+  assert.equal(
+    JSON.parse(oliver.localStorage.getItem("reading-rangers-v1")).stars,
+    9,
+  );
+  assert.equal(
+    JSON.parse(one.localStorage.getItem("reading-rangers-v1")).stars,
+    2,
+  );
+  assert.equal(
+    JSON.parse(two.localStorage.getItem("reading-rangers-v1")).stars,
+    3,
+  );
+  one.window.LMS.complete(2, 5);
+  await new Promise(setImmediate);
+  assert.equal(one.posts[0].learnerId, "test1");
+  assert.equal(JSON.parse(one.posts[0].saved["reading-rangers-v1"]).stars, 2);
+  assert.ok(values.has("lms-pending-completions-test1-reading"));
+  assert.ok(!values.has("lms-pending-completions-reading"));
+  assert.ok(!values.has("lms-pending-completions-test2-reading"));
+  assert.equal(
+    JSON.parse(open("test1").localStorage.getItem("reading-rangers-v1")).stars,
+    2,
+  );
+  one.localStorage.removeItem("reading-rangers-v1");
+  assert.equal(one.localStorage.getItem("reading-rangers-v1"), null);
+  assert.equal(
+    JSON.parse(oliver.localStorage.getItem("reading-rangers-v1")).stars,
+    9,
+  );
+});
+
 test("legacy bridge queues a finished round offline, retries once online, and gives a replay a new identity", async () => {
   class Storage {
     constructor() {

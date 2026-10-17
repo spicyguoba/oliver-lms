@@ -1,10 +1,15 @@
 "use client";
 import { useState } from "react";
 import { Sprout, ArrowRight, ShieldCheck } from "lucide-react";
+let activeLearner;
 export async function api(url, body) {
+  const headers =
+    body === undefined ? {} : { "Content-Type": "application/json" };
+  if (activeLearner && !["login", "logout", "learner/select"].includes(url))
+    headers["x-lms-learner"] = activeLearner;
   const r = await fetch("/api/" + url, {
     method: body === undefined ? "GET" : "POST",
-    headers: body === undefined ? {} : { "Content-Type": "application/json" },
+    headers,
     body: body === undefined ? undefined : JSON.stringify(body),
     cache: "no-store",
   });
@@ -18,9 +23,10 @@ export async function api(url, body) {
     throw Object.assign(new Error(json.error || "Please try again."), {
       status: r.status,
     });
+  if (json.learnerId) activeLearner = json.learnerId;
   return json;
 }
-export function Brand() {
+export function Brand({ name = "Oliver" }) {
   return (
     <a className="brand" href="/">
       <span className="brand-mark">
@@ -29,7 +35,7 @@ export function Brand() {
       <span>
         adventure
         <span className="brand-second">
-          club <i>for Oliver</i>
+          club <i>for {name}</i>
         </span>
       </span>
     </a>
