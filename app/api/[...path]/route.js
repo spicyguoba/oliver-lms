@@ -12,6 +12,13 @@ import {
   streaks,
 } from "../../../lib/calendar.mjs";
 import { validMonth } from "../../../lib/dates.mjs";
+import {
+  dashState,
+  startDash,
+  finishDash,
+  answerDash,
+  hintDash,
+} from "../../../lib/dash.mjs";
 import { sanitizeLegacyMap } from "../../../lib/legacy-save.mjs";
 import {
   learnerData,
@@ -176,6 +183,7 @@ export async function GET(req, context) {
       checkLearner(req, d);
       if (route === "state")
         return NextResponse.json(safeState(d, role, family));
+      if (route === "dash") return NextResponse.json(dashState(d));
       if (route === "calendar") {
         const month =
           req.nextUrl.searchParams.get("month") ||
@@ -204,6 +212,10 @@ export async function GET(req, context) {
             defaultPassword: d.settings.defaultPassword,
           },
           allAssignments: d.assignments,
+          dashHistory: d.dash.runs
+            .filter((r) => r.attempt)
+            .map(({ question, ...r }) => r)
+            .reverse(),
         });
       if (route === "admin/export")
         return new NextResponse(
@@ -334,6 +346,13 @@ export async function POST(req, context) {
         return res;
       }
       checkLearner(req, d, body);
+      if (route === "dash/start")
+        return NextResponse.json(startDash(d, body.level));
+      if (route === "dash/finish")
+        return NextResponse.json(finishDash(d, body.id, body));
+      if (route === "dash/answer")
+        return NextResponse.json(answerDash(d, body.id, body));
+      if (route === "dash/hint") return NextResponse.json(hintDash(d, body.id));
       if (route === "launch") {
         const res = NextResponse.json({ ok: true });
         setCookie(res, "child", d, false, d.learnerId);

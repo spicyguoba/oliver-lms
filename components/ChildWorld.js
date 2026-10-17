@@ -309,6 +309,14 @@ export default function ChildWorld() {
               </span>
             </section>
             <StreakTrail streak={data.streak} />
+            <a href="/dash" className="kid-dash-link">
+              <span>⚡</span>
+              <div>
+                <strong>Star Dash</strong>
+                <small>Jump through 20 worlds. Discover a study star!</small>
+              </div>
+              <Play size={28} />
+            </a>
             <DailyFive plan={data.dailyPlan} onPlay={playDaily} busy={busy} />
             <div className="kid-home-choices">
               <a href="/#games" className="kid-choice sky">
@@ -350,6 +358,11 @@ export default function ChildWorld() {
         )}
         {screen === "games" && (
           <div className="kid-world-grid">
+            <a href="/dash" className="kid-choice lilac">
+              <span>⚡</span>
+              <strong>Star Dash</strong>
+              <small>20 worlds · jump, learn & collect stars</small>
+            </a>
             {worlds.map(([id, label, icon, desc, color]) => (
               <a
                 key={id}

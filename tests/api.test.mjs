@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { skills } from "../lib/questions.mjs";
+import { pilot } from "./dash-helper.mjs";
 const base = process.env.LMS_TEST_URL || "http://127.0.0.1:3001";
 let cookie = "";
 async function request(route, body, custom = {}) {
@@ -190,7 +191,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 4);
+  assert.equal(exportData.version, 5);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
@@ -459,4 +460,90 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
   assert.deepEqual(rootOnly(after), rootOnly(before));
   assert.equal(after.learners.test1.stars, 5);
   assert.equal(after.learners.test2.stars, 0);
+});
+
+test("Star Dash HTTP gates the question behind a verified clear and awards its star once in the right profile", async () => {
+  assert.equal((await request("dash", undefined, { Cookie: "" })).status, 401);
+  const rootStars = (await (await request("state")).json()).stars;
+  const selected = await request("learner/select", { id: "test2" });
+  cookie = selected.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  assert.equal((await request("dash/start", { level: 20 })).status, 400);
+  let run = await (
+    await request("dash/start", { level: 1, stars: 9999 })
+  ).json();
+  assert.equal(run.learnerId, "test2");
+  assert.equal(run.question, null);
+  const p = pilot(1, run.seed);
+  assert.equal(
+    (
+      await request("dash/answer", {
+        id: run.id,
+        questionId: "fake",
+        answer: "0",
+      })
+    ).status,
+    400,
+  );
+  assert.equal(
+    (await request("dash/finish", { id: run.id, jumps: p.jumps })).status,
+    400,
+  );
+  await new Promise((resolve) =>
+    setTimeout(resolve, (p.course.durationFrames / 60) * 1000 + 50),
+  );
+  assert.equal(
+    (await request("dash/finish", { id: run.id, jumps: [] })).status,
+    400,
+  );
+  const finishes = await Promise.all([
+    request("dash/finish", { id: run.id, jumps: p.jumps }),
+    request("dash/finish", { id: run.id, jumps: p.jumps }),
+  ]);
+  run = await finishes[0].json();
+  assert.equal(run.question.id, (await finishes[1].json()).question.id);
+  assert.ok(!("answer" in run.question));
+  assert.ok(!("explanation" in run.question));
+  const [a, operator, b] = run.question.prompt.split(" ");
+  const answer = String(
+    operator === "+" ? Number(a) + Number(b) : Number(a) - Number(b),
+  );
+  const results = await Promise.all([
+    request("dash/answer", {
+      id: run.id,
+      questionId: run.question.id,
+      answer,
+      stars: 9999,
+    }),
+    request("dash/answer", { id: run.id, questionId: run.question.id, answer }),
+  ]);
+  const feedback = await results[0].json();
+  assert.equal(feedback.feedback.stars, 1);
+  assert.deepEqual((await results[1].json()).feedback, feedback.feedback);
+  const state = await (await request("dash")).json();
+  assert.equal(state.stars, 3);
+  assert.equal(state.unlocked, 2);
+  assert.equal(state.pending, null);
+  assert.equal(
+    (await (await request("admin")).json()).dashHistory[0].attempt.correct,
+    true,
+  );
+  const calendar = await (await request("calendar")).json();
+  assert.ok(
+    calendar.days
+      .flatMap((d) => d.events)
+      .some((e) => e.title.startsWith("Star Dash")),
+  );
+  const back = await request("learner/select", { id: "oliver" });
+  cookie = back.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  assert.equal((await (await request("state")).json()).stars, rootStars);
+  assert.equal(
+    (await request("dash/finish", { id: run.id, jumps: p.jumps })).status,
+    404,
+  );
 });

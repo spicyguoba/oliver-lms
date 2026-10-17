@@ -6,6 +6,8 @@ Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the
 
 ## What works
 
+- **Star Dash** at `/dash`: twenty progressively faster, longer, denser cube-runner courses, each with an original visual theme and synthesized music, plus jump/crash/finish sounds. Touch or hold to jump; keyboard and pause controls are available. Clearing a course reveals one server-graded question from the existing learning library and unlocks the next world. Correct answers award one study star (three for level 20), once per level per learner. Wrong first answers remain saved; replaying offers a fresh question. The learning calendar and parent activity report include question outcomes and timing, separate from five-question exercise benchmarks.
+
 - **Oliver / Test1 / Test2** learner picker on the child home and parent dashboard. Each has independent answers, scores, stars, calendars, daily plans, story unlocks, legacy saves, quests and rewards. Devices still use the family's parent sign-in/pairing; no extra learner password is required. Source materials and parent authentication settings are shared. The admin export includes all three learners.
 
 - Completion cards show the latest finished score/date with a green shade and text badge; world and vocabulary category cards show total/finished/left. Replays do not inflate completed counts. Abandoned rounds do not count.
@@ -43,7 +45,7 @@ Without `DATABASE_URL`, development uses ignored `.data/family.json` with serial
 5. Sign in, import the private material manifest, then set a new parent password. For initial setup only, run `materials:sync -- --initial-plan` against the hosted URL with `LMS_URL` and `LMS_ADMIN_PASSWORD` in your local environment. The first run adds five material-based quests; later runs never overwrite an existing plan.
 6. Verify login, answer a question, reload, complete a round, and read the result from another signed-in device. Test a deployment restart/redeploy before depending on cloud persistence.
 
-PostgreSQL schema initialization is additive and runs automatically. Version 2 uses a single family row with JSONB data and adds a separate client-reported legacy completion log to version 1. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves one family, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
+PostgreSQL schema initialization is additive and runs automatically. Version 5 adds independent Star Dash progress to each learner; earlier migrations retain legacy completion logs, calendars and the three learner profiles. The database uses a single family row with JSONB data. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves one family, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
 
 ## Materials and future additions
 

@@ -26,7 +26,7 @@ test("schema four adds empty test learners and preserves every Oliver field", ()
     { ...d, version: 3, learners: undefined },
     { ...original, learners: undefined },
   );
-  assert.equal(d.version, 4);
+  assert.equal(d.version, 5);
   assert.deepEqual(
     learnerList(d).map((x) => x.name),
     ["Oliver", "Test1", "Test2"],

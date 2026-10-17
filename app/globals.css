@@ -3304,3 +3304,496 @@ legend {
     font-size: 15px;
   }
 }
+/* Star Dash — an original arcade world, with a quiet study break after each course. */
+.kid-dash-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  margin: 20px 0;
+  border: 2px solid #9e98c9;
+  border-radius: 24px;
+  background: linear-gradient(110deg, #ede6ff, #e4f4f2);
+  color: #39375c;
+  box-shadow: 0 5px 0 #d4cce3;
+}
+.kid-dash-link > span {
+  font-size: 38px;
+}
+.kid-dash-link > div {
+  flex: 1;
+}
+.kid-dash-link strong {
+  display: block;
+  font-size: 25px;
+}
+.kid-dash-link small {
+  display: block;
+  font-size: 17px;
+  margin-top: 5px;
+}
+.dash-shell {
+  --dash-accent: #c9ff9c;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 24px 28px 60px;
+  color: #eaf0ff;
+  min-height: 100dvh;
+  background: radial-gradient(ellipse at 80% 0%, #393559, #151a30 65%);
+  border-radius: 0 0 30px 30px;
+}
+.dash-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #ffffff24;
+}
+.dash-top > a {
+  color: #def0ff;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.dash-top > strong {
+  letter-spacing: 0.18em;
+  font-size: 20px;
+}
+.dash-top > span {
+  padding: 10px 16px;
+  background: #ffffff12;
+  border-radius: 18px;
+  color: #ffe9a7;
+}
+.dash-intro {
+  padding: 28px 0 8px;
+}
+.dash-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.19em;
+  color: #b9c6e9;
+  font-weight: 800;
+}
+.dash-intro h1 {
+  font-size: clamp(28px, 4.3vw, 46px);
+  line-height: 1.2;
+  max-width: 850px;
+  color: #fff;
+  margin: 12px 0;
+}
+.dash-intro > p:last-child {
+  color: #c6d2e7;
+  line-height: 1.6;
+  max-width: 800px;
+}
+.dash-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.dash-toolbar > span {
+  margin-left: auto;
+  color: #d6e3f5;
+  font-size: 14px;
+}
+.dash-shell button,
+.dash-result-actions a {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #9cacc16b;
+  background: #ffffff0e;
+  color: #f4f7ff;
+  border-radius: 14px;
+  padding: 12px 18px;
+  min-height: 48px;
+}
+.dash-shell button:hover {
+  border-color: #c9ff9c;
+  background: #ffffff1f;
+}
+.dash-shell button:focus-visible,
+.dash-shell a:focus-visible {
+  outline: 3px solid #fff19f;
+  outline-offset: 4px;
+}
+.dash-shell button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.dash-shell button[aria-pressed="true"] {
+  background: #d3f3c7;
+  color: #183d36;
+  border-color: #d3f3c7;
+}
+.dash-shell .dash-action {
+  background: #c8f99c;
+  border: 2px solid #c8f99c;
+  color: #1d3930;
+  font-weight: 800;
+  padding: 15px 24px;
+  min-height: 56px;
+}
+.dash-shell .dash-action:hover {
+  background: #deffbc;
+  color: #183a2c;
+}
+.dash-map-intro {
+  padding: 18px 22px;
+  background: #ffffff09;
+  border: 1px solid #ffffff1f;
+  border-radius: 20px;
+  margin: 24px 0;
+}
+.dash-map-intro strong {
+  color: #ffe39f;
+}
+.dash-map-intro p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd3e7;
+  margin-bottom: 0;
+}
+.dash-map {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+}
+.dash-map li {
+  min-width: 0;
+}
+.dash-map li button {
+  width: 100%;
+  height: 235px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 9px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--tile-sky), var(--tile-glow));
+  border: 2px solid #ffffff2d;
+  text-align: left;
+  padding: 22px;
+}
+.dash-map li button:before {
+  content: "◇";
+  position: absolute;
+  right: -2px;
+  top: 0;
+  font-size: 140px;
+  color: var(--tile-accent);
+  opacity: 0.08;
+  line-height: 1.2;
+}
+.dash-map-number {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--tile-accent);
+}
+.dash-map-icon {
+  font-size: 38px;
+  margin-bottom: 3px;
+}
+.dash-map strong {
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+}
+.dash-map small {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ecf4ff;
+}
+.dash-map li button:disabled {
+  opacity: 0.63;
+}
+.dash-map .dash-map-starred {
+  border-color: var(--tile-accent);
+}
+.dash-difficulty {
+  display: flex;
+  gap: 5px;
+  margin-top: 4px;
+}
+.dash-difficulty i {
+  width: 17px;
+  height: 5px;
+  border-radius: 3px;
+  background: #ffffff28;
+}
+.dash-difficulty .lit {
+  background: var(--tile-accent);
+}
+.dash-stage {
+  position: relative;
+  border: 2px solid #ffffff40;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #132332;
+}
+.dash-stage canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.dash-overlay {
+  position: absolute;
+  inset: 0;
+  background: #071525b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  backdrop-filter: blur(3px);
+}
+.dash-overlay > span {
+  font-size: 42px;
+}
+.dash-overlay h2 {
+  font-size: 30px;
+  color: #fff;
+  margin: 8px 0;
+}
+.dash-overlay p {
+  font-size: 16px;
+  color: #e4eaff;
+  margin: 6px 0 20px;
+}
+.dash-controls {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin: 18px 0;
+}
+.dash-controls .dash-jump {
+  flex: 1;
+  background: #c5f1fb;
+  color: #1c3749;
+  border: 2px solid #c5f1fb;
+  font-size: 26px;
+  font-weight: 800;
+  min-height: 78px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.dash-jump small {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.dash-controls > span {
+  font-size: 13px;
+  color: #ccd3e5;
+}
+.dash-hint {
+  color: #b4c3df;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.dash-shell .error-box {
+  background: #ffe5df;
+  color: #782e31;
+}
+.dash-study {
+  max-width: 850px;
+  background: #fffdf4;
+  color: #2b4144;
+  border: 3px solid #e7e3ba;
+  border-radius: 26px;
+  padding: clamp(22px, 5vw, 48px);
+  margin: 24px auto;
+  text-align: center;
+}
+.dash-study-icon {
+  font-size: 52px;
+}
+.dash-study > p {
+  line-height: 1.7;
+}
+.dash-study > h2 {
+  font-size: 32px;
+  color: #2c4242;
+  margin: 12px 0;
+}
+.dash-study > h3 {
+  font-size: clamp(23px, 3.5vw, 30px);
+  line-height: 1.5;
+  color: #263b3d;
+  margin: 26px 0;
+}
+.dash-study blockquote {
+  font-size: 24px;
+  line-height: 1.7;
+  margin: 24px 0;
+  background: #f0f3e7;
+  padding: 20px;
+  border-radius: 14px;
+}
+.dash-study button {
+  background: #eef0e7;
+  color: #2d4945;
+  border-color: #b8c8b6;
+}
+.dash-study button:hover {
+  background: #e0edda;
+  border-color: #668760;
+}
+.dash-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+.dash-options button {
+  text-align: left;
+  min-height: 68px;
+  font-size: 22px;
+  background: #fff;
+  border: 2px solid #bdcbbc;
+  padding: 18px 22px;
+}
+.dash-study form {
+  margin-top: 24px;
+  display: grid;
+  gap: 20px;
+}
+.dash-study label {
+  display: grid;
+  gap: 12px;
+  font-weight: 700;
+}
+.dash-study input {
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+  font-size: 26px;
+  min-height: 62px;
+  text-align: center;
+  border: 2px solid #9fb69a;
+  border-radius: 14px;
+  padding: 12px;
+  background: #fff;
+  color: #283f3b;
+}
+.dash-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.dash-result-actions a {
+  display: flex;
+  align-items: center;
+  background: #eef0e7;
+  color: #2d4945;
+  border-color: #b8c8b6;
+}
+@media (max-width: 850px) {
+  .dash-map {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .dash-shell {
+    padding: 20px;
+  }
+  .dash-map li button {
+    height: 225px;
+    padding: 18px;
+  }
+}
+@media (max-width: 540px) {
+  .dash-shell {
+    padding: 16px 12px 40px;
+  }
+  .dash-top > strong {
+    font-size: 16px;
+  }
+  .dash-top > span {
+    font-size: 13px;
+  }
+  .dash-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .dash-map li button {
+    height: 220px;
+    padding: 16px;
+  }
+  .dash-map strong {
+    font-size: 17px;
+  }
+  .dash-map-intro {
+    padding: 16px;
+  }
+  .dash-overlay {
+    position: static;
+    background: #17283d;
+    backdrop-filter: none;
+    padding: 20px;
+  }
+  .dash-overlay > span {
+    font-size: 30px;
+  }
+  .dash-overlay h2 {
+    font-size: 23px;
+  }
+  .dash-overlay p {
+    font-size: 14px;
+  }
+  .dash-controls {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .dash-controls > span {
+    width: 100%;
+    text-align: right;
+  }
+  .dash-toolbar > span {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+  .kid-dash-link {
+    padding: 18px;
+    gap: 12px;
+  }
+  .kid-dash-link small {
+    font-size: 15px;
+  }
+  .dash-study blockquote {
+    font-size: 21px;
+    padding: 15px;
+  }
+}
+.dash-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 360px;
+  width: 100%;
+  margin: auto;
+}
+.dash-keypad button {
+  font-size: 24px;
+  min-height: 54px;
+}
+.dash-keypad .dash-erase {
+  grid-column: span 3;
+  font-size: 17px;
+}

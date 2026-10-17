@@ -1703,7 +1703,42 @@ function Reports({ data, play, busy, difficulty, setDifficulty }) {
         )}
       </section>
       <section className="white-card section">
-        <h2>Original game activity</h2>
+        <h2>More game activity</h2>
+        <details className="section">
+          <summary>
+            Star Dash study questions ({data.dashHistory.length})
+          </summary>
+          <p>
+            Single study questions after arcade courses. Kept separately from
+            five-question exercise rounds and independent baseline metrics.
+            Course replay checks validate physics; they do not prove unassisted
+            play.
+          </p>
+          {!data.dashHistory.length && <p>No Star Dash study answers yet.</p>}
+          {data.dashHistory.map((r) => (
+            <div className="attempt" key={r.id}>
+              <strong>
+                Level {r.level} ·{" "}
+                {r.attempt.correct ? "✓ Correct" : "↻ Needs practice"} ·{" "}
+                {r.earned || 0} study stars
+              </strong>
+              <p>{r.attempt.prompt}</p>
+              {r.attempt.context && <p>{r.attempt.context}</p>}
+              <p>
+                Answered: {r.attempt.answer} · Expected: {r.attempt.expected}
+              </p>
+              <small>
+                {new Date(r.attempt.at).toLocaleString("en-US", {
+                  timeZone: data.timezone,
+                })}{" "}
+                · {(r.attempt.wallMs / 1000).toFixed(1)} sec elapsed ·{" "}
+                {(r.attempt.activeMs / 1000).toFixed(1)} sec active ·{" "}
+                {r.attempt.helped ? "Help used" : "No help marked"} ·{" "}
+                {r.attempt.focusLosses} tab changes
+              </small>
+            </div>
+          ))}
+        </details>
         <p className="footnote">
           Legacy game events are reported by the game in the browser and kept
           separately. They do not count toward the server-graded baseline or the
