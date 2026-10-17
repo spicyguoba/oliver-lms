@@ -2,6 +2,7 @@ import { spawn, spawnSync } from "node:child_process";
 import { mkdtemp } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { once } from "node:events";
 const directory = await mkdtemp(path.join(os.tmpdir(), "oliver-lms-test-"));
 const server = spawn(
   process.execPath,
@@ -44,11 +45,18 @@ try {
     await new Promise((r) => setTimeout(r, 500));
   }
   if (!ready) throw Error("Test server did not become ready. " + output);
-  const result = spawnSync(process.execPath, ["--test", "tests/api.test.mjs"], {
-    env: { ...process.env, LMS_TEST_URL: "http://127.0.0.1:3001" },
-    stdio: "inherit",
-  });
-  process.exitCode = result.status || 0;
+  // Keep draining server logs while tests run. spawnSync blocks these pipe
+  // readers and can deadlock a longer suite on Linux's smaller pipe buffers.
+  const runner = spawn(
+    process.execPath,
+    ["--test", "--test-timeout=90000", "tests/api.test.mjs"],
+    {
+      env: { ...process.env, LMS_TEST_URL: "http://127.0.0.1:3001" },
+      stdio: "inherit",
+    },
+  );
+  const [code] = await once(runner, "exit");
+  process.exitCode = code ?? 1;
 } finally {
   if (process.platform === "win32")
     spawnSync("taskkill", ["/pid", String(server.pid), "/T", "/F"], {
