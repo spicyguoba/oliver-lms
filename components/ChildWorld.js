@@ -350,7 +350,7 @@ export default function ChildWorld() {
         {(subject || screen === "world-Favorites") && (
           <>
             <p className="kid-subtitle">Tap a picture to choose your game.</p>
-            {subject && (
+            {subject && courses.some((c) => c.subject === subject[0]) && (
               <ProgressCount
                 exercises={data.stats.filter((s) => s.subject === subject[0])}
               />
