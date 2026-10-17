@@ -6,6 +6,8 @@ export default {
       "./legacy/*.html",
       "./content/stories.json",
       "./content/discoveries.json",
+      "./content/additions.json",
+      "./content/vocabulary/*.json",
     ],
   },
   outputFileTracingExcludes: {

@@ -8,6 +8,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { api, Brand, ErrorBox, Login, Loading } from "./ui";
+import { speakParts } from "./WordLesson";
 export default function Adventure({ id }) {
   const [session, setSession] = useState(null),
     [error, setError] = useState(""),
@@ -90,6 +91,23 @@ export default function Adventure({ id }) {
     try {
       await api("session/" + id + "/hint", { kind: "read-aloud" });
       timer.current.helped = true;
+      if (session.question.language) {
+        const q = session.question;
+        if (
+          !speakParts([
+            [q.prompt],
+            [q.context, q.language === "zh" ? "zh-CN" : "en-US"],
+            ...(q.options || []).flatMap((o, i) => [
+              [`Choice ${i + 1}`],
+              [o, q.optionsLanguage],
+            ]),
+          ])
+        )
+          setError(
+            "Ask your grown-up to read with you. This browser has no read-aloud voice.",
+          );
+        return;
+      }
       if ("speechSynthesis" in window) {
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(
@@ -161,7 +179,14 @@ export default function Adventure({ id }) {
                 : "A story passes at 4 of 5. This rank’s story streak starts again at zero."}
             </p>
           )}
-          <a className="button" href={"/#world-" + (session.subject || "Math")}>
+          <a
+            className="button"
+            href={
+              session.course
+                ? "/#course-" + session.course
+                : "/#world-" + (session.subject || "Math")
+            }
+          >
             Choose another game <ArrowRight size={22} />
           </a>
           <a className="button secondary" href="/">
@@ -213,6 +238,19 @@ export default function Adventure({ id }) {
           {q && (
             <>
               <h1>{q.prompt}</h1>
+              {q.context && (
+                <div className="kid-quiz-context">
+                  {q.vocabWord && (
+                    <strong lang={q.language === "zh" ? "zh-CN" : "en"}>
+                      {q.vocabWord}
+                    </strong>
+                  )}
+                  {q.pronunciation && (
+                    <p className="kid-pinyin">{q.pronunciation}</p>
+                  )}
+                  <p lang={q.language === "zh" ? "zh-CN" : "en"}>{q.context}</p>
+                </div>
+              )}
               {q.diagram && (
                 <div
                   role="img"
@@ -251,12 +289,20 @@ export default function Adventure({ id }) {
                     aria-label="Your answer"
                     autoComplete="off"
                     inputMode={
-                      session.skill === "fractions" ? "text" : "numeric"
+                      ["fractions", "math-fractions-add"].includes(
+                        session.skill,
+                      )
+                        ? "text"
+                        : "decimal"
                     }
                     value={answer}
                     onChange={(e) => setAnswer(e.target.value)}
                     placeholder={
-                      session.skill === "fractions" ? "Like 1/2" : "Your answer"
+                      ["fractions", "math-fractions-add"].includes(
+                        session.skill,
+                      )
+                        ? "Like 1/2"
+                        : "Your answer"
                     }
                     maxLength="40"
                     required
@@ -319,13 +365,9 @@ export default function Adventure({ id }) {
                     setError("Ask your grown-up to read this with you.");
                     return;
                   }
-                  window.speechSynthesis.cancel();
-                  const u = new SpeechSynthesisUtterance(
-                    session.feedback.explanation,
+                  speakParts(
+                    session.feedback.speech || [[session.feedback.explanation]],
                   );
-                  u.rate = 0.82;
-                  u.lang = "en-US";
-                  window.speechSynthesis.speak(u);
                 }}
               >
                 <Volume2 size={22} /> Read this to me

@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import vm from "node:vm";
+import { randomUUID } from "node:crypto";
 import { sanitizeLegacyMap } from "../lib/legacy-save.mjs";
 function source(game) {
   const html = fs.readFileSync(
@@ -12,6 +13,80 @@ function source(game) {
     .map((m) => m[1])
     .join("\n");
 }
+
+test("legacy bridge queues a finished round offline, retries once online, and gives a replay a new identity", async () => {
+  class Storage {
+    constructor() {
+      this.values = new Map();
+    }
+    get length() {
+      return this.values.size;
+    }
+    key(i) {
+      return [...this.values.keys()][i];
+    }
+    getItem(k) {
+      return this.values.get(k) || null;
+    }
+    setItem(k, v) {
+      this.values.set(k, String(v));
+    }
+  }
+  const localStorage = new Storage(),
+    listeners = new Map(),
+    posts = [];
+  let online = false;
+  const window = {
+    __LMS_GAME__: "reading",
+    __LMS_SAVED__: {},
+    addEventListener: (name, fn) => listeners.set(name, fn),
+  };
+  const context = vm.createContext({
+    window,
+    localStorage,
+    Storage,
+    crypto: { randomUUID },
+    performance: { now: () => 1000 },
+    setTimeout: () => 1,
+    clearTimeout() {},
+    document: { addEventListener() {}, getElementById: () => null },
+    fetch: async (url, request) => {
+      posts.push(JSON.parse(request.body));
+      if (!online) throw Error("offline");
+      return { ok: true };
+    },
+  });
+  vm.runInContext(
+    fs.readFileSync(
+      new URL("../public/game-bridge.js", import.meta.url),
+      "utf8",
+    ),
+    context,
+  );
+  window.LMS.begin();
+  window.LMS.complete(3, 5);
+  window.LMS.complete(3, 5);
+  await new Promise(setImmediate);
+  const queued = JSON.parse(
+    localStorage.getItem("lms-pending-completions-reading"),
+  );
+  assert.equal(queued.length, 1);
+  assert.equal(posts.length, 1);
+  online = true;
+  listeners.get("online")();
+  await new Promise(setImmediate);
+  assert.equal(posts[1].completion.id, queued[0].id);
+  assert.deepEqual(
+    JSON.parse(localStorage.getItem("lms-pending-completions-reading")),
+    [],
+  );
+  window.LMS.begin();
+  window.LMS.complete(5, 5);
+  await new Promise(setImmediate);
+  assert.notEqual(posts[2].completion.id, queued[0].id);
+  assert.equal(posts[2].completion.correct, 5);
+  assert.equal(posts[2].game, "reading");
+});
 test("all copied game scripts parse", () => {
   for (const game of ["math", "reading", "stories"])
     new vm.Script(source(game));

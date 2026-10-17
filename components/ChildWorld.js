@@ -10,6 +10,14 @@ import {
   Shield,
 } from "lucide-react";
 import { Fox, api, ErrorBox, Loading, Login } from "./ui";
+import {
+  courses,
+  CourseCard,
+  ExerciseCatalog,
+  ProgressCount,
+  CompletionLabel,
+} from "./ExerciseCatalog";
+import WordLesson from "./WordLesson";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -120,6 +128,7 @@ export default function ChildWorld() {
     );
   const subject = worlds.find((w) => screen === "world-" + w[0]);
   const topic = data.stats.find((s) => screen === "learn-" + s.id);
+  const course = courses.find((c) => screen === "course-" + c.id);
   const known =
     screen === "home" ||
     screen === "games" ||
@@ -127,9 +136,11 @@ export default function ChildWorld() {
     screen === "plan" ||
     screen === "world-Favorites" ||
     subject ||
+    course ||
     topic;
   const title =
     topic?.title ||
+    course?.title ||
     subject?.[1] ||
     {
       games: "Pick a world!",
@@ -174,16 +185,22 @@ export default function ChildWorld() {
             className="kid-back"
             href={
               topic
-                ? "/#world-" + topic.subject
-                : subject
-                  ? "/#games"
-                  : "/#home"
+                ? topic.course
+                  ? "/#course-" + topic.course
+                  : "/#world-" + topic.subject
+                : course
+                  ? "/#world-" + course.subject
+                  : subject
+                    ? "/#games"
+                    : "/#home"
             }
           >
             <ArrowLeft size={22} />
             {topic
               ? "Back to " +
-                (worlds.find((w) => w[0] === topic.subject)?.[1] || "games")
+                (courses.find((c) => c.id === topic.course)?.title ||
+                  worlds.find((w) => w[0] === topic.subject)?.[1] ||
+                  "games")
               : "Back"}
           </a>
         )}
@@ -202,16 +219,22 @@ export default function ChildWorld() {
                       ...(topic.lesson || [topic.description]),
                       topic.tryIt || "",
                     ].join(". ")
-                  : subject || screen === "world-Favorites"
-                    ? `${subject[1]}. Pick a game. ${data.stats
-                        .filter((s) => s.subject === subject[0])
+                  : subject
+                    ? `${subject[1]}. Pick a game. ${courses
+                        .filter((c) => c.subject === subject[0])
+                        .map((c) => c.title)
+                        .join(". ")}. ${data.stats
+                        .filter((s) => s.subject === subject[0] && !s.course)
+                        .slice(0, 8)
                         .map((s) => s.title)
                         .join(". ")}`
-                    : screen === "games"
-                      ? "Pick a world. Numbers. Words and stories. Science lab. Our world. Time machine. Chinese garden. Old favorites."
-                      : screen === "home"
-                        ? `Hi ${data.profile.name}! Tap the big play button, or choose Games. Stars shows your rewards.`
-                        : title,
+                    : course
+                      ? `${course.title}. Choose a path. Starter is a good place to begin. Tap a game to meet its words.`
+                      : screen === "games"
+                        ? "Pick a world. Numbers. Words and stories. Science lab. Our world. Time machine. Chinese garden. Old favorites."
+                        : screen === "home"
+                          ? `Hi ${data.profile.name}! Tap the big play button, or choose Games. Stars shows your rewards.`
+                          : title,
               )
             }
           >
@@ -304,18 +327,34 @@ export default function ChildWorld() {
                 <span>{icon}</span>
                 <strong>{label}</strong>
                 <small>{desc}</small>
+                <ProgressCount
+                  exercises={data.stats.filter((s) => s.subject === id)}
+                  compact
+                />
               </a>
             ))}
             <a href="/#world-Favorites" className="kid-choice butter">
               <span>🏰</span>
               <strong>Old favorites</strong>
               <small>Your first three games</small>
+              <ProgressCount
+                exercises={oldGames.map((_, i) => ({
+                  lastCompletion:
+                    data.legacyProgress?.[["math", "reading", "stories"][i]],
+                }))}
+                compact
+              />
             </a>
           </div>
         )}
         {(subject || screen === "world-Favorites") && (
           <>
             <p className="kid-subtitle">Tap a picture to choose your game.</p>
+            {subject && (
+              <ProgressCount
+                exercises={data.stats.filter((s) => s.subject === subject[0])}
+              />
+            )}
             {subject?.[0] === "History" && (
               <div className="kid-timeline" aria-label="History overview">
                 <span>🦣 Ice Age</span>
@@ -332,36 +371,63 @@ export default function ChildWorld() {
             )}
             <div className="kid-topic-grid">
               {screen === "world-Favorites"
-                ? oldGames.map(([icon, name, url]) => (
-                    <a className="kid-topic" href={url} key={name}>
+                ? oldGames.map(([icon, name, url], i) => (
+                    <a
+                      className={
+                        "kid-topic" +
+                        (data.legacyProgress?.[
+                          ["math", "reading", "stories"][i]
+                        ]
+                          ? " kid-finished"
+                          : "")
+                      }
+                      href={url}
+                      key={name}
+                    >
                       <span>{icon}</span>
                       <div>
                         <h2>{name}</h2>
                         <p>Play your favorite</p>
+                        <CompletionLabel
+                          completion={
+                            data.legacyProgress?.[
+                              ["math", "reading", "stories"][i]
+                            ]
+                          }
+                          timezone={data.timezone}
+                        />
                       </div>
                       <Play size={24} />
                     </a>
                   ))
-                : data.stats
-                    .filter((s) => s.subject === subject[0])
-                    .map((s) => (
-                      <a
-                        className="kid-topic"
-                        href={"/#learn-" + s.id}
-                        key={s.id}
-                      >
-                        <span>{s.icon}</span>
-                        <div>
-                          <h2>{s.title}</h2>
-                          <p>{s.description}</p>
-                          {s.total > 0 && (
-                            <small>★ {s.correct} discoveries</small>
-                          )}
-                        </div>
-                        <Play size={24} />
-                      </a>
+                : courses
+                    .filter((c) => c.subject === subject[0])
+                    .map((c) => (
+                      <CourseCard
+                        key={c.id}
+                        course={c}
+                        exercises={data.stats.filter((s) => s.course === c.id)}
+                      />
                     ))}
             </div>
+            {screen === "world-Favorites" && (
+              <p className="kid-subtitle">
+                Your old in-game stars and unlocks are safe. Dated round results
+                here start with this update.
+              </p>
+            )}
+            {subject && (
+              <>
+                <h2>Quick games</h2>
+                <ExerciseCatalog
+                  key={subject[0]}
+                  exercises={data.stats.filter(
+                    (s) => s.subject === subject[0] && !s.course,
+                  )}
+                  timezone={data.timezone}
+                />
+              </>
+            )}
             {subject && ["Math", "Reading"].includes(subject[0]) && (
               <a className="kid-saved" href="/#world-Favorites">
                 🏰 Looking for your old games? Tap here.
@@ -369,12 +435,29 @@ export default function ChildWorld() {
             )}
           </>
         )}
+        {course && (
+          <ExerciseCatalog
+            key={course.id}
+            exercises={data.stats.filter((s) => s.course === course.id)}
+            timezone={data.timezone}
+            vocabulary
+          />
+        )}
         {topic && (
           <section className="kid-learn">
             <div className="kid-lesson-picture" aria-hidden="true">
               {topic.icon}
             </div>
             {topic.era && <p className="kid-era">{topic.era}</p>}
+            {topic.lastCompletion && (
+              <CompletionLabel
+                completion={topic.lastCompletion}
+                timezone={data.timezone}
+              />
+            )}
+            {topic.kind === "vocabulary" && (
+              <WordLesson key={topic.id} id={topic.id} />
+            )}
             {topic.lesson ? (
               <>
                 <h2>A little discovery first</h2>
@@ -635,7 +718,7 @@ export default function ChildWorld() {
             aria-current={
               screen === id ||
               (id === "games" &&
-                (subject || topic || screen === "world-Favorites"))
+                (subject || course || topic || screen === "world-Favorites"))
                 ? "page"
                 : undefined
             }

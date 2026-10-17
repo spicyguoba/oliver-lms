@@ -1,0 +1,802 @@
+[
+  {
+    "word": "fragile",
+    "meaning": "easily broken or damaged",
+    "example": "We carried the fragile model carefully.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fragment",
+    "meaning": "a small broken part",
+    "example": "A pottery fragment was displayed in the museum.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "framework",
+    "meaning": "a supporting structure or set of ideas",
+    "example": "The model's framework held up the roof.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "freezer",
+    "meaning": "a compartment or machine keeping things below freezing",
+    "example": "The ice trays went into the freezer.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "frustrated",
+    "meaning": "upset because a task or goal is difficult to achieve",
+    "example": "I felt frustrated when the model kept falling over.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fundamental",
+    "meaning": "very important as a foundation",
+    "example": "Listening is fundamental to a good discussion.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fundraiser",
+    "meaning": "an event or activity collecting money for a purpose",
+    "example": "The book sale was a fundraiser for the library.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fungus",
+    "meaning": "an organism such as a mushroom, mold, or yeast",
+    "example": "A mushroom is part of a fungus.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "funnel",
+    "meaning": "a tool with a wide opening and narrow tube for pouring",
+    "example": "The funnel helped us fill the bottle without spilling.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "future",
+    "meaning": "the time that has not happened yet",
+    "example": "We imagined what schools might look like in the future.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gadget",
+    "meaning": "a small useful device",
+    "example": "The gadget helped open tight jar lids.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gallery",
+    "meaning": "a place displaying art",
+    "example": "The gallery showed paintings by local artists.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gap",
+    "meaning": "an empty space between things",
+    "example": "We left a gap between the plants.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gardener",
+    "meaning": "a person who grows and cares for plants",
+    "example": "The gardener checked the soil before watering.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "garlic",
+    "meaning": "a strongly flavored bulb divided into cloves",
+    "example": "We used garlic to flavor the sauce.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gathering",
+    "meaning": "people coming together for a purpose",
+    "example": "The family gathering included stories and games.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "generation",
+    "meaning": "people born and living around the same time",
+    "example": "Stories can pass from one generation to the next.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "generous",
+    "meaning": "willing to share or give",
+    "example": "My generous friend shared her art supplies.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gently",
+    "meaning": "in a soft or careful way",
+    "example": "I gently placed the seedling in the soil.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "genuine",
+    "meaning": "real and not a copy or pretense",
+    "example": "The museum displayed a genuine ancient coin.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "geographer",
+    "meaning": "a person who studies places and relationships between people and environments",
+    "example": "The geographer compared maps of the region.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "geologist",
+    "meaning": "a person who studies Earth and its rocks",
+    "example": "The geologist identified the mineral.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "germ",
+    "meaning": "a tiny organism or agent that can cause illness",
+    "example": "Washing hands helps remove a germ before it spreads.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ginger",
+    "meaning": "a spicy underground stem used in food",
+    "example": "We grated ginger into the soup.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "giraffe",
+    "meaning": "a tall African mammal with a very long neck",
+    "example": "The giraffe reached leaves high in the tree.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "global",
+    "meaning": "connected with the whole world",
+    "example": "The class studied global patterns of climate.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "globe",
+    "meaning": "a spherical model of Earth",
+    "example": "The globe showed oceans and continents.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gloomy",
+    "meaning": "dark or sad in mood",
+    "example": "The gloomy sky brightened after the rain.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "glossy",
+    "meaning": "smooth and shiny",
+    "example": "The book had a glossy cover.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "glyph",
+    "meaning": "a written or carved symbol",
+    "example": "The museum label explained the ancient glyph.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "goldsmith",
+    "meaning": "a person who makes or repairs objects from gold",
+    "example": "The goldsmith used delicate tools.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "governor",
+    "meaning": "the head of a state government in the United States",
+    "example": "The governor works with the state legislature.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "graceful",
+    "meaning": "moving in a smooth and pleasing way",
+    "example": "The graceful swan glided across the lake.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "grammar",
+    "meaning": "the rules for how words work together",
+    "example": "Grammar helps us make clear sentences.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "grandparent",
+    "meaning": "a parent of your mother or father",
+    "example": "My grandparent taught me a new card game.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "greenhouse",
+    "meaning": "a transparent building used for growing plants",
+    "example": "The greenhouse kept seedlings warm.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "grid",
+    "meaning": "a pattern of crossing lines forming squares or rectangles",
+    "example": "The grid helped us draw the map.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "grocer",
+    "meaning": "a person who sells food and household goods",
+    "example": "The grocer arranged fruit on the shelf.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "guardian",
+    "meaning": "a person legally responsible for caring for someone",
+    "example": "A parent or guardian signed the permission note.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "guidance",
+    "meaning": "advice or help about what to do",
+    "example": "The librarian's guidance helped us find good sources.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gymnasium",
+    "meaning": "a room or building for exercise and sports",
+    "example": "We played a team game in the gymnasium.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gymnast",
+    "meaning": "an athlete who performs balancing and acrobatic exercises",
+    "example": "The gymnast practiced on a low beam.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hail",
+    "meaning": "balls or lumps of ice falling from clouds",
+    "example": "We stayed indoors during the hail.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hairdresser",
+    "meaning": "a person who cuts and styles hair",
+    "example": "The hairdresser combed the hair gently.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "half",
+    "meaning": "one of two equal parts",
+    "example": "I colored half of the circle.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hallway",
+    "meaning": "a passage connecting rooms",
+    "example": "The hallway led to the classroom.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hammer",
+    "meaning": "a tool with a heavy head used for striking",
+    "example": "An adult used a hammer to drive the nail.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "handle",
+    "meaning": "a part made for holding or carrying something",
+    "example": "I held the bag by its handle.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "happy",
+    "meaning": "feeling pleased or joyful",
+    "example": "I felt happy when my friend arrived.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "harbor",
+    "meaning": "a sheltered place where boats can stay",
+    "example": "The fishing boats returned to the harbor.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hardware",
+    "meaning": "the physical parts of a computer or machine",
+    "example": "The keyboard is computer hardware.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hazard",
+    "meaning": "something that could cause harm",
+    "example": "The loose cable was a tripping hazard.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hazelnut",
+    "meaning": "a small round nut with a hard shell",
+    "example": "A hazelnut fell beneath the tree.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "headmaster",
+    "meaning": "a title for the head of some schools",
+    "example": "The headmaster welcomed families to the concert.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "headphones",
+    "meaning": "a pair of small speakers worn over or in the ears",
+    "example": "I used headphones at a comfortable volume.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hedgehog",
+    "meaning": "a small mammal with spines on its back",
+    "example": "The hedgehog curled into a prickly ball.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hidden",
+    "meaning": "kept out of sight",
+    "example": "The hidden key was under a flowerpot in the story.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hieroglyph",
+    "meaning": "a picturelike symbol in an ancient writing system",
+    "example": "The hieroglyph was carved on stone.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "highway",
+    "meaning": "a main road for travel between places",
+    "example": "The highway connected two cities.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hiker",
+    "meaning": "a person who takes long walks outdoors",
+    "example": "The hiker carried water and a map.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hill",
+    "meaning": "a raised area of land smaller than a mountain",
+    "example": "We climbed the grassy hill.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hinge",
+    "meaning": "a joint that lets a door or lid swing",
+    "example": "The hinge let the box lid open smoothly.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hive",
+    "meaning": "a place where a group of bees lives",
+    "example": "The bees flew back to their hive.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hoe",
+    "meaning": "a long-handled tool used for loosening soil or removing weeds",
+    "example": "The hoe helped clear weeds between rows.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hole",
+    "meaning": "an opening in or through something",
+    "example": "The button went through the hole.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hollow",
+    "meaning": "having an empty space inside",
+    "example": "The hollow log became a hiding place for insects.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "homeless",
+    "meaning": "having no home to live in",
+    "example": "The shelter helps homeless families find a safe place.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "honest",
+    "meaning": "telling the truth and acting fairly",
+    "example": "I was honest about forgetting my homework.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "honey",
+    "meaning": "a sweet substance made by bees from nectar",
+    "example": "A little honey sweetened the dressing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "honeydew",
+    "meaning": "a melon often with smooth rind and pale green flesh",
+    "example": "We cut the honeydew into cubes.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hook",
+    "meaning": "a curved piece used for hanging or catching something",
+    "example": "I hung my coat on the hook.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hop",
+    "meaning": "to jump on one foot or with both feet together",
+    "example": "We hop along the playground line.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hope",
+    "meaning": "to want something to happen",
+    "example": "I hope the seeds grow into tall flowers.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hopeful",
+    "meaning": "feeling that something good may happen",
+    "example": "We were hopeful that the seeds would sprout.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "horizon",
+    "meaning": "the line where the sky seems to meet land or water",
+    "example": "We watched the Sun disappear below the horizon.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "horse",
+    "meaning": "a large hoofed mammal used for riding",
+    "example": "The horse trotted around the field.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hose",
+    "meaning": "a flexible tube used for carrying water",
+    "example": "We rolled up the hose after watering.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "host",
+    "meaning": "a person who welcomes guests or organizes an event",
+    "example": "The host welcomed everyone to the reading party.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hot",
+    "meaning": "having a high temperature",
+    "example": "The hot soup needs time to cool.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "housing",
+    "meaning": "homes provided or available for people",
+    "example": "The town discussed affordable housing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "however",
+    "meaning": "a word introducing an idea that differs from what came before",
+    "example": "The sky was cloudy; however, we still enjoyed our walk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "humble",
+    "meaning": "not boasting about your abilities or achievements",
+    "example": "The humble winner thanked the whole team.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hundred",
+    "meaning": "ten groups of ten",
+    "example": "One hundred centimeters make one meter.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hunger",
+    "meaning": "the feeling of needing food",
+    "example": "My hunger grew after our long walk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hungry",
+    "meaning": "feeling a need for food",
+    "example": "We were hungry after playing outside.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hut",
+    "meaning": "a small simple shelter",
+    "example": "The story described a hut beside the river.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hydrogen",
+    "meaning": "the lightest element, found with oxygen in water",
+    "example": "Hydrogen is one of the elements in water.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hyperbole",
+    "meaning": "an exaggerated statement used for effect",
+    "example": "I waited a million years is hyperbole.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hyphen",
+    "meaning": "a short mark joining words or word parts",
+    "example": "The phrase child-friendly uses a hyphen.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "iceberg",
+    "meaning": "a large piece of floating ice broken from land ice",
+    "example": "Most of the iceberg was below the water.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "icon",
+    "meaning": "a small picture representing an action or thing",
+    "example": "The star icon opened the rewards page.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "idea",
+    "meaning": "a thought or plan",
+    "example": "My friend had an idea for a new game.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "identical",
+    "meaning": "exactly the same",
+    "example": "The two cards had identical pictures.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "identity",
+    "meaning": "the qualities and connections that make someone who they are",
+    "example": "Language can be one part of a person's identity.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "idiom",
+    "meaning": "a phrase whose meaning differs from its separate words",
+    "example": "A piece of cake is an idiom meaning something easy.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "idle",
+    "meaning": "not working or being used",
+    "example": "The idle machine stayed switched off.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "image",
+    "meaning": "a picture or visual representation",
+    "example": "The image showed the plant's roots.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "imaginary",
+    "meaning": "existing only in the mind",
+    "example": "The story took place in an imaginary forest.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "imagine",
+    "meaning": "to form a picture or idea in your mind",
+    "example": "I imagine a city floating above the clouds.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "imitation",
+    "meaning": "something made to resemble something else",
+    "example": "The model used imitation stone made from painted cardboard.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  }
+]

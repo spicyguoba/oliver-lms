@@ -1,0 +1,802 @@
+[
+  {
+    "word": "caregiver",
+    "meaning": "a person caring for someone who needs support",
+    "example": "The caregiver helped the child feel comfortable.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "caretaker",
+    "meaning": "a person looking after a place or someone needing care",
+    "example": "The caretaker kept the school grounds tidy.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cartographer",
+    "meaning": "a person who makes maps",
+    "example": "The cartographer added rivers and roads to the map.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "carton",
+    "meaning": "a container often made from coated paperboard",
+    "example": "The milk carton stood in the refrigerator.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cashew",
+    "meaning": "an edible kidney-shaped seed",
+    "example": "We added a cashew to the snack bowl.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cauliflower",
+    "meaning": "a vegetable with a compact flower head often white",
+    "example": "We roasted cauliflower for dinner.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "caution",
+    "meaning": "care taken to avoid danger or mistakes",
+    "example": "We used caution near the wet steps.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cedar",
+    "meaning": "a conifer valued for its wood and often fragrant foliage",
+    "example": "The cedar grew near the garden fence.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "celebrate",
+    "meaning": "to do something enjoyable for a special occasion",
+    "example": "We celebrate the end of our reading challenge.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "celebration",
+    "meaning": "an event marking something special",
+    "example": "Our class held a celebration after finishing the project.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "celery",
+    "meaning": "a vegetable with long crisp stalks",
+    "example": "The celery made a crunchy snack.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cement",
+    "meaning": "a powder that binds materials together when mixed with water",
+    "example": "The builders used cement in the concrete mixture.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "channel",
+    "meaning": "a passage through which water flows or boats travel",
+    "example": "The boat followed the marked channel.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "charity",
+    "meaning": "an organization or act that helps people in need",
+    "example": "The charity collected warm coats.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "checkered",
+    "meaning": "having a pattern of alternating squares",
+    "example": "The board had a checkered pattern.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cheerful",
+    "meaning": "happy and positive",
+    "example": "The cheerful greeting made the visitor feel welcome.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chef",
+    "meaning": "a professional cook",
+    "example": "The chef prepared a vegetable soup.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chemical",
+    "meaning": "connected with substances and the way they change or interact",
+    "example": "Rusting is a chemical change.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chestnut",
+    "meaning": "a nut growing inside a prickly case",
+    "example": "The chestnut fell from the tree.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chickpea",
+    "meaning": "a round edible seed from a legume",
+    "example": "We mashed a chickpea into the hummus.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chisel",
+    "meaning": "a tool with a sharp edge used for shaping hard material",
+    "example": "The craftsperson used a chisel to shape the wood.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chopsticks",
+    "meaning": "a pair of slender sticks used for picking up food",
+    "example": "I practiced using chopsticks with small pieces of food.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chronological",
+    "meaning": "arranged in the order events happened",
+    "example": "The timeline showed events in chronological order.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chunk",
+    "meaning": "a thick solid piece",
+    "example": "A chunk of melon filled the cup.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cilantro",
+    "meaning": "the fresh leaves of the coriander plant used as an herb",
+    "example": "We added cilantro to the vegetable dish.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cinema",
+    "meaning": "a place where films are shown",
+    "example": "The cinema showed a nature film.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cinnamon",
+    "meaning": "an aromatic spice made from tree bark",
+    "example": "The cinnamon gave the oatmeal a warm flavor.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "claim",
+    "meaning": "a statement that someone says is true",
+    "example": "We checked the evidence for the claim.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clearly",
+    "meaning": "in a way that is easy to see, hear, or understand",
+    "example": "Please speak clearly when you explain the rules.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "climber",
+    "meaning": "a person who climbs rocks, mountains, or other structures",
+    "example": "The climber checked the safety equipment.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clipboard",
+    "meaning": "a board with a clip for holding paper while writing",
+    "example": "We used a clipboard during the nature walk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clue",
+    "meaning": "information that helps you solve a problem",
+    "example": "The muddy footprints were a clue in the story.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clumsy",
+    "meaning": "moving without much care or coordination",
+    "example": "My clumsy movement knocked over the empty cup.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cluster",
+    "meaning": "a close group of things",
+    "example": "A cluster of flowers grew beside the path.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "code",
+    "meaning": "instructions written for a computer or a system of symbols",
+    "example": "The code made the game show the next question.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coil",
+    "meaning": "a series of loops or spirals",
+    "example": "We wound the rope into a coil.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "collaboration",
+    "meaning": "working together to create or complete something",
+    "example": "Our collaboration produced a colorful mural.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "colleague",
+    "meaning": "a person working with another in the same job or organization",
+    "example": "The teacher shared ideas with a colleague.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "collect",
+    "meaning": "to gather things together",
+    "example": "We collect fallen leaves for our nature table.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "collection",
+    "meaning": "a group of things gathered together",
+    "example": "My collection included shells from several beaches.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "colon",
+    "meaning": "a mark that often introduces a list or explanation",
+    "example": "The colon introduced a list of supplies.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "colorful",
+    "meaning": "having many or bright colors",
+    "example": "The colorful mural filled the classroom wall.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "comfortable",
+    "meaning": "pleasant and free from discomfort",
+    "example": "The reading chair was comfortable.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "command",
+    "meaning": "a sentence telling someone to do something",
+    "example": "Please close the door is a polite command.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "committee",
+    "meaning": "a small group chosen to organize or decide something",
+    "example": "Our class committee planned the book fair.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "common",
+    "meaning": "found or happening often",
+    "example": "Dandelions are common in our neighborhood.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "companionship",
+    "meaning": "the comfort of spending time with others",
+    "example": "The pet offered companionship to the family.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "comparison",
+    "meaning": "a look at how things are alike or different",
+    "example": "Our comparison showed that the oak leaf was wider.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "complex",
+    "meaning": "made of many connected parts",
+    "example": "The complex model took several days to build.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compliment",
+    "meaning": "a kind statement showing appreciation",
+    "example": "I gave my friend a compliment about her drawing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "component",
+    "meaning": "one part of a larger system",
+    "example": "The battery was one component of the circuit.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "composer",
+    "meaning": "a person who writes music",
+    "example": "The composer created a song for the school choir.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compost",
+    "meaning": "decayed organic material used to improve soil",
+    "example": "We added compost to the garden bed.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "comprehend",
+    "meaning": "to understand",
+    "example": "I reread the paragraph to comprehend its meaning.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compression",
+    "meaning": "a pushing or squeezing force",
+    "example": "The model column stayed strong under compression.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "computer",
+    "meaning": "an electronic device that processes information using instructions",
+    "example": "We used the computer to organize our notes.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "concentration",
+    "meaning": "careful attention kept on one task",
+    "example": "The detailed puzzle needed concentration.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conclude",
+    "meaning": "to decide something after considering information",
+    "example": "We conclude that the stronger bridge held more weight.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "concrete",
+    "meaning": "a building material made with cement, water, and stone or sand",
+    "example": "The path was made from concrete.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "condense",
+    "meaning": "to change from gas to liquid",
+    "example": "Water vapor can condense on a cool window.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "condition",
+    "meaning": "a requirement that determines what happens",
+    "example": "The game checked a condition before opening the next level.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "confirm",
+    "meaning": "to establish that something is true or agreed",
+    "example": "The second test helped confirm our result.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "confused",
+    "meaning": "unable to understand something clearly",
+    "example": "I felt confused until I reread the instructions.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "connection",
+    "meaning": "a link allowing things to work or communicate together",
+    "example": "The connection let the tablet load the page.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consequence",
+    "meaning": "a result of an action",
+    "example": "One consequence of forgetting to water the plant was drooping leaves.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conservation",
+    "meaning": "careful protection and use of natural resources",
+    "example": "Water conservation helps leave more water for people and nature.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consider",
+    "meaning": "to think carefully about something",
+    "example": "We consider several ideas before choosing.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "constant",
+    "meaning": "staying the same or happening without interruption",
+    "example": "We kept the water at a constant temperature.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "construct",
+    "meaning": "to build",
+    "example": "We construct a bridge using paper and tape.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "construction",
+    "meaning": "the process of building something",
+    "example": "The library's construction took several months.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consult",
+    "meaning": "to look at a source or ask an informed person",
+    "example": "We consult the atlas to find the island.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consume",
+    "meaning": "to use up or eat something",
+    "example": "Animals consume food to get energy.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consumer",
+    "meaning": "a person who buys or uses goods or services",
+    "example": "A consumer can compare products before buying.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "container",
+    "meaning": "something used to hold or carry things",
+    "example": "The container kept the seeds dry.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "content",
+    "meaning": "satisfied and comfortable",
+    "example": "The cat looked content in the sunny window.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contents",
+    "meaning": "a list of a book's sections with their page numbers",
+    "example": "The contents helped me find the chapter about rivers.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "continue",
+    "meaning": "to keep doing something",
+    "example": "We continue reading until the chapter ends.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contraction",
+    "meaning": "a shortened form of words with missing letters marked by an apostrophe",
+    "example": "Don't is a contraction of do not.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contribution",
+    "meaning": "something given to help a shared effort",
+    "example": "Each person's contribution improved the project.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "control",
+    "meaning": "a comparison kept under usual or unchanged conditions in a test",
+    "example": "The control plant stayed in the usual light.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "convenient",
+    "meaning": "easy to use or suited to a need",
+    "example": "The library's nearby location was convenient.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conversation",
+    "meaning": "a talk between people",
+    "example": "Our conversation gave me new ideas for my story.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cooperation",
+    "meaning": "working together toward a goal",
+    "example": "Cooperation made the difficult task easier.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coordinator",
+    "meaning": "a person helping different parts of work fit together",
+    "example": "The coordinator matched volunteers with tasks.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "corridor",
+    "meaning": "a long passage inside a building",
+    "example": "We walked quietly along the corridor.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "counselor",
+    "meaning": "a trained person who offers guidance or support",
+    "example": "The school counselor helped us talk through a problem.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "count",
+    "meaning": "to find how many things there are",
+    "example": "We count the shells in the basket.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "counter",
+    "meaning": "a flat surface used for preparing food or serving",
+    "example": "We placed the mixing bowl on the counter.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "county",
+    "meaning": "a local government area within a state or country",
+    "example": "Our county maintains several parks.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "courier",
+    "meaning": "a person or service carrying messages or packages",
+    "example": "The courier brought the parcel to the office.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "course",
+    "meaning": "a set of lessons on a subject",
+    "example": "The art course included painting and sculpture.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "court",
+    "meaning": "a place or system where legal cases are decided",
+    "example": "The class learned what happens in a court.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cousin",
+    "meaning": "a child of your aunt or uncle",
+    "example": "My cousin visited during the school holiday.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cover",
+    "meaning": "the outside part of a book",
+    "example": "The book cover showed a bright red kite.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cow",
+    "meaning": "an adult female bovine often kept for milk",
+    "example": "The cow ate grass in the pasture.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cozy",
+    "meaning": "warm, comfortable, and pleasant",
+    "example": "We made a cozy reading corner with cushions.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crab",
+    "meaning": "a water animal with a hard shell and claws",
+    "example": "The crab moved sideways across the sand.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crack",
+    "meaning": "a narrow split or opening",
+    "example": "A small crack appeared in the dry soil.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cracker",
+    "meaning": "a thin crisp baked food often savory",
+    "example": "I put cheese on a cracker.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cranberry",
+    "meaning": "a small tart red berry",
+    "example": "We mixed a dried cranberry into the snack.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  }
+]

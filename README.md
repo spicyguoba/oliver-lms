@@ -6,9 +6,12 @@ Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the
 
 ## What works
 
+- Completion cards show the latest finished score/date with a green shade and text badge; world and vocabulary category cards show total/finished/left. Replays do not inflate completed counts. Abandoned rounds do not count.
+- 377 native exercise cards: 320 vocabulary meaning/sentence activities (2,000 English and 1,200 Chinese words with examples), sixteen additional procedural math activities, thirty-five discovery topics, and the six original skills. Word packs have twenty flashcards and short five-question rounds, with Starter/Growing/Challenge filters, search, paging, pinyin, and Mandarin read aloud. See [word-bank provenance and practice limits](content/VOCABULARY.md).
+
 - Child dashboard, daily practice suggestions, star wallet, reward requests, parent approvals, recurring workbook/reading quests, learner profile and parent settings.
 - A child-first home with large Play, Games, and Stars controls, picture worlds, a consistent Home button, read-aloud support, and participation stickers. Parent reports retain their detailed view.
-- 27 server-graded activities: the six original LMS skills plus 21 science, geography, and history adventures (210 new questions). Includes world/country/culture introductions, 50 states in five small trails, Virginia, Ice Age/early people, ancient cities, Middle Ages, Qin/Han/Tang/Song/Ming, Native nations, U.S. founding, past presidents, and freedom/civil rights. See [content sources and teaching choices](content/SOURCES.md).
+- Science, geography, and history now have thirty-five discovery topics and 322 fixed question variants, including world/country/culture introductions, 50 states in five trails, Virginia, Ice Age/early people, ancient cities, Middle Ages, selected Chinese dynasties, Native nations, U.S. founding, past presidents, civil rights, inventions, plant life, water, matter, and light/sound. See [content sources and teaching choices](content/SOURCES.md).
 - Parent reports retain every first answer, including wrong answers, server elapsed time, browser-reported active time/help/tab changes and parent-started observed mode. Legacy browser-reported events are separate from server-graded insights.
 - Copies of all three original games at `/games/math/`, `/reading/`, `/stories/`, with their original storage keys and cloud save synchronization. Their own stars/unlocks remain separate from the LMS wallet.
 - Story pass requires 4/5. Only three different consecutive passed stories unlock the next rank. Failure clears the current streak; previously earned unlocks remain.
@@ -38,7 +41,7 @@ Without `DATABASE_URL`, development uses ignored `.data/family.json` with serial
 5. Sign in, import the private material manifest, then set a new parent password. For initial setup only, run `materials:sync -- --initial-plan` against the hosted URL with `LMS_URL` and `LMS_ADMIN_PASSWORD` in your local environment. The first run adds five material-based quests; later runs never overwrite an existing plan.
 6. Verify login, answer a question, reload, complete a round, and read the result from another signed-in device. Test a deployment restart/redeploy before depending on cloud persistence.
 
-PostgreSQL schema initialization is additive and runs automatically. Version 1 uses a single family row with JSONB data. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves one family, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
+PostgreSQL schema initialization is additive and runs automatically. Version 2 uses a single family row with JSONB data and adds a separate client-reported legacy completion log to version 1. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves one family, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
 
 ## Materials and future additions
 

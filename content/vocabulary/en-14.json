@@ -1,0 +1,802 @@
+[
+  {
+    "word": "appointment",
+    "meaning": "an arranged meeting at a particular time",
+    "example": "We had an appointment to meet the teacher.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "appreciate",
+    "meaning": "to recognize the value of something or feel grateful",
+    "example": "I appreciate my friend's help with the project.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "apprentice",
+    "meaning": "a person learning a trade through guided work",
+    "example": "The apprentice learned from the experienced carpenter.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "appropriate",
+    "meaning": "suited to a situation or purpose",
+    "example": "We chose appropriate tools for the experiment.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "apricot",
+    "meaning": "a small orange fruit with a hard pit",
+    "example": "The ripe apricot was soft and sweet.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "aquarium",
+    "meaning": "a tank or place displaying water animals",
+    "example": "The aquarium had a tank of colorful fish.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "arch",
+    "meaning": "a curved structure spanning an opening",
+    "example": "The bridge had a stone arch.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "archaeology",
+    "meaning": "the study of past people through objects and remains",
+    "example": "Archaeology helps us learn how people lived long ago.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "architect",
+    "meaning": "a person trained to design buildings",
+    "example": "The architect drew plans for the new school.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "architecture",
+    "meaning": "the design and construction of buildings",
+    "example": "We studied the architecture of the old station.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "arena",
+    "meaning": "a place with a central performance or sports area",
+    "example": "The arena hosted a skating event.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "argument",
+    "meaning": "reasons given to support a view",
+    "example": "Her argument explained why the park needed more trees.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "around",
+    "meaning": "on every side of something",
+    "example": "We sat around the table.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "arrival",
+    "meaning": "the act or time of reaching a place",
+    "example": "Our arrival at the campsite was before sunset.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "arrive",
+    "meaning": "to reach a place",
+    "example": "We arrive at school before the bell.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "arrogant",
+    "meaning": "acting as if you are better than other people",
+    "example": "The arrogant character learned to listen to others.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "art",
+    "meaning": "creative work such as painting, drawing, or sculpture",
+    "example": "We used leaves to make art.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "artichoke",
+    "meaning": "a plant whose flower bud is eaten as a vegetable",
+    "example": "The artichoke had thick overlapping leaves.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "article",
+    "meaning": "a piece of writing about a subject",
+    "example": "The article explained how bees communicate.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "artificial",
+    "meaning": "made by people rather than occurring naturally",
+    "example": "The model used an artificial light source.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "artist",
+    "meaning": "a person who creates art",
+    "example": "The artist painted a river landscape.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ash",
+    "meaning": "powder left after something burns",
+    "example": "The cooled ash remained in the fireplace.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "asparagus",
+    "meaning": "a vegetable grown for its young shoots",
+    "example": "The asparagus tips were tender.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assemble",
+    "meaning": "to put parts together",
+    "example": "We assemble the model by following the instructions.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assembly",
+    "meaning": "a group meeting for a shared purpose",
+    "example": "The school assembly included music and announcements.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assess",
+    "meaning": "to judge something using information",
+    "example": "We assess whether the bridge is strong enough.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assistance",
+    "meaning": "help with a task or problem",
+    "example": "I asked for assistance carrying the model.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assistant",
+    "meaning": "a person who helps someone with work",
+    "example": "The assistant prepared the art supplies.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "association",
+    "meaning": "an organized group with a shared purpose",
+    "example": "The neighborhood association planned a cleanup.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "assume",
+    "meaning": "to accept something as true before checking it",
+    "example": "We should not assume the answer without evidence.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "astonished",
+    "meaning": "very greatly surprised",
+    "example": "The children were astonished by the magician's trick.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "astronomer",
+    "meaning": "a person who studies objects and events in space",
+    "example": "The astronomer used a telescope to observe the planet.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "athlete",
+    "meaning": "a person trained or taking part in sports",
+    "example": "The athlete practiced regularly.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "atlas",
+    "meaning": "a book or collection of maps",
+    "example": "We used an atlas to locate the country.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "atom",
+    "meaning": "a tiny unit of an element",
+    "example": "An atom is too small to see with an ordinary microscope.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "attach",
+    "meaning": "to join something to something else",
+    "example": "We attach the label to the box.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "attention",
+    "meaning": "the act of focusing your mind on something",
+    "example": "We gave our full attention to the instructions.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "attic",
+    "meaning": "a space just below a building's roof",
+    "example": "The old trunk was stored in the attic.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "audio",
+    "meaning": "recorded or transmitted sound",
+    "example": "The audio helped us hear the Chinese word.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "auditorium",
+    "meaning": "a large room for an audience",
+    "example": "The school concert filled the auditorium.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "aunt",
+    "meaning": "a sister of a parent or a related adult through marriage",
+    "example": "My aunt brought a book for us to read.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "automatic",
+    "meaning": "working by itself once set in motion",
+    "example": "The automatic timer turned the lamp off.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "autumn",
+    "meaning": "the season between summer and winter",
+    "example": "Leaves turn many colors in autumn.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "available",
+    "meaning": "ready to be used or obtained",
+    "example": "Several books about whales were available at the library.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "avenue",
+    "meaning": "a broad street, sometimes lined with trees",
+    "example": "The avenue led to the town square.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "avocado",
+    "meaning": "a fruit with creamy flesh and a large seed",
+    "example": "We mashed the avocado for a spread.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "aware",
+    "meaning": "knowing or noticing something",
+    "example": "We became aware of birds singing outside.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "awful",
+    "meaning": "very unpleasant or bad",
+    "example": "The spoiled food had an awful smell.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "awkward",
+    "meaning": "difficult to use or making movement uncomfortable",
+    "example": "The large box was awkward to carry.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "axle",
+    "meaning": "a shaft around which a wheel turns",
+    "example": "The wheel turned around its axle.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "backup",
+    "meaning": "an extra copy kept in case the original is lost",
+    "example": "We kept a backup of our project.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bacterium",
+    "meaning": "a tiny single-celled organism without a nucleus",
+    "example": "A bacterium can be seen with a powerful microscope.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bag",
+    "meaning": "a flexible container for carrying things",
+    "example": "I packed my bag for school.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bake",
+    "meaning": "to cook food in an oven",
+    "example": "We bake bread on Saturday morning.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "baker",
+    "meaning": "a person who makes bread and other baked foods",
+    "example": "The baker shaped the dough into loaves.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "balance",
+    "meaning": "a tool comparing masses using two sides",
+    "example": "The balance showed that the two objects had equal mass.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "balcony",
+    "meaning": "a raised outdoor platform attached to a building",
+    "example": "Plants grew in pots on the balcony.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ball",
+    "meaning": "a round object used in games",
+    "example": "We tossed the ball across the playground.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bamboo",
+    "meaning": "a fast-growing grass with hard hollow stems",
+    "example": "The bamboo formed a tall green screen.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "banana",
+    "meaning": "a long curved fruit with a peel",
+    "example": "I sliced a banana onto my cereal.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "band",
+    "meaning": "a group of musicians who play together",
+    "example": "The school band played at the concert.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "barber",
+    "meaning": "a person who cuts hair",
+    "example": "The barber trimmed the child's hair.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bargain",
+    "meaning": "something bought at a favorable price",
+    "example": "The used book was a bargain.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bark",
+    "meaning": "the protective outer layer of woody stems and roots",
+    "example": "The tree's bark felt rough.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "barley",
+    "meaning": "a cereal grain used in foods and drinks",
+    "example": "We added barley to the vegetable soup.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "barn",
+    "meaning": "a farm building used for storage or animals",
+    "example": "The barn held hay and tools.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "barrier",
+    "meaning": "something preventing movement or access",
+    "example": "A barrier kept visitors away from the repair work.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "base",
+    "meaning": "the bottom supporting part of something",
+    "example": "A wide base made the tower steadier.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "basement",
+    "meaning": "a level of a building partly or fully below ground",
+    "example": "The basement had shelves for storage.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "basic",
+    "meaning": "forming the simplest or most necessary part",
+    "example": "We learned basic map symbols first.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "basil",
+    "meaning": "a fragrant herb often used in cooking",
+    "example": "We added basil leaves to the salad.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "basket",
+    "meaning": "a container made of woven material",
+    "example": "The basket held apples from the market.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bat",
+    "meaning": "a flying mammal that is often active at night",
+    "example": "A bat flew above the pond at dusk.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bath",
+    "meaning": "washing your body in a tub of water",
+    "example": "The muddy puppy needed a bath.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bathroom",
+    "meaning": "a room with washing facilities and usually a toilet",
+    "example": "We washed our hands in the bathroom.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "batter",
+    "meaning": "a pourable mixture used for pancakes or cakes",
+    "example": "We poured the batter into the pan with adult help.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "battery",
+    "meaning": "a device storing chemical energy that can provide electrical energy",
+    "example": "The battery powered the small flashlight.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beach",
+    "meaning": "a shore covered with sand or small stones",
+    "example": "We collected empty shells on the beach.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beak",
+    "meaning": "the hard mouthpart of a bird",
+    "example": "The bird held a twig in its beak.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beaker",
+    "meaning": "a wide container used in laboratory work",
+    "example": "We poured water into the beaker.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beam",
+    "meaning": "a long supporting piece in a structure",
+    "example": "The beam held up the roof.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bean",
+    "meaning": "an edible seed that grows inside a pod",
+    "example": "We planted a bean in a small pot.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bear",
+    "meaning": "a large furry mammal with strong paws",
+    "example": "The bear searched for berries in the forest.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "because",
+    "meaning": "for the reason that",
+    "example": "We wore coats because the wind was cold.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bedroom",
+    "meaning": "a room used for sleeping",
+    "example": "I put my book beside the bed in my bedroom.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bee",
+    "meaning": "a flying insect that gathers nectar and pollen",
+    "example": "The bee visited a yellow flower.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beet",
+    "meaning": "a root vegetable often deep red",
+    "example": "The beet colored the cutting board red.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beetle",
+    "meaning": "an insect with hard outer wing cases",
+    "example": "The beetle crawled under a leaf.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "before",
+    "meaning": "earlier than something",
+    "example": "We packed our bags before breakfast.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "begin",
+    "meaning": "to start doing or happening",
+    "example": "We begin our lesson with a question.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beginner",
+    "meaning": "someone starting to learn a skill",
+    "example": "The beginner practiced simple rhythms first.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "behind",
+    "meaning": "at the back of something",
+    "example": "The bicycle is behind the shed.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "below",
+    "meaning": "in a lower place than something",
+    "example": "The shoes are below the coat hooks.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bend",
+    "meaning": "to make something curved or angled",
+    "example": "We bend the pipe cleaner into a circle.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "benefit",
+    "meaning": "a helpful or good result",
+    "example": "One benefit of reading is learning new words.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "berry",
+    "meaning": "a small soft juicy fruit",
+    "example": "A ripe berry grew on the bush.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "beside",
+    "meaning": "at the side of something",
+    "example": "I sat beside my friend.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "best",
+    "meaning": "better than all the others",
+    "example": "That was my best drawing so far.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "between",
+    "meaning": "in the space separating two things",
+    "example": "The library is between the school and the park.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "bill",
+    "meaning": "a paper note used as money or a request for payment",
+    "example": "We used a five-dollar bill to pay.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  }
+]

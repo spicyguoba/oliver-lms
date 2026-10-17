@@ -1,0 +1,802 @@
+[
+  {
+    "word": "dissolve",
+    "meaning": "to mix into a liquid so the particles spread evenly",
+    "example": "Sugar can dissolve in water.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "distance",
+    "meaning": "how far apart things are or how far something travels",
+    "example": "We measured the distance from the door to the table.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "district",
+    "meaning": "an area used for administration or another purpose",
+    "example": "The school district includes several schools.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diversity",
+    "meaning": "the presence of many different kinds",
+    "example": "The forest's diversity included many plants and animals.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "document",
+    "meaning": "a written or digital source of information",
+    "example": "The old document described the town's founding.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dollar",
+    "meaning": "a unit of money used in the United States and some other countries",
+    "example": "One dollar equals one hundred cents in the United States.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dolphin",
+    "meaning": "a water mammal with a long snout and curved dorsal fin",
+    "example": "The dolphin swam beside the boat.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dome",
+    "meaning": "a rounded roof or ceiling",
+    "example": "The building had a large dome.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "domestic",
+    "meaning": "connected with the home or animals kept by people",
+    "example": "A domestic cat may live with a family.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "donation",
+    "meaning": "something given to help a person or cause",
+    "example": "The donation supplied books for the school.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "download",
+    "meaning": "to copy data from another system to a device",
+    "example": "We download the worksheet before printing it.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dreamer",
+    "meaning": "a person imagining possibilities or having dreams",
+    "example": "The dreamer imagined a garden on the Moon.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "driveway",
+    "meaning": "a short road leading to a building or garage",
+    "example": "We kept the driveway clear.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dumpling",
+    "meaning": "a small piece of dough cooked with or around a filling",
+    "example": "We folded a vegetable dumpling together.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "duplicate",
+    "meaning": "an extra copy of something",
+    "example": "We kept a duplicate of the instructions.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "durability",
+    "meaning": "the ability to last through use",
+    "example": "We tested the durability of the bag's handles.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "duration",
+    "meaning": "the length of time something lasts",
+    "example": "We recorded the duration of each test.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dusk",
+    "meaning": "the dim light after sunset and before night",
+    "example": "We returned home at dusk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dwelling",
+    "meaning": "a place where someone lives",
+    "example": "The exhibit showed an ancient dwelling.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "earthquake",
+    "meaning": "shaking of the ground caused by sudden movement in Earth's crust",
+    "example": "The class practiced what to do during an earthquake.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "easily",
+    "meaning": "without much difficulty",
+    "example": "The new handle let me open the box easily.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "echo",
+    "meaning": "a reflected sound heard again",
+    "example": "We heard an echo in the large empty hall.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ecologist",
+    "meaning": "a person who studies relationships between living things and their environments",
+    "example": "The ecologist studied the pond ecosystem.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "economical",
+    "meaning": "using money or resources carefully",
+    "example": "Refilling the bottle was an economical choice.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "edition",
+    "meaning": "a particular published version of a book or other work",
+    "example": "The new edition included better maps.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "editor",
+    "meaning": "a person who checks and improves written or other work",
+    "example": "The editor helped make the article clearer.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "education",
+    "meaning": "the process of learning and teaching",
+    "example": "Education can happen at school, at home, and in the community.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "educator",
+    "meaning": "a person who teaches or helps others learn",
+    "example": "The museum educator led our activity.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "effect",
+    "meaning": "a result of something",
+    "example": "One effect of the rain was a full pond.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "effective",
+    "meaning": "successful in achieving the intended result",
+    "example": "The clear sign was effective at showing the way.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "efficient",
+    "meaning": "using little wasted time, energy, or material",
+    "example": "The efficient design used fewer pieces.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "effort",
+    "meaning": "the work or energy used to do something",
+    "example": "Learning a new skill takes effort.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "eggplant",
+    "meaning": "a fruit often used as a vegetable with smooth purple skin",
+    "example": "The eggplant was roasted until soft.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elastic",
+    "meaning": "able to stretch and return toward its original shape",
+    "example": "The elastic band held the cards together.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elasticity",
+    "meaning": "the ability to return toward an original shape after stretching or squeezing",
+    "example": "The rubber band's elasticity let it spring back.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elderly",
+    "meaning": "having reached an advanced age",
+    "example": "We offered seats to the elderly visitors.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "electrician",
+    "meaning": "a person trained to work with electrical systems",
+    "example": "The electrician repaired the classroom light.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elegant",
+    "meaning": "simple or graceful in an attractive way",
+    "example": "The bridge had an elegant curved shape.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "element",
+    "meaning": "a substance made of only one kind of atom",
+    "example": "Oxygen is an element.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elevation",
+    "meaning": "height above a reference level, often sea level",
+    "example": "The map showed the mountain's elevation.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "embarrassed",
+    "meaning": "feeling uncomfortable about a mistake or attention",
+    "example": "I felt embarrassed when I mixed up the two names.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "emergency",
+    "meaning": "a serious unexpected situation needing quick action",
+    "example": "We learned whom to ask for help in an emergency.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "emigrate",
+    "meaning": "to leave one country to live in another",
+    "example": "The family planned to emigrate and join relatives overseas.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "employee",
+    "meaning": "a person paid to work for an organization",
+    "example": "The employee helped a visitor find the right shelf.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "employer",
+    "meaning": "a person or organization that pays people to work",
+    "example": "The employer explained the new worker's duties.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "empress",
+    "meaning": "a female ruler of an empire or an emperor's spouse",
+    "example": "The exhibit described the life of an empress.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "encourage",
+    "meaning": "to give someone confidence or support",
+    "example": "We encourage our teammates when a task is difficult.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "encouragement",
+    "meaning": "words or actions giving confidence",
+    "example": "The teacher's encouragement helped us continue.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "engineering",
+    "meaning": "designing and building things to solve problems",
+    "example": "Our engineering project was a paper bridge.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "entertain",
+    "meaning": "to give enjoyment",
+    "example": "The funny story will entertain the class.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "enthusiasm",
+    "meaning": "strong interest and enjoyment",
+    "example": "Our enthusiasm for the project grew each day.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "entrance",
+    "meaning": "a way into a place",
+    "example": "A sign marked the museum entrance.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "envious",
+    "meaning": "wanting something another person has",
+    "example": "The envious character learned to appreciate what she had.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equilibrium",
+    "meaning": "a balanced condition with no overall change from competing effects",
+    "example": "The balanced mobile was in equilibrium.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equipment",
+    "meaning": "tools or supplies needed for a task",
+    "example": "We gathered the equipment for the experiment.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "error",
+    "meaning": "a mistake or problem",
+    "example": "The error message helped us find the missing file.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "essay",
+    "meaning": "a piece of writing developing ideas about a subject",
+    "example": "My essay described why libraries matter.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "evaporate",
+    "meaning": "to change from liquid to gas at the surface",
+    "example": "The puddle will evaporate in the warm weather.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "event",
+    "meaning": "something that happens, often planned",
+    "example": "The book fair was a popular school event.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "examine",
+    "meaning": "to look at something closely",
+    "example": "We examine the leaf with a magnifying glass.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "excavate",
+    "meaning": "to carefully dig to uncover something",
+    "example": "The team will excavate the site a little at a time.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "excellent",
+    "meaning": "extremely good",
+    "example": "Your careful drawing was an excellent example.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "exclude",
+    "meaning": "to leave something out",
+    "example": "We exclude broken pieces from the building set.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "excursion",
+    "meaning": "a short trip for enjoyment or learning",
+    "example": "The class excursion took us to a local farm.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "exist",
+    "meaning": "to be real or present",
+    "example": "Many kinds of insects exist in a garden.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "expedition",
+    "meaning": "an organized journey for a particular purpose",
+    "example": "The science expedition studied plants on the island.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "expensive",
+    "meaning": "costing a lot of money",
+    "example": "The expensive tool stayed in its protective case.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "experience",
+    "meaning": "something you do or live through",
+    "example": "Our camping experience taught us how to read a trail map.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "expert",
+    "meaning": "a person with a great deal of knowledge or skill",
+    "example": "The bird expert helped us identify the nest.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "explanation",
+    "meaning": "words making something easier to understand",
+    "example": "The explanation showed why ice floats.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "explore",
+    "meaning": "to travel or investigate to learn about something",
+    "example": "We explore the nature trail with a map.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "explorer",
+    "meaning": "someone who travels or investigates to learn about places or ideas",
+    "example": "The explorer kept careful notes about the journey.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "express",
+    "meaning": "to show a thought or feeling",
+    "example": "We express our ideas through words and pictures.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "extend",
+    "meaning": "to make longer or reach farther",
+    "example": "We extend the bridge with another section.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "exterior",
+    "meaning": "the outside part",
+    "example": "The building's exterior was made of brick.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fabric",
+    "meaning": "material made by weaving, knitting, or other methods",
+    "example": "We chose strong fabric for the bag.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "faded",
+    "meaning": "having lost some color or brightness",
+    "example": "The faded photograph showed our old house.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "failure",
+    "meaning": "an attempt that does not achieve the intended result",
+    "example": "The first test was a failure, so we changed our design.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fairytale",
+    "meaning": "a traditional story with magical events or characters",
+    "example": "The fairytale included a talking tree.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "faithful",
+    "meaning": "reliable and continuing to support someone or something",
+    "example": "The faithful dog waited beside its owner.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "familiar",
+    "meaning": "known from previous experience",
+    "example": "I recognized a familiar song.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fantastic",
+    "meaning": "very impressive or belonging to imagination",
+    "example": "The story described a fantastic floating city.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fantasy",
+    "meaning": "a story with imaginary worlds or magical events",
+    "example": "The fantasy followed a child who could speak to clouds.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "faucet",
+    "meaning": "a device controlling water from a pipe",
+    "example": "I turned off the faucet after washing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fern",
+    "meaning": "a nonflowering plant with divided leaves and spores",
+    "example": "The fern grew in the damp woodland.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fertilizer",
+    "meaning": "a substance added to provide plant nutrients",
+    "example": "The gardener used fertilizer according to the instructions.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "festival",
+    "meaning": "a special event with activities or celebrations",
+    "example": "The town festival included music and art.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fiber",
+    "meaning": "a plant material in food that supports healthy digestion",
+    "example": "Whole grains provide fiber.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "filter",
+    "meaning": "a material or tool that separates particles from a fluid",
+    "example": "The filter trapped sand while water passed through.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fir",
+    "meaning": "an evergreen conifer often with flat needles and upright cones",
+    "example": "The fir grew on the mountainside.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "firefighter",
+    "meaning": "a person trained to prevent and put out fires and help in emergencies",
+    "example": "The firefighter explained the safety drill.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "flask",
+    "meaning": "a laboratory container often with a narrow neck",
+    "example": "The flask held colored water.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "flax",
+    "meaning": "a plant grown for fiber and edible seeds",
+    "example": "The flax plant had small blue flowers.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "florist",
+    "meaning": "a person who arranges or sells flowers",
+    "example": "The florist arranged a colorful bouquet.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "foal",
+    "meaning": "a young horse",
+    "example": "The foal ran beside its mother.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "folder",
+    "meaning": "a place for organizing files or papers",
+    "example": "The folder kept our project files together.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "font",
+    "meaning": "a particular style of printed or displayed letters",
+    "example": "We chose a readable font for the poster.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "force",
+    "meaning": "a push or pull that can change motion",
+    "example": "A force moved the toy car.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "foreign",
+    "meaning": "connected with a country other than one's own",
+    "example": "We learned a greeting in a foreign language.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "foundation",
+    "meaning": "the base supporting a building or idea",
+    "example": "A strong foundation kept the tower steady.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  }
+]

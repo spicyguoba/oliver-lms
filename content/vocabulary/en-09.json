@@ -1,0 +1,802 @@
+[
+  {
+    "word": "bookshelf",
+    "meaning": "a shelf used to hold books",
+    "example": "We organized the books on the bookshelf.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "border",
+    "meaning": "a line separating places such as countries or states",
+    "example": "We found the state border on the map.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "braille",
+    "meaning": "a reading and writing system using raised dots",
+    "example": "The sign has braille below the printed letters.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "calculator",
+    "meaning": "a tool that performs calculations",
+    "example": "We checked our completed calculation with a calculator.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "calendar",
+    "meaning": "a chart of days, weeks, and months",
+    "example": "I marked our class trip on the calendar.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "call",
+    "meaning": "to say something loudly to get attention",
+    "example": "I call my friend when it is time to play.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "calligraphy",
+    "meaning": "the art of beautiful or expressive handwriting",
+    "example": "We practiced calligraphy with a brush.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "camouflage",
+    "meaning": "colors or shapes that help something blend in",
+    "example": "The insect uses camouflage to hide among leaves.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "can",
+    "meaning": "to be able to do something",
+    "example": "I can tie my own shoes.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "capacity",
+    "meaning": "the amount a container can hold",
+    "example": "The bucket has a larger capacity than the cup.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "caption",
+    "meaning": "a short explanation beside a picture",
+    "example": "The caption tells us where the photo was taken.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cardinal",
+    "meaning": "showing how many things there are",
+    "example": "Seven is a cardinal number.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "category",
+    "meaning": "a group of things that share a feature",
+    "example": "Each leaf belongs in a category based on its shape.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "centimeter",
+    "meaning": "a small metric unit of length",
+    "example": "A centimeter is one hundredth of a meter.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "century",
+    "meaning": "a period of one hundred years",
+    "example": "A century is longer than a decade.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ceramic",
+    "meaning": "made from clay shaped and hardened by heat",
+    "example": "The ceramic cup was made by a craftsperson.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "challenge",
+    "meaning": "a task that takes effort or skill",
+    "example": "Building a tall paper tower was a challenge.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chapter",
+    "meaning": "a main section of a book",
+    "example": "We finished one chapter before bedtime.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "character",
+    "meaning": "a written symbol used in a language",
+    "example": "We practiced writing one Chinese character carefully.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chlorophyll",
+    "meaning": "the green substance that helps plants use light",
+    "example": "Chlorophyll helps a leaf capture light energy.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chronology",
+    "meaning": "the order in which events happened",
+    "example": "We put the events into a clear chronology.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chrysalis",
+    "meaning": "the stage in which a butterfly develops inside a covering",
+    "example": "A butterfly develops inside a chrysalis.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "circuit",
+    "meaning": "a complete path through which electricity can flow",
+    "example": "We connected a safe battery circuit in class.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "circular",
+    "meaning": "shaped like a circle",
+    "example": "We drew a circular border around the picture.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "circumference",
+    "meaning": "the distance around a circle",
+    "example": "We wrapped string around the lid to measure its circumference.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "civilization",
+    "meaning": "a large society with organized communities and institutions",
+    "example": "The ancient civilization built cities near rivers.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clarify",
+    "meaning": "to make something easier to understand",
+    "example": "The diagram helps clarify the instructions.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "classify",
+    "meaning": "to put things into groups using shared features",
+    "example": "We classify the leaves by their shapes.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "climate",
+    "meaning": "the usual weather patterns over many years",
+    "example": "A desert climate is usually very dry.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "collaborate",
+    "meaning": "to create or work on something together",
+    "example": "The partners collaborate on a class poster.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "combine",
+    "meaning": "to bring two or more things together",
+    "example": "We combine the small groups to find the total.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "comet",
+    "meaning": "an icy object that can form a bright tail near the Sun",
+    "example": "The comet appeared in the evening sky.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "comma",
+    "meaning": "a punctuation mark that separates parts of a sentence",
+    "example": "We put a comma between items in the list.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "communicate",
+    "meaning": "to share information or ideas",
+    "example": "People communicate with words, signs, and pictures.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "community",
+    "meaning": "people who share a place or connection",
+    "example": "Our community cares for the neighborhood park.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compass",
+    "meaning": "a tool that helps show direction",
+    "example": "The compass needle helped us find north.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compound",
+    "meaning": "made by joining two or more parts",
+    "example": "Sunflower is a compound word.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compromise",
+    "meaning": "a solution in which each side gives up something",
+    "example": "We made a compromise so everyone could have a turn.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conclusion",
+    "meaning": "an idea reached after considering evidence",
+    "example": "We wrote a conclusion after comparing the results.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "condensation",
+    "meaning": "water vapor changing into liquid droplets",
+    "example": "Condensation formed drops on the cold glass.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conduct",
+    "meaning": "to allow heat or electricity to pass through",
+    "example": "Some metals conduct electricity well.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "confidence",
+    "meaning": "a feeling that you can try or do something",
+    "example": "Practice helped me gain confidence.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conflict",
+    "meaning": "a struggle or problem in a story",
+    "example": "The characters work together to solve the conflict.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conical",
+    "meaning": "shaped like a cone",
+    "example": "The model has a conical roof.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conjunction",
+    "meaning": "a word that joins words or parts of sentences",
+    "example": "And is a conjunction.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consensus",
+    "meaning": "a decision that a group can all support",
+    "example": "The class reached a consensus about the project.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conserve",
+    "meaning": "to use carefully and avoid wasting",
+    "example": "We conserve water by turning off the tap.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "considerate",
+    "meaning": "careful about other people’s needs and feelings",
+    "example": "It was considerate to leave room for another player.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "consonant",
+    "meaning": "a speech sound made by partly or fully blocking air flow",
+    "example": "The first sound in map is a consonant.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "constellation",
+    "meaning": "a named pattern of stars seen from Earth",
+    "example": "We found a constellation in the night sky.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "constitution",
+    "meaning": "a basic set of rules for a government",
+    "example": "The Constitution describes the U.S. government’s framework.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "context",
+    "meaning": "the words and situation around something",
+    "example": "The context helped us understand the new word.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "continent",
+    "meaning": "one of Earth’s large land areas",
+    "example": "Africa is a continent.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contract",
+    "meaning": "to become or make smaller",
+    "example": "Some materials contract when they cool.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contrast",
+    "meaning": "to show how things are different",
+    "example": "We contrast the two characters’ choices.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "contribute",
+    "meaning": "to give something to help a shared effort",
+    "example": "Each person can contribute an idea.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cooperate",
+    "meaning": "to work together toward a goal",
+    "example": "We cooperate to build a strong paper bridge.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coordinate",
+    "meaning": "one of a set of numbers used to locate a point",
+    "example": "We used a coordinate to mark the spot on the grid.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "counting",
+    "meaning": "finding how many things there are",
+    "example": "Counting by fives helped us find the total quickly.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "country",
+    "meaning": "a place with its own government",
+    "example": "Japan is a country in Asia.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "courage",
+    "meaning": "the willingness to face something difficult",
+    "example": "It took courage to ask a question in front of the class.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crater",
+    "meaning": "a bowl-shaped hollow in a surface",
+    "example": "We saw a large crater in the photograph of the Moon.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "creativity",
+    "meaning": "the ability to make new ideas or things",
+    "example": "The art project gave us a chance to use creativity.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crystal",
+    "meaning": "a solid with a repeating, orderly structure",
+    "example": "We looked at the shape of a salt crystal.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cube",
+    "meaning": "a solid with six equal square faces",
+    "example": "A standard number die has the shape of a cube.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cuboid",
+    "meaning": "a solid with six rectangular faces",
+    "example": "A shoebox is usually shaped like a cuboid.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "culture",
+    "meaning": "shared and changing ways of life in a community",
+    "example": "Stories and music can be part of a culture.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curiosity",
+    "meaning": "a desire to learn or know more",
+    "example": "Curiosity led us to ask another question.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cycle",
+    "meaning": "a series of stages that repeats",
+    "example": "The diagram shows the water cycle.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cylinder",
+    "meaning": "a solid with two circular ends joined by a curved surface",
+    "example": "The can is a cylinder.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cylindrical",
+    "meaning": "shaped like a tube with circular ends",
+    "example": "The cylindrical can rolls on its side.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "data",
+    "meaning": "information collected to answer a question",
+    "example": "We collected data about the weather.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "day",
+    "meaning": "a period of twenty-four hours",
+    "example": "We read a little every day.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "deadline",
+    "meaning": "the time by which a task should be finished",
+    "example": "We wrote the deadline on the calendar.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "debate",
+    "meaning": "a discussion using reasons for different positions",
+    "example": "We held a friendly debate about the best playground design.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "decade",
+    "meaning": "a period of ten years",
+    "example": "We compared photographs taken one decade apart.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "deciduous",
+    "meaning": "losing leaves during part of the year",
+    "example": "A deciduous tree may lose its leaves in autumn.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "decimal",
+    "meaning": "a number written using a point to show parts of one",
+    "example": "We wrote the price as a decimal.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "definition",
+    "meaning": "an explanation of what a word means",
+    "example": "The dictionary gives a definition of the word.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delta",
+    "meaning": "land formed from sediment near a river’s mouth",
+    "example": "The river’s delta has many smaller channels.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "democracy",
+    "meaning": "government in which people take part directly or through representatives",
+    "example": "Voting is one part of a democracy.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "demonstrate",
+    "meaning": "to show how something works or is done",
+    "example": "Our teacher will demonstrate how to fold the paper.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "denominator",
+    "meaning": "the bottom number in a fraction",
+    "example": "The denominator tells how many equal parts make the whole.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "describe",
+    "meaning": "to tell what something is like",
+    "example": "I describe the rock using its color and texture.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "desert",
+    "meaning": "a region that receives very little precipitation",
+    "example": "Many desert plants can store water.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "detail",
+    "meaning": "a small piece of information about something",
+    "example": "The picture includes a detail that helps solve the mystery.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "determined",
+    "meaning": "firmly wanting to achieve a goal",
+    "example": "We were determined to finish our model bridge.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diagonal",
+    "meaning": "slanting between corners or sides",
+    "example": "We folded the square along a diagonal line.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dialogue",
+    "meaning": "the words spoken between characters",
+    "example": "The dialogue tells us what the friends are thinking.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diameter",
+    "meaning": "a straight line across a circle through its center",
+    "example": "We measured the diameter of the circle.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "digit",
+    "meaning": "one symbol used to write a number",
+    "example": "The digit 4 has a value of forty in 42.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "digraph",
+    "meaning": "two letters that work together to spell one sound",
+    "example": "The letters sh form a digraph in ship.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "discovery",
+    "meaning": "finding or learning something previously unknown to you",
+    "example": "Our discovery of a new bird made us curious.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "discussion",
+    "meaning": "a conversation in which people share ideas",
+    "example": "Our discussion helped us understand the story.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "distribute",
+    "meaning": "to give or spread things among people or places",
+    "example": "We distribute the paper equally among the teams.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diverse",
+    "meaning": "including many different kinds",
+    "example": "Our library has a diverse collection of stories.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "division",
+    "meaning": "splitting an amount into equal groups",
+    "example": "We use division to share the counters equally.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dog",
+    "meaning": "a furry animal often kept as a pet",
+    "example": "The dog carried its ball to the garden.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "draft",
+    "meaning": "an early version of a piece of writing",
+    "example": "I read my draft before making changes.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dynasty",
+    "meaning": "a line of rulers, often from one family",
+    "example": "The Han dynasty followed the Qin dynasty.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  }
+]

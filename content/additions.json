@@ -1,0 +1,1378 @@
+[
+  {
+    "id": "plant-life",
+    "title": "Seed to sunflower",
+    "subject": "Science",
+    "icon": "🌻",
+    "description": "Follow roots, leaves, flowers, and seeds.",
+    "lesson": [
+      "A seed contains a tiny plant and stored food. Many seeds need water, suitable warmth, and air to germinate.",
+      "Roots anchor a plant and take in water. Leaves use light to help make food; flowers can develop seeds.",
+      "Plants have different life cycles. Observe a real plant over time rather than expecting every seed to grow at the same speed."
+    ],
+    "tryIt": "With a grown-up, grow a bean in a clear cup. Draw what changes; keep it moist rather than flooded.",
+    "sources": [
+      "https://www.fs.usda.gov/wildflowers/kids/activities/surprisegarden.shtml"
+    ],
+    "questions": [
+      {
+        "prompt": "What usually grows from a seed first?",
+        "options": [
+          "A root",
+          "A wooden chair",
+          "A fully grown flower"
+        ],
+        "answer": 0,
+        "explanation": "A root often emerges first and grows into the moist growing material."
+      },
+      {
+        "prompt": "Which part usually anchors a plant in soil?",
+        "options": [
+          "Roots",
+          "Petals",
+          "Fruit skin"
+        ],
+        "answer": 0,
+        "explanation": "Roots help hold the plant in place."
+      },
+      {
+        "prompt": "Which part mainly captures light to help make food?",
+        "options": [
+          "Leaves",
+          "Only dry seeds",
+          "Only bark"
+        ],
+        "answer": 0,
+        "explanation": "Leaves usually capture light for photosynthesis."
+      },
+      {
+        "prompt": "What can a flower help a plant make?",
+        "options": [
+          "Seeds",
+          "Metal",
+          "Plastic"
+        ],
+        "answer": 0,
+        "explanation": "Flowers are involved in reproduction and can lead to seeds."
+      },
+      {
+        "prompt": "Why should a bean seed not be left completely dry?",
+        "options": [
+          "It needs water to start growing",
+          "Dryness gives it extra water",
+          "Seeds never use water"
+        ],
+        "answer": 0,
+        "explanation": "Water helps start the changes of germination."
+      },
+      {
+        "prompt": "Which is a good way to observe growth?",
+        "options": [
+          "Draw and measure the same plant over several days",
+          "Guess once and never look again",
+          "Change every condition without keeping notes"
+        ],
+        "answer": 0,
+        "explanation": "Repeated observations show how a plant changes."
+      },
+      {
+        "prompt": "A seedling bends toward a bright window. What is it responding to?",
+        "options": [
+          "Light",
+          "The color of your shoes",
+          "A map of the ocean"
+        ],
+        "answer": 0,
+        "explanation": "Plant growth can respond to light."
+      },
+      {
+        "prompt": "Which statement respects differences between plants?",
+        "options": [
+          "Different plants can need different conditions",
+          "Every plant grows at exactly the same speed",
+          "All plants live only in deserts"
+        ],
+        "answer": 0,
+        "explanation": "Plants differ in their needs and life cycles."
+      }
+    ]
+  },
+  {
+    "id": "water-journey",
+    "title": "Water’s round trip",
+    "subject": "Science",
+    "icon": "💧",
+    "description": "Follow water through air, land, and oceans.",
+    "lesson": [
+      "Water moves among oceans, air, land, and living things. The Sun provides energy that helps water evaporate.",
+      "Evaporation changes liquid water to vapor. Condensation changes vapor to liquid droplets; clouds contain tiny droplets or ice crystals.",
+      "Rain and snow are precipitation. Water can flow over land, soak into soil, or collect in lakes and oceans."
+    ],
+    "tryIt": "Watch a small dish of water over several days with a grown-up. Mark its level and discuss evaporation.",
+    "sources": [
+      "https://www.usgs.gov/water-science-school/water-cycle"
+    ],
+    "questions": [
+      {
+        "prompt": "What is liquid water changing to vapor called?",
+        "options": [
+          "Evaporation",
+          "Freezing",
+          "Drawing"
+        ],
+        "answer": 0,
+        "explanation": "Evaporation changes liquid water at its surface into vapor."
+      },
+      {
+        "prompt": "What is vapor changing to liquid droplets called?",
+        "options": [
+          "Condensation",
+          "Multiplication",
+          "Erosion"
+        ],
+        "answer": 0,
+        "explanation": "Condensation forms liquid droplets from vapor."
+      },
+      {
+        "prompt": "Which is precipitation?",
+        "options": [
+          "Rain falling from clouds",
+          "A dry pebble on a shelf",
+          "A written weather report"
+        ],
+        "answer": 0,
+        "explanation": "Rain is one kind of precipitation."
+      },
+      {
+        "prompt": "What provides much of the energy driving the water cycle?",
+        "options": [
+          "The Sun",
+          "A paper map",
+          "The Moon’s own light"
+        ],
+        "answer": 0,
+        "explanation": "Sunlight supplies energy that helps water evaporate."
+      },
+      {
+        "prompt": "After rain, water soaks into soil. Where has it gone?",
+        "options": [
+          "Into spaces in the ground",
+          "Out of existence",
+          "Into solid metal"
+        ],
+        "answer": 0,
+        "explanation": "Water can enter spaces in soil and rock."
+      },
+      {
+        "prompt": "Which cloud description is correct?",
+        "options": [
+          "Tiny water droplets or ice crystals",
+          "Only cotton wool",
+          "Only empty blue sky"
+        ],
+        "answer": 0,
+        "explanation": "Clouds contain small droplets or ice crystals."
+      },
+      {
+        "prompt": "What can happen to a puddle on a warm day?",
+        "options": [
+          "It gets smaller as water evaporates",
+          "It must turn into a mountain",
+          "Its water is destroyed forever"
+        ],
+        "answer": 0,
+        "explanation": "Water can leave a puddle as vapor."
+      },
+      {
+        "prompt": "Why is this called a cycle?",
+        "options": [
+          "Water moves through repeating connected processes",
+          "It happens once and ends forever",
+          "Water never changes location"
+        ],
+        "answer": 0,
+        "explanation": "Water keeps moving among connected stores and processes."
+      }
+    ]
+  },
+  {
+    "id": "matter-makers",
+    "title": "Matter makers",
+    "subject": "Science",
+    "icon": "🧊",
+    "description": "Explore solids, liquids, gases, and mixtures.",
+    "lesson": [
+      "Matter takes up space and has mass. A solid keeps its shape; a liquid flows to fit its container; a gas spreads out.",
+      "Melting changes a solid to a liquid. Freezing changes a liquid to a solid. Water vapor is invisible.",
+      "A mixture combines materials. Dissolved salt is still in salt water even when you cannot see separate grains."
+    ],
+    "tryIt": "With a grown-up, compare an ice cube and liquid water in containers. Never taste unknown materials.",
+    "sources": [
+      "https://www.usgs.gov/special-topics/water-science-school/science/water-properties-information-topic"
+    ],
+    "questions": [
+      {
+        "prompt": "Which is a solid at normal room temperature?",
+        "options": [
+          "A wooden block",
+          "A cup of water",
+          "Air in a balloon"
+        ],
+        "answer": 0,
+        "explanation": "A wooden block keeps its own shape."
+      },
+      {
+        "prompt": "Which material flows and takes the shape of its cup?",
+        "options": [
+          "Liquid water",
+          "A stone",
+          "A wooden cube"
+        ],
+        "answer": 0,
+        "explanation": "Liquid water flows to fit the container."
+      },
+      {
+        "prompt": "Which spreads out to fill an available container?",
+        "options": [
+          "A gas",
+          "A brick",
+          "A pencil"
+        ],
+        "answer": 0,
+        "explanation": "Gases spread through the available space."
+      },
+      {
+        "prompt": "An ice cube becomes liquid water. What happened?",
+        "options": [
+          "Melting",
+          "Freezing",
+          "Sewing"
+        ],
+        "answer": 0,
+        "explanation": "Melting changes solid ice to liquid water."
+      },
+      {
+        "prompt": "Liquid water becomes ice. What happened?",
+        "options": [
+          "Freezing",
+          "Melting",
+          "Cutting"
+        ],
+        "answer": 0,
+        "explanation": "Freezing changes liquid water to solid ice."
+      },
+      {
+        "prompt": "Salt seems to disappear after stirring in water. Which is true?",
+        "options": [
+          "It is dissolved in the water",
+          "It has stopped existing",
+          "It turned into a wooden block"
+        ],
+        "answer": 0,
+        "explanation": "The salt particles are spread through the solution."
+      },
+      {
+        "prompt": "Which is a mixture?",
+        "options": [
+          "Sand and pebbles together",
+          "Only one pure substance by definition",
+          "An empty drawing of a bowl"
+        ],
+        "answer": 0,
+        "explanation": "Sand and pebbles can be combined in a mixture."
+      },
+      {
+        "prompt": "Why can a balloon expand when you blow into it?",
+        "options": [
+          "Air takes up space inside it",
+          "Air has no effect at all",
+          "Rubber creates new air by itself"
+        ],
+        "answer": 0,
+        "explanation": "Air is matter and takes up space."
+      }
+    ]
+  },
+  {
+    "id": "light-sound",
+    "title": "Light & sound studio",
+    "subject": "Science",
+    "icon": "🔦",
+    "description": "Use reflections, shadows, and vibrations.",
+    "lesson": [
+      "Light lets us see. A shadow forms where an object blocks light, while a mirror reflects light.",
+      "Sound starts with vibration and travels through materials such as air, water, and solids.",
+      "Pitch describes high or low sound; volume describes loud or quiet sound. Keep listening volumes comfortable."
+    ],
+    "tryIt": "With a grown-up, use a flashlight and a toy to make shadows. Pluck a rubber band gently and observe its vibration.",
+    "sources": [
+      "https://science.nasa.gov/resource/exploring-earth-bears-shadow/",
+      "https://www.nasa.gov/wp-content/uploads/2009/07/350541main_optics_reflection_light_plane_mirror.pdf",
+      "https://www.nidcd.nih.gov/health/how-do-we-hear"
+    ],
+    "questions": [
+      {
+        "prompt": "What makes a shadow?",
+        "options": [
+          "An object blocking light",
+          "A mirror adding food",
+          "A sound becoming a rock"
+        ],
+        "answer": 0,
+        "explanation": "A shadow forms where light is blocked."
+      },
+      {
+        "prompt": "What does a mirror do to light?",
+        "options": [
+          "Reflects it",
+          "Turns it into a plant",
+          "Uses it as water"
+        ],
+        "answer": 0,
+        "explanation": "A mirror reflects light toward our eyes."
+      },
+      {
+        "prompt": "What begins a sound?",
+        "options": [
+          "A vibration",
+          "A perfectly still silent object alone",
+          "A color on a map"
+        ],
+        "answer": 0,
+        "explanation": "Vibration starts sound waves in a material."
+      },
+      {
+        "prompt": "What describes a sound as high or low?",
+        "options": [
+          "Pitch",
+          "Temperature",
+          "Perimeter"
+        ],
+        "answer": 0,
+        "explanation": "Pitch is how high or low a sound seems."
+      },
+      {
+        "prompt": "What describes a sound as loud or quiet?",
+        "options": [
+          "Volume",
+          "Latitude",
+          "Area"
+        ],
+        "answer": 0,
+        "explanation": "Volume describes loudness."
+      },
+      {
+        "prompt": "Can sound travel through water?",
+        "options": [
+          "Yes",
+          "Only through empty space",
+          "No material can carry sound"
+        ],
+        "answer": 0,
+        "explanation": "Sound can travel through water as well as air and solids."
+      },
+      {
+        "prompt": "Which object usually lets you see clearly through it?",
+        "options": [
+          "Clear glass",
+          "Opaque cardboard",
+          "A thick wooden board"
+        ],
+        "answer": 0,
+        "explanation": "Transparent glass transmits light clearly."
+      },
+      {
+        "prompt": "How should we protect our ears while listening?",
+        "options": [
+          "Keep volume comfortable and take breaks",
+          "Always use the loudest setting",
+          "Move closer to very loud speakers"
+        ],
+        "answer": 0,
+        "explanation": "Comfortable volume helps protect hearing."
+      }
+    ]
+  },
+  {
+    "id": "africa-trip",
+    "title": "Across Africa",
+    "subject": "Geography",
+    "icon": "🦒",
+    "description": "Meet varied landscapes and countries.",
+    "lesson": [
+      "Africa is a continent with many countries, languages, cities, and ways of life. One picture cannot represent everyone.",
+      "The Sahara is a large desert in northern Africa. Other African regions include forests, grasslands, mountains, and lakes.",
+      "Egypt, Kenya, Nigeria, and South Africa are countries in Africa. Learn a specific place before making claims about a whole continent."
+    ],
+    "tryIt": "Find four African countries on an atlas. Compare one city and one natural landscape without treating them as everyone’s life.",
+    "sources": [
+      "https://education.nationalgeographic.org/resource/Continent/"
+    ],
+    "questions": [
+      {
+        "prompt": "Africa is best described as what?",
+        "options": [
+          "A continent with many countries",
+          "One single country",
+          "A single city"
+        ],
+        "answer": 0,
+        "explanation": "Africa contains many countries and communities."
+      },
+      {
+        "prompt": "Where is the Sahara?",
+        "options": [
+          "Northern Africa",
+          "Antarctica",
+          "Virginia"
+        ],
+        "answer": 0,
+        "explanation": "The Sahara lies across much of northern Africa."
+      },
+      {
+        "prompt": "Which country is in Africa?",
+        "options": [
+          "Kenya",
+          "Japan",
+          "Peru"
+        ],
+        "answer": 0,
+        "explanation": "Kenya is in eastern Africa."
+      },
+      {
+        "prompt": "Which of these is a country in western Africa?",
+        "options": [
+          "Nigeria",
+          "Canada",
+          "Sweden"
+        ],
+        "answer": 0,
+        "explanation": "Nigeria is in western Africa."
+      },
+      {
+        "prompt": "Which African country is strongly connected with the Nile and ancient pyramids?",
+        "options": [
+          "Egypt",
+          "Brazil",
+          "New Zealand"
+        ],
+        "answer": 0,
+        "explanation": "Egypt lies in northeastern Africa along the Nile."
+      },
+      {
+        "prompt": "Which statement is fair and accurate?",
+        "options": [
+          "Africa has many different languages and cultures",
+          "Everyone in Africa speaks one language",
+          "Every African home is the same"
+        ],
+        "answer": 0,
+        "explanation": "People and places across Africa are diverse."
+      },
+      {
+        "prompt": "Which landscape can be found in Africa?",
+        "options": [
+          "Mountains, forests, grasslands, and deserts",
+          "Only one endless desert",
+          "Only permanent ice with no cities"
+        ],
+        "answer": 0,
+        "explanation": "Africa has varied environments as well as large cities."
+      },
+      {
+        "prompt": "Which question helps us learn respectfully?",
+        "options": [
+          "What is life like in this particular place?",
+          "Why is everyone on the continent identical?",
+          "Can one photograph explain every person?"
+        ],
+        "answer": 0,
+        "explanation": "Specific questions avoid making everyone seem the same."
+      }
+    ]
+  },
+  {
+    "id": "asia-trip",
+    "title": "Across Asia",
+    "subject": "Geography",
+    "icon": "🏔️",
+    "description": "Explore countries, mountains, and islands.",
+    "lesson": [
+      "Asia is Earth’s largest continent by land area. It has many countries and languages; China, India, and Japan are examples.",
+      "The Himalayas form a great mountain range. Japan is an island country, while many Asian countries have large mainland areas.",
+      "People within one country can have different traditions, languages, and everyday lives."
+    ],
+    "tryIt": "Find China, India, Japan, and the Himalayas in an atlas. Compare the shapes of an island country and a mainland country.",
+    "sources": [
+      "https://education.nationalgeographic.org/resource/asia/"
+    ],
+    "questions": [
+      {
+        "prompt": "Which is Earth’s largest continent by land area?",
+        "options": [
+          "Asia",
+          "Australia",
+          "Europe"
+        ],
+        "answer": 0,
+        "explanation": "Asia is the largest continent by land area."
+      },
+      {
+        "prompt": "Which country is in Asia?",
+        "options": [
+          "India",
+          "Argentina",
+          "Norway"
+        ],
+        "answer": 0,
+        "explanation": "India is in southern Asia."
+      },
+      {
+        "prompt": "Which Asian country is made up of islands?",
+        "options": [
+          "Japan",
+          "Bolivia",
+          "Virginia"
+        ],
+        "answer": 0,
+        "explanation": "Japan is an island country in eastern Asia."
+      },
+      {
+        "prompt": "Which mountain range is in Asia?",
+        "options": [
+          "The Himalayas",
+          "The Blue Ridge only",
+          "The Andes"
+        ],
+        "answer": 0,
+        "explanation": "The Himalayas rise across parts of southern Asia."
+      },
+      {
+        "prompt": "Where is China?",
+        "options": [
+          "Asia",
+          "South America",
+          "Antarctica"
+        ],
+        "answer": 0,
+        "explanation": "China is a country in Asia."
+      },
+      {
+        "prompt": "Which statement about Asia is true?",
+        "options": [
+          "It has many countries and languages",
+          "It has only one language",
+          "Every person has the same daily routine"
+        ],
+        "answer": 0,
+        "explanation": "Asia is home to very diverse communities."
+      },
+      {
+        "prompt": "What surrounds an island?",
+        "options": [
+          "Water",
+          "Only other land on every side",
+          "Only desert sand"
+        ],
+        "answer": 0,
+        "explanation": "An island is surrounded by water."
+      },
+      {
+        "prompt": "What is a respectful way to explore a culture?",
+        "options": [
+          "Learn specific examples and remember people vary",
+          "Assume every family does the same thing",
+          "Judge people by one food"
+        ],
+        "answer": 0,
+        "explanation": "Specific examples help without treating a whole population as identical."
+      }
+    ]
+  },
+  {
+    "id": "europe-trip",
+    "title": "Across Europe",
+    "subject": "Geography",
+    "icon": "🏰",
+    "description": "Find countries, peninsulas, and landmarks.",
+    "lesson": [
+      "Europe has many countries, languages, and histories. France, Germany, Italy, and Greece are examples.",
+      "The Alps are a mountain range. Italy extends into the Mediterranean as a peninsula, which is mostly surrounded by water.",
+      "Historic buildings stand beside modern homes, schools, and workplaces. People living in Europe today have varied backgrounds."
+    ],
+    "tryIt": "Locate four European countries. Find the Mediterranean Sea and compare a peninsula with an island.",
+    "sources": [
+      "https://education.nationalgeographic.org/resource/Continent/"
+    ],
+    "questions": [
+      {
+        "prompt": "Which country is in Europe?",
+        "options": [
+          "France",
+          "Kenya",
+          "Peru"
+        ],
+        "answer": 0,
+        "explanation": "France is a country in Europe."
+      },
+      {
+        "prompt": "Which of these European countries includes Berlin?",
+        "options": [
+          "Germany",
+          "Japan",
+          "Chile"
+        ],
+        "answer": 0,
+        "explanation": "Germany is in Europe, and Berlin is its capital."
+      },
+      {
+        "prompt": "Which country extends into the Mediterranean as a peninsula?",
+        "options": [
+          "Italy",
+          "Mongolia",
+          "Bolivia"
+        ],
+        "answer": 0,
+        "explanation": "Much of Italy is a peninsula in the Mediterranean."
+      },
+      {
+        "prompt": "Which mountain range is in Europe?",
+        "options": [
+          "The Alps",
+          "The Andes",
+          "The Himalayas"
+        ],
+        "answer": 0,
+        "explanation": "The Alps cross parts of Europe."
+      },
+      {
+        "prompt": "What is a peninsula?",
+        "options": [
+          "Land mostly surrounded by water and connected to larger land",
+          "Land completely surrounded by water",
+          "Only a mountain peak"
+        ],
+        "answer": 0,
+        "explanation": "A peninsula is connected to a larger land area."
+      },
+      {
+        "prompt": "Which sea lies south of much of Europe?",
+        "options": [
+          "The Mediterranean Sea",
+          "Only the Arctic Ocean",
+          "The Chesapeake Bay"
+        ],
+        "answer": 0,
+        "explanation": "The Mediterranean lies between Europe, Africa, and Asia."
+      },
+      {
+        "prompt": "Which is true of Europe today?",
+        "options": [
+          "People live in modern communities with many backgrounds",
+          "Everyone lives in a castle",
+          "No one uses modern transportation"
+        ],
+        "answer": 0,
+        "explanation": "Historic places and modern life coexist."
+      },
+      {
+        "prompt": "Which country is associated with ancient Athens?",
+        "options": [
+          "Greece",
+          "Brazil",
+          "Canada"
+        ],
+        "answer": 0,
+        "explanation": "Athens is in Greece."
+      }
+    ]
+  },
+  {
+    "id": "south-america-trip",
+    "title": "Across South America",
+    "subject": "Geography",
+    "icon": "🦙",
+    "description": "Follow the Andes and the Amazon.",
+    "lesson": [
+      "South America includes countries such as Brazil, Peru, Chile, and Argentina.",
+      "The Andes form a long mountain range along the western side. The Amazon basin includes a very large tropical rainforest.",
+      "Portuguese is the main language of Brazil. Spanish and many Indigenous languages are spoken across other parts of the continent."
+    ],
+    "tryIt": "Trace the Andes on an atlas, then locate Brazil and Peru. Learn about one Indigenous language from a reliable source.",
+    "sources": [
+      "https://education.nationalgeographic.org/resource/Continent/"
+    ],
+    "questions": [
+      {
+        "prompt": "Which country is in South America?",
+        "options": [
+          "Brazil",
+          "Egypt",
+          "Japan"
+        ],
+        "answer": 0,
+        "explanation": "Brazil is a country in South America."
+      },
+      {
+        "prompt": "Which mountain range runs along western South America?",
+        "options": [
+          "The Andes",
+          "The Alps",
+          "The Blue Ridge"
+        ],
+        "answer": 0,
+        "explanation": "The Andes extend along the continent’s western side."
+      },
+      {
+        "prompt": "The Amazon basin is known for what?",
+        "options": [
+          "A large tropical rainforest",
+          "Only polar ice",
+          "Only dry bare rock"
+        ],
+        "answer": 0,
+        "explanation": "Much of the Amazon basin contains tropical rainforest."
+      },
+      {
+        "prompt": "What is Brazil’s main language?",
+        "options": [
+          "Portuguese",
+          "Only English",
+          "Only Japanese"
+        ],
+        "answer": 0,
+        "explanation": "Portuguese is the official and main language of Brazil."
+      },
+      {
+        "prompt": "Which of these countries is on South America’s western side?",
+        "options": [
+          "Peru",
+          "Germany",
+          "India"
+        ],
+        "answer": 0,
+        "explanation": "Peru lies on South America’s western side."
+      },
+      {
+        "prompt": "Which long narrow country lies along the continent’s west coast?",
+        "options": [
+          "Chile",
+          "Mongolia",
+          "Nepal"
+        ],
+        "answer": 0,
+        "explanation": "Chile lies between the Andes and the Pacific coast."
+      },
+      {
+        "prompt": "Which languages also belong in a picture of South America?",
+        "options": [
+          "Many Indigenous languages",
+          "No languages except one",
+          "Only Latin from ancient Rome"
+        ],
+        "answer": 0,
+        "explanation": "Indigenous languages remain important across South America."
+      },
+      {
+        "prompt": "Which ocean lies west of South America?",
+        "options": [
+          "Pacific Ocean",
+          "Only the Arctic Ocean",
+          "The Chesapeake Bay"
+        ],
+        "answer": 0,
+        "explanation": "The Pacific Ocean borders the west coast."
+      }
+    ]
+  },
+  {
+    "id": "oceania-trip",
+    "title": "Australia & Pacific islands",
+    "subject": "Geography",
+    "icon": "🐨",
+    "description": "Explore a continent and a wider region.",
+    "lesson": [
+      "Australia is both a country and, in our seven-continent model, a continent. Oceania is a wider region including many Pacific islands.",
+      "New Zealand is a country in the southwestern Pacific. Pacific communities have many different languages and histories.",
+      "Aboriginal and Torres Strait Islander peoples have longstanding ties to Australia. Māori are Indigenous to New Zealand."
+    ],
+    "tryIt": "Find Australia, New Zealand, and Fiji on an atlas. Notice how a region can include many islands and countries.",
+    "sources": [
+      "https://www.nationalgeographic.org/national-geographic-map-policy"
+    ],
+    "questions": [
+      {
+        "prompt": "In our seven-continent model, Australia is what?",
+        "options": [
+          "A continent and a country",
+          "A city in Virginia",
+          "Only a river"
+        ],
+        "answer": 0,
+        "explanation": "Australia names both the country and a continent in this model."
+      },
+      {
+        "prompt": "What is Oceania?",
+        "options": [
+          "A wider region including Australia and many Pacific islands",
+          "One single town",
+          "A synonym for Europe"
+        ],
+        "answer": 0,
+        "explanation": "Oceania includes many island communities and countries."
+      },
+      {
+        "prompt": "Where is New Zealand?",
+        "options": [
+          "The southwestern Pacific",
+          "Northern Africa",
+          "The center of Europe"
+        ],
+        "answer": 0,
+        "explanation": "New Zealand is in the southwestern Pacific."
+      },
+      {
+        "prompt": "Which ocean is central to Oceania?",
+        "options": [
+          "Pacific Ocean",
+          "Only the Arctic Ocean",
+          "Only the Atlantic Ocean"
+        ],
+        "answer": 0,
+        "explanation": "The region includes many islands across the Pacific."
+      },
+      {
+        "prompt": "Which peoples have longstanding ties to Australia?",
+        "options": [
+          "Aboriginal and Torres Strait Islander peoples",
+          "Only people arriving yesterday",
+          "Only ancient Romans"
+        ],
+        "answer": 0,
+        "explanation": "These peoples have diverse and longstanding cultures in Australia."
+      },
+      {
+        "prompt": "Māori are Indigenous to which country?",
+        "options": [
+          "New Zealand",
+          "Egypt",
+          "Italy"
+        ],
+        "answer": 0,
+        "explanation": "Māori are Indigenous to Aotearoa New Zealand."
+      },
+      {
+        "prompt": "Which country is in the Pacific island region?",
+        "options": [
+          "Fiji",
+          "Austria",
+          "Switzerland"
+        ],
+        "answer": 0,
+        "explanation": "Fiji is a Pacific island country."
+      },
+      {
+        "prompt": "Which statement is accurate?",
+        "options": [
+          "Pacific island cultures are varied",
+          "All Pacific island people speak one language",
+          "Every island has the same history"
+        ],
+        "answer": 0,
+        "explanation": "The region has many distinct communities and histories."
+      }
+    ]
+  },
+  {
+    "id": "china-bronze",
+    "title": "Shang & Zhou clues",
+    "subject": "History",
+    "icon": "🏺",
+    "description": "Read objects from very early China.",
+    "lesson": [
+      "The Shang and Zhou were dynasties of ancient China, long before the Qin and Han. A dynasty is a series of rulers from a family.",
+      "Shang oracle-bone inscriptions preserve early Chinese writing. Bronze vessels provide clues about skill, ceremonies, and social life.",
+      "The Zhou followed the Shang. Objects and inscriptions are evidence, while interpretations can change as researchers learn more."
+    ],
+    "tryIt": "Draw an imaginary museum label for an ordinary object from your home. What could it tell a future historian?",
+    "sources": [
+      "https://afe.easia.columbia.edu/special/china_4000bce_bronze.htm"
+    ],
+    "questions": [
+      {
+        "prompt": "Which came earlier: Shang or Han?",
+        "options": [
+          "Shang",
+          "Han",
+          "They are names for the same dynasty"
+        ],
+        "answer": 0,
+        "explanation": "The Shang was much earlier than the Han."
+      },
+      {
+        "prompt": "What can Shang oracle bones preserve?",
+        "options": [
+          "Early Chinese writing",
+          "Modern printed newspapers",
+          "Digital photographs"
+        ],
+        "answer": 0,
+        "explanation": "Inscriptions on oracle bones preserve early Chinese writing."
+      },
+      {
+        "prompt": "Which material was used for important ancient vessels?",
+        "options": [
+          "Bronze",
+          "Modern plastic only",
+          "Cardboard only"
+        ],
+        "answer": 0,
+        "explanation": "Skilled craftspeople cast bronze vessels."
+      },
+      {
+        "prompt": "Which dynasty followed the Shang?",
+        "options": [
+          "Zhou",
+          "Qing",
+          "Ming"
+        ],
+        "answer": 0,
+        "explanation": "The Zhou followed the Shang."
+      },
+      {
+        "prompt": "What is a dynasty?",
+        "options": [
+          "A series of rulers from a family",
+          "A kind of cloud",
+          "A modern computer"
+        ],
+        "answer": 0,
+        "explanation": "Dynasty names organize parts of political history."
+      },
+      {
+        "prompt": "What is an inscription?",
+        "options": [
+          "Writing carved or marked on a surface",
+          "An empty room",
+          "A type of rainfall"
+        ],
+        "answer": 0,
+        "explanation": "Inscriptions can preserve words on objects."
+      },
+      {
+        "prompt": "How should researchers use an ancient object?",
+        "options": [
+          "Study it carefully with other evidence",
+          "Guess its use from color alone",
+          "Assume one object explains every person"
+        ],
+        "answer": 0,
+        "explanation": "Objects are interpreted alongside other evidence."
+      },
+      {
+        "prompt": "Can new evidence change a historical explanation?",
+        "options": [
+          "Yes",
+          "No, evidence never matters",
+          "Only a coin toss can change history"
+        ],
+        "answer": 0,
+        "explanation": "Researchers revise interpretations as evidence improves."
+      }
+    ]
+  },
+  {
+    "id": "china-yuan",
+    "title": "Yuan journeys",
+    "subject": "History",
+    "icon": "🧭",
+    "description": "Explore exchange during the Yuan dynasty.",
+    "lesson": [
+      "The Yuan dynasty ruled China from 1271 to 1368. Its rulers came from the Mongol imperial family.",
+      "Travel, trade, and artistic exchange linked distant places. Blue-and-white porcelain developed and flourished through such connections.",
+      "Trade involves many workers and communities. An object may reveal connected histories across regions."
+    ],
+    "tryIt": "Trace an imaginary trade route on a map. List the people who might help a fragile bowl travel safely.",
+    "sources": [
+      "https://www.metmuseum.org/essays/yuan-dynasty-1271-1368"
+    ],
+    "questions": [
+      {
+        "prompt": "The Yuan rulers came from which imperial background?",
+        "options": [
+          "Mongol",
+          "Ancient Roman only",
+          "Modern American"
+        ],
+        "answer": 0,
+        "explanation": "The Yuan rulers belonged to the Mongol imperial family."
+      },
+      {
+        "prompt": "Which dates belong to the Yuan dynasty?",
+        "options": [
+          "1271–1368",
+          "1900–2000",
+          "3000–2900 BCE"
+        ],
+        "answer": 0,
+        "explanation": "The Yuan dynasty is dated 1271–1368."
+      },
+      {
+        "prompt": "Which dynasty followed the Yuan?",
+        "options": [
+          "Ming",
+          "Shang",
+          "Zhou"
+        ],
+        "answer": 0,
+        "explanation": "The Ming followed the Yuan in 1368."
+      },
+      {
+        "prompt": "What can trade carry besides goods?",
+        "options": [
+          "Ideas and artistic influences",
+          "Only empty boxes",
+          "Nothing beyond the goods"
+        ],
+        "answer": 0,
+        "explanation": "Travel and trade can connect people and ideas."
+      },
+      {
+        "prompt": "What is porcelain?",
+        "options": [
+          "A fine ceramic material",
+          "A kind of map",
+          "A metal coin"
+        ],
+        "answer": 0,
+        "explanation": "Porcelain is a ceramic material often used for vessels."
+      },
+      {
+        "prompt": "Which colors are central to blue-and-white porcelain?",
+        "options": [
+          "Blue decoration on white ceramic",
+          "Only red and green",
+          "Only black and orange"
+        ],
+        "answer": 0,
+        "explanation": "Blue-and-white porcelain combines blue designs with a white ceramic body."
+      },
+      {
+        "prompt": "Who helped trade happen?",
+        "options": [
+          "Craftspeople, carriers, merchants, and many others",
+          "Only one ruler",
+          "No ordinary workers"
+        ],
+        "answer": 0,
+        "explanation": "Trade relied on many kinds of work."
+      },
+      {
+        "prompt": "Why compare objects from different places?",
+        "options": [
+          "To look for connections and differences",
+          "To claim all cultures are identical",
+          "To avoid looking at evidence"
+        ],
+        "answer": 0,
+        "explanation": "Comparisons can reveal exchange while respecting differences."
+      }
+    ]
+  },
+  {
+    "id": "china-qing",
+    "title": "Qing art detectives",
+    "subject": "History",
+    "icon": "🖌️",
+    "description": "Look at China’s last imperial dynasty.",
+    "lesson": [
+      "The Qing was China’s last imperial dynasty. Manchu rulers led a large empire from the seventeenth century into the early twentieth.",
+      "Artists painted landscapes, plants, and other subjects. Some followed older traditions while others explored new ways of painting.",
+      "Paintings are evidence of an artist’s choices. They are not exact photographs of everyone’s life."
+    ],
+    "tryIt": "Draw the same tree in two different styles. Discuss how an artist chooses what to include.",
+    "sources": [
+      "https://www.metmuseum.org/essays/the-qing-dynasty-1644-1911-painting"
+    ],
+    "questions": [
+      {
+        "prompt": "Which was China’s last imperial dynasty?",
+        "options": [
+          "Qing",
+          "Shang",
+          "Qin"
+        ],
+        "answer": 0,
+        "explanation": "The Qing was the last imperial dynasty."
+      },
+      {
+        "prompt": "The Qing rulers were associated with which people?",
+        "options": [
+          "Manchu",
+          "Ancient Romans",
+          "Vikings only"
+        ],
+        "answer": 0,
+        "explanation": "The ruling family was Manchu."
+      },
+      {
+        "prompt": "Which dynasty came earlier: Ming or Qing?",
+        "options": [
+          "Ming",
+          "Qing",
+          "They are exactly the same"
+        ],
+        "answer": 0,
+        "explanation": "The Ming preceded the Qing."
+      },
+      {
+        "prompt": "Which subject appeared in Chinese landscape painting?",
+        "options": [
+          "Mountains and rivers",
+          "Only modern cars",
+          "Only empty white circles"
+        ],
+        "answer": 0,
+        "explanation": "Landscape painters often represented mountains, rivers, and trees."
+      },
+      {
+        "prompt": "Can two artists paint the same place differently?",
+        "options": [
+          "Yes, they make different choices",
+          "No, all paintings are identical",
+          "Only cameras can make pictures"
+        ],
+        "answer": 0,
+        "explanation": "Artists select styles, details, and viewpoints."
+      },
+      {
+        "prompt": "Should one painting be treated as a photograph of everyone’s life?",
+        "options": [
+          "No",
+          "Yes, always",
+          "Only if its frame is gold"
+        ],
+        "answer": 0,
+        "explanation": "A painting represents particular choices and contexts."
+      },
+      {
+        "prompt": "What does imperial mean here?",
+        "options": [
+          "Connected with an emperor or empire",
+          "Connected only with insects",
+          "A type of arithmetic"
+        ],
+        "answer": 0,
+        "explanation": "Imperial describes an emperor or empire."
+      },
+      {
+        "prompt": "Which helps us interpret a painting?",
+        "options": [
+          "Who made it, when, and for whom",
+          "Only its frame’s price",
+          "Ignoring its context"
+        ],
+        "answer": 0,
+        "explanation": "Context helps us understand an artwork."
+      }
+    ]
+  },
+  {
+    "id": "greece-rome",
+    "title": "Greek & Roman builders",
+    "subject": "History",
+    "icon": "🏛️",
+    "description": "Compare columns, arches, roads, and waterworks.",
+    "lesson": [
+      "Ancient Greek builders used columns in many public buildings. Greek communities included different city-states rather than one modern nation.",
+      "Roman builders used arches, roads, and aqueducts. Aqueducts carried water, and roads connected places across the Roman world.",
+      "Both societies included people with unequal rights. Surviving monuments tell only part of the story of everyday workers and families."
+    ],
+    "tryIt": "Build a paper column and a small block arch with a grown-up. Compare how the shapes support weight.",
+    "sources": [
+      "https://www.metmuseum.org/essays/architecture-in-ancient-greece",
+      "https://www.metmuseum.org/-/media/files/learn/for-educators/publications-for-educators/roman.pdf"
+    ],
+    "questions": [
+      {
+        "prompt": "What is a column in a building?",
+        "options": [
+          "An upright support",
+          "A kind of rain",
+          "An ocean current"
+        ],
+        "answer": 0,
+        "explanation": "Columns support parts of a building."
+      },
+      {
+        "prompt": "What shape is an arch?",
+        "options": [
+          "A curved structure over an opening",
+          "Only a flat line",
+          "Only a loose pile of leaves"
+        ],
+        "answer": 0,
+        "explanation": "Arches can carry loads across an opening."
+      },
+      {
+        "prompt": "What did an aqueduct carry?",
+        "options": [
+          "Water",
+          "Only letters",
+          "Only sand for painting"
+        ],
+        "answer": 0,
+        "explanation": "Aqueducts carried water to communities."
+      },
+      {
+        "prompt": "Why were roads important to the Roman world?",
+        "options": [
+          "They connected places and supported travel",
+          "They stopped all movement",
+          "They were only drawings"
+        ],
+        "answer": 0,
+        "explanation": "Roads helped move people, messages, and goods."
+      },
+      {
+        "prompt": "Which city is associated with ancient Greece?",
+        "options": [
+          "Athens",
+          "Richmond",
+          "Tokyo"
+        ],
+        "answer": 0,
+        "explanation": "Athens was an important Greek city-state."
+      },
+      {
+        "prompt": "Were ancient Greek city-states all one modern nation?",
+        "options": [
+          "No",
+          "Yes, exactly like a modern country",
+          "They were all one building"
+        ],
+        "answer": 0,
+        "explanation": "City-states were separate communities with their own governments."
+      },
+      {
+        "prompt": "Did everyone have equal rights in these ancient societies?",
+        "options": [
+          "No",
+          "Yes, everyone always did",
+          "Rights never existed anywhere"
+        ],
+        "answer": 0,
+        "explanation": "Rights varied greatly, and many people were excluded."
+      },
+      {
+        "prompt": "What can monuments leave out?",
+        "options": [
+          "The lives of many ordinary workers and families",
+          "Every stone used",
+          "The fact that buildings had supports"
+        ],
+        "answer": 0,
+        "explanation": "A monument gives only part of a society’s history."
+      }
+    ]
+  },
+  {
+    "id": "american-inventors",
+    "title": "American invention workshop",
+    "subject": "History",
+    "icon": "💡",
+    "description": "Meet experiments, teamwork, and useful changes.",
+    "lesson": [
+      "The Wright brothers worked on controlled powered flight and flew their Flyer in North Carolina in 1903.",
+      "Thomas Edison and his teams helped develop practical electric lighting systems and sound recording. Inventions often build on earlier work.",
+      "An invention is tested and improved. Many people, including those rarely named in a short account, contribute to change."
+    ],
+    "tryIt": "Choose a daily problem and sketch a helpful invention. Explain how you would test it and improve a first model.",
+    "sources": [
+      "https://siarchives.si.edu/history/featured-topics/stories/wright-brothers-pioneers-aviation",
+      "https://invention.si.edu/invention-stories/thomas-edisons-inventive-life"
+    ],
+    "questions": [
+      {
+        "prompt": "What did the Wright brothers work on?",
+        "options": [
+          "Controlled powered flight",
+          "Only deep-sea diving",
+          "Only pottery"
+        ],
+        "answer": 0,
+        "explanation": "The Wright brothers developed and tested flying machines."
+      },
+      {
+        "prompt": "Where did their 1903 Flyer flights take place?",
+        "options": [
+          "North Carolina",
+          "The Moon",
+          "Ancient Rome"
+        ],
+        "answer": 0,
+        "explanation": "The 1903 flights took place near Kitty Hawk, North Carolina."
+      },
+      {
+        "prompt": "Which year is associated with the Wright Flyer?",
+        "options": [
+          "1903",
+          "1203",
+          "2003 only"
+        ],
+        "answer": 0,
+        "explanation": "The Wright Flyer flew in 1903."
+      },
+      {
+        "prompt": "Which is associated with Edison’s work and teams?",
+        "options": [
+          "Practical electric lighting systems",
+          "The first sunrise",
+          "The invention of all fire"
+        ],
+        "answer": 0,
+        "explanation": "Edison and his teams worked on electric lighting systems and many other devices."
+      },
+      {
+        "prompt": "What could a phonograph do?",
+        "options": [
+          "Record and play sound",
+          "Grow leaves",
+          "Measure a continent’s width"
+        ],
+        "answer": 0,
+        "explanation": "A phonograph records and plays back sound."
+      },
+      {
+        "prompt": "How do inventions often develop?",
+        "options": [
+          "Through earlier ideas, testing, and teamwork",
+          "From no previous knowledge and no work",
+          "Only by guessing once"
+        ],
+        "answer": 0,
+        "explanation": "Inventions commonly build on work by many people."
+      },
+      {
+        "prompt": "Your first model does not work. What is a useful next step?",
+        "options": [
+          "Study the result and improve the design",
+          "Hide all the results",
+          "Claim it worked without checking"
+        ],
+        "answer": 0,
+        "explanation": "A failed test can provide information for improvement."
+      },
+      {
+        "prompt": "What should a fair invention story remember?",
+        "options": [
+          "Many contributors may be left out of a short account",
+          "Only one person can ever contribute",
+          "Ordinary workers never help"
+        ],
+        "answer": 0,
+        "explanation": "A named inventor may work within a much larger network of contributors."
+      }
+    ]
+  }
+]

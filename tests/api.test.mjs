@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { skills } from "../lib/questions.mjs";
 const base = process.env.LMS_TEST_URL || "http://127.0.0.1:3001";
 let cookie = "";
 async function request(route, body, custom = {}) {
@@ -17,6 +18,7 @@ async function request(route, body, custom = {}) {
 }
 test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", async () => {
   assert.equal((await request("admin")).status, 401);
+  assert.equal((await request("lesson/en-words-001")).status, 401);
   assert.equal(
     (
       await request(
@@ -90,7 +92,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   });
   cookie = relogin.headers.get("set-cookie").split(";")[0];
   const expanded = (await (await request("admin")).json()).stats;
-  assert.equal(expanded.length, 27);
+  assert.equal(expanded.length, Object.keys(skills).length);
   assert.ok(expanded.every((s) => !("questions" in s)));
   for (const [skill, difficulty] of [
     ["space", 1],
@@ -150,4 +152,80 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   ]);
   report = await (await request("admin")).json();
   assert.equal(report.stars, 4);
+  const beforeLesson = report.history.length;
+  const lesson = await (await request("lesson/zh-usage-001")).json();
+  assert.equal(lesson.cards.length, 20);
+  assert.ok(
+    lesson.cards.every(
+      (c) => c.pinyin && c.meaning && c.sentence && c.translation,
+    ),
+  );
+  assert.equal((await request("lesson/missing-pack")).status, 404);
+  assert.equal(
+    (await (await request("admin")).json()).history.length,
+    beforeLesson,
+  );
+  const legacyId = "abcdefab-1234-5678-abcd-123456789abc";
+  const legacyBody = {
+    game: "reading",
+    completion: { id: legacyId, correct: 3, total: 5 },
+  };
+  await Promise.all([
+    request("legacy", legacyBody),
+    request("legacy", legacyBody),
+  ]);
+  const exportData = await (await request("admin/export")).json();
+  assert.equal(exportData.version, 2);
+  assert.equal(
+    exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
+    1,
+  );
+  assert.equal(exportData.stars, 4);
+  assert.equal(
+    (
+      await request("legacy", {
+        game: "reading",
+        completion: { id: legacyId, correct: 99, total: 5 },
+      })
+    ).status,
+    400,
+  );
+  const progressState = await (await request("state")).json();
+  assert.equal(progressState.legacyProgress.reading.correct, 3);
+  assert.equal(progressState.legacyProgress.reading.total, 5);
+  assert.ok(progressState.legacyProgress.reading.date);
+  let round = await (
+      await request("session/start", { skill: "en-usage-001" })
+    ).json(),
+    score = 0;
+  for (let i = 0; i < 5; i++) {
+    assert.ok(round.question.context.includes("____"));
+    assert.ok(!("answer" in round.question));
+    const answered = await (
+      await request(`session/${round.id}/answer`, {
+        questionId: round.question.id,
+        answer: "0",
+        activeMs: 1500,
+      })
+    ).json();
+    if (answered.feedback.correct) score++;
+    round = await (await request(`session/${round.id}/next`, {})).json();
+  }
+  assert.ok(round.finishedAt);
+  const completed = await (await request("state")).json(),
+    card = completed.stats.find((s) => s.id === "en-usage-001");
+  assert.deepEqual(card.lastCompletion, {
+    date: round.finishedAt,
+    correct: score,
+    total: 5,
+  });
+  assert.equal(card.completedRounds, 1);
+  assert.equal(completed.stars, 4 + score);
+  await request(`session/${round.id}/next`, {});
+  const again = await (await request("state")).json();
+  assert.equal(again.stars, completed.stars);
+  assert.equal(
+    again.stats.find((s) => s.id === "en-usage-001").completedRounds,
+    1,
+  );
 });

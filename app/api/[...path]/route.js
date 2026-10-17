@@ -3,6 +3,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { createHash, randomBytes } from "node:crypto";
 import { transact, databaseMode } from "../../../lib/store.mjs";
+import { legacyProgress } from "../../../lib/progress.mjs";
+import { vocabularyLesson } from "../../../lib/vocabulary.mjs";
 import { sanitizeLegacyMap } from "../../../lib/legacy-save.mjs";
 import {
   verifyPassword,
@@ -81,6 +83,8 @@ function setCookie(res, role, data, clear = false) {
 function safeState(d, role) {
   return {
     role,
+    timezone: d.settings.timezone,
+    legacyProgress: legacyProgress(d),
     profile: d.profile,
     stars: d.stars,
     stats: stats(d),
@@ -129,6 +133,11 @@ export async function GET(req, context) {
         route === "admin" || route === "admin/export",
       );
       if (route === "state") return NextResponse.json(safeState(d, role));
+      if (p[0] === "lesson" && p.length === 2) {
+        const lesson = vocabularyLesson(p[1]);
+        if (!lesson) fail("Word pack not found.", 404);
+        return NextResponse.json(lesson);
+      }
       if (route === "admin")
         return NextResponse.json({
           ...safeState(d, role),
@@ -360,6 +369,33 @@ export async function POST(req, context) {
           if (JSON.stringify(clean).length > 300000)
             fail("Game save too large.");
           d.legacy[body.game] = clean;
+        }
+        if (body.completion) {
+          const c = body.completion;
+          if (
+            typeof c.id !== "string" ||
+            !/^[a-f0-9-]{16,50}$/.test(c.id) ||
+            !Number.isInteger(c.correct) ||
+            !Number.isInteger(c.total) ||
+            c.total < 1 ||
+            c.total > 100 ||
+            c.correct < 0 ||
+            c.correct > c.total
+          )
+            fail("Invalid completed round.");
+          if (
+            !d.legacyCompletions.some(
+              (x) => x.id === c.id && x.game === body.game,
+            )
+          )
+            d.legacyCompletions.push({
+              id: c.id,
+              game: body.game,
+              correct: c.correct,
+              total: c.total,
+              date: Date.now(),
+              source: "legacy-client-reported",
+            });
         }
         if (body.event) {
           const e = body.event;

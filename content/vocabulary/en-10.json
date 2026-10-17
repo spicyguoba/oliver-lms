@@ -1,0 +1,802 @@
+[
+  {
+    "word": "ecosystem",
+    "meaning": "living things and their surroundings acting together",
+    "example": "The pond ecosystem includes plants, animals, water, and soil.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "edit",
+    "meaning": "to correct and improve a piece of writing",
+    "example": "I edit my work to fix spelling and punctuation.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elaborate",
+    "meaning": "to add more details or explanation",
+    "example": "I elaborate on my idea with an example.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "elapsed",
+    "meaning": "having passed, when describing time",
+    "example": "We calculated the elapsed time between the two events.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "election",
+    "meaning": "a process in which people vote to choose someone",
+    "example": "Our class held an election for a team leader.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "empathy",
+    "meaning": "trying to understand another person’s feelings",
+    "example": "Empathy helps us listen to a friend.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "emperor",
+    "meaning": "a ruler of an empire",
+    "example": "The emperor’s officials kept written records.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "empire",
+    "meaning": "a group of territories ruled under one central power",
+    "example": "The map shows how the empire changed over time.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "energy",
+    "meaning": "the ability to cause change or do work",
+    "example": "Sunlight provides energy for plants.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "enthusiastic",
+    "meaning": "showing strong interest or enjoyment",
+    "example": "The enthusiastic readers asked for another chapter.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "environment",
+    "meaning": "the surroundings in which living things exist",
+    "example": "A healthy environment helps living things thrive.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equality",
+    "meaning": "having the same rights or value",
+    "example": "We discussed equality and fair treatment.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equation",
+    "meaning": "a number sentence with an equals sign",
+    "example": "We wrote an equation to match the picture.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equator",
+    "meaning": "an imaginary line around the middle of Earth",
+    "example": "The equator divides the northern and southern halves of Earth.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equivalent",
+    "meaning": "having the same value or meaning",
+    "example": "Two quarters and one half are equivalent fractions.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "erosion",
+    "meaning": "the movement of soil or rock by water, wind, or ice",
+    "example": "Erosion carried soil down the stream.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "essential",
+    "meaning": "very important or needed",
+    "example": "Water is essential for living things.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "estimate",
+    "meaning": "to find an answer that is close enough",
+    "example": "We estimate the number of beads before we count them.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "estuary",
+    "meaning": "a place where river water meets and mixes with sea water",
+    "example": "Many animals live in the estuary.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "evaluate",
+    "meaning": "to judge something using reasons or evidence",
+    "example": "We evaluate our designs after testing them.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "evaporation",
+    "meaning": "liquid water changing into water vapor",
+    "example": "Evaporation made the puddle smaller.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "evergreen",
+    "meaning": "keeping green leaves through the year",
+    "example": "The evergreen tree still had leaves in winter.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "evidence",
+    "meaning": "information that helps support an idea or answer",
+    "example": "We used evidence from the text to explain our answer.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "example",
+    "meaning": "a particular case used to explain an idea",
+    "example": "We used one example to show the rule.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "exclamation",
+    "meaning": "a strong expression of feeling or surprise",
+    "example": "The sentence ends with an exclamation mark.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "expand",
+    "meaning": "to become or make larger",
+    "example": "We will expand our model town by adding a park.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "experiment",
+    "meaning": "a test used to learn about something",
+    "example": "Our experiment compared two kinds of paper boats.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "exploration",
+    "meaning": "travel or study to learn about a place",
+    "example": "The class planned an exploration of the school garden.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "expression",
+    "meaning": "a look, sound, or action that communicates an idea or feeling",
+    "example": "Her expression showed that she was curious.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "extinct",
+    "meaning": "no longer living anywhere on Earth",
+    "example": "The woolly mammoth is extinct.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "factor",
+    "meaning": "a whole number that divides another number exactly",
+    "example": "Four is a factor of twelve.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fairness",
+    "meaning": "treating people justly and considering their needs",
+    "example": "We talked about fairness when making the game rules.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "feature",
+    "meaning": "a noticeable part or quality of something",
+    "example": "The bird’s long beak is an important feature.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "feedback",
+    "meaning": "information that helps someone improve",
+    "example": "The teacher’s feedback helped me revise the paragraph.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fiction",
+    "meaning": "writing about imagined characters or events",
+    "example": "The dragon story is fiction.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "figurative",
+    "meaning": "using words in an imaginative, nonliteral way",
+    "example": "The poet uses figurative language to describe the wind.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "flexible",
+    "meaning": "able to bend or adapt to change",
+    "example": "We stayed flexible when our first plan did not work.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fluent",
+    "meaning": "able to speak or read smoothly",
+    "example": "Practice helps a reader become more fluent.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "folktale",
+    "meaning": "a traditional story shared in a community",
+    "example": "Our class read a folktale from another country.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "forecast",
+    "meaning": "a statement about weather expected in the future",
+    "example": "The forecast said it might rain tomorrow.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fossil",
+    "meaning": "preserved remains or traces of life from long ago",
+    "example": "The fossil showed the shape of an ancient leaf.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fraction",
+    "meaning": "a number that names part of a whole",
+    "example": "One half is a fraction of the whole sandwich.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "frequent",
+    "meaning": "happening often",
+    "example": "Frequent reading practice helped me learn new words.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "friction",
+    "meaning": "a force that resists movement between touching surfaces",
+    "example": "Friction slowed the toy car on the rug.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "function",
+    "meaning": "the job or purpose of something",
+    "example": "The function of the handle is to help us carry the bag.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "galaxy",
+    "meaning": "a huge group of stars, gas, and dust",
+    "example": "Our Sun is part of a galaxy called the Milky Way.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "generosity",
+    "meaning": "a willingness to share or give",
+    "example": "Her generosity made everyone feel welcome.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "germinate",
+    "meaning": "to begin growing from a seed",
+    "example": "We watched the bean germinate in damp paper.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gesture",
+    "meaning": "a movement that communicates an idea",
+    "example": "A friendly gesture helped welcome the new student.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "glacier",
+    "meaning": "a large body of ice that slowly moves",
+    "example": "A glacier shaped the valley over a long time.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "glossary",
+    "meaning": "a list that explains words used in a book",
+    "example": "The glossary explains the science words.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gradual",
+    "meaning": "happening slowly in small steps",
+    "example": "We noticed a gradual change in the plant’s height.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gram",
+    "meaning": "a small metric unit of mass",
+    "example": "A gram is a small unit of mass.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "graph",
+    "meaning": "a picture that shows data",
+    "example": "Our graph shows how many students chose each fruit.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gratitude",
+    "meaning": "a feeling of being thankful",
+    "example": "I showed gratitude by writing a thank-you note.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "gravity",
+    "meaning": "the pull between objects that have mass",
+    "example": "Gravity keeps our feet on the ground.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "habitat",
+    "meaning": "the place where a living thing gets what it needs",
+    "example": "A pond is a habitat for many living things.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "halve",
+    "meaning": "to divide something into two equal parts",
+    "example": "We halve the sandwich so both friends get the same amount.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "handwriting",
+    "meaning": "the way a person forms written letters or characters",
+    "example": "Slow practice helped make my handwriting clearer.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "heading",
+    "meaning": "a title for a section of a text",
+    "example": "The heading tells us what the next section explains.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hemisphere",
+    "meaning": "one half of Earth",
+    "example": "Virginia is in the Northern Hemisphere.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "heritage",
+    "meaning": "traditions and history passed from earlier generations",
+    "example": "We learned about our family’s heritage.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hexagon",
+    "meaning": "a shape with six straight sides",
+    "example": "A honeycomb cell often has the shape of a hexagon.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hibernate",
+    "meaning": "to spend a long cold period in a less active state",
+    "example": "Some animals hibernate through the winter.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "historian",
+    "meaning": "a person who studies the past",
+    "example": "The historian compared two old letters.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "history",
+    "meaning": "the study of people and events in the past",
+    "example": "Objects and written records help us study history.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hold",
+    "meaning": "to support or carry something in your hands",
+    "example": "Please hold the box while I open the door.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "home",
+    "meaning": "the place where a person lives",
+    "example": "We went home after our visit to the park.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "homophone",
+    "meaning": "a word that sounds the same as another but has a different meaning",
+    "example": "Sea and see are a homophone pair.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "honesty",
+    "meaning": "the habit of being truthful",
+    "example": "Honesty helped the friends solve their problem.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "horizontal",
+    "meaning": "going across from side to side",
+    "example": "We drew a horizontal line on the graph.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hour",
+    "meaning": "a unit of time equal to sixty minutes",
+    "example": "The journey took one hour.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "humidity",
+    "meaning": "the amount of water vapor in the air",
+    "example": "The humidity was high after the rain.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hundredth",
+    "meaning": "one of one hundred equal parts of a whole",
+    "example": "Each tiny square is one hundredth of the whole grid.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "hypothesis",
+    "meaning": "an idea that can be tested",
+    "example": "Our hypothesis predicted which ramp would work best.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "identify",
+    "meaning": "to find or name what something is",
+    "example": "We identify the shapes in the picture.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "igneous",
+    "meaning": "formed when melted rock cools and hardens",
+    "example": "Basalt is an igneous rock.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "illustrate",
+    "meaning": "to show or explain with pictures or examples",
+    "example": "I illustrate my story with a drawing.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "illustrator",
+    "meaning": "a person who makes pictures for a text",
+    "example": "The illustrator drew the animal characters.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "imagination",
+    "meaning": "the ability to form ideas or pictures in your mind",
+    "example": "I used my imagination to invent a new story.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "impossible",
+    "meaning": "unable to happen or be done",
+    "example": "It is impossible to draw a square with only three sides.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inclusion",
+    "meaning": "making sure different people can take part",
+    "example": "Our game rules support inclusion.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "independence",
+    "meaning": "the ability to govern or act without another’s control",
+    "example": "The colonies declared independence in 1776.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "independent",
+    "meaning": "able to do some things without help",
+    "example": "I became more independent at packing my school bag.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "index",
+    "meaning": "an alphabetical list showing where topics appear in a book",
+    "example": "We used the index to find pages about birds.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inequality",
+    "meaning": "a statement that compares unequal values",
+    "example": "An inequality can show that seven is greater than four.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "infer",
+    "meaning": "to use clues and knowledge to work something out",
+    "example": "We infer how the character feels from the clues.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inference",
+    "meaning": "an idea worked out from clues and knowledge",
+    "example": "Our inference was supported by two clues in the story.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "innovation",
+    "meaning": "a useful new idea or improvement",
+    "example": "The new wheel design was an innovation.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "insect",
+    "meaning": "an animal with six legs and three main body parts",
+    "example": "An ant is an insect.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "insulator",
+    "meaning": "a material that does not let heat or electricity pass through easily",
+    "example": "The cup has an insulator around its outside.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "integer",
+    "meaning": "a whole number or its negative, including zero",
+    "example": "The number negative three is an integer.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interpret",
+    "meaning": "to explain the meaning of information or signs",
+    "example": "We interpret the graph to answer the question.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "intersect",
+    "meaning": "to cross or meet",
+    "example": "The two paths intersect near the fountain.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interval",
+    "meaning": "a space or amount of time between things",
+    "example": "There was a short interval between the songs.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "intonation",
+    "meaning": "the rise and fall of a voice when speaking",
+    "example": "Intonation can help show that a sentence is a question.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "invention",
+    "meaning": "a new tool, process, or idea made by someone",
+    "example": "The invention helped people share information.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "invertebrate",
+    "meaning": "an animal without a backbone",
+    "example": "A snail is an invertebrate.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "investigate",
+    "meaning": "to look carefully for information",
+    "example": "We investigate which surface makes the car roll farther.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "invisible",
+    "meaning": "unable to be seen",
+    "example": "Water vapor is usually invisible to our eyes.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  }
+]

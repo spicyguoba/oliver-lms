@@ -2829,3 +2829,133 @@ legend {
     font-size: 14px;
   }
 }
+.kid-category-progress {
+  display: grid;
+  gap: 9px;
+  width: 100%;
+  margin: 12px 0 18px;
+  font-size: 15px;
+  color: #31554b;
+}
+.kid-category-progress.compact {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+.kid-category-track {
+  height: 9px;
+  border-radius: 20px;
+  background: #d9e5db;
+  overflow: hidden;
+  width: 100%;
+}
+.kid-category-track i {
+  display: block;
+  height: 100%;
+  background: #32816a;
+  border-radius: inherit;
+}
+.kid-topic.kid-finished {
+  background: #e8f4e7;
+  border-color: #6d9e73;
+  box-shadow: 0 4px 0 #b8d7b5;
+}
+.kid-last-completion {
+  display: grid;
+  gap: 5px;
+  margin: 12px 0 6px;
+  color: #23533b;
+  font-size: 14px;
+}
+.kid-last-completion time {
+  font-size: 13px;
+  color: #42634f;
+}
+.kid-unplayed {
+  display: inline-block;
+  margin-top: 10px;
+  color: #57695f;
+}
+.kid-course {
+  background: #f3edff;
+}
+.kid-catalog-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 20px 0;
+}
+.kid-catalog-tools label {
+  flex: 1 1 160px;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 750;
+}
+.kid-catalog-tools select,
+.kid-catalog-tools input {
+  width: 100%;
+  min-height: 48px;
+  border: 2px solid #bdcabb;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: white;
+  font: inherit;
+}
+.kid-catalog-result {
+  color: #526b5b;
+  font-size: 15px;
+}
+.kid-word-lesson {
+  margin: 28px 0;
+}
+.kid-word-card {
+  border-radius: 24px;
+  border: 2px solid #acc7ad;
+  padding: 28px;
+  background: #f0f7e9;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.kid-word-card h3 {
+  font-size: clamp(36px, 7vw, 58px);
+  margin: 18px 0 10px;
+  color: #244e3e;
+}
+.kid-word-card .kid-listen {
+  margin: 18px auto 0;
+}
+.kid-pinyin {
+  font-size: 22px;
+  color: #725476;
+}
+.kid-word-meaning {
+  font-size: 21px;
+  font-weight: 750;
+}
+.kid-word-example {
+  font-size: 24px;
+  line-height: 1.75;
+  margin-top: 24px;
+}
+.kid-translation {
+  font-size: 17px;
+  color: #51675b;
+}
+.kid-quiz-context {
+  border-radius: 20px;
+  padding: 20px;
+  background: #f0f6e8;
+  margin: 20px 0;
+  text-align: center;
+}
+.kid-quiz-context > strong {
+  font-size: 34px;
+}
+.kid-quiz-context > p {
+  font-size: 25px;
+  line-height: 1.7;
+}
+.kid-card-controls {
+  align-items: center;
+  flex-wrap: wrap;
+}

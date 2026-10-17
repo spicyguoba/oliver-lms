@@ -1370,46 +1370,76 @@ function Material({ material: m, act, busy }) {
   );
 }
 function SkillTable({ stats }) {
+  const [subject, setSubject] = useState("All");
+  const [includeNew, setIncludeNew] = useState(false);
+  const visible = stats.filter(
+    (s) =>
+      (includeNew || s.total > 0) &&
+      (subject === "All" || s.subject === subject),
+  );
   return (
-    <div className="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th>Independent first answers</th>
-            <th>Accuracy</th>
-            <th>Typical correct time</th>
-            <th>Observed answers</th>
-          </tr>
-        </thead>
-        <tbody>
-          {stats.map((s) => (
-            <tr key={s.id}>
-              <td>
-                <strong>
-                  {skillIcons[s.id] || s.icon} {s.title}
-                </strong>
-              </td>
-              <td>
-                {s.independentCorrect} / {s.independent}
-              </td>
-              <td>
-                {s.accuracy === null ? "No baseline yet" : s.accuracy + "%"}
-              </td>
-              <td>
-                {s.medianSeconds === null ? "—" : s.medianSeconds + " sec"}
-              </td>
-              <td>{s.observed}</td>
+    <>
+      <div className="row wrap">
+        <label>
+          Subject
+          <select value={subject} onChange={(e) => setSubject(e.target.value)}>
+            <option>All</option>
+            {[...new Set(stats.map((s) => s.subject))].map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+        </label>
+        <label className="row">
+          <input
+            type="checkbox"
+            checked={includeNew}
+            onChange={(e) => setIncludeNew(e.target.checked)}
+          />{" "}
+          Include exercises not yet attempted
+        </label>
+      </div>
+      {!visible.length && <p>No attempted exercises in this view yet.</p>}
+      <div className="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Independent first answers</th>
+              <th>Accuracy</th>
+              <th>Typical correct time</th>
+              <th>Observed answers</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {visible.map((s) => (
+              <tr key={s.id}>
+                <td>
+                  <strong>
+                    {skillIcons[s.id] || s.icon} {s.title}
+                  </strong>
+                </td>
+                <td>
+                  {s.independentCorrect} / {s.independent}
+                </td>
+                <td>
+                  {s.accuracy === null ? "No baseline yet" : s.accuracy + "%"}
+                </td>
+                <td>
+                  {s.medianSeconds === null ? "—" : s.medianSeconds + " sec"}
+                </td>
+                <td>{s.observed}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 function Reports({ data, play, busy, difficulty, setDifficulty }) {
   const [selected, setSelected] = useState(null);
   const [stateTrail, setStateTrail] = useState(1);
+  const [observedSkill, setObservedSkill] = useState("phonics");
   return (
     <>
       <PageTitle
@@ -1469,23 +1499,45 @@ function Reports({ data, play, busy, difficulty, setDifficulty }) {
             ))}
           </select>
         </label>
+        <label>
+          Exercise to observe
+          <select
+            value={observedSkill}
+            onChange={(e) => setObservedSkill(e.target.value)}
+          >
+            {[...new Set(data.stats.map((s) => s.subject))].map((subject) => (
+              <optgroup key={subject} label={subject}>
+                {data.stats
+                  .filter((s) => s.subject === subject)
+                  .map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.title}
+                      {s.band ? ` · ${s.band}` : ""}
+                    </option>
+                  ))}
+              </optgroup>
+            ))}
+          </select>
+        </label>
         <div className="row wrap">
-          {data.stats.map((s) => (
-            <button
-              className="button secondary small"
-              key={s.id}
-              disabled={busy}
-              onClick={() =>
-                play(
-                  s.id,
-                  "observed",
-                  s.id === "states" ? stateTrail : difficulty,
-                )
-              }
-            >
-              {skillIcons[s.id] || s.icon} {s.title}
-            </button>
-          ))}
+          {data.stats
+            .filter((s) => s.id === observedSkill)
+            .map((s) => (
+              <button
+                className="button secondary small"
+                key={s.id}
+                disabled={busy}
+                onClick={() =>
+                  play(
+                    s.id,
+                    "observed",
+                    s.id === "states" ? stateTrail : difficulty,
+                  )
+                }
+              >
+                {skillIcons[s.id] || s.icon} {s.title}
+              </button>
+            ))}
         </div>
       </section>
       <details className="white-card section">
@@ -1496,6 +1548,15 @@ function Reports({ data, play, busy, difficulty, setDifficulty }) {
           ten. An earned picture sticker celebrates completing a round, not
           mastery. History includes different perspectives and overlapping
           timelines.
+        </p>
+        <p>
+          The word library has 2,000 original English entries and 1,200 Chinese
+          entries, each with meaning and sentence activities in packs of twenty.
+          Starter, Growing, and Challenge are family practice paths, not
+          standardized grade levels. A finished five-question round marks an
+          exercise complete; it does not establish mastery of every word in the
+          pack. Open a word pack in Oliver’s world for its flashcards,
+          individual sentence credits, and Mandarin audio.
         </p>
         {data.stats
           .filter((s) => s.lesson)

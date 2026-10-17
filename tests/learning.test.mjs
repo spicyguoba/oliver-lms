@@ -133,7 +133,7 @@ test("equivalent fractions and harmless numeric formatting are accepted", () => 
 });
 
 test("every discovery has teachable content, sources, and valid server-private questions", () => {
-  assert.equal(discoveries.length, 21);
+  assert.equal(discoveries.length, 35);
   assert.equal(new Set(discoveries.map((t) => t.id)).size, discoveries.length);
   for (const topic of discoveries) {
     assert.ok(topic.lesson.length >= 3);

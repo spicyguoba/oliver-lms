@@ -1,5 +1,13 @@
 # Discovery content notes
 
+## Completion and library expansion (2026-10-16)
+
+`additions.json` adds fourteen original topics and 112 questions to the original 21/210: plant life, water cycle, matter, light/sound, Africa, Asia, Europe, South America, Australia/Pacific islands, Shang/Zhou, Yuan, Qing, Greek/Roman builders, and American inventors. `lib/math.mjs` adds sixteen procedural mathematics activities. The word library adds 320 meaning/sentence activities for 2,000 English and 1,200 Chinese entries; see [vocabulary content, licenses, and limits](VOCABULARY.md).
+
+New educator references are included in each topic and shown in parent reports. They include USDA Forest Service seed-growing activities, USGS Water Science School, NASA shadow/reflection activities, NIH/NIDCD hearing, National Geographic continent/Asia/map-model resources, Columbia University's Asia for Educators bronze-age China, the Metropolitan Museum's Yuan/Qing/Greece/Rome resources, and Smithsonian histories of the Wright brothers and Edison's teams. Questions and lessons are original; no source images or passages are copied. Broad continent models are introduced as models, and culture lessons emphasize variation within places.
+
+A completed card now shows its latest finished native round's score and date, including a zero score, and has a distinct green shade plus a text badge. Abandoned rounds do not count. Category counts are counts of exercise cards with at least one finished round; replaying does not add another completed card. Counts are not claims of mastery. Copied legacy-game round results are client-reported and dated only from this update; historical in-game stars/unlocks are retained without inventing past dates. Version 2 additively introduces `legacyCompletions`; it does not replace any prior records. The notes below describe the preceding discovery release.
+
 Reviewed 2026-10-16. `discoveries.json` contains 21 original introductory activities and 210 question variants. These are family practice activities for roughly ages 6–9 with adult/read-aloud support, not a calibrated curriculum or assessment. Each round draws five questions. The six existing activities remain available.
 
 The text, questions, and schematic world picture are original; source pages and their images are not embedded or copied. The child's interface has no outbound links. Parent learning insights include references for each topic.

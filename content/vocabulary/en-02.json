@@ -1,0 +1,802 @@
+[
+  {
+    "word": "accept",
+    "meaning": "to agree to receive something or say yes to an offer",
+    "example": "I accept my friend's offer to help.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "accident",
+    "meaning": "something unexpected that was not intended",
+    "example": "The spilled water was an accident.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "account",
+    "meaning": "a record allowing a person to use a service",
+    "example": "The parent manages the learning account.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "acorn",
+    "meaning": "the nut of an oak tree",
+    "example": "The squirrel buried an acorn.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "across",
+    "meaning": "from one side to the other",
+    "example": "We walked across the bridge.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "add",
+    "meaning": "to put more with something",
+    "example": "We add two blocks to the tower.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "address",
+    "meaning": "a location identifying a place or online resource",
+    "example": "We checked the website address carefully.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "adventure",
+    "meaning": "an exciting experience or journey",
+    "example": "The story follows an adventure across the sea.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "afraid",
+    "meaning": "feeling fear",
+    "example": "The loud thunder made the puppy afraid.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "after",
+    "meaning": "later than something",
+    "example": "We washed our hands after gardening.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "afternoon",
+    "meaning": "the part of the day after noon and before evening",
+    "example": "We visited the library in the afternoon.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "age",
+    "meaning": "the length of time someone or something has existed",
+    "example": "The tree's age was more than fifty years.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ago",
+    "meaning": "before the present time",
+    "example": "We visited the museum two days ago.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "agree",
+    "meaning": "to have the same opinion or accept a plan",
+    "example": "We agree to take turns with the swing.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "aid",
+    "meaning": "help or support",
+    "example": "The teacher gave aid to the group with the heavy box.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "airport",
+    "meaning": "a place where aircraft land and take off",
+    "example": "The airport had a large waiting area.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "alarm",
+    "meaning": "a signal giving a warning or reminder",
+    "example": "The alarm reminded us to check the oven with an adult.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "allow",
+    "meaning": "to let someone do something",
+    "example": "The rules allow each player two turns.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "almost",
+    "meaning": "nearly but not completely",
+    "example": "The puzzle is almost finished.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "alone",
+    "meaning": "without anyone else",
+    "example": "The single tree stood alone in the field.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "already",
+    "meaning": "before now or before a certain time",
+    "example": "I have already fed the rabbit.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "always",
+    "meaning": "every time",
+    "example": "I always wash my hands before eating.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "amount",
+    "meaning": "how much of something there is",
+    "example": "We measured the amount of water in the cup.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "angry",
+    "meaning": "feeling upset because something seems wrong or unfair",
+    "example": "I felt angry when someone broke my model.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "animal",
+    "meaning": "a living thing that gets food by consuming other organisms or their products",
+    "example": "A rabbit is an animal.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "another",
+    "meaning": "one more or a different one",
+    "example": "I borrowed another book about space.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "answer",
+    "meaning": "a response to a question",
+    "example": "I wrote my answer below the question.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ant",
+    "meaning": "a small insect that lives in a colony",
+    "example": "An ant carried a crumb toward its nest.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "anywhere",
+    "meaning": "in or to any place",
+    "example": "You can sit anywhere on the reading rug.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "apartment",
+    "meaning": "a home forming part of a larger building",
+    "example": "The apartment had a bright reading corner.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "appear",
+    "meaning": "to become visible",
+    "example": "New leaves appear on many trees in spring.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cap",
+    "meaning": "a covering for the top of a container",
+    "example": "The bottle cap kept the water inside.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "captain",
+    "meaning": "a person in charge of a ship or a team",
+    "example": "The captain guided the ship into the harbor.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "car",
+    "meaning": "a road vehicle usually with four wheels",
+    "example": "We rode in the car to the museum.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cardboard",
+    "meaning": "a thick stiff paper material",
+    "example": "We built a model house from cardboard.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "care",
+    "meaning": "to give attention and help to someone or something",
+    "example": "We care for the class plants each morning.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "careful",
+    "meaning": "taking time to avoid mistakes or harm",
+    "example": "Be careful when carrying the full cup.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "careless",
+    "meaning": "not paying enough attention",
+    "example": "A careless spill made the drawing wet.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "carpenter",
+    "meaning": "a person who makes or repairs things from wood",
+    "example": "The carpenter built a sturdy shelf.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "carrot",
+    "meaning": "a root vegetable often orange",
+    "example": "The carrot grew beneath the soil.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "carry",
+    "meaning": "to hold something while moving it",
+    "example": "We carry the books to the classroom.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cash",
+    "meaning": "money in the form of notes and coins",
+    "example": "The visitor paid with cash.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cashier",
+    "meaning": "a person who takes payment in a shop",
+    "example": "The cashier counted the change carefully.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "castle",
+    "meaning": "a fortified building from the past",
+    "example": "The old castle stood on a hill.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "catch",
+    "meaning": "to stop and hold something moving through the air",
+    "example": "I catch the ball with both hands.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cause",
+    "meaning": "something that makes an event happen",
+    "example": "The strong wind was the cause of the fallen branches.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ceiling",
+    "meaning": "the upper inside surface of a room",
+    "example": "A light hung from the ceiling.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cell",
+    "meaning": "a small basic unit of living things",
+    "example": "The plant cell has a cell wall.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cent",
+    "meaning": "one hundredth of a dollar in United States money",
+    "example": "A penny is worth one cent.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "center",
+    "meaning": "the middle point or area",
+    "example": "I put a dot in the center of the circle.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cereal",
+    "meaning": "a grain plant or a breakfast food made from grain",
+    "example": "I added milk to my cereal.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "certainly",
+    "meaning": "without doubt or surely",
+    "example": "I will certainly return the borrowed ruler.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chain",
+    "meaning": "a series of connected links or events",
+    "example": "The bicycle's chain turned the wheel.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chalk",
+    "meaning": "a soft material used for writing on boards or pavement",
+    "example": "We drew a hopscotch grid with chalk.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chance",
+    "meaning": "an opportunity to do something",
+    "example": "Everyone had a chance to speak.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "change",
+    "meaning": "to become different",
+    "example": "Leaves change color in autumn.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chart",
+    "meaning": "an organized display of information",
+    "example": "We used a chart to record the weather.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cheap",
+    "meaning": "costing a small amount of money",
+    "example": "The cheap notebook was useful for rough drafts.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "check",
+    "meaning": "to look carefully to see whether something is correct",
+    "example": "I check my work before handing it in.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cheese",
+    "meaning": "food made from milk curds",
+    "example": "I put cheese in my sandwich.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cherry",
+    "meaning": "a small round fruit with a hard pit",
+    "example": "A cherry hung from the branch.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chicken",
+    "meaning": "a farm bird raised for eggs or meat",
+    "example": "The chicken scratched the soil for seeds.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chief",
+    "meaning": "the main leader of a group or organization",
+    "example": "The fire chief explained the team's work.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "chocolate",
+    "meaning": "a food made from cacao beans",
+    "example": "We added a small piece of chocolate to the recipe.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "choice",
+    "meaning": "an act of picking between possibilities",
+    "example": "I had a choice between two books.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "choose",
+    "meaning": "to pick from two or more possibilities",
+    "example": "You may choose a book to read.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "city",
+    "meaning": "a large community with many buildings and people",
+    "example": "The city had a busy train station.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "class",
+    "meaning": "a group of students learning together",
+    "example": "Our class planted a garden.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "classmate",
+    "meaning": "someone in the same class as you",
+    "example": "My classmate helped me find the right page.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "claw",
+    "meaning": "a curved pointed nail on an animal's foot",
+    "example": "The cat caught the toy with a claw.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clay",
+    "meaning": "a fine-grained earth material that can be shaped when wet",
+    "example": "We shaped the clay into a bowl.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clean",
+    "meaning": "free from dirt",
+    "example": "We put clean plates on the table.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "click",
+    "meaning": "to press a control on a mouse or make a short sharp sound",
+    "example": "I click the picture to open the activity.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cliff",
+    "meaning": "a steep rock face",
+    "example": "Seabirds nested on the cliff.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "climb",
+    "meaning": "to move upward using hands, feet, or both",
+    "example": "We climb the steps to the library entrance.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clip",
+    "meaning": "a small fastener holding things together",
+    "example": "The clip kept the pages in order.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "clock",
+    "meaning": "a device showing the time",
+    "example": "The classroom clock showed half past nine.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "close",
+    "meaning": "to move something so it is no longer open",
+    "example": "Please close the door gently.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "closet",
+    "meaning": "a small enclosed storage space",
+    "example": "My coat hung in the closet.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cloud",
+    "meaning": "a visible group of tiny water droplets or ice crystals in the air",
+    "example": "A white cloud drifted above the hill.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "club",
+    "meaning": "a group meeting for a shared interest",
+    "example": "I joined the nature club.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coach",
+    "meaning": "a person who guides and teaches a sports team or learner",
+    "example": "The coach encouraged everyone to keep trying.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coal",
+    "meaning": "a dark fuel formed from ancient plant material",
+    "example": "The exhibit explained how coal formed long ago.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cobbler",
+    "meaning": "a person who repairs shoes",
+    "example": "The cobbler fixed the loose sole.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coconut",
+    "meaning": "a large palm seed with a hard shell and white flesh",
+    "example": "The coconut had a tough outer covering.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coin",
+    "meaning": "a flat metal piece used as money",
+    "example": "The coin went into the savings jar.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cold",
+    "meaning": "having a low temperature",
+    "example": "The cold wind made us put on our coats.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "column",
+    "meaning": "things arranged in a line from top to bottom",
+    "example": "The first column listed the names of the plants.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "company",
+    "meaning": "a business or the presence of other people",
+    "example": "The company makes wooden toys.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "conductor",
+    "meaning": "a material that allows heat or electric current to move through it easily",
+    "example": "Copper is a good conductor of electricity.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "connect",
+    "meaning": "to link things or ideas together",
+    "example": "We connect the new word with something we already know.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cook",
+    "meaning": "to prepare food using heat",
+    "example": "A grown-up helped us cook the soup.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cookie",
+    "meaning": "a small flat sweet baked food",
+    "example": "We shared a cookie after lunch.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cool",
+    "meaning": "a little cold",
+    "example": "We rested in the cool shade of a tree.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coop",
+    "meaning": "a small enclosure for poultry",
+    "example": "The chickens slept in the coop.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "copper",
+    "meaning": "a reddish metal often used in electric wires",
+    "example": "The wire had a copper core.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "copy",
+    "meaning": "to make another version of something",
+    "example": "I copy the diagram onto a new page.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "corn",
+    "meaning": "a grain with kernels growing on a cob",
+    "example": "We ate sweet corn at dinner.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "corner",
+    "meaning": "a place where two sides or edges meet",
+    "example": "The reading chair stood in the corner.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "correct",
+    "meaning": "right or accurate",
+    "example": "I checked the map to find the correct route.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  }
+]

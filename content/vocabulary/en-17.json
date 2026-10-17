@@ -1,0 +1,802 @@
+[
+  {
+    "word": "crash",
+    "meaning": "to collide with something suddenly",
+    "example": "The toy cars crash into the block wall.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crate",
+    "meaning": "a strong container often used for transporting goods",
+    "example": "The wooden crate held the apples.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crawl",
+    "meaning": "to move on hands and knees or close to the ground",
+    "example": "The baby can crawl across the mat.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crayon",
+    "meaning": "a colored wax stick used for drawing",
+    "example": "The green crayon colored the leaves.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cream",
+    "meaning": "the fat-rich part of milk",
+    "example": "A little cream thickened the sauce.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "creased",
+    "meaning": "marked by a fold",
+    "example": "The creased card showed where we had bent it.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "create",
+    "meaning": "to make something new",
+    "example": "We create a poster about ocean animals.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "creator",
+    "meaning": "a person who makes something",
+    "example": "The creator shared how the model was built.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "creek",
+    "meaning": "a small stream",
+    "example": "We watched tiny fish in the creek.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crisis",
+    "meaning": "a time of serious difficulty that needs action",
+    "example": "The town worked together during the water crisis.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crisp",
+    "meaning": "firm and making a sharp sound when broken",
+    "example": "The crisp apple crunched when I bit it.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "criticism",
+    "meaning": "comments pointing out problems or weaknesses",
+    "example": "Helpful criticism can suggest ways to improve.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crocodile",
+    "meaning": "a large water reptile with a long snout",
+    "example": "The crocodile floated near the riverbank.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crooked",
+    "meaning": "bent or not straight",
+    "example": "We straightened the crooked picture frame.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crosswalk",
+    "meaning": "a marked place where people cross a road",
+    "example": "We used the crosswalk with an adult.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crowd",
+    "meaning": "a large number of people together",
+    "example": "The crowd watched the parade.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crumb",
+    "meaning": "a small piece broken from bread or another dry food",
+    "example": "A crumb fell onto the plate.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crumpled",
+    "meaning": "pressed into folds and wrinkles",
+    "example": "We flattened the crumpled paper for reuse.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "crust",
+    "meaning": "the outer firm layer of bread or another food",
+    "example": "The bread had a crisp crust.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cry",
+    "meaning": "to have tears come from your eyes",
+    "example": "It is okay to cry when you feel sad.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cub",
+    "meaning": "a young animal such as a bear or lion",
+    "example": "The bear cub followed its mother.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cucumber",
+    "meaning": "a long green fruit often eaten as a vegetable",
+    "example": "We sliced a cucumber for the salad.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cup",
+    "meaning": "a small container used for drinking",
+    "example": "I poured water into my cup.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cupboard",
+    "meaning": "a storage space with shelves and doors",
+    "example": "The cups were in the cupboard.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curator",
+    "meaning": "a person who manages a collection or exhibition",
+    "example": "The curator arranged the museum display.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curb",
+    "meaning": "the raised edge between a road and sidewalk",
+    "example": "We stopped at the curb before crossing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curd",
+    "meaning": "the solid part formed when milk thickens",
+    "example": "The cheese maker separated the curd from the liquid.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curious",
+    "meaning": "wanting to learn or find out more",
+    "example": "The curious child asked how rainbows form.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "current",
+    "meaning": "the flow of electric charge",
+    "example": "The battery pushed a current through the wire.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curriculum",
+    "meaning": "the subjects and learning planned for a course or school",
+    "example": "The curriculum included science and history.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curry",
+    "meaning": "a dish with a sauce flavored with a mixture of spices",
+    "example": "The mild vegetable curry was served with rice.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cursor",
+    "meaning": "a marker showing a position on a screen",
+    "example": "The cursor showed where the next letter would appear.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curtain",
+    "meaning": "a hanging piece of fabric covering a window or space",
+    "example": "I opened the curtain to let in light.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curve",
+    "meaning": "a line or surface that bends smoothly",
+    "example": "The path made a gentle curve around the pond.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "curved",
+    "meaning": "bending rather than straight",
+    "example": "The curved path went around the pond.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "custard",
+    "meaning": "a food made by thickening milk with eggs or another thickener",
+    "example": "The warm custard was served with fruit.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "custom",
+    "meaning": "a usual way of doing something in a group",
+    "example": "Taking off shoes indoors is a custom in some homes.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "customer",
+    "meaning": "a person who buys goods or services",
+    "example": "The customer asked about the price.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cut",
+    "meaning": "to divide something using a sharp edge",
+    "example": "We cut the paper with child-safe scissors.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cyclist",
+    "meaning": "a person who rides a bicycle",
+    "example": "The cyclist wore a helmet.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "daffodil",
+    "meaning": "a spring flower often with a trumpet-shaped center",
+    "example": "The yellow daffodil bloomed in March.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "daily",
+    "meaning": "happening every day",
+    "example": "Daily reading helps me practice new words.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "daisy",
+    "meaning": "a flower often with white petals around a yellow center",
+    "example": "A daisy grew beside the path.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "damaged",
+    "meaning": "harmed or made less useful",
+    "example": "We kept the damaged book for repair.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "damp",
+    "meaning": "a little wet",
+    "example": "Seeds rested on a damp paper towel.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dance",
+    "meaning": "to move your body to music",
+    "example": "We dance to the lively song.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dancer",
+    "meaning": "a person who dances",
+    "example": "The dancer practiced a graceful turn.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dark",
+    "meaning": "having little or no light",
+    "example": "We turned on a lamp in the dark room.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "date",
+    "meaning": "a sweet fruit from a date palm",
+    "example": "The date had a small hard pit.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dawn",
+    "meaning": "the first light before sunrise",
+    "example": "Birds began singing at dawn.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "debug",
+    "meaning": "to find and fix problems in a program",
+    "example": "We debug the game by checking each step.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "decide",
+    "meaning": "to make a choice after thinking",
+    "example": "We decide which path to take by reading the map.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "decision",
+    "meaning": "a choice made after thinking",
+    "example": "Our decision was to build a wider bridge.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "decrease",
+    "meaning": "to become smaller or fewer",
+    "example": "The water level will decrease as water evaporates.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "deduce",
+    "meaning": "to work out a conclusion from known information",
+    "example": "We deduce that the wet footprints came from outside.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "deer",
+    "meaning": "a hoofed mammal whose males often grow antlers",
+    "example": "A deer walked quietly between the trees.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delegate",
+    "meaning": "a person chosen to represent a group",
+    "example": "The delegate shared the club's ideas at the meeting.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delete",
+    "meaning": "to remove stored text or data",
+    "example": "I delete the extra word from the sentence.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delicious",
+    "meaning": "very pleasant to taste",
+    "example": "The homemade soup was delicious.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delightful",
+    "meaning": "very pleasing or enjoyable",
+    "example": "The delightful story made us smile.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "delivery",
+    "meaning": "the act of bringing something to its destination",
+    "example": "The delivery brought books to the school.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "demolition",
+    "meaning": "the careful process of taking a building down",
+    "example": "The old unsafe shed was scheduled for demolition.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "demonstration",
+    "meaning": "showing how something works or is done",
+    "example": "The demonstration showed how to use the balance.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "den",
+    "meaning": "a wild animal's sheltered resting place",
+    "example": "The fox returned to its den.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "density",
+    "meaning": "mass compared with volume",
+    "example": "The rock's density was greater than the wood's density.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dent",
+    "meaning": "a small hollow caused by pressure or impact",
+    "example": "The empty can had a dent.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dentist",
+    "meaning": "a person trained to care for teeth and gums",
+    "example": "The dentist showed us how to brush carefully.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "departure",
+    "meaning": "the act or time of leaving",
+    "example": "We checked the train's departure time.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "depend",
+    "meaning": "to need or rely on something",
+    "example": "Young birds depend on adults for food.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dependable",
+    "meaning": "able to be trusted to do what is expected",
+    "example": "Our dependable helper arrived on time.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "deposit",
+    "meaning": "to leave material in a place",
+    "example": "Slow water can deposit sand along a riverbank.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "depth",
+    "meaning": "the distance from the top to the bottom",
+    "example": "We used a marked stick to measure the puddle's depth.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "descendant",
+    "meaning": "a person related to someone from an earlier generation",
+    "example": "A descendant shared the family's old photographs.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "description",
+    "meaning": "words telling what something is like",
+    "example": "The description helped me picture the forest.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "design",
+    "meaning": "a plan showing how something will be made or work",
+    "example": "Our design had a wide base.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "designer",
+    "meaning": "a person who plans how something will look or work",
+    "example": "The designer tested several poster layouts.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dessert",
+    "meaning": "a sweet food often served after a meal",
+    "example": "We had fruit for dessert.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "destination",
+    "meaning": "the place someone or something is going",
+    "example": "The museum was our destination.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "detach",
+    "meaning": "to separate something from what it is joined to",
+    "example": "We detach the old label carefully.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "determination",
+    "meaning": "a strong decision to keep trying",
+    "example": "Her determination helped her finish the difficult puzzle.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "detour",
+    "meaning": "a different route used to avoid a blocked one",
+    "example": "We followed a detour around the closed bridge.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "develop",
+    "meaning": "to grow or change over time",
+    "example": "Frogs develop from eggs into tadpoles and then adults.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "developer",
+    "meaning": "a person who builds or improves software or other projects",
+    "example": "The developer fixed the game's navigation.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "device",
+    "meaning": "a tool or machine made for a purpose",
+    "example": "The device measured the temperature.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dew",
+    "meaning": "water drops forming on a cool surface",
+    "example": "Dew sparkled on the leaves at sunrise.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diagram",
+    "meaning": "a drawing showing parts or how something works",
+    "example": "The diagram showed the parts of a flower.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "dialect",
+    "meaning": "a form of a language used by a group or region",
+    "example": "The story included words from a local dialect.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "diary",
+    "meaning": "a private record of daily experiences or thoughts",
+    "example": "I wrote about our trip in my diary.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "digital",
+    "meaning": "using information represented by separate values such as numbers",
+    "example": "The digital clock displayed the time with digits.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "director",
+    "meaning": "a person guiding an organization or production",
+    "example": "The director welcomed visitors to the museum.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disadvantage",
+    "meaning": "something that makes a task or situation harder",
+    "example": "A disadvantage of paper is that it can tear when wet.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disagree",
+    "meaning": "to have a different opinion",
+    "example": "We can disagree and still speak kindly.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disagreement",
+    "meaning": "a difference in opinions or wishes",
+    "example": "We solved our disagreement with a calm discussion.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disappear",
+    "meaning": "to stop being visible",
+    "example": "The Moon seemed to disappear behind a cloud.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disappointed",
+    "meaning": "sad because something did not happen as hoped",
+    "example": "We were disappointed when rain postponed the picnic.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disconnect",
+    "meaning": "to separate a connection",
+    "example": "An adult helps disconnect the battery after the test.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "discount",
+    "meaning": "a reduction in the usual price",
+    "example": "The shop offered a discount on notebooks.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "displacement",
+    "meaning": "the change from a starting position to a final position",
+    "example": "The map showed the walker's displacement from the start.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disposable",
+    "meaning": "intended to be thrown away after use",
+    "example": "We used a washable cloth instead of a disposable wipe.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "disprove",
+    "meaning": "to show that a claim is false",
+    "example": "One counterexample can disprove an always statement.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  }
+]

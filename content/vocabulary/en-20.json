@@ -1,0 +1,802 @@
+[
+  {
+    "word": "immediate",
+    "meaning": "happening right away",
+    "example": "The question needed an immediate answer.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "immigrant",
+    "meaning": "a person who moves to another country to live",
+    "example": "The biography described an immigrant building a new home.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "importance",
+    "meaning": "the quality of having meaning or value",
+    "example": "We discussed the importance of clean water.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "important",
+    "meaning": "having great meaning or value",
+    "example": "It is important to listen when someone is speaking.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "improve",
+    "meaning": "to become better",
+    "example": "My handwriting will improve with careful practice.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inaccessible",
+    "meaning": "difficult or impossible to reach or use",
+    "example": "The high shelf was inaccessible without adult help.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inactive",
+    "meaning": "not moving or taking part at the moment",
+    "example": "The inactive volcano had not erupted for a long time.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "include",
+    "meaning": "to have something as part of a group or whole",
+    "example": "Our report will include a labeled diagram.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "income",
+    "meaning": "money received from work or other sources",
+    "example": "The family planned how to use its income.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "incorrect",
+    "meaning": "not right or accurate",
+    "example": "I erased the incorrect answer and tried again.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "increase",
+    "meaning": "to become larger or more numerous",
+    "example": "The number of sprouts will increase as more seeds grow.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "indigenous",
+    "meaning": "originating in or belonging to a place, especially peoples with longstanding ties",
+    "example": "The museum worked with Indigenous communities to tell their histories.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "individual",
+    "meaning": "one person or thing considered separately",
+    "example": "Each individual had a different idea.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "industry",
+    "meaning": "business activity producing similar goods or services",
+    "example": "The town's furniture industry used local workshops.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inertia",
+    "meaning": "the tendency to keep the same state of motion unless a net force acts",
+    "example": "Inertia helped explain why the toy stayed still until pushed.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "infant",
+    "meaning": "a very young baby",
+    "example": "The infant slept in a safe crib.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inform",
+    "meaning": "to give information",
+    "example": "The leaflet will inform visitors about the museum.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "information",
+    "meaning": "facts or details about something",
+    "example": "The sign gave information about the trail.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ingredient",
+    "meaning": "one of the foods used to make a dish",
+    "example": "Flour is an ingredient in bread.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inhabitant",
+    "meaning": "a person or animal living in a place",
+    "example": "An inhabitant of the island showed us the harbor.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ink",
+    "meaning": "a colored liquid used for writing or printing",
+    "example": "The pen's ink was blue.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inquire",
+    "meaning": "to ask for information",
+    "example": "We inquire about the museum's opening time.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inscription",
+    "meaning": "words written or carved onto a surface",
+    "example": "The stone had an ancient inscription.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inside",
+    "meaning": "in the inner part of something",
+    "example": "The pencils are inside the box.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inspect",
+    "meaning": "to examine carefully",
+    "example": "We inspect the model for loose parts.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inspection",
+    "meaning": "a careful check",
+    "example": "We made an inspection of the model before testing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inspector",
+    "meaning": "a person who checks whether something meets requirements",
+    "example": "The inspector checked the new playground.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inspire",
+    "meaning": "to make someone feel eager to do or create something",
+    "example": "The museum visit helped inspire my painting.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "instead",
+    "meaning": "in place of something else",
+    "example": "We walked instead of taking the bus.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "institution",
+    "meaning": "an established organization with a public or social purpose",
+    "example": "A library is a community institution.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "instruction",
+    "meaning": "a direction explaining what to do",
+    "example": "The first instruction said to fold the paper.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "instructional",
+    "meaning": "designed to help someone learn",
+    "example": "The instructional video showed how to fold the paper.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "instructor",
+    "meaning": "a person teaching a practical skill or subject",
+    "example": "The swimming instructor showed a safe technique.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "instrument",
+    "meaning": "a tool used for a particular task",
+    "example": "A thermometer is an instrument for measuring temperature.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "insufficient",
+    "meaning": "not enough",
+    "example": "The first test used insufficient support for the roof.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interact",
+    "meaning": "to act on or communicate with one another",
+    "example": "Living things interact with their surroundings.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interactive",
+    "meaning": "responding to a person's actions",
+    "example": "The interactive map let us choose a continent.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interior",
+    "meaning": "the inside part",
+    "example": "The box's interior was lined with paper.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interjection",
+    "meaning": "a short word or phrase expressing a strong feeling",
+    "example": "Wow is an interjection showing surprise.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "intermediate",
+    "meaning": "between beginning and advanced levels",
+    "example": "The intermediate puzzle used more pieces.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "international",
+    "meaning": "connected with more than one country",
+    "example": "The international festival included music from many places.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "internet",
+    "meaning": "the worldwide network connecting many computer networks",
+    "example": "The internet can help us find reliable information.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "interview",
+    "meaning": "a meeting in which someone asks questions to learn information",
+    "example": "We prepared an interview with the school librarian.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "intestine",
+    "meaning": "a long tube in the body where digestion and absorption occur",
+    "example": "The small intestine absorbs many nutrients.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "invent",
+    "meaning": "to create something new that did not exist before",
+    "example": "The character hoped to invent a helpful machine.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "inventor",
+    "meaning": "a person who creates a new thing or method",
+    "example": "The inventor tested many designs.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "invite",
+    "meaning": "to ask someone to come or take part",
+    "example": "We invite the new student to play.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "iron",
+    "meaning": "a strong metal used in steel",
+    "example": "The old gate was made of iron.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "irregular",
+    "meaning": "not following an even or usual pattern",
+    "example": "The rock had an irregular shape.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "irrelevant",
+    "meaning": "not connected with the topic or task",
+    "example": "The extra detail was interesting but irrelevant to our question.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "irresponsible",
+    "meaning": "failing to take proper care of duties or choices",
+    "example": "Leaving the tap running was an irresponsible choice.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "itinerary",
+    "meaning": "a plan of a journey's places and times",
+    "example": "Our itinerary included a museum and a nature walk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jam",
+    "meaning": "a thick sweet spread made from fruit",
+    "example": "We spread berry jam on the bread.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jar",
+    "meaning": "a wide-mouthed container often with a lid",
+    "example": "We kept the seeds in a labeled jar.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jealous",
+    "meaning": "upset because someone else has something you want",
+    "example": "I felt jealous, then remembered my own progress.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jellyfish",
+    "meaning": "a soft sea animal with a bell-shaped body and tentacles",
+    "example": "The jellyfish drifted with the current.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jeweler",
+    "meaning": "a person who makes, repairs, or sells jewelry",
+    "example": "The jeweler examined the small clasp.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "join",
+    "meaning": "to become part of a group or activity",
+    "example": "I asked to join the reading club.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "joint",
+    "meaning": "a place where two or more bones meet",
+    "example": "The elbow is a joint that lets the arm bend.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "journal",
+    "meaning": "a regular record of observations, experiences, or ideas",
+    "example": "My nature journal had drawings of leaves.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "journalist",
+    "meaning": "a person who gathers and reports news",
+    "example": "The journalist asked careful questions.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "journey",
+    "meaning": "travel from one place to another",
+    "example": "Our journey to the museum took an hour.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "judge",
+    "meaning": "a person who makes decisions in a court",
+    "example": "The judge listened carefully to both sides.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "judgment",
+    "meaning": "the ability to make careful decisions",
+    "example": "We used good judgment when choosing a safe path.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "juice",
+    "meaning": "liquid squeezed from fruit or vegetables",
+    "example": "I poured orange juice into a glass.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jump",
+    "meaning": "to push off a surface into the air",
+    "example": "I jump over the small puddle.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "jungle",
+    "meaning": "dense tropical forest or vegetation",
+    "example": "The story described a path through thick jungle.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "junior",
+    "meaning": "younger or at a lower level",
+    "example": "My brother joined the junior swimming team.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "justice",
+    "meaning": "fair treatment according to rights and laws",
+    "example": "The lesson explored why justice matters in a community.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kennel",
+    "meaning": "a shelter for a dog",
+    "example": "The dog rested beside its kennel.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kettle",
+    "meaning": "a container used for heating water",
+    "example": "A grown-up filled the kettle.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "key",
+    "meaning": "an explanation of symbols in a map or diagram",
+    "example": "The key showed what each map symbol meant.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "keyboard",
+    "meaning": "a set of keys used to enter information or play music",
+    "example": "I used the keyboard to write a sentence.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kick",
+    "meaning": "to strike something with your foot",
+    "example": "We kick the ball toward the goal.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kindness",
+    "meaning": "caring and helpful behavior",
+    "example": "A small act of kindness welcomed the new student.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "king",
+    "meaning": "a male monarch",
+    "example": "The story's king asked the villagers for advice.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kingdom",
+    "meaning": "a land ruled by a king or queen",
+    "example": "The old map showed a small kingdom.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kitchen",
+    "meaning": "a room or area used for preparing food",
+    "example": "We mixed the dough in the kitchen.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kitten",
+    "meaning": "a young cat",
+    "example": "The kitten chased a soft toy.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kiwi",
+    "meaning": "a fruit with fuzzy brown skin and green or golden flesh",
+    "example": "The kiwi had tiny black seeds.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "knife",
+    "meaning": "a cutting tool with a blade",
+    "example": "A grown-up used a knife to slice the melon.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "knowledge",
+    "meaning": "information and understanding gained by learning",
+    "example": "Reading increased my knowledge of ocean animals.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "label",
+    "meaning": "words identifying something",
+    "example": "The label showed the parts of the plant.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "laboratory",
+    "meaning": "a place equipped for scientific study or experiments",
+    "example": "The laboratory had tools for measuring and observing.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ladder",
+    "meaning": "a frame with steps used for climbing",
+    "example": "An adult used a ladder to reach the high shelf.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lake",
+    "meaning": "a large inland body of water",
+    "example": "We walked around the lake.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lamb",
+    "meaning": "a young sheep",
+    "example": "The lamb rested in the field.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "landform",
+    "meaning": "a natural feature of Earth's surface",
+    "example": "A valley is a landform.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "landscape",
+    "meaning": "the visible features of an area of land",
+    "example": "The landscape included hills, fields, and a river.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lane",
+    "meaning": "a narrow road or one marked part of a road",
+    "example": "The bicycle lane ran beside the street.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "late",
+    "meaning": "after the expected or usual time",
+    "example": "The bus was late because of traffic.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "laugh",
+    "meaning": "to make sounds with your voice when amused",
+    "example": "We laugh at the funny story.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lavender",
+    "meaning": "a fragrant plant often with small purple flowers",
+    "example": "Bees visited the lavender in the garden.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "law",
+    "meaning": "a rule made and enforced by a government",
+    "example": "A traffic law helps people travel safely.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lawn",
+    "meaning": "an area of short mown grass",
+    "example": "We played a gentle ball game on the lawn.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lawyer",
+    "meaning": "a person trained to give legal advice and represent people",
+    "example": "The lawyer explained the agreement clearly.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "laziness",
+    "meaning": "being unwilling to make an effort",
+    "example": "I overcame my laziness and finished tidying my desk.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lazy",
+    "meaning": "unwilling to make an effort",
+    "example": "The story's lazy character learned to help with chores.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lead",
+    "meaning": "to guide someone or go first",
+    "example": "The teacher will lead the group along the path.",
+    "pos": "verb",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "leader",
+    "meaning": "a person who guides a group",
+    "example": "The group leader helped everyone take part.",
+    "pos": "noun",
+    "band": "Challenge",
+    "source": "Original family practice text"
+  }
+]

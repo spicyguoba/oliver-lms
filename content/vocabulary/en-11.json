@@ -1,0 +1,802 @@
+[
+  {
+    "word": "irrigation",
+    "meaning": "bringing water to land so crops can grow",
+    "example": "The farmers used irrigation during dry weather.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "island",
+    "meaning": "land surrounded by water",
+    "example": "The island is surrounded by the sea.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "justify",
+    "meaning": "to give reasons or evidence for an answer",
+    "example": "We justify our answer using clues from the passage.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "keep",
+    "meaning": "to continue to have or hold something",
+    "example": "I keep my favorite drawings in a folder.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kilogram",
+    "meaning": "one thousand grams",
+    "example": "The bag of rice has a mass of one kilogram.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kilometer",
+    "meaning": "one thousand meters",
+    "example": "We walked about a kilometer along the trail.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "kind",
+    "meaning": "caring and helpful toward others",
+    "example": "It was kind of you to share your pencils.",
+    "pos": "adjective",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "know",
+    "meaning": "to have learned a fact or skill",
+    "example": "I know how to count by tens.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "landmark",
+    "meaning": "a feature that helps people recognize a place",
+    "example": "The tall bridge is a familiar landmark.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "language",
+    "meaning": "a system of words and signs used to communicate",
+    "example": "Chinese is one language spoken around the world.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "larva",
+    "meaning": "an early stage in the life of some animals",
+    "example": "A caterpillar is a larva.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "last",
+    "meaning": "coming after all the others",
+    "example": "I put the last piece into the puzzle.",
+    "pos": "adjective",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "latitude",
+    "meaning": "distance north or south of the equator measured in degrees",
+    "example": "Latitude helps describe a place’s location.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lava",
+    "meaning": "melted rock that has reached Earth’s surface",
+    "example": "The lava cooled into solid rock.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "learn",
+    "meaning": "to gain knowledge or a skill",
+    "example": "We learn something new from each experiment.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "leave",
+    "meaning": "to go away from a place",
+    "example": "We leave the classroom after we tidy our desks.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "left",
+    "meaning": "the side opposite to right",
+    "example": "My left hand holds the paper still.",
+    "pos": "adjective",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "legend",
+    "meaning": "a traditional story often mixing history and imagination",
+    "example": "The legend tells of a mysterious island.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "length",
+    "meaning": "the distance from one end to another",
+    "example": "We measured the length of the desk.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "let",
+    "meaning": "to allow someone to do something",
+    "example": "We let each player choose a color.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "liter",
+    "meaning": "a metric unit used to measure capacity",
+    "example": "The bottle can hold one liter of water.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "literal",
+    "meaning": "using words in their usual, direct meaning",
+    "example": "The literal meaning of icy is covered with ice.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "logical",
+    "meaning": "following a clear and sensible order of thinking",
+    "example": "We used logical steps to solve the puzzle.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "longitude",
+    "meaning": "distance east or west of a reference line measured in degrees",
+    "example": "Longitude is one part of a map coordinate.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "lunchbox",
+    "meaning": "a container used to carry a meal",
+    "example": "My lunchbox has a small space for a spoon.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "magma",
+    "meaning": "melted rock beneath Earth’s surface",
+    "example": "Magma can rise through cracks inside Earth.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "magnetic",
+    "meaning": "able to be attracted by a magnet or act like a magnet",
+    "example": "The magnetic clip stuck to the board.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "magnetism",
+    "meaning": "a force that can attract or repel certain materials",
+    "example": "We explored magnetism with an iron paper clip.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "magnifier",
+    "meaning": "a lens that makes an object appear larger",
+    "example": "We used a magnifier to examine the seed.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "mammal",
+    "meaning": "an animal whose young are fed milk",
+    "example": "A dolphin is a mammal.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "manuscript",
+    "meaning": "a text written by hand or an early version of a book",
+    "example": "The old manuscript had carefully drawn letters.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "measuring",
+    "meaning": "finding a size, amount, or distance using a tool or unit",
+    "example": "Measuring the desk helped us choose the right cover.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "median",
+    "meaning": "the middle value when numbers are ordered",
+    "example": "We put the scores in order to find the median.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "medieval",
+    "meaning": "related to the Middle Ages of European history",
+    "example": "The museum displayed a medieval manuscript.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "merchant",
+    "meaning": "a person who buys and sells goods",
+    "example": "The merchant carried cloth to another town.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "metamorphic",
+    "meaning": "changed by heat and pressure inside Earth",
+    "example": "Marble is a metamorphic rock.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "metamorphosis",
+    "meaning": "a major change in body form during an animal’s life",
+    "example": "A butterfly goes through metamorphosis.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "metaphor",
+    "meaning": "a comparison that describes one thing as another",
+    "example": "The phrase a blanket of snow is a metaphor.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "meter",
+    "meaning": "a metric unit used to measure length",
+    "example": "The stick is one meter long.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "method",
+    "meaning": "a planned way of doing something",
+    "example": "Our method helped us count the blocks accurately.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "microscope",
+    "meaning": "a tool that makes very small objects look larger",
+    "example": "The microscope helped us see tiny details on the leaf.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "migration",
+    "meaning": "movement from one place to another",
+    "example": "Bird migration can take place over long distances.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "millennium",
+    "meaning": "a period of one thousand years",
+    "example": "A millennium contains ten centuries.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "milliliter",
+    "meaning": "one thousandth of a liter",
+    "example": "A milliliter is a small unit of liquid volume.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "millimeter",
+    "meaning": "one thousandth of a meter",
+    "example": "The pencil line is about one millimeter wide.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "mineral",
+    "meaning": "a naturally occurring solid with a particular structure",
+    "example": "Quartz is a mineral.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "multilingual",
+    "meaning": "able to use several languages",
+    "example": "The multilingual guide greeted visitors in several languages.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "multiple",
+    "meaning": "a number found by multiplying by a whole number",
+    "example": "Twelve is a multiple of three.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "multiplication",
+    "meaning": "finding the total of equal groups",
+    "example": "Multiplication helps us count six rows of four chairs.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "myth",
+    "meaning": "a traditional story used to explain beliefs or the world",
+    "example": "The ancient myth explained the seasons.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "narrator",
+    "meaning": "the voice that tells a story",
+    "example": "The narrator describes the garden.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "navigation",
+    "meaning": "finding and following a route",
+    "example": "Maps and stars have helped with navigation.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "nectar",
+    "meaning": "a sweet liquid made by flowers",
+    "example": "A butterfly drinks nectar from the flowers.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "negative",
+    "meaning": "less than zero",
+    "example": "The temperature was a negative number in degrees Celsius.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "new",
+    "meaning": "made or obtained recently",
+    "example": "I borrowed a new book this morning.",
+    "pos": "adjective",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "next",
+    "meaning": "coming immediately after this one",
+    "example": "We will read the next chapter tomorrow.",
+    "pos": "adjective",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "nonfiction",
+    "meaning": "writing that presents facts about real subjects",
+    "example": "We borrowed a nonfiction book about whales.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "notebook",
+    "meaning": "a book of blank or lined pages for writing",
+    "example": "I keep my observations in a notebook.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "noun",
+    "meaning": "a word that names a person, place, thing, or idea",
+    "example": "Garden is a noun.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "number",
+    "meaning": "a symbol or word used for counting",
+    "example": "I wrote a number beside each drawing.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "numerator",
+    "meaning": "the top number in a fraction",
+    "example": "The numerator tells how many equal parts we chose.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "nutrient",
+    "meaning": "a substance needed for growth and health",
+    "example": "Calcium is a nutrient that helps build bones.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "observant",
+    "meaning": "good at noticing details",
+    "example": "The observant child found a tiny footprint in the mud.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "observe",
+    "meaning": "to notice carefully using senses or tools",
+    "example": "We observe the plants each morning.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "obtuse",
+    "meaning": "larger than a right angle but smaller than a straight angle",
+    "example": "We drew an obtuse angle on the board.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "occasional",
+    "meaning": "happening sometimes but not often",
+    "example": "An occasional shower helped water the garden.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "octagon",
+    "meaning": "a shape with eight straight sides",
+    "example": "We drew an octagon on the paper.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "opaque",
+    "meaning": "not letting light pass through",
+    "example": "The opaque curtain blocked the sunlight.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "opinion",
+    "meaning": "what someone thinks or believes",
+    "example": "My opinion is that the ending was surprising.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "opposite",
+    "meaning": "on the other side or facing away",
+    "example": "The two doors are on opposite sides of the room.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "optimistic",
+    "meaning": "expecting that good things may happen",
+    "example": "We stayed optimistic while trying a new plan.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "optional",
+    "meaning": "something you may choose rather than must do",
+    "example": "The extra drawing activity is optional.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "orbit",
+    "meaning": "the path one object follows around another in space",
+    "example": "Earth follows an orbit around the Sun.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ordinal",
+    "meaning": "showing a position in an order",
+    "example": "Third is an ordinal number.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "organism",
+    "meaning": "a living thing",
+    "example": "A mushroom is an organism.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "organize",
+    "meaning": "to put things in a useful order or plan",
+    "example": "We organize the tools before starting the project.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "organized",
+    "meaning": "arranged or planned in a useful order",
+    "example": "Our organized supplies made the project easier.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "paleontologist",
+    "meaning": "a scientist who studies ancient life through fossils",
+    "example": "The paleontologist carefully examined the fossil.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "paragraph",
+    "meaning": "a group of sentences about one main idea",
+    "example": "Each paragraph gives a different reason.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "parallel",
+    "meaning": "always the same distance apart",
+    "example": "The two long sides of the rectangle are parallel.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "participate",
+    "meaning": "to take part in an activity",
+    "example": "Everyone can participate in the class game.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "patience",
+    "meaning": "the ability to wait calmly",
+    "example": "Growing a plant takes patience.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "pattern",
+    "meaning": "a design or sequence that repeats or follows a rule",
+    "example": "We made a pattern with red and blue tiles.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "peninsula",
+    "meaning": "land with water on three sides",
+    "example": "Florida is a peninsula.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "pentagon",
+    "meaning": "a shape with five straight sides",
+    "example": "The tile has the shape of a pentagon.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "percent",
+    "meaning": "a number of parts out of one hundred",
+    "example": "Fifty percent of the square is shaded.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "perimeter",
+    "meaning": "the distance all the way around a shape",
+    "example": "We measured the perimeter of the garden bed.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "permanent",
+    "meaning": "intended to last for a long time",
+    "example": "The museum has a permanent collection of old maps.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "perpendicular",
+    "meaning": "meeting at a right angle",
+    "example": "The lines are perpendicular where they meet.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "perseverance",
+    "meaning": "continuing to try despite difficulty",
+    "example": "Perseverance helped us finish the difficult puzzle.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "personification",
+    "meaning": "describing a nonhuman thing as if it had human qualities",
+    "example": "The poem’s dancing trees are an example of personification.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "perspective",
+    "meaning": "a way of seeing or thinking about something",
+    "example": "We listened to another person’s perspective.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "persuade",
+    "meaning": "to give reasons that may change someone’s mind",
+    "example": "The poster tries to persuade people to recycle.",
+    "pos": "verb",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "petal",
+    "meaning": "one of the colored parts around the center of a flower",
+    "example": "A yellow petal fell onto the path.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "photosynthesis",
+    "meaning": "the process plants use to make food using light",
+    "example": "Leaves use photosynthesis to make food.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "pinyin",
+    "meaning": "a system using letters and tones to show Mandarin pronunciation",
+    "example": "Pinyin helps us say a new Chinese word.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "plateau",
+    "meaning": "a broad area of high, mostly flat land",
+    "example": "The plateau rises above the nearby plain.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "plot",
+    "meaning": "the events that make up a story",
+    "example": "The plot includes a problem and a solution.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "plural",
+    "meaning": "referring to more than one",
+    "example": "Cats is a plural noun.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "pollen",
+    "meaning": "tiny grains made by flowering plants",
+    "example": "The bee carried pollen on its body.",
+    "pos": "noun",
+    "band": "Growing",
+    "source": "Original family practice text"
+  }
+]

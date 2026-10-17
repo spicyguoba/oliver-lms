@@ -7,7 +7,7 @@
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
-    "test": "node --test tests/learning.test.mjs tests/legacy.test.mjs",
+    "test": "node --test tests/learning.test.mjs tests/legacy.test.mjs tests/library.test.mjs",
     "test:api": "node scripts/test-api.mjs",
     "materials:snapshot": "node scripts/snapshot-materials.mjs",
     "materials:sync": "node scripts/sync-materials.mjs"
@@ -23,6 +23,7 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "opencc-js": "1.4.2",
     "prettier": "^3.9.10"
   }
 }

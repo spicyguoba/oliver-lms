@@ -1,0 +1,802 @@
+[
+  {
+    "word": "air",
+    "meaning": "the mixture of gases around Earth",
+    "example": "We can feel the air move when the fan turns.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "apple",
+    "meaning": "a round fruit with red, green, or yellow skin",
+    "example": "I packed an apple for my snack.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "canyon",
+    "meaning": "a deep valley with steep sides",
+    "example": "We saw layers of rock along the canyon walls.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "capital",
+    "meaning": "the city where a government’s main offices are",
+    "example": "Richmond is the capital of Virginia.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cat",
+    "meaning": "a small furry animal often kept as a pet",
+    "example": "Our cat slept beside the sunny window.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "caterpillar",
+    "meaning": "the larva of a butterfly or moth",
+    "example": "The caterpillar ate a leaf.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "certain",
+    "meaning": "sure to happen or be true",
+    "example": "It is certain that the Sun is a star.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "child",
+    "meaning": "a young person",
+    "example": "Each child chose a book to read.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "citizen",
+    "meaning": "a person who is a member of a country",
+    "example": "A citizen can help improve their community.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "classroom",
+    "meaning": "a room where a group of students learns",
+    "example": "Our classroom has a quiet reading corner.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "coast",
+    "meaning": "the land beside a sea or ocean",
+    "example": "We found shells along the coast.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "come",
+    "meaning": "to move toward a place",
+    "example": "Please come to the reading corner.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "compare",
+    "meaning": "to look for similarities and differences",
+    "example": "We compare the two maps.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "cone",
+    "meaning": "a solid with a circular base and one pointed end",
+    "example": "The paper hat has the shape of a cone.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "difference",
+    "meaning": "the amount by which two numbers are apart",
+    "example": "The difference between eight and five is three.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "do",
+    "meaning": "to carry out an action",
+    "example": "I do my homework after school.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "double",
+    "meaning": "to multiply an amount by two",
+    "example": "We double the number of counters in the next row.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "earth",
+    "meaning": "the planet where we live",
+    "example": "The earth travels around the Sun.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "edge",
+    "meaning": "a line where two faces of a solid meet",
+    "example": "We traced one edge of the box.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "eighth",
+    "meaning": "one of eight equal parts of a whole",
+    "example": "One eighth of the strip is blue.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "equal",
+    "meaning": "the same in amount, size, or value",
+    "example": "We cut the sandwich into two equal parts.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "even",
+    "meaning": "flat, smooth, or level",
+    "example": "We placed the blocks on an even surface.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "explain",
+    "meaning": "to make an idea clear by giving details",
+    "example": "I explain how I solved the problem.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fable",
+    "meaning": "a short story that teaches a lesson",
+    "example": "The fable uses talking animals to teach patience.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "face",
+    "meaning": "a flat surface of a solid shape",
+    "example": "Each face of a cube is a square.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "fact",
+    "meaning": "something that can be checked using evidence",
+    "example": "The number of sides on a triangle is a fact.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "feel",
+    "meaning": "to notice an emotion or a physical sensation",
+    "example": "I feel proud when I finish a tricky puzzle.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "find",
+    "meaning": "to discover something you were looking for",
+    "example": "We find the missing puzzle piece under the chair.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "free",
+    "meaning": "not costing any money",
+    "example": "The park has a free story time on Saturdays.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "friend",
+    "meaning": "someone you like and trust",
+    "example": "My friend helped me find my hat.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "geography",
+    "meaning": "the study of Earth’s places and people",
+    "example": "We study maps in geography.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "get",
+    "meaning": "to receive or obtain something",
+    "example": "I get a new book from the library.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "give",
+    "meaning": "to let someone have something",
+    "example": "I give my friend a turn.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "go",
+    "meaning": "to move or travel somewhere",
+    "example": "We go to the library on Saturday.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "goal",
+    "meaning": "something someone wants to achieve",
+    "example": "Our goal is to read a little each day.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "good",
+    "meaning": "helpful, pleasant, or of high quality",
+    "example": "That was a good idea for sharing the toys.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "government",
+    "meaning": "the people and systems that make and carry out public decisions",
+    "example": "We learned how local government cares for public places.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "great",
+    "meaning": "very good or impressive",
+    "example": "The class did a great job cleaning the garden.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "have",
+    "meaning": "to own or hold something",
+    "example": "I have a blue backpack.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "height",
+    "meaning": "the distance from bottom to top",
+    "example": "We measured the height of our bean plant.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "help",
+    "meaning": "to make a task easier for someone",
+    "example": "We help each other carry the books.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "light",
+    "meaning": "energy that makes it possible to see",
+    "example": "The lamp gives us light for reading.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "like",
+    "meaning": "to enjoy or feel pleased by something",
+    "example": "I like reading stories about animals.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "line",
+    "meaning": "a long, thin mark",
+    "example": "I drew a straight line across the page.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "little",
+    "meaning": "small in size or amount",
+    "example": "A little seed can grow into a tall tree.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "long",
+    "meaning": "measuring a great distance from end to end",
+    "example": "We walked across a long bridge.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "look",
+    "meaning": "to turn your eyes toward something",
+    "example": "We look at the stars after sunset.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "make",
+    "meaning": "to create or build something",
+    "example": "We make a paper boat together.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "man",
+    "meaning": "an adult male person",
+    "example": "The man carried the books to the library.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "mean",
+    "meaning": "to express a particular idea",
+    "example": "What does this word mean in the story?",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "million",
+    "meaning": "one thousand thousands",
+    "example": "The rock is more than one million years old.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "minute",
+    "meaning": "a unit of time equal to sixty seconds",
+    "example": "We watched the sand fall for one minute.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "need",
+    "meaning": "to require something important",
+    "example": "Plants need water and light to grow.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "ocean",
+    "meaning": "one of the vast connected bodies of salty water on Earth",
+    "example": "The Atlantic is an ocean.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "odd",
+    "meaning": "not divisible by two without a remainder",
+    "example": "Five is an odd number.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "on",
+    "meaning": "touching the top or surface of something",
+    "example": "The book is on the table.",
+    "pos": "preposition",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "only",
+    "meaning": "no more than this or these",
+    "example": "There is only one red block in the box.",
+    "pos": "adverb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "other",
+    "meaning": "different from the one already mentioned",
+    "example": "I found the other sock under the bed.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "own",
+    "meaning": "belonging to a particular person",
+    "example": "I put my own name on the drawing.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "part",
+    "meaning": "a piece of a larger whole",
+    "example": "Each friend built a different part of the model.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "place",
+    "meaning": "a particular position or area",
+    "example": "We found a quiet place to read.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "play",
+    "meaning": "to take part in a game or enjoyable activity",
+    "example": "The children play a board game together.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "playground",
+    "meaning": "an outdoor place with space or equipment for play",
+    "example": "We met our friends on the playground.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "poem",
+    "meaning": "writing arranged to express ideas through sound and imagery",
+    "example": "I wrote a poem about the rain.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "point",
+    "meaning": "a small mark showing a position",
+    "example": "We marked a point on the map.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "put",
+    "meaning": "to place something somewhere",
+    "example": "I put my pencil in the box.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "quarter",
+    "meaning": "one of four equal parts of a whole",
+    "example": "A quarter of the circle is shaded.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "read",
+    "meaning": "to understand written words",
+    "example": "We read a page of the story together.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "reason",
+    "meaning": "an explanation for why something happens or is chosen",
+    "example": "I gave a reason for my answer.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "right",
+    "meaning": "correct or free from mistakes",
+    "example": "I checked the sum and found the right answer.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "root",
+    "meaning": "the part of a plant that takes in water from soil",
+    "example": "The root grew downward through the soil.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "round",
+    "meaning": "shaped like a circle or ball",
+    "example": "The round plate has no corners.",
+    "pos": "adjective",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "run",
+    "meaning": "to move quickly on your feet",
+    "example": "We run around the playground at recess.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "say",
+    "meaning": "to speak words",
+    "example": "I say thank you for the help.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "school",
+    "meaning": "a place where people learn with teachers",
+    "example": "We planted a garden at our school.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "second",
+    "meaning": "a small unit used to measure time",
+    "example": "The light flashed once every second.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "see",
+    "meaning": "to notice with your eyes",
+    "example": "I see a bird in the tree.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "sentence",
+    "meaning": "a group of words that expresses a complete thought",
+    "example": "I wrote a sentence about the picture.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "separate",
+    "meaning": "to put or keep things apart",
+    "example": "We separate the beads by color.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "set",
+    "meaning": "a group of things that belong together",
+    "example": "I have a set of colored pencils.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "setting",
+    "meaning": "the time and place of a story",
+    "example": "The setting is a small village beside a river.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "there",
+    "meaning": "in or at that place",
+    "example": "We put the chair over there.",
+    "pos": "adverb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "think",
+    "meaning": "to use your mind to consider ideas",
+    "example": "I think about the clues before I answer.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "third",
+    "meaning": "one of three equal parts of a whole",
+    "example": "Each friend received one third of the snack.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "thousand",
+    "meaning": "the number equal to ten hundreds",
+    "example": "One thousand is ten times one hundred.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "time",
+    "meaning": "a period measured in minutes, hours, or days",
+    "example": "We have time to read one more page.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "tone",
+    "meaning": "a pitch pattern that can help distinguish words in Mandarin",
+    "example": "We listened carefully to the tone of the word.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "trade",
+    "meaning": "the exchange of goods or services",
+    "example": "Trade connected towns along the river.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "tree",
+    "meaning": "a tall plant with a wooden trunk",
+    "example": "We rested in the shade of a tree.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "try",
+    "meaning": "to make an effort to do something",
+    "example": "I will try a different way to solve the puzzle.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "turn",
+    "meaning": "a chance to do something after someone else",
+    "example": "I waited for my turn on the slide.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "use",
+    "meaning": "to do something with a tool or object",
+    "example": "We use a ruler to measure the paper.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "valley",
+    "meaning": "low land between hills or mountains",
+    "example": "The river flows through a green valley.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "very",
+    "meaning": "to a high degree",
+    "example": "The little puppy is very playful.",
+    "pos": "adverb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "want",
+    "meaning": "to wish for something",
+    "example": "I want a turn on the swing.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "word",
+    "meaning": "a unit of language that has a meaning",
+    "example": "I found a new word in my book.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "work",
+    "meaning": "to spend effort doing a task",
+    "example": "We work together to solve the puzzle.",
+    "pos": "verb",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "world",
+    "meaning": "Earth and all its places and people",
+    "example": "We enjoy learning about people around the world.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "about",
+    "meaning": "concerning a subject",
+    "example": "We read a book about whales.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  },
+  {
+    "word": "above",
+    "meaning": "in a higher place than something",
+    "example": "The clock hangs above the door.",
+    "pos": "noun",
+    "band": "Starter",
+    "source": "Original family practice text"
+  }
+]
