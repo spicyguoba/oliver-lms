@@ -5,6 +5,13 @@ import { createHash, randomBytes } from "node:crypto";
 import { transact, databaseMode } from "../../../lib/store.mjs";
 import { legacyProgress } from "../../../lib/progress.mjs";
 import { vocabularyLesson } from "../../../lib/vocabulary.mjs";
+import { dailyPlan } from "../../../lib/planner.mjs";
+import {
+  learningCalendar,
+  awardConsistency,
+  streaks,
+} from "../../../lib/calendar.mjs";
+import { validMonth } from "../../../lib/dates.mjs";
 import { sanitizeLegacyMap } from "../../../lib/legacy-save.mjs";
 import {
   verifyPassword,
@@ -89,6 +96,9 @@ function safeState(d, role) {
     stars: d.stars,
     stats: stats(d),
     recommendations: recommendations(d),
+    dailyPlan: dailyPlan(d),
+    streak: streaks(d),
+    today: localDay(Date.now(), d.settings.timezone),
     rewards: d.rewards,
     redemptions: d.redemptions,
     assignments: d.assignments
@@ -103,6 +113,7 @@ function safeState(d, role) {
     todayCompleted: d.sessions.filter(
       (s) =>
         s.finishedAt &&
+        !s.abandoned &&
         localDay(s.finishedAt, d.settings.timezone) ===
           localDay(Date.now(), d.settings.timezone),
     ).length,
@@ -111,6 +122,7 @@ function safeState(d, role) {
         .filter(
           (s) =>
             s.finishedAt &&
+            !s.abandoned &&
             localDay(s.finishedAt, d.settings.timezone) ===
               localDay(Date.now(), d.settings.timezone),
         )
@@ -133,6 +145,15 @@ export async function GET(req, context) {
         route === "admin" || route === "admin/export",
       );
       if (route === "state") return NextResponse.json(safeState(d, role));
+      if (route === "calendar") {
+        const month =
+          req.nextUrl.searchParams.get("month") ||
+          localDay(Date.now(), d.settings.timezone).slice(0, 7);
+        if (!validMonth(month)) fail("Choose a valid calendar month.");
+        return NextResponse.json(
+          learningCalendar(d, month, Date.now(), role === "admin"),
+        );
+      }
       if (p[0] === "lesson" && p.length === 2) {
         const lesson = vocabularyLesson(p[1]);
         if (!lesson) fail("Word pack not found.", 404);
@@ -276,6 +297,21 @@ export async function POST(req, context) {
         setCookie(res, "child", d);
         setCookie(res, "admin", d, true);
         return res;
+      }
+      if (route === "daily/start") {
+        const plan = dailyPlan(d);
+        if (
+          body.day !== plan.day ||
+          !Number.isInteger(body.slot) ||
+          !plan.slots[body.slot]
+        )
+          fail("Today's plan has changed. Go home and try again.");
+        const slot = plan.slots[body.slot];
+        if (slot.completed)
+          return NextResponse.json(
+            sessionView(d.sessions.find((s) => s.id === slot.sessionId)),
+          );
+        return NextResponse.json(beginSession(d, slot.skill, slot.difficulty));
       }
       if (route === "session/start")
         return NextResponse.json(
@@ -549,7 +585,12 @@ export async function POST(req, context) {
           c.observation = String(body.observation || "").slice(0, 1000);
           if (body.approve) {
             const a = d.assignments.find((a) => a.id === c.assignmentId);
-            d.stars += a?.stars || 0;
+            c.earned = a?.stars || 0;
+            c.title = a?.title || "Study together";
+            c.approvedAt = Date.now();
+            d.stars += c.earned;
+            if (c.day === localDay(c.approvedAt, d.settings.timezone))
+              awardConsistency(d, c.approvedAt);
           }
         }
         const r = d.redemptions.find(

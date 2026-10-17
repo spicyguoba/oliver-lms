@@ -26,7 +26,7 @@ import {
   legacyProgress,
 } from "../lib/progress.mjs";
 
-test("version two migration is additive and idempotent with existing family progress", () => {
+test("version three migration is additive and idempotent with existing family progress", () => {
   const old = seed();
   old.version = 1;
   delete old.legacyCompletions;
@@ -37,7 +37,7 @@ test("version two migration is additive and idempotent with existing family prog
   beginSession(old, "phonics");
   const original = structuredClone(old);
   assert.strictEqual(migrateFamily(old), old);
-  assert.equal(old.version, 2);
+  assert.equal(old.version, 3);
   assert.deepEqual(old.legacyCompletions, []);
   assert.deepEqual(
     { ...old, version: 1, legacyCompletions: undefined },
@@ -200,5 +200,5 @@ test("finished word packs update the latest card score; resume retains old quest
   assert.equal(progress.lastCompletion.correct, 4);
   assert.equal(progress.lastCompletion.total, 5);
   assert.equal(progress.lastCompletion.date, 6100);
-  assert.equal(d.stars, 4);
+  assert.equal(d.stars, 6);
 });

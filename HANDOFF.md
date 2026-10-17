@@ -1,5 +1,15 @@
 # Adventure Club handoff
 
+## Learning calendar and daily-five path (2026-10-17)
+
+Schema 3 adds a versioned learning-program start day, saved daily plans and an idempotent consistency-award ledger. Migration leaves all prior data in place and does not back-pay bonuses. Both roles can use `/api/calendar?month=YYYY-MM`; only admin receives first-answer/timing details. Finished rounds qualify on completion day; partial practice appears on each answer's actual local day. Approved quests qualify on requested learning day; older unsaved quest award amounts are explicitly unknown. Legacy scores remain separately labeled and do not qualify for bonuses.
+
+Oliver has a Calendar bottom tab, a seven-day trail and Today's five on Home; admin has Learning calendar with day details and the same daily plan. Rewards are +2 once per qualifying day, +5 each seventh consecutive day, +5 once for the daily five. Scores of zero still celebrate finishing. Gaps never subtract stars. Civil-date calculations handle DST/leap days. Daily plans remain stable across reloads/devices and old unfinished sessions resume unchanged.
+
+The continuing 400-day rotation has math, English (including weekly stories/phonics), Chinese, science and alternating geography/history. Existing word-pack IDs remain unchanged. Question generation now uses all prior same-skill snapshots for least-seen vocabulary/discovery targets, avoids the preceding set where possible, and changes procedural math combinations. Stretch math ranges are available at level 2; daily auto-selection waits until day 120 and twenty unhelped answers with 80% correct in the last six completed math rounds. See `content/STUDY_PROGRAM.md` for precise capacity/review limits. A domain test generates all 2,000 rounds / 10,000 presentations across the 400 days and validates keys/variation. These are repeatable practice opportunities, not 10,000 unique facts.
+
+Private fresh snapshot: `.data/before-calendar-upgrade.json`. The browser preview uses a separate local copy in `.data/calendar-preview/`; never restore that copy to production or treat its QA answers as family progress. Unit tests cover migrations, streak gaps/DST, zero-score rewards, seven-day milestones, daily-five awards, partial/legacy/quest distinctions and child privacy. HTTP tests cover simultaneous starts/next/approvals, stable plans, authenticated calendar access and duplicate reward prevention. A local browser completed a 4/5 daily round, saw +2 bonus, calendar entry, 1/5 completion and preserved prior records. Parent day drill-down and 390×844 / 768×1024 / 1024×768 layouts were checked in Chromium; no horizontal overflow. Physical iPad/Safari remains untested.
+
 Created 2026-10-16 in a new repository, independent of `spicyguoba/mathquest`.
 
 ## Completion cards and larger learning library (2026-10-16)

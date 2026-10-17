@@ -75,9 +75,9 @@ test("answer keys never leave server; wrong first answer cannot be replaced; nex
     );
     nextQuestion(d, s.id, 11000 + i * 5000);
   }
-  assert.equal(d.stars, 4);
+  assert.equal(d.stars, 6); // four correct answers plus the once-daily consistency award
   nextQuestion(d, s.id);
-  assert.equal(d.stars, 4);
+  assert.equal(d.stars, 6);
   assert.equal(stats(d).find((x) => x.id === "regrouping").independent, 4);
 });
 test("hints exclude helped answers; partial sessions retain attempts across resume", () => {

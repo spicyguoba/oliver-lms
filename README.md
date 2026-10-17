@@ -70,6 +70,8 @@ The original GitHub Pages origin's localStorage cannot be read by a new domain. 
 
 ## Verification
 
+Oliver's **Calendar** tab shows daily topics, round scores, earned stars and a seven-day trail. **Admin → Learning calendar** adds first-answer and timing details. Home supplies **Today's five**, with a saved 400-day rotation spanning mathematics, English, Chinese, science, geography and history. Bonuses are +2 for a learning day, +5 every seventh consecutive day and +5 for finishing the daily five; breaks never remove stars. See [the practice program](content/STUDY_PROGRAM.md) for question rotation, grade 3 extensions, historical data and reward rules.
+
 ```sh
 npm test
 npm run test:api

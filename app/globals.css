@@ -2959,3 +2959,289 @@ legend {
   align-items: center;
   flex-wrap: wrap;
 }
+/* Daily learning: quiet progress, generous touch targets, no racing clock. */
+.streak-trail,
+.daily-five,
+.calendar-card,
+.calendar-detail,
+.calendar-rules {
+  background: #fffdf7;
+  border: 2px solid #e2e6d7;
+  border-radius: 24px;
+  padding: clamp(16px, 3vw, 28px);
+  margin: 22px 0;
+  color: #263d39;
+}
+.streak-trail {
+  background: #edf7e8;
+}
+.streak-trail > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.streak-trail > div > span {
+  font-size: 46px;
+}
+.streak-trail h2,
+.daily-five h2,
+.calendar-detail h2 {
+  margin: 0;
+}
+.streak-trail p {
+  margin: 8px 0;
+}
+.streak-trail ol {
+  display: flex;
+  gap: 9px;
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+}
+.streak-trail li {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px dashed #91af89;
+  border-radius: 50%;
+  font-weight: 800;
+}
+.streak-trail li.grown {
+  background: #ffe799;
+  border: 2px solid #b18526;
+  color: #695016;
+}
+.daily-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.daily-heading p {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+.daily-heading > strong {
+  background: #f1e7ff;
+  border-radius: 16px;
+  padding: 12px;
+  white-space: nowrap;
+}
+.daily-games {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+.daily-games li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 2px solid #e1e7ed;
+  background: #fff;
+}
+.daily-games .daily-done {
+  background: #eaf5e8;
+  border-color: #9ebc98;
+}
+.daily-number {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: #f3e9d1;
+  font-weight: 800;
+}
+.daily-icon {
+  font-size: 32px;
+}
+.daily-games li > div {
+  flex: 1;
+  min-width: 0;
+}
+.daily-games h3 {
+  font-size: 19px;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+.daily-games p {
+  margin: 5px 0;
+}
+.daily-games a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #385c49;
+  text-decoration: underline;
+}
+.daily-games .button {
+  flex-shrink: 0;
+  min-height: 56px;
+}
+.calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.calendar-heading h2 {
+  margin: 0;
+  font-size: clamp(19px, 3vw, 27px);
+  text-align: center;
+}
+.calendar-heading button {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #d6dfd5;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #263d39;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.calendar-today {
+  border: 0;
+  background: transparent;
+  color: #395f49;
+  text-decoration: underline;
+  min-height: 44px;
+  padding: 5px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+.calendar-weekday {
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 0;
+  font-weight: 700;
+}
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 74px;
+  min-width: 0;
+  border: 2px solid #e1e7e4;
+  border-radius: 12px;
+  background: #fff;
+  color: #34473e;
+  font: inherit;
+  cursor: pointer;
+}
+.calendar-day small {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.calendar-day.learning-day {
+  background: #e3f2dc;
+  border-color: #a4bd99;
+}
+.calendar-day[aria-pressed="true"] {
+  border: 3px solid #7452b7;
+  box-shadow: 0 0 0 2px #efe7ff;
+}
+.calendar-day[aria-current="date"] strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.calendar-day:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.calendar-key,
+.calendar-rules p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.calendar-detail {
+  scroll-margin-top: 20px;
+}
+.calendar-day-total {
+  font-size: 24px;
+  font-weight: 800;
+  color: #6d4d12;
+}
+.calendar-events {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.calendar-events > li {
+  padding: 18px 0;
+  border-top: 1px solid #dce5da;
+  overflow-wrap: anywhere;
+}
+.calendar-events p {
+  margin: 8px 0;
+}
+.calendar-events details {
+  margin-top: 12px;
+}
+.calendar-events summary,
+.calendar-rules summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+  font-weight: 700;
+}
+.calendar-attempt {
+  padding: 14px;
+  margin: 8px 0;
+  background: #f1f4ed;
+  border-radius: 12px;
+}
+@media (max-width: 540px) {
+  .daily-games li {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+  .daily-games .daily-icon {
+    display: none;
+  }
+  .daily-games li > div {
+    flex-basis: calc(100% - 52px);
+  }
+  .daily-games .button {
+    width: 100%;
+  }
+  .calendar-grid {
+    gap: 3px;
+  }
+  .calendar-day {
+    min-height: 62px;
+    border-radius: 9px;
+  }
+  .calendar-day small {
+    font-size: 11px;
+  }
+  .calendar-weekday {
+    font-size: 11px;
+  }
+  .streak-trail ol {
+    gap: 5px;
+  }
+  .streak-trail li {
+    flex: 1;
+    width: auto;
+    max-width: 44px;
+    height: 36px;
+  }
+}

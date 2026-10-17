@@ -18,6 +18,7 @@ async function request(route, body, custom = {}) {
 }
 test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", async () => {
   assert.equal((await request("admin")).status, 401);
+  assert.equal((await request("calendar")).status, 401);
   assert.equal((await request("lesson/en-words-001")).status, 401);
   assert.equal(
     (
@@ -77,6 +78,20 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   const state = await (await request("state")).json();
   assert.equal(state.role, "child");
   assert.equal(state.profile.name, "Oliver");
+  assert.equal(state.dailyPlan.slots.length, 5);
+  assert.deepEqual(
+    (await (await request("state")).json()).dailyPlan,
+    state.dailyPlan,
+  );
+  assert.equal((await request("calendar?month=2026-99")).status, 400);
+  assert.equal(
+    (await request("daily/start", { day: "2000-01-01", slot: 0 })).status,
+    400,
+  );
+  assert.equal(
+    (await request("daily/start", { day: state.today, slot: -1 })).status,
+    400,
+  );
   const attempt = await (
     await request("session/start", { skill: "science", mode: "observed" })
   ).json();
@@ -131,7 +146,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("admin/approve", { id: completion.id, approve: true }),
   ]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 4);
+  assert.equal(report.stars, 6);
   await request("admin/reward", {
     id: "test-reward",
     title: "Test family activity",
@@ -143,7 +158,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   ]);
   assert.deepEqual(requests.map((r) => r.status).sort(), [200, 400]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 1);
+  assert.equal(report.stars, 3);
   assert.equal(report.redemptions.length, 1);
   const reward = report.redemptions[0];
   await Promise.all([
@@ -151,7 +166,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("admin/approve", { id: reward.id, approve: false }),
   ]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 4);
+  assert.equal(report.stars, 6);
   const beforeLesson = report.history.length;
   const lesson = await (await request("lesson/zh-usage-001")).json();
   assert.equal(lesson.cards.length, 20);
@@ -175,12 +190,12 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 2);
+  assert.equal(exportData.version, 3);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
   );
-  assert.equal(exportData.stars, 4);
+  assert.equal(exportData.stars, 6);
   assert.equal(
     (
       await request("legacy", {
@@ -220,12 +235,70 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     total: 5,
   });
   assert.equal(card.completedRounds, 1);
-  assert.equal(completed.stars, 4 + score);
+  assert.equal(completed.stars, 6 + score);
   await request(`session/${round.id}/next`, {});
   const again = await (await request("state")).json();
   assert.equal(again.stars, completed.stars);
   assert.equal(
     again.stats.find((s) => s.id === "en-usage-001").completedRounds,
     1,
+  );
+  const beforeFive = again.stars;
+  let dailyScore = 0;
+  for (let slot = 0; slot < 5; slot++) {
+    const starts = await Promise.all([
+      request("daily/start", {
+        day: again.today,
+        slot,
+        stars: 99999,
+        difficulty: 5,
+      }),
+      request("daily/start", { day: again.today, slot }),
+    ]);
+    let current = await starts[0].json();
+    assert.equal(current.id, (await starts[1].json()).id);
+    for (let i = 0; i < 5; i++) {
+      const answer = current.question.options ? "0" : "999999";
+      const answered = await (
+        await request(`session/${current.id}/answer`, {
+          questionId: current.question.id,
+          answer,
+        })
+      ).json();
+      dailyScore += Number(answered.feedback.correct);
+      const next = await Promise.all([
+        request(`session/${current.id}/next`, {}),
+        request(`session/${current.id}/next`, {}),
+      ]);
+      current = await next[0].json();
+      assert.equal((await next[1].json()).index, current.index);
+    }
+  }
+  const final = await (await request("state")).json();
+  assert.ok(final.dailyPlan.slots.every((s) => s.completed));
+  assert.equal(final.stars, beforeFive + dailyScore + 5);
+  await request("daily/start", { day: final.today, slot: 0 });
+  assert.equal((await (await request("state")).json()).stars, final.stars);
+  const calendar = await (await request("calendar")).json();
+  assert.ok(
+    calendar.days
+      .find((d) => d.day === final.today)
+      .events.some(
+        (e) => e.type === "bonus" && e.title === "Today's five finished",
+      ),
+  );
+  assert.ok(
+    calendar.days.flatMap((d) => d.events).some((e) => e.attempts?.length),
+  );
+  const paired = await request("launch", {});
+  cookie = paired.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-child="))
+    .split(";")[0];
+  const childCalendar = await (await request("calendar")).json();
+  assert.ok(
+    childCalendar.days
+      .flatMap((d) => d.events)
+      .every((e) => !("attempts" in e)),
   );
 });

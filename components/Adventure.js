@@ -172,6 +172,17 @@ export default function Adventure({ id }) {
             {"☆".repeat(Math.max(0, 5 - session.stars))}
           </div>
           <p>{session.stars} stars added to your collection.</p>
+          {session.bonuses?.map((b) => (
+            <p className="kid-notice" key={b.kind}>
+              🌟 {b.label}: +{b.stars} bonus stars!
+            </p>
+          ))}
+          <a className="button" href="/#home">
+            Today’s five <ArrowRight size={22} />
+          </a>
+          <a className="button secondary" href="/#calendar">
+            See my learning calendar
+          </a>
           {session.skill === "stories" && (
             <p>
               {session.correct >= 4

@@ -21,8 +21,10 @@ import {
   Library,
   SlidersHorizontal,
   CircleHelp,
+  CalendarDays,
 } from "lucide-react";
 import { api, Brand, Fox, Landscape, Login, Loading, ErrorBox } from "./ui";
+import LearningCalendar, { DailyFive } from "./LearningCalendar";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -105,6 +107,7 @@ export default function Dashboard({ parent = false }) {
   const nav = parent
     ? [
         ["overview", "Overview", Home],
+        ["calendar", "Learning calendar", CalendarDays],
         ["reports", "Learning insights", SlidersHorizontal],
         ["library", "Materials library", Library],
         ["plan", "Study plan", BookOpen],
@@ -854,6 +857,35 @@ export default function Dashboard({ parent = false }) {
                   Explore learning insights <ArrowRight size={16} />
                 </button>
               </section>
+            </>
+          )}
+          {parent && section === "calendar" && (
+            <>
+              <PageTitle
+                eyebrow="A LITTLE LEARNING EACH DAY"
+                title="Learning calendar"
+                text="See daily topics, first-answer scores, timing, and earned stars. Select a date to explore."
+              />
+              <LearningCalendar today={data.today} parent />
+              <DailyFive
+                plan={data.dailyPlan}
+                busy={busy}
+                onPlay={async (slot) => {
+                  const s = await act("daily/start", {
+                    day: data.dailyPlan.day,
+                    slot,
+                  });
+                  if (s) window.location.href = "/adventure/" + s.id;
+                }}
+              />
+              <p className="footnote">
+                400 planned days · 2,000 short rounds · 10,000 question
+                presentations. Mathematics uses new number combinations;
+                vocabulary rotates targets; discovery topics use spaced review
+                of a finite fact bank. This is a family practice path extending
+                into grade 3 topics and beyond, not a calibrated grade-level
+                curriculum.
+              </p>
             </>
           )}
           {parent && section === "reports" && (

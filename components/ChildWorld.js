@@ -8,6 +8,7 @@ import {
   ArrowLeft,
   Play,
   Shield,
+  CalendarDays,
 } from "lucide-react";
 import { Fox, api, ErrorBox, Loading, Login } from "./ui";
 import {
@@ -18,6 +19,8 @@ import {
   CompletionLabel,
 } from "./ExerciseCatalog";
 import WordLesson from "./WordLesson";
+import LearningCalendar, { DailyFive, StreakTrail } from "./LearningCalendar";
+import { localDay } from "../lib/dates.mjs";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -83,6 +86,18 @@ export default function ChildWorld() {
     heading.current?.focus({ preventScroll: true });
     window.speechSynthesis?.cancel();
   }, [screen]);
+  useEffect(() => {
+    if (!data) return;
+    const checkDay = () => {
+      if (localDay(Date.now(), data.timezone) !== data.today) load();
+    };
+    const timer = window.setInterval(checkDay, 60000);
+    window.addEventListener("focus", checkDay);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus", checkDay);
+    };
+  }, [data?.today, data?.timezone]);
   async function act(route, body, message) {
     if (busy) return;
     setBusy(true);
@@ -105,6 +120,10 @@ export default function ChildWorld() {
       skill,
       difficulty: skill === "states" ? stateTrail : level,
     });
+    if (s) window.location.href = "/adventure/" + s.id;
+  }
+  async function playDaily(slot) {
+    const s = await act("daily/start", { day: data.dailyPlan.day, slot });
     if (s) window.location.href = "/adventure/" + s.id;
   }
   function listen(text) {
@@ -134,6 +153,7 @@ export default function ChildWorld() {
     screen === "games" ||
     screen === "stars" ||
     screen === "plan" ||
+    screen === "calendar" ||
     screen === "world-Favorites" ||
     subject ||
     course ||
@@ -146,11 +166,13 @@ export default function ChildWorld() {
       games: "Pick a world!",
       stars: "My stars",
       plan: "Study together",
+      calendar: "My learning days",
       "world-Favorites": "Old favorites",
     }[screen] ||
     `Hi, ${data.profile.name}!`;
   const resume = data.activeSessions[0];
-  const pick = data.recommendations[0];
+  const pick =
+    data.recommendations.find((s) => !s.completed) || data.recommendations[0];
   const next = resume ? data.stats.find((s) => s.id === resume.skill) : pick;
   const learnCards = topic?.collection?.slice(
     (stateTrail - 1) * 10,
@@ -263,6 +285,12 @@ export default function ChildWorld() {
                 </p>
                 <a
                   className="kid-play"
+                  onClick={(e) => {
+                    if (!resume) {
+                      e.preventDefault();
+                      playDaily(pick.slot);
+                    }
+                  }}
                   href={
                     resume ? "/adventure/" + resume.id : "/#learn-" + pick.id
                   }
@@ -278,6 +306,8 @@ export default function ChildWorld() {
                 ✦
               </span>
             </section>
+            <StreakTrail streak={data.streak} />
+            <DailyFive plan={data.dailyPlan} onPlay={playDaily} busy={busy} />
             <div className="kid-home-choices">
               <a href="/#games" className="kid-choice sky">
                 <span>🎮</span>
@@ -346,6 +376,9 @@ export default function ChildWorld() {
               />
             </a>
           </div>
+        )}
+        {screen === "calendar" && (
+          <LearningCalendar key={data.today} today={data.today} />
         )}
         {(subject || screen === "world-Favorites") && (
           <>
@@ -710,6 +743,7 @@ export default function ChildWorld() {
         {[
           ["home", "Home", Home],
           ["games", "Games", Gamepad2],
+          ["calendar", "Calendar", CalendarDays],
           ["stars", "Stars", Star],
         ].map(([id, label, Icon]) => (
           <a
