@@ -50,7 +50,7 @@ test("migration retains wallets, first answers, saved question snapshots, auth, 
   beginSession(d, "regrouping", 1, "practice", noon("2026-10-16"));
   const before = structuredClone(d);
   migrateFamily(d, noon("2026-10-17"));
-  assert.equal(d.version, 5);
+  assert.equal(d.version, 6);
   assert.equal(d.learningProgram.startDay, "2026-10-17");
   assert.deepEqual(
     {
@@ -76,7 +76,7 @@ test("migration retains wallets, first answers, saved question snapshots, auth, 
 test("streaks follow local civil dates through DST, keep yesterday alive, and reset after a gap", () => {
   const d = seed();
   for (const day of ["2026-10-31", "2026-11-01", "2026-11-02"])
-    finish(d, "regrouping", day);
+    for (let i = 0; i < 5; i++) finish(d, "regrouping", day);
   assert.equal(streaks(d, noon("2026-11-03")).current, 3);
   assert.equal(streaks(d, noon("2026-11-04")).current, 0);
   assert.equal(streaks(d, noon("2026-11-04")).best, 3);
@@ -85,25 +85,29 @@ test("streaks follow local civil dates through DST, keep yesterday alive, and re
   assert.equal(localDay(Date.parse("2026-11-01T03:59:00Z")), "2026-10-31");
   assert.equal(localDay(Date.parse("2026-11-01T04:00:00Z")), "2026-11-01");
 });
-test("zero-score completion earns a learning day; rewards pay once and seven days pays a milestone", () => {
+test("zero-score practice stays visible; 21-star days pay once and seven days pays a milestone", () => {
   const d = seed();
+  finish(d, "regrouping", "2026-10-16", 1, false);
+  assert.equal(d.stars, 0);
+  assert.equal(streaks(d, noon("2026-10-16")).current, 0);
   for (let i = 0; i < 7; i++) {
     const day = shiftDay("2026-10-17", i);
-    const v = finish(d, "regrouping", day, 1, false);
-    assert.equal(v.correct, 0);
+    let v;
+    for (let j = 0; j < 5; j++) v = finish(d, "regrouping", day);
+    assert.equal(v.correct, 5);
     nextQuestion(d, v.id, noon(day) + 20000);
     awardConsistency(d, noon(day) + 30000);
   }
-  assert.equal(d.stars, 7 * 2 + 5);
+  assert.equal(d.stars, 7 * 25 + 7 * 2 + 5);
   assert.equal(d.consistencyAwards.length, 8);
   assert.equal(streaks(d, noon("2026-10-23")).current, 7);
   d.stars -= 3;
   const c = learningCalendar(d, "2026-10", noon("2026-10-23"));
   assert.equal(
     c.days.reduce((n, d) => n + d.stars, 0),
-    19,
+    194,
   );
-  assert.equal(d.stars, 16);
+  assert.equal(d.stars, 191);
 });
 test("daily plans stay fixed, unfinished games resume, all-five bonus is atomic and abandoned games don't count", () => {
   const d = seed(),
@@ -115,9 +119,9 @@ test("daily plans stay fixed, unfinished games resume, all-five bonus is atomic 
     finish(d, slot.skill, plan.day, slot.difficulty, false);
   assert.deepEqual(d.dailyPlans, saved);
   assert.equal(dailyPlan(d, now).slots.filter((s) => s.completed).length, 5);
-  assert.equal(d.stars, 7); // 0/25 still celebrates perseverance, plus daily-five finish
+  assert.equal(d.stars, 5); // Daily-five completion bonus stays separate from the 21-star streak goal.
   awardConsistency(d, now);
-  assert.equal(d.stars, 7);
+  assert.equal(d.stars, 5);
   const v = beginSession(d, "phonics", 1, "practice", now);
   assert.equal(beginSession(d, "phonics", 1, "practice", now).id, v.id);
   d.sessions.find((s) => s.id === v.id).abandoned = true;
@@ -266,8 +270,54 @@ test("a round spanning midnight records actual practice days and awards only on 
   assert.equal(before.qualifying, false);
   assert.equal(before.events[0].type, "practice");
   assert.equal(before.events[0].total, 1);
-  assert.equal(after.stars, 7);
-  assert.equal(after.qualifying, true);
+  assert.equal(after.stars, 5);
+  assert.equal(after.qualifying, false);
+});
+
+test("streak requires exactly 21 earned study stars; bonuses and spending cannot change the goal", () => {
+  const d = seed(),
+    day = "2026-10-17",
+    now = noon(day);
+  for (let i = 0; i < 4; i++) finish(d, "regrouping", day);
+  assert.equal(streaks(d, now).todayStars, 20);
+  assert.equal(streaks(d, now).todayComplete, false);
+  d.consistencyAwards.push({
+    day,
+    kind: "five",
+    stars: 5,
+    label: "Today's five finished",
+    at: now,
+  });
+  d.stars += 5;
+  const below = learningCalendar(d, "2026-10", now).days[0];
+  assert.equal(below.stars, 25);
+  assert.equal(below.studyStars, 20);
+  assert.equal(below.qualifying, false);
+  d.completions.push({
+    id: "one-star",
+    day,
+    status: "approved",
+    earned: 1,
+    at: now,
+  });
+  d.stars++;
+  awardConsistency(d, now);
+  const achieved = streaks(d, now);
+  assert.equal(achieved.goalStars, 21);
+  assert.equal(achieved.todayStars, 21);
+  assert.equal(achieved.todayComplete, true);
+  assert.equal(
+    d.consistencyAwards.filter((a) => a.kind === "practice").length,
+    1,
+  );
+  d.stars -= 15;
+  awardConsistency(d, now + 1000);
+  assert.equal(streaks(d, now).todayComplete, true);
+  assert.equal(d.stars, 13);
+  const calendar = learningCalendar(d, "2026-10", now);
+  assert.equal(calendar.days[0].stars, 28);
+  assert.equal(calendar.days[0].studyStars, 21);
+  assert.equal(calendar.days[0].qualifying, true);
 });
 
 test("daily math stretch requires practice evidence and a saved day's difficulty never shifts", () => {

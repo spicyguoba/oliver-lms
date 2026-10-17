@@ -16,8 +16,8 @@ export function StreakTrail({ streak }) {
           </h2>
           <p>
             {streak.todayComplete
-              ? "You showed up today. Well done!"
-              : "One little game grows your learning trail."}
+              ? "You reached today’s star goal. Well done!"
+              : `Earn ${streak.goalStars || 21} study stars today to grow your trail.`}
           </p>
         </div>
       </div>
@@ -32,7 +32,22 @@ export function StreakTrail({ streak }) {
           </li>
         ))}
       </ol>
-      <p>+2 ★ for a learning day · +5 ★ every 7 days in a row</p>
+      <div className="streak-goal">
+        <label htmlFor="streak-star-progress">
+          Today: {streak.todayStars || 0} / {streak.goalStars || 21} study stars
+        </label>
+        <progress
+          id="streak-star-progress"
+          value={Math.min(streak.todayStars || 0, streak.goalStars || 21)}
+          max={streak.goalStars || 21}
+        />
+        <small>
+          {streak.todayComplete
+            ? "Daily goal complete!"
+            : `${Math.max(0, (streak.goalStars || 21) - (streak.todayStars || 0))} more to reach today’s goal. Take breaks whenever you need.`}
+        </small>
+      </div>
+      <p>+2 ★ for reaching the daily goal · +5 ★ every 7 days in a row</p>
       <small>
         Best: {streak.best} day{streak.best === 1 ? "" : "s"} · A break is okay.
         Your stars stay yours.
@@ -202,7 +217,7 @@ export default function LearningCalendar({ today, parent = false }) {
           })}
         </div>
         <p className="calendar-key">
-          🌱 Green = learning day · ★ = stars earned, before spending
+          🌱 Green = 21+ study stars · ★ = stars earned, before spending
         </p>
       </section>
       {data && (
@@ -225,6 +240,11 @@ export default function LearningCalendar({ today, parent = false }) {
                   : ""}
               </p>
               <p>{picked.topics.join(" · ")}</p>
+              <p>
+                {picked.studyStars} / 21 study stars toward the streak goal
+                {picked.qualifying ? " · Goal reached ✓" : ""}. Bonus stars
+                don’t count toward the 21.
+              </p>
               {picked.unknownQuestStars && (
                 <p>
                   Older quest star amounts were not saved; only known awards are
@@ -240,9 +260,11 @@ export default function LearningCalendar({ today, parent = false }) {
                           ? "🌟 "
                           : e.type === "quest"
                             ? "📘 "
-                            : e.type === "legacy"
-                              ? "🏰 "
-                              : "🎮 "}
+                            : e.type === "reward"
+                              ? "🎁 "
+                              : e.type === "legacy"
+                                ? "🏰 "
+                                : "🎮 "}
                         {e.title}
                       </strong>
                       <p>
@@ -250,13 +272,18 @@ export default function LearningCalendar({ today, parent = false }) {
                           ? `${e.correct}/${e.total} first answers correct · round finished`
                           : e.type === "practice"
                             ? `${e.correct}/${e.total} first answers correct · practice recorded, no round finished this day`
-                            : e.type === "legacy"
-                              ? `${e.correct}/${e.total} reported score`
-                              : e.type === "quest"
-                                ? `Parent review: ${e.status}`
-                                : "Consistency bonus"}
+                            : e.type === "reward"
+                              ? `Reward enjoyed · ${e.cost} stars spent when requested`
+                              : e.type === "legacy"
+                                ? `${e.correct}/${e.total} reported score`
+                                : e.type === "quest"
+                                  ? `Parent review: ${e.status}`
+                                  : "Consistency bonus"}
                         {e.stars ? ` · +${e.stars} ★` : ""}
                       </p>
+                      {parent && e.parentNote && (
+                        <p>Parent note: {e.parentNote}</p>
+                      )}
                       {e.type === "legacy" && (
                         <small>
                           Game-reported · own game stars separate · no club
@@ -265,11 +292,23 @@ export default function LearningCalendar({ today, parent = false }) {
                       )}
                       {parent && e.at && (
                         <small>
-                          {new Date(e.at).toLocaleTimeString("en-US", {
-                            timeZone: data.timezone,
-                            hour: "numeric",
-                            minute: "2-digit",
-                          })}{" "}
+                          {e.type === "reward"
+                            ? `Recorded ${new Date(e.at).toLocaleString(
+                                "en-US",
+                                {
+                                  timeZone: data.timezone,
+                                  month: "short",
+                                  day: "numeric",
+                                  year: "numeric",
+                                  hour: "numeric",
+                                  minute: "2-digit",
+                                },
+                              )}`
+                            : new Date(e.at).toLocaleTimeString("en-US", {
+                                timeZone: data.timezone,
+                                hour: "numeric",
+                                minute: "2-digit",
+                              })}{" "}
                           · {e.mode || e.type}
                         </small>
                       )}

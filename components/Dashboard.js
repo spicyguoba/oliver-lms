@@ -26,6 +26,7 @@ import {
 import { api, Brand, Fox, Landscape, Login, Loading, ErrorBox } from "./ui";
 import LearningCalendar, { DailyFive } from "./LearningCalendar";
 import LearnerPicker from "./LearnerPicker";
+import RewardRecord from "./RewardRecord";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -603,7 +604,7 @@ export default function Dashboard({ parent = false }) {
                 }
                 text={
                   parent
-                    ? "Set family experiences and approve requests. Stars never expire."
+                    ? "Approve rewards, record when you enjoy them, and keep private parent notes. Stars are set aside when requested; completing a reward never charges again."
                     : `You’ve collected ${data.stars} stars. Pick something to look forward to.`
                 }
               />
@@ -708,18 +709,33 @@ export default function Dashboard({ parent = false }) {
                   </div>
                 ))}
               </div>
-              <h2 className="section">Your requests</h2>
+              <h2 className="section">
+                {parent
+                  ? "Reward requests & completion notes"
+                  : "Your requests"}
+              </h2>
               <div className="white-card">
                 {data.redemptions.length ? (
                   data.redemptions
                     .slice()
                     .reverse()
-                    .map((r) => (
-                      <div className="list-row" key={r.id}>
-                        <strong>{r.title}</strong>
-                        <span className="tag">{r.status}</span>
-                      </div>
-                    ))
+                    .map((r) =>
+                      parent ? (
+                        <RewardRecord
+                          key={`${r.id}-${r.status}-${r.notesUpdatedAt || 0}`}
+                          request={r}
+                          today={data.today}
+                          timezone={data.timezone}
+                          busy={busy}
+                          onAction={act}
+                        />
+                      ) : (
+                        <div className="list-row" key={r.id}>
+                          <strong>{r.title}</strong>
+                          <span className="tag">{r.status}</span>
+                        </div>
+                      ),
+                    )
                 ) : (
                   <p className="muted">
                     Your reward adventures will appear here.
@@ -813,6 +829,14 @@ export default function Dashboard({ parent = false }) {
                         <span className="eyebrow">{x.type}</span>
                         <strong>{x.title}</strong>
                         <div className="row">
+                          {x.type === "Reward" && (
+                            <button
+                              className="button secondary small"
+                              onClick={() => setSection("rewards")}
+                            >
+                              Completion & parent note
+                            </button>
+                          )}
                           <button
                             className="button small"
                             disabled={busy}

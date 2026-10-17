@@ -739,9 +739,11 @@ export default function ChildWorld() {
                       {r.title} —{" "}
                       {r.status === "pending"
                         ? "Waiting for your grown-up"
-                        : r.status === "approved"
-                          ? "Ready! Ask your grown-up"
-                          : "Stars returned"}
+                        : r.status === "completed"
+                          ? `✓ Enjoyed together${r.completedDay ? " · " + new Date(r.completedDay + "T12:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", month: "short", day: "numeric" }) : ""}`
+                          : r.status === "approved"
+                            ? "Ready! Ask your grown-up"
+                            : "Stars returned"}
                     </p>
                   ))}
               </section>

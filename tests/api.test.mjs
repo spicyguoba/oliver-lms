@@ -147,7 +147,10 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("admin/approve", { id: completion.id, approve: true }),
   ]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 6);
+  assert.equal(report.stars, 4);
+  assert.equal(report.streak.goalStars, 21);
+  assert.equal(report.streak.todayStars, 4);
+  assert.equal(report.streak.todayComplete, false);
   await request("admin/reward", {
     id: "test-reward",
     title: "Test family activity",
@@ -159,7 +162,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   ]);
   assert.deepEqual(requests.map((r) => r.status).sort(), [200, 400]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 3);
+  assert.equal(report.stars, 1);
   assert.equal(report.redemptions.length, 1);
   const reward = report.redemptions[0];
   await Promise.all([
@@ -167,7 +170,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("admin/approve", { id: reward.id, approve: false }),
   ]);
   report = await (await request("admin")).json();
-  assert.equal(report.stars, 6);
+  assert.equal(report.stars, 4);
   const beforeLesson = report.history.length;
   const lesson = await (await request("lesson/zh-usage-001")).json();
   assert.equal(lesson.cards.length, 20);
@@ -191,12 +194,12 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 5);
+  assert.equal(exportData.version, 6);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
   );
-  assert.equal(exportData.stars, 6);
+  assert.equal(exportData.stars, 4);
   assert.equal(
     (
       await request("legacy", {
@@ -236,7 +239,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     total: 5,
   });
   assert.equal(card.completedRounds, 1);
-  assert.equal(completed.stars, 6 + score);
+  assert.equal(completed.stars, 4 + score);
   await request(`session/${round.id}/next`, {});
   const again = await (await request("state")).json();
   assert.equal(again.stars, completed.stars);
@@ -277,7 +280,13 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   }
   const final = await (await request("state")).json();
   assert.ok(final.dailyPlan.slots.every((s) => s.completed));
-  assert.equal(final.stars, beforeFive + dailyScore + 5);
+  assert.equal(
+    final.stars,
+    beforeFive +
+      dailyScore +
+      5 +
+      (final.streak.todayComplete && !again.streak.todayComplete ? 2 : 0),
+  );
   await request("daily/start", { day: final.today, slot: 0 });
   assert.equal((await (await request("state")).json()).stars, final.stars);
   const calendar = await (await request("calendar")).json();
@@ -376,7 +385,7 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
     });
     round = await (await request(`session/${round.id}/next`, {})).json();
   }
-  assert.equal((await (await request("state")).json()).stars, 2);
+  assert.equal((await (await request("state")).json()).stars, 0);
   await request("admin/assignment", {
     id: "test1-only",
     title: "Test1 quest",
@@ -430,7 +439,7 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
   await select("test1");
   state = await (await request("admin")).json();
   assert.equal(state.profile.age, 8);
-  assert.equal(state.stars, 5);
+  assert.equal(state.stars, 3);
   assert.equal(state.history[0].attempts.length, 5);
   assert.equal(state.legacyProgress.reading.correct, 3);
   const paired = await request("launch", {});
@@ -458,7 +467,7 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
     .split(";")[0];
   const after = await (await request("admin/export")).json();
   assert.deepEqual(rootOnly(after), rootOnly(before));
-  assert.equal(after.learners.test1.stars, 5);
+  assert.equal(after.learners.test1.stars, 3);
   assert.equal(after.learners.test2.stars, 0);
 });
 
@@ -523,7 +532,7 @@ test("Star Dash HTTP gates the question behind a verified clear and awards its s
   assert.equal(feedback.feedback.stars, 1);
   assert.deepEqual((await results[1].json()).feedback, feedback.feedback);
   const state = await (await request("dash")).json();
-  assert.equal(state.stars, 3);
+  assert.equal(state.stars, 1);
   assert.equal(state.unlocked, 2);
   assert.equal(state.pending, null);
   assert.equal(
@@ -546,4 +555,168 @@ test("Star Dash HTTP gates the question behind a verified clear and awards its s
     (await request("dash/finish", { id: run.id, jumps: p.jumps })).status,
     404,
   );
+});
+
+test("parents record reward completion once with private notes; child and other learners cannot change it", async () => {
+  const rootStars = (await (await request("state")).json()).stars;
+  const select = async (id) => {
+    const r = await request("learner/select", { id });
+    cookie = r.headers
+      .getSetCookie()
+      .find((c) => c.startsWith("oliver-admin="))
+      .split(";")[0];
+  };
+  await select("test1");
+  const before = (await (await request("admin")).json()).stars;
+  await request("admin/reward", {
+    id: "completion-test",
+    title: "Read a bedtime book",
+    cost: 1,
+  });
+  assert.equal(
+    (await request("redeem", { id: "completion-test" })).status,
+    200,
+  );
+  let report = await (await request("admin")).json();
+  const r = report.redemptions.find((r) => r.rewardId === "completion-test");
+  assert.equal(report.stars, before - 1);
+  assert.equal(
+    (
+      await request("admin/redemption", {
+        id: r.id,
+        action: "complete",
+        completedDay: "2200-01-01",
+      })
+    ).status,
+    400,
+  );
+  const body = {
+    id: r.id,
+    action: "complete",
+    completedDay: report.today,
+    parentNote: "Private parent detail: chose a book together.",
+  };
+  assert.equal(
+    (await request("admin/redemption", body, { "x-lms-learner": "oliver" }))
+      .status,
+    409,
+  );
+  assert.equal(
+    (await request("admin/redemption", body, { Cookie: "" })).status,
+    401,
+  );
+  const responses = await Promise.all([
+    request("admin/redemption", body),
+    request("admin/redemption", body),
+  ]);
+  assert.ok(responses.every((r) => r.status === 200));
+  report = await (await request("admin")).json();
+  const saved = report.redemptions.find((x) => x.id === r.id);
+  assert.equal(saved.status, "completed");
+  assert.equal(saved.completedDay, report.today);
+  assert.equal(saved.parentNote, body.parentNote);
+  assert.ok(saved.completedAt);
+  assert.equal(report.stars, before - 1);
+  await request("admin/approve", { id: r.id, approve: false });
+  assert.equal((await (await request("admin")).json()).stars, before - 1);
+  assert.equal(
+    (
+      await request("admin/redemption", {
+        id: r.id,
+        action: "note",
+        parentNote: "Updated private parent detail",
+      })
+    ).status,
+    200,
+  );
+  assert.ok(
+    JSON.stringify(await (await request("admin/export")).json()).includes(
+      "Updated private parent detail",
+    ),
+  );
+  const parentCalendar = await (await request("calendar")).json();
+  assert.ok(
+    parentCalendar.days
+      .flatMap((d) => d.events)
+      .some(
+        (e) =>
+          e.type === "reward" &&
+          e.parentNote === "Updated private parent detail",
+      ),
+  );
+  const paired = await request("launch", {});
+  cookie = paired.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-child="))
+    .split(";")[0];
+  assert.equal((await request("admin/redemption", body)).status, 401);
+  const child = await (await request("state")).json(),
+    calendar = await (await request("calendar")).json();
+  assert.equal(
+    child.redemptions.find((x) => x.id === r.id).status,
+    "completed",
+  );
+  assert.ok(!JSON.stringify(child).includes("parentNote"));
+  assert.ok(!JSON.stringify(calendar).includes("private parent"));
+  const login = await request("login", {
+    username: "admin",
+    password: "admin1234",
+  });
+  cookie = login.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  await select("test2");
+  assert.equal(
+    (
+      await request("admin/redemption", {
+        id: r.id,
+        action: "note",
+        parentNote: "wrong profile",
+      })
+    ).status,
+    404,
+  );
+  await select("oliver");
+  assert.equal((await (await request("state")).json()).stars, rootStars);
+});
+
+test("the server awards the daily streak bonus only after reaching 21 study stars", async () => {
+  const selected = await request("learner/select", { id: "test2" });
+  cookie = selected.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  const before = await (await request("state")).json();
+  assert.equal(before.streak.todayStars, 1);
+  assert.equal(before.streak.todayComplete, false);
+  await request("admin/assignment", {
+    id: "reach-goal",
+    title: "Study to the daily goal",
+    stars: 20,
+    days: [1],
+  });
+  await request("assignment/request", { id: "reach-goal" });
+  const pending = (await (await request("admin")).json()).completions.find(
+    (c) => c.assignmentId === "reach-goal",
+  );
+  await Promise.all([
+    request("admin/approve", { id: pending.id, approve: true }),
+    request("admin/approve", { id: pending.id, approve: true }),
+  ]);
+  const after = await (await request("state")).json();
+  assert.equal(after.streak.todayStars, 21);
+  assert.equal(after.streak.todayComplete, true);
+  assert.equal(after.stars, before.stars + 20 + 2);
+  const calendar = await (await request("calendar")).json(),
+    today = calendar.days.find((d) => d.day === after.today);
+  assert.equal(today.studyStars, 21);
+  assert.equal(today.qualifying, true);
+  assert.equal(today.bonusStars, 2);
+  assert.equal(today.events.filter((e) => e.type === "bonus").length, 1);
+  const back = await request("learner/select", { id: "oliver" });
+  cookie = back.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
 });

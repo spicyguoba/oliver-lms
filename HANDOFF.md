@@ -1,5 +1,21 @@
 # Adventure Club handoff
 
+## 21-star streak goal (2026-10-17)
+
+The parent changed the streak rule: each day needs at least **21 earned study stars**. This supersedes the earlier any-score learning-day rule described in the historical notes below. Eligibility sums saved `earned` amounts from finished, non-abandoned native rounds, answered Dash questions and approved quests on their attributed civil day. Partial rounds, unknown historical quest amounts, legacy stars, reward fulfillment and all consistency bonuses are excluded. Spending/refunding reward stars never changes a day's earned study total. The current streak still gives the child today to continue yesterday's qualifying run; historical days are recomputed against the new threshold, without changing past records or previously awarded stars.
+
+The +2 daily bonus now waits for the 21-star goal, while +5 every seventh qualifying day remains. The +5 daily-five finish bonus remains independent of score and does not count toward the threshold. Home and both calendars show a goal progress bar and remaining study stars; calendar green days require 21+. Existing ledgers keep all bonuses idempotent and no reading/migration pays retroactive stars. Tests cover 20 versus exactly 21, exclusion of bonuses, spending invariance, zero-score practice, seven-day milestones, DST and per-learner isolation. Current checks total 41 domain tests plus five HTTP tests, including concurrent approvals reaching the 21-star threshold.
+
+## Reward completion and parent notes (2026-10-17)
+
+The parent asked how to record a delivered bedtime-story reward. **Admin → Rewards → Reward requests & completion notes** now has a completion date, a private note (up to 1,000 characters), **Mark completed**, **Save parent note**, and separate **Approve for later** / **Refund stars** actions. Overview's pending reward also links to this section. Completing a pending or approved reward records delivery without charging any additional stars. Approval alone does not imply delivery. A pending refund still returns its original reserved cost exactly once; completed rewards cannot be refunded through that action.
+
+Schema 6 adds empty `parentNote`, null `completedAt` and null `completedDay` to existing redemptions for all three learners, preserving their statuses, wallets and every older field. Never infer delivery dates for existing approved rewards. `completedDay` is the parent's chosen civil date between request day and today; `completedAt` is the server recording timestamp. Completion retries are idempotent, including timestamps and notes. Later note edits use the separate note action. Learner selection and all mutation roles remain server-enforced.
+
+The child sees “Enjoyed together” and the completion date. Both calendars display a separate gift event on that date, worth zero earned stars and no learning-day/streak credit; parent calendar additionally shows the private note and full recording date/time. Notes are stripped from child state/calendar responses but retained in admin views and the full parent export. Completing the reward does not change historical earned totals or the current available balance.
+
+Verification: 40 unit/domain tests and four isolated HTTP tests cover migration, invalid/future dates, note validation/privacy, one-time completion/refund, wallet preservation, concurrent submissions, parent/child access, stale-page and cross-learner boundaries, calendar and export behavior. Local browser uses the ignored `.data/reward-preview/` copy; its synthetic completion is not a cloud record. Fresh private baseline is `.data/before-reward-notes-upgrade.json`; never restore it over production. Preserve the real bedtime request for the parent to record with their chosen date and note.
+
 ## Test learner profiles (2026-10-17)
 
 Schema 4 adds `learners.test1` and `learners.test2`, preserving all of Oliver's existing root fields. `lib/learners.mjs` provides a transaction-local view that directs learner-specific reads/writes to the selected record. Tests start with zero stars and no answers/calendar history/unlocks; quests and rewards are independent copies of the existing definitions. Only source materials and parent auth/settings remain family-wide. Admin export retains the complete family structure and redacts authentication settings as before.

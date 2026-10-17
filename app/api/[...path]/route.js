@@ -12,6 +12,7 @@ import {
   streaks,
 } from "../../../lib/calendar.mjs";
 import { validMonth } from "../../../lib/dates.mjs";
+import { rewardRequests, reviewReward } from "../../../lib/rewards.mjs";
 import {
   dashState,
   startDash,
@@ -132,7 +133,7 @@ function safeState(d, role, family) {
     streak: streaks(d),
     today: localDay(Date.now(), d.settings.timezone),
     rewards: d.rewards,
-    redemptions: d.redemptions,
+    redemptions: rewardRequests(d, role === "admin"),
     assignments: d.assignments
       .filter((x) => !x.archived)
       .map((a) => ({
@@ -434,6 +435,9 @@ export async function POST(req, context) {
           cost: r.cost,
           status: "pending",
           at: Date.now(),
+          parentNote: "",
+          completedAt: null,
+          completedDay: null,
         });
         return NextResponse.json({ ok: true });
       }
@@ -645,6 +649,8 @@ export async function POST(req, context) {
         }
         return NextResponse.json({ ok: true });
       }
+      if (route === "admin/redemption")
+        return NextResponse.json(reviewReward(d, body));
       if (route === "admin/approve") {
         const c = d.completions.find(
           (x) => x.id === body.id && x.status === "pending",
@@ -666,8 +672,10 @@ export async function POST(req, context) {
           (x) => x.id === body.id && x.status === "pending",
         );
         if (r) {
-          r.status = body.approve ? "approved" : "refunded";
-          if (!body.approve) d.stars += r.cost;
+          reviewReward(d, {
+            id: r.id,
+            action: body.approve ? "approve" : "refund",
+          });
         }
         return NextResponse.json({ ok: true });
       }

@@ -3797,3 +3797,49 @@ legend {
   grid-column: span 3;
   font-size: 17px;
 }
+.reward-record {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border, #e2e7dd);
+}
+.reward-record:last-child {
+  border-bottom: 0;
+}
+.reward-record label {
+  display: grid;
+  gap: 8px;
+  font-weight: 650;
+  margin: 18px 0 10px;
+}
+.reward-record input[type="date"] {
+  width: min(100%, 280px);
+}
+.reward-record textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}
+.reward-record small {
+  color: #5f6e68;
+}
+.reward-record-actions {
+  margin-top: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.reward-record .section-heading {
+  flex-wrap: wrap;
+}
+.streak-trail > .streak-goal {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  width: 100%;
+}
+.streak-goal label {
+  font-weight: 750;
+}
+.streak-goal progress {
+  width: 100%;
+  height: 18px;
+  accent-color: #487556;
+}

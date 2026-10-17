@@ -26,7 +26,7 @@ test("schema four adds empty test learners and preserves every Oliver field", ()
     { ...d, version: 3, learners: undefined },
     { ...original, learners: undefined },
   );
-  assert.equal(d.version, 5);
+  assert.equal(d.version, 6);
   assert.deepEqual(
     learnerList(d).map((x) => x.name),
     ["Oliver", "Test1", "Test2"],
@@ -59,7 +59,7 @@ test("learner views write through to their own wallet, profile, quests, rewards,
     submitAnswer(one, s.id, { questionId: q.id, answer: q.answer });
     nextQuestion(one, s.id);
   }
-  assert.equal(one.stars, 17);
+  assert.equal(one.stars, 15);
   assert.equal(two.stars, 0);
   assert.equal(two.sessions.length, 0);
   assert.equal(two.assignments.length, 0);
@@ -69,7 +69,7 @@ test("learner views write through to their own wallet, profile, quests, rewards,
   assert.equal(learningCalendar(two, month).days.length, 0);
   assert.equal(
     learningCalendar(one, month).days.filter((d) => d.qualifying).length,
-    1,
+    0,
   );
   assert.deepEqual(
     { ...family, learners: undefined },

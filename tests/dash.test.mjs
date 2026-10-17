@@ -136,7 +136,7 @@ test("schema five adds Dash without changing prior records in any learner", () =
   const before = structuredClone(d);
   migrateFamily(d);
   const strip = (x) => ({ ...x, dash: undefined });
-  assert.equal(d.version, 5);
+  assert.equal(d.version, 6);
   assert.deepEqual(
     { ...strip(d), version: 4, learners: undefined },
     { ...strip(before), learners: undefined },
@@ -222,9 +222,9 @@ test("wrong first answers are immutable; replay asks fresh questions and each le
   );
   assert.equal(result.feedback.stars, 1);
   assert.ok(r.attempt.helped);
-  assert.equal(d.stars, 3); // +2 learning-day consistency
+  assert.equal(d.stars, 1); // A single Dash star does not meet the 21-star streak goal.
   answerDash(d, r.id, {}, now + 24000);
-  assert.equal(d.stars, 3);
+  assert.equal(d.stars, 1);
   ({ r, v } = clear());
   answerDash(
     d,
@@ -233,11 +233,11 @@ test("wrong first answers are immutable; replay asks fresh questions and each le
     now + 25000,
   );
   assert.equal(r.earned, 0);
-  assert.equal(d.stars, 3);
+  assert.equal(d.stars, 1);
   const child = learningCalendar(d, localDay(now).slice(0, 7), now),
     parent = learningCalendar(d, localDay(now).slice(0, 7), now, true);
-  assert.equal(child.days[0].stars, 3);
-  assert.ok(child.days[0].qualifying);
+  assert.equal(child.days[0].stars, 1);
+  assert.ok(!child.days[0].qualifying);
   assert.ok(
     parent.days[0].events.some((e) => e.mode === "dash study question"),
   );
