@@ -1,4 +1,5 @@
 import "./globals.css";
+import AccountSync from "../components/AccountSync";
 export const metadata = {
   title: "Oliver’s Adventure Club",
   description:
@@ -8,7 +9,10 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AccountSync />
+        {children}
+      </body>
     </html>
   );
 }

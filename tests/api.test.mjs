@@ -39,6 +39,17 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   cookie = login.headers.get("set-cookie").split(";")[0];
   const admin = await (await request("admin")).json();
   assert.ok(!JSON.stringify(admin).includes("passwordHash"));
+  const accounts = (await (await request("admin/accounts")).json()).accounts;
+  for (const a of accounts.filter((a) => a.role !== "admin"))
+    assert.equal(
+      (
+        await request("admin/account", {
+          id: a.id,
+          password: `isolated-${a.username}-password`,
+        })
+      ).status,
+      200,
+    );
   const s = await (
     await request("session/start", { skill: "regrouping", mode: "observed" })
   ).json();
@@ -77,7 +88,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   );
   assert.equal((await request("admin/export")).status, 401);
   const state = await (await request("state")).json();
-  assert.equal(state.role, "child");
+  assert.equal(state.role, "student");
   assert.equal(state.profile.name, "Oliver");
   assert.equal(state.dailyPlan.slots.length, 5);
   assert.deepEqual(
@@ -194,7 +205,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 6);
+  assert.equal(exportData.version, 7);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
@@ -449,14 +460,23 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
     .split(";")[0];
   assert.equal((await (await request("state")).json()).learnerId, "test1");
   assert.equal((await request("admin")).status, 401);
-  await select("test2", "child");
-  assert.equal((await (await request("state")).json()).role, "child");
+  assert.equal((await request("learner/select", { id: "test2" })).status, 403);
+  const test2login = await request("login", {
+    username: "test2",
+    password: "isolated-test2-password",
+  });
+  cookie = test2login.headers
+    .getSetCookie()
+    .find(
+      (c) => c.startsWith("oliver-child=") && !c.startsWith("oliver-child=;"),
+    )
+    .split(";")[0];
+  assert.equal((await (await request("state")).json()).role, "student");
   assert.equal(
     (await request("admin/profile", { name: "changed" })).status,
     401,
   );
-  await select("oliver", "child");
-  assert.equal((await (await request("state")).json()).stars, rootStars);
+  assert.equal((await request("learner/select", { id: "oliver" })).status, 403);
   const relogin = await request("login", {
     username: "admin",
     password: "admin1234",
@@ -466,6 +486,7 @@ test("three learner profiles isolate all progress, cookies, stale tabs, approval
     .find((c) => c.startsWith("oliver-admin="))
     .split(";")[0];
   const after = await (await request("admin/export")).json();
+  assert.equal(after.stars, rootStars);
   assert.deepEqual(rootOnly(after), rootOnly(before));
   assert.equal(after.learners.test1.stars, 3);
   assert.equal(after.learners.test2.stars, 0);
@@ -719,4 +740,214 @@ test("the server awards the daily streak bonus only after reaching 21 study star
     .getSetCookie()
     .find((c) => c.startsWith("oliver-admin="))
     .split(";")[0];
+});
+
+test("student, parent and admin logins enforce account isolation, scoped exports and revocation", async () => {
+  const signIn = async (
+    username,
+    password = `isolated-${username}-password`,
+  ) => {
+    const r = await request("login", { username, password });
+    assert.equal(r.status, 200);
+    const json = await r.json();
+    const bucket = json.role === "student" ? "child" : "admin";
+    cookie = r.headers
+      .getSetCookie()
+      .find(
+        (c) =>
+          c.startsWith(`oliver-${bucket}=`) &&
+          !c.startsWith(`oliver-${bucket}=;`),
+      )
+      .split(";")[0];
+    assert.ok(
+      r.headers
+        .getSetCookie()
+        .some((c) =>
+          c.startsWith(`oliver-${bucket === "admin" ? "child" : "admin"}=;`),
+        ),
+    );
+    return json;
+  };
+  await signIn("admin", "admin1234");
+  const all = await (await request("admin/export")).json();
+  assert.equal(all.accounts.length, 7);
+  assert.ok(!JSON.stringify(all).includes("passwordHash"));
+  const ids = {
+    oliver: all.sessions[0].id,
+    test1: all.learners.test1.sessions[0].id,
+  };
+  const studentCookies = {};
+  for (const id of ["oliver", "test1", "test2"]) {
+    const login = await signIn(id);
+    assert.equal(login.redirect, "/");
+    studentCookies[id] = cookie;
+    const state = await (await request("state")).json();
+    assert.equal(state.role, "student");
+    assert.equal(state.learnerId, id);
+    assert.deepEqual(
+      state.learners.map((l) => l.id),
+      [id],
+    );
+    assert.equal(
+      (
+        await request("learner/select", {
+          id: id === "oliver" ? "test1" : "oliver",
+        })
+      ).status,
+      403,
+    );
+    assert.equal((await request("admin")).status, 401);
+    assert.equal((await request("admin/export")).status, 401);
+    assert.equal((await request("admin/accounts")).status, 403);
+    assert.equal(
+      (
+        await request("admin/account", {
+          id: "admin",
+          password: "hijack-not-allowed",
+        })
+      ).status,
+      401,
+    );
+    assert.equal(
+      (await request(`session/${ids[id === "oliver" ? "test1" : "oliver"]}`))
+        .status,
+      404,
+    );
+    assert.equal(
+      (
+        await request("state", undefined, {
+          "x-lms-learner": id === "oliver" ? "test1" : "oliver",
+        })
+      ).status,
+      409,
+    );
+    assert.equal(
+      (await request("state", undefined, { "x-lms-account": "admin" })).status,
+      409,
+    );
+    const legacy = await (await request("game/reading")).text();
+    assert.ok(legacy.includes(`window.__LMS_LEARNER__=${JSON.stringify(id)}`));
+  }
+  for (const id of ["oliver", "test1", "test2"]) {
+    const login = await signIn(`${id}parent`);
+    assert.equal(login.redirect, "/admin");
+    const report = await (await request("admin")).json();
+    assert.equal(report.role, "parent");
+    assert.equal(report.learnerId, id);
+    assert.deepEqual(
+      report.learners.map((l) => l.id),
+      [id],
+    );
+    assert.equal(
+      (
+        await request("learner/select", {
+          id: id === "oliver" ? "test1" : "oliver",
+        })
+      ).status,
+      403,
+    );
+    assert.equal((await request("admin/accounts")).status, 403);
+    assert.equal(
+      (await request("admin/account", { id: "test1", enabled: false })).status,
+      403,
+    );
+    assert.equal(
+      (await request("admin/materials/import", { files: [] })).status,
+      403,
+    );
+    const exported = await (await request("admin/export")).json();
+    assert.equal(exported.learnerId, id);
+    for (const key of ["accounts", "learners", "loginLimits"])
+      assert.ok(!(key in exported));
+    assert.ok(!JSON.stringify(exported).includes("passwordHash"));
+    assert.equal(
+      (await request(`session/${ids[id === "oliver" ? "test1" : "oliver"]}`))
+        .status,
+      404,
+    );
+    const observed = await (
+      await request("session/start", { skill: "phonics", mode: "observed" })
+    ).json();
+    assert.equal(observed.mode, "observed");
+    await request(`session/${observed.id}/leave`, {});
+  }
+  await signIn("test1parent");
+  assert.equal((await request("admin/revoke", {})).status, 200);
+  assert.equal(
+    (await request("state", undefined, { Cookie: studentCookies.test1 }))
+      .status,
+    401,
+  );
+  assert.equal(
+    (await request("state", undefined, { Cookie: studentCookies.test2 }))
+      .status,
+    200,
+  );
+  const parentCookie = cookie;
+  await signIn("admin", "admin1234");
+  assert.equal(
+    (
+      await request("admin/account", {
+        id: "test1parent",
+        password: "replacement-parent-test-password",
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request("admin", undefined, { Cookie: parentCookie })).status,
+    401,
+  );
+  assert.equal(
+    (
+      await request("login", {
+        username: "test1parent",
+        password: "isolated-test1parent-password",
+      })
+    ).status,
+    401,
+  );
+  await signIn("test1parent", "replacement-parent-test-password");
+  await signIn("admin", "admin1234");
+  assert.equal(
+    (await request("admin/account", { id: "test2", enabled: false })).status,
+    200,
+  );
+  assert.equal(
+    (await request("state", undefined, { Cookie: studentCookies.test2 }))
+      .status,
+    401,
+  );
+  assert.equal(
+    (
+      await request("login", {
+        username: "test2",
+        password: "isolated-test2-password",
+      })
+    ).status,
+    401,
+  );
+  assert.equal(
+    (await request("admin/account", { id: "test2", enabled: true })).status,
+    200,
+  );
+  assert.equal(
+    (await request("admin/account", { id: "admin", enabled: false })).status,
+    400,
+  );
+  assert.equal(
+    (
+      await request("admin/account", {
+        username: "qa-extra-parent",
+        role: "parent",
+        learnerId: "test2",
+        password: "extra-parent-test-password",
+        enabled: true,
+      })
+    ).status,
+    200,
+  );
+  const accounts = await (await request("admin/accounts")).json();
+  assert.equal(accounts.accounts.length, 8);
+  assert.ok(!JSON.stringify(accounts).includes("passwordHash"));
 });

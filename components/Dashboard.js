@@ -27,6 +27,7 @@ import { api, Brand, Fox, Landscape, Login, Loading, ErrorBox } from "./ui";
 import LearningCalendar, { DailyFive } from "./LearningCalendar";
 import LearnerPicker from "./LearnerPicker";
 import RewardRecord from "./RewardRecord";
+import AccountsPanel from "./AccountsPanel";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -111,7 +112,12 @@ export default function Dashboard({ parent = false }) {
         ["overview", "Overview", Home],
         ["calendar", "Learning calendar", CalendarDays],
         ["reports", "Learning insights", SlidersHorizontal],
-        ["library", "Materials library", Library],
+        ...(data.role === "admin"
+          ? [
+              ["library", "Materials library", Library],
+              ["accounts", "User accounts", Shield],
+            ]
+          : []),
         ["plan", "Study plan", BookOpen],
         ["rewards", "Rewards", Star],
         ["settings", "Settings", Settings],
@@ -149,12 +155,22 @@ export default function Dashboard({ parent = false }) {
           </div>
           <div>
             <strong>{data.profile.name}</strong>
-            <small>{parent ? "Parent dashboard" : "Curious explorer"}</small>
+            <small>
+              {parent
+                ? data.role === "admin"
+                  ? "Admin dashboard"
+                  : "Parent dashboard"
+                : "Curious explorer"}
+            </small>
           </div>
           <span className="online-dot" />
         </div>
         <div className="nav-label">
-          {parent ? "PARENT SPACE" : "YOUR LITTLE WORLD"}
+          {parent
+            ? data.role === "admin"
+              ? "ADMIN SPACE"
+              : "PARENT SPACE"
+            : "YOUR LITTLE WORLD"}
         </div>
         <nav>
           {nav.map(([id, title, Icon]) => (
@@ -205,6 +221,9 @@ export default function Dashboard({ parent = false }) {
             {nav.find((n) => n[0] === section)?.[1]}
           </span>
           <div className="topbar-right">
+            <span className="account-caption">
+              {data.account.username} · {data.role}
+            </span>
             <span className="star-pill">
               <Star size={18} fill="currentColor" />
               {data.stars} <span>stars</span>
@@ -923,7 +942,10 @@ export default function Dashboard({ parent = false }) {
               setDifficulty={setDifficulty}
             />
           )}
-          {parent && section === "library" && (
+          {parent && data.role === "admin" && section === "accounts" && (
+            <AccountsPanel busy={busy} act={act} learners={data.learners} />
+          )}
+          {parent && data.role === "admin" && section === "library" && (
             <>
               <PageTitle
                 eyebrow="THE MATERIALS YOU ALREADY HAVE, ALL ACCOUNTED FOR"
@@ -994,7 +1016,7 @@ export default function Dashboard({ parent = false }) {
               <PageTitle
                 eyebrow="A LEARNING SPACE THAT FITS YOUR FAMILY"
                 title="Make it your own."
-                text="Manage Oliver’s profile, the parent password, and device access."
+                text="Manage the learner profile, your own password, and student device access."
               />
               <div className="settings-grid">
                 <form
@@ -1056,12 +1078,12 @@ export default function Dashboard({ parent = false }) {
                     const r = await act(
                       "admin/password",
                       Object.fromEntries(new FormData(f)),
-                      "Parent password changed. Other parent sessions are signed out.",
+                      "Your password changed. Your other sessions are signed out.",
                     );
                     if (r) f.reset();
                   }}
                 >
-                  <h2>Parent password</h2>
+                  <h2>Your password</h2>
                   {data.settings.defaultPassword && (
                     <div className="notice">
                       You’re using the starter password. Set a unique parent
@@ -1096,9 +1118,9 @@ export default function Dashboard({ parent = false }) {
                   <h2>Devices & data</h2>
                   <p>{data.storage}</p>
                   <p className="muted">
-                    Timezone: America/New_York. Opening the child’s world locks
-                    the admin session. A paired child device stays signed in for
-                    30 days.
+                    Timezone: America/New_York. Student logins last up to 30
+                    days. Opening a student’s world signs out this grown-up
+                    account.
                   </p>
                   <button
                     className="button secondary"
@@ -1107,7 +1129,7 @@ export default function Dashboard({ parent = false }) {
                       act(
                         "admin/revoke",
                         {},
-                        "Child devices signed out. Open a learner’s world again to pair this device.",
+                        "Student sessions signed out. Each student can sign in again with their own login.",
                       )
                     }
                   >

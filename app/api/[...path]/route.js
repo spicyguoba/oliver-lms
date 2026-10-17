@@ -14,6 +14,15 @@ import {
 import { validMonth } from "../../../lib/dates.mjs";
 import { rewardRequests, reviewReward } from "../../../lib/rewards.mjs";
 import {
+  isManager,
+  loginAccount,
+  resolveAccountSession,
+  publicAccount,
+  accountList,
+  manageAccount,
+  exportForAccount,
+} from "../../../lib/accounts.mjs";
+import {
   dashState,
   startDash,
   finishDash,
@@ -28,7 +37,6 @@ import {
 } from "../../../lib/learners.mjs";
 import {
   verifyPassword,
-  hashPassword,
   signSession,
   readSession,
 } from "../../../lib/security.mjs";
@@ -50,21 +58,13 @@ function fail(message, status = 400) {
   throw Object.assign(new Error(message), { status });
 }
 function authenticatedSession(req, data) {
-  for (const role of ["admin", "child"]) {
-    const s = readSession(
-      req.cookies.get(`oliver-${role}`)?.value || "",
-      secret(),
+  for (const bucket of ["admin", "child"]) {
+    const s = resolveAccountSession(
+      data,
+      readSession(req.cookies.get(`oliver-${bucket}`)?.value || "", secret()),
     );
-    if (
-      s?.role === role &&
-      s.v ===
-        (role === "admin"
-          ? data.settings.authVersion
-          : data.settings.childVersion)
-    )
-      return validLearner(s.learnerId || "oliver")
-        ? { ...s, learnerId: s.learnerId || "oliver" }
-        : null;
+    if (s && (bucket === "admin" ? isManager(s.role) : s.role === "student"))
+      return s;
   }
   return null;
 }
@@ -72,33 +72,57 @@ function actor(req, data) {
   return authenticatedSession(req, data)?.role || null;
 }
 function checkLearner(req, d, body) {
+  const expectedAccount = req.headers.get("x-lms-account");
+  if (
+    expectedAccount &&
+    expectedAccount !== authenticatedSession(req, d)?.accountId
+  )
+    fail("The signed-in account changed. Reload before continuing.", 409);
   const expected = req.headers.get("x-lms-learner") || body?.learnerId;
   if (expected && expected !== d.learnerId)
     fail("The learner changed in another tab. Reload before continuing.", 409);
 }
 function requireRole(req, data, admin = false) {
   const role = actor(req, data);
-  if (!role || (admin && role !== "admin"))
+  if (!role || (admin && !isManager(role)))
     fail(
       admin ? "Parent sign-in required." : "Sign in to start your adventure.",
       401,
     );
   return role;
 }
-function setCookie(res, role, data, clear = false, learnerId = "oliver") {
+function setCookie(
+  res,
+  role,
+  data,
+  clear = false,
+  learnerId = "oliver",
+  accountId,
+) {
+  const bucket = role === "child" || role === "student" ? "child" : "admin";
+  const account =
+    data.accounts.find((a) => a.id === accountId) ||
+    data.accounts.find(
+      (a) =>
+        a.role === (role === "child" ? "student" : role) &&
+        (role === "admin" || a.learnerId === learnerId),
+    );
   res.cookies.set(
-    `oliver-${role}`,
+    `oliver-${bucket}`,
     clear
       ? ""
       : signSession(
           {
-            role,
+            role: account.role,
+            accountId: account.id,
+            accountVersion: account.version,
             learnerId,
             v:
               role === "admin"
                 ? data.settings.authVersion
                 : data.settings.childVersion,
-            exp: Date.now() + (role === "admin" ? 12 * 3600000 : 30 * 86400000),
+            exp:
+              Date.now() + (bucket === "admin" ? 12 * 3600000 : 30 * 86400000),
           },
           secret(),
         ),
@@ -107,7 +131,7 @@ function setCookie(res, role, data, clear = false, learnerId = "oliver") {
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
       path: "/",
-      maxAge: clear ? 0 : role === "admin" ? 43200 : 2592000,
+      maxAge: clear ? 0 : bucket === "admin" ? 43200 : 2592000,
     },
   );
 }
@@ -118,11 +142,14 @@ function sessionResponse(d, view) {
     learnerName: d.profile.name,
   });
 }
-function safeState(d, role, family) {
+function safeState(d, role, family, session) {
   return {
     role,
     learnerId: d.learnerId,
-    learners: learnerList(family),
+    learners: learnerList(family).filter(
+      (l) => role === "admin" || l.id === d.learnerId,
+    ),
+    account: publicAccount(session.account),
     timezone: d.settings.timezone,
     legacyProgress: legacyProgress(d),
     profile: d.profile,
@@ -133,12 +160,15 @@ function safeState(d, role, family) {
     streak: streaks(d),
     today: localDay(Date.now(), d.settings.timezone),
     rewards: d.rewards,
-    redemptions: rewardRequests(d, role === "admin"),
+    redemptions: rewardRequests(d, isManager(role)),
     assignments: d.assignments
       .filter((x) => !x.archived)
       .map((a) => ({
         ...a,
-        material: d.materials.find((m) => m.id === a.materialId) || null,
+        material: materialView(
+          d.materials.find((m) => m.id === a.materialId),
+          role,
+        ),
       })),
     completions: d.completions,
     storyProgress: d.storyProgress,
@@ -165,15 +195,19 @@ function safeState(d, role, family) {
     storage: databaseMode(),
   };
 }
+function materialView(m, role) {
+  if (!m) return null;
+  return role === "admin"
+    ? m
+    : { id: m.id, title: m.title, subject: m.subject, status: m.status };
+}
 export async function GET(req, context) {
   try {
     const { path: p } = await context.params;
     const route = p.join("/");
     return await transact(async (family) => {
-      const d = learnerData(
-        family,
-        authenticatedSession(req, family)?.learnerId || "oliver",
-      );
+      const session = authenticatedSession(req, family);
+      const d = learnerData(family, session?.learnerId || "oliver");
       if (route === "health")
         return NextResponse.json({ ok: true, storage: databaseMode() });
       const role = requireRole(
@@ -181,9 +215,22 @@ export async function GET(req, context) {
         d,
         route === "admin" || route === "admin/export",
       );
+      if (route === "identity")
+        return NextResponse.json({
+          id: session.accountId,
+          role,
+          learnerId: session.learnerId,
+        });
       checkLearner(req, d);
       if (route === "state")
-        return NextResponse.json(safeState(d, role, family));
+        return NextResponse.json(safeState(d, role, family, session));
+      if (route === "admin/accounts") {
+        if (role !== "admin") fail("Administrator access required.", 403);
+        return NextResponse.json({
+          accounts: accountList(family),
+          learners: learnerList(family),
+        });
+      }
       if (route === "dash") return NextResponse.json(dashState(d));
       if (route === "calendar") {
         const month =
@@ -191,7 +238,7 @@ export async function GET(req, context) {
           localDay(Date.now(), d.settings.timezone).slice(0, 7);
         if (!validMonth(month)) fail("Choose a valid calendar month.");
         return NextResponse.json(
-          learningCalendar(d, month, Date.now(), role === "admin"),
+          learningCalendar(d, month, Date.now(), isManager(role)),
         );
       }
       if (p[0] === "lesson" && p.length === 2) {
@@ -201,8 +248,14 @@ export async function GET(req, context) {
       }
       if (route === "admin")
         return NextResponse.json({
-          ...safeState(d, role, family),
-          materials: d.materials,
+          ...safeState(d, role, family, session),
+          materials: d.materials
+            .filter(
+              (m) =>
+                role === "admin" ||
+                d.assignments.some((a) => a.materialId === m.id),
+            )
+            .map((m) => materialView(m, role)),
           history: d.sessions
             .map(({ questions, ...s }) => s)
             .slice()
@@ -210,7 +263,7 @@ export async function GET(req, context) {
           legacyEvents: d.legacyEvents.slice(-200).reverse(),
           settings: {
             timezone: d.settings.timezone,
-            defaultPassword: d.settings.defaultPassword,
+            defaultPassword: session.account.defaultPassword,
           },
           allAssignments: d.assignments,
           dashHistory: d.dash.runs
@@ -220,11 +273,7 @@ export async function GET(req, context) {
         });
       if (route === "admin/export")
         return new NextResponse(
-          JSON.stringify(
-            { ...family, settings: { timezone: family.settings.timezone } },
-            null,
-            2,
-          ),
+          JSON.stringify(exportForAccount(family, session), null, 2),
           {
             headers: {
               "Content-Type": "application/json",
@@ -294,10 +343,8 @@ export async function POST(req, context) {
     const { path: p } = await context.params;
     const route = p.join("/");
     return await transact(async (family) => {
-      const d = learnerData(
-        family,
-        authenticatedSession(req, family)?.learnerId || "oliver",
-      );
+      const session = authenticatedSession(req, family);
+      const d = learnerData(family, session?.learnerId || "oliver");
       if (route === "login") {
         const ip = createHash("sha256")
           .update(
@@ -314,13 +361,8 @@ export async function POST(req, context) {
             { error: "Take a short break before trying again." },
             { status: 429 },
           );
-        if (
-          body.username !== "admin" ||
-          !verifyPassword(
-            String(body.password || "").slice(0, 300),
-            d.settings.passwordHash,
-          )
-        ) {
+        const account = loginAccount(family, body.username, body.password);
+        if (!account) {
           limit.count++;
           d.loginLimits[ip] = limit;
           return NextResponse.json(
@@ -329,8 +371,21 @@ export async function POST(req, context) {
           );
         }
         delete d.loginLimits[ip];
-        const res = NextResponse.json({ ok: true });
-        setCookie(res, "admin", d);
+        const learnerId =
+          account.role === "admin" ? "oliver" : account.learnerId;
+        const res = NextResponse.json({
+          ok: true,
+          role: account.role,
+          learnerId,
+          redirect: account.role === "student" ? "/" : "/admin",
+        });
+        setCookie(res, account.role, family, false, learnerId, account.id);
+        setCookie(
+          res,
+          account.role === "student" ? "admin" : "student",
+          family,
+          true,
+        );
         return res;
       }
       if (route === "logout") {
@@ -341,12 +396,14 @@ export async function POST(req, context) {
       }
       const role = requireRole(req, d, p[0] === "admin" || route === "launch");
       if (route === "learner/select") {
+        if (role !== "admin")
+          fail("Only the administrator can switch learners.", 403);
         if (!validLearner(body.id)) fail("Choose Oliver, Test1, or Test2.");
         const res = NextResponse.json({ ok: true, learnerId: body.id });
-        setCookie(res, role, family, false, body.id);
+        setCookie(res, role, family, false, body.id, session.accountId);
         return res;
       }
-      checkLearner(req, d, body);
+      checkLearner(req, d, route === "admin/account" ? undefined : body);
       if (route === "dash/start")
         return NextResponse.json(startDash(d, body.level));
       if (route === "dash/finish")
@@ -355,8 +412,17 @@ export async function POST(req, context) {
         return NextResponse.json(answerDash(d, body.id, body));
       if (route === "dash/hint") return NextResponse.json(hintDash(d, body.id));
       if (route === "launch") {
+        const student = family.accounts.find(
+          (a) =>
+            a.role === "student" &&
+            a.learnerId === d.learnerId &&
+            a.enabled &&
+            a.passwordHash,
+        );
+        if (!student)
+          fail("Ask admin to enable this student's login first.", 409);
         const res = NextResponse.json({ ok: true });
-        setCookie(res, "child", d, false, d.learnerId);
+        setCookie(res, "student", d, false, d.learnerId, student.id);
         setCookie(res, "admin", d, true);
         return res;
       }
@@ -387,7 +453,7 @@ export async function POST(req, context) {
               : body.difficulty === 2
                 ? 2
                 : 1,
-            role === "admin" && body.mode === "observed"
+            isManager(role) && body.mode === "observed"
               ? "observed"
               : "practice",
           ),
@@ -540,7 +606,10 @@ export async function POST(req, context) {
       }
       if (route === "admin/password") {
         if (
-          !verifyPassword(String(body.current || ""), d.settings.passwordHash)
+          !verifyPassword(
+            String(body.current || ""),
+            session.account.passwordHash,
+          )
         )
           fail("Current password did not match.");
         if (
@@ -549,18 +618,34 @@ export async function POST(req, context) {
           body.password.length > 200
         )
           fail("Choose 10–200 characters.");
-        d.settings.passwordHash = hashPassword(body.password);
-        d.settings.authVersion++;
-        d.settings.defaultPassword = false;
+        manageAccount(
+          family,
+          { id: session.accountId, password: body.password },
+          session.accountId,
+        );
         const res = NextResponse.json({ ok: true });
-        setCookie(res, "admin", d, false, d.learnerId);
+        setCookie(res, role, family, false, d.learnerId, session.accountId);
         return res;
       }
       if (route === "admin/revoke") {
-        d.settings.childVersion++;
+        for (const a of family.accounts)
+          if (
+            a.role === "student" &&
+            (role === "admin" || a.learnerId === d.learnerId)
+          )
+            a.version++;
         return NextResponse.json({ ok: true });
       }
+      if (route === "admin/account") {
+        if (role !== "admin") fail("Administrator access required.", 403);
+        const result = manageAccount(family, body, session.accountId);
+        const res = NextResponse.json(result);
+        if (result.reauthenticate)
+          setCookie(res, role, family, false, d.learnerId, session.accountId);
+        return res;
+      }
       if (route === "admin/materials/import") {
+        if (role !== "admin") fail("Administrator access required.", 403);
         if (!Array.isArray(body.files) || body.files.length > 2000)
           fail("Choose a valid snapshot manifest (up to 2,000 files).");
         let added = 0;
@@ -598,6 +683,7 @@ export async function POST(req, context) {
         });
       }
       if (route === "admin/material") {
+        if (role !== "admin") fail("Administrator access required.", 403);
         const m = d.materials.find((m) => m.id === body.id);
         if (!m) fail("Material not found.");
         m.note = String(body.note || "").slice(0, 2000);

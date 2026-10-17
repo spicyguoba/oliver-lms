@@ -3843,3 +3843,36 @@ legend {
   height: 18px;
   accent-color: #487556;
 }
+.account-list {
+  margin-top: 24px;
+}
+.account-list .list-row {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.account-list p {
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+.account-list strong {
+  overflow-wrap: anywhere;
+}
+.account-form {
+  max-width: 720px;
+}
+.account-caption {
+  font-size: 13px;
+  color: #586c61;
+  overflow-wrap: anywhere;
+}
+.kid-grownup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 540px) {
+  .account-caption {
+    display: none;
+  }
+}

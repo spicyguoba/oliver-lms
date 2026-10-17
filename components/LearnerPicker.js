@@ -17,6 +17,7 @@ export default function LearnerPicker({ data, parent = false }) {
       setBusy(false);
     }
   }
+  if (data.role !== "admin") return null;
   return (
     <section
       className="learner-picker"

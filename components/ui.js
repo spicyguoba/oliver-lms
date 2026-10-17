@@ -2,11 +2,14 @@
 import { useState } from "react";
 import { Sprout, ArrowRight, ShieldCheck } from "lucide-react";
 let activeLearner;
+let activeAccount;
 export async function api(url, body) {
   const headers =
     body === undefined ? {} : { "Content-Type": "application/json" };
   if (activeLearner && !["login", "logout", "learner/select"].includes(url))
     headers["x-lms-learner"] = activeLearner;
+  if (activeAccount && !["login", "logout"].includes(url))
+    headers["x-lms-account"] = activeAccount;
   const r = await fetch("/api/" + url, {
     method: body === undefined ? "GET" : "POST",
     headers,
@@ -24,6 +27,17 @@ export async function api(url, body) {
       status: r.status,
     });
   if (json.learnerId) activeLearner = json.learnerId;
+  if (json.account?.id) activeAccount = json.account.id;
+  if (["login", "logout"].includes(url)) {
+    activeAccount = undefined;
+    activeLearner = undefined;
+    try {
+      localStorage.setItem(
+        "lms-auth-changed-v1",
+        `${Date.now()}-${Math.random()}`,
+      );
+    } catch {}
+  }
   return json;
 }
 export function Brand({ name = "Oliver" }) {
@@ -34,9 +48,7 @@ export function Brand({ name = "Oliver" }) {
       </span>
       <span>
         adventure
-        <span className="brand-second">
-          club <i>for {name}</i>
-        </span>
+        <span className="brand-second">club {name && <i>for {name}</i>}</span>
       </span>
     </a>
   );
@@ -50,8 +62,8 @@ export function Login() {
     setError("");
     const f = new FormData(e.currentTarget);
     try {
-      await api("login", Object.fromEntries(f));
-      window.location.href = "/admin";
+      const result = await api("login", Object.fromEntries(f));
+      window.location.href = result.redirect;
     } catch (e) {
       setError(e.message);
       setBusy(false);
@@ -59,7 +71,7 @@ export function Login() {
   }
   return (
     <main className="login-page">
-      <Brand />
+      <Brand name={null} />
       <div className="login-art">
         <Fox />
         <span className="sparkle">✦</span>
@@ -67,14 +79,16 @@ export function Login() {
       <div className="login-card">
         <div className="eyebrow">A LITTLE LEARNING. A BIG ADVENTURE.</div>
         <h1>Welcome to the club.</h1>
-        <p>A grown-up signs in first. Then it’s time to explore.</p>
+        <p>Sign in with your own student, parent, or admin account.</p>
         <form onSubmit={submit}>
           <label>
             Username
             <input
               name="username"
               autoComplete="username"
-              defaultValue="admin"
+              autoCapitalize="none"
+              spellCheck={false}
+              maxLength={32}
               required
             />
           </label>
@@ -93,8 +107,7 @@ export function Login() {
             </p>
           )}
           <button className="button wide" disabled={busy}>
-            {busy ? "Opening the gate…" : "Parent sign in"}{" "}
-            <ArrowRight size={19} />
+            {busy ? "Opening the gate…" : "Sign in"} <ArrowRight size={19} />
           </button>
         </form>
         <small>
@@ -177,7 +190,7 @@ export function Landscape() {
 export function Loading() {
   return (
     <main className="loading">
-      <Brand />
+      <Brand name={null} />
       <p>Getting your adventure ready…</p>
     </main>
   );

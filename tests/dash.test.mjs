@@ -136,7 +136,7 @@ test("schema five adds Dash without changing prior records in any learner", () =
   const before = structuredClone(d);
   migrateFamily(d);
   const strip = (x) => ({ ...x, dash: undefined });
-  assert.equal(d.version, 6);
+  assert.equal(d.version, 7);
   assert.deepEqual(
     { ...strip(d), version: 4, learners: undefined },
     { ...strip(before), learners: undefined },

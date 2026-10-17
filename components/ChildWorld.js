@@ -754,6 +754,16 @@ export default function ChildWorld() {
           <a href="/admin">
             <Shield size={17} /> Grown-ups
           </a>
+          <button
+            className="text-button"
+            disabled={busy}
+            onClick={async () => {
+              await api("logout", {});
+              window.location.href = "/";
+            }}
+          >
+            Sign out
+          </button>
         </footer>
       </main>
       <nav className="kid-bottom" aria-label="Main navigation">

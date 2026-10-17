@@ -2,26 +2,26 @@
 
 A family LMS for short, encouraging learning adventures. Separate from the original `spicyguoba/mathquest` GitHub Pages site: no changes to its files, URLs, or localStorage.
 
-Live family site: https://oliver-lms-david-ferlemann.vercel.app . Sign in as the parent, then choose **Open Oliver’s world** to pair his device and lock the parent area. The production site uses the LMS login; deployment URLs and previews retain Vercel protection. See HANDOFF.md for verified hosting and private material snapshot details.
+Live family site: https://oliver-lms-david-ferlemann.vercel.app . Students sign in to their own world; parents sign in to their linked student's dashboard. Admin manages all learners and logins. The production site uses the LMS login; deployment URLs and previews retain Vercel protection. See HANDOFF.md for verified hosting and private material snapshot details.
 
 ## What works
 
 - **Star Dash** at `/dash`: twenty progressively faster, longer, denser cube-runner courses, each with an original visual theme and synthesized music, plus jump/crash/finish sounds. Touch or hold to jump; keyboard and pause controls are available. Clearing a course reveals one server-graded question from the existing learning library and unlocks the next world. Correct answers award one study star (three for level 20), once per level per learner. Wrong first answers remain saved; replaying offers a fresh question. The learning calendar and parent activity report include question outcomes and timing, separate from five-question exercise benchmarks.
 
-- **Oliver / Test1 / Test2** learner picker on the child home and parent dashboard. Each has independent answers, scores, stars, calendars, daily plans, story unlocks, legacy saves, quests and rewards. Devices still use the family's parent sign-in/pairing; no extra learner password is required. Source materials and parent authentication settings are shared. The admin export includes all three learners.
+- **Admin / parent / student accounts** with separate passwords. The initial learner logins are `oliver`, `test1`, `test2`, with linked parents `oliverparent`, `test1parent`, `test2parent`. Only admin sees the learner picker and **User accounts** controls. Admin can create additional logins linked to an existing profile, edit usernames/roles/links, reset passwords, disable accounts and revoke sessions. Students and parents cannot see or switch to another learner. Their progress stays independent. Admin exports include all learners; parent exports include only their linked learner. Neither export contains password hashes.
 
 - Completion cards show the latest finished score/date with a green shade and text badge; world and vocabulary category cards show total/finished/left. Replays do not inflate completed counts. Abandoned rounds do not count.
 - 377 native exercise cards: 320 vocabulary meaning/sentence activities (2,000 English and 1,200 Chinese words with examples), sixteen additional procedural math activities, thirty-five discovery topics, and the six original skills. Word packs have twenty flashcards and short five-question rounds, with Starter/Growing/Challenge filters, search, paging, pinyin, and Mandarin read aloud. See [word-bank provenance and practice limits](content/VOCABULARY.md).
 
 - Child dashboard, daily practice suggestions, star wallet, reward requests, parent approvals, recurring workbook/reading quests, learner profile and parent settings.
-- **Admin → Rewards** records delivery with **Mark completed**, a chosen completion date and private parent notes. Completed rewards appear in both calendars; only admin can see notes. Stars are reserved when requested and never charged again on completion. Approval for later and refunds remain separate actions.
+- **Parent dashboard → Rewards** records delivery with **Mark completed**, a chosen completion date and private parent notes. Completed rewards appear in both calendars; only admin and the linked parent can see notes. Stars are reserved when requested and never charged again on completion. Approval for later and refunds remain separate actions.
 - A child-first home with large Play, Games, and Stars controls, picture worlds, a consistent Home button, read-aloud support, and participation stickers. Parent reports retain their detailed view.
 - Science, geography, and history now have thirty-five discovery topics and 322 fixed question variants, including world/country/culture introductions, 50 states in five trails, Virginia, Ice Age/early people, ancient cities, Middle Ages, selected Chinese dynasties, Native nations, U.S. founding, past presidents, civil rights, inventions, plant life, water, matter, and light/sound. See [content sources and teaching choices](content/SOURCES.md).
 - Parent reports retain every first answer, including wrong answers, server elapsed time, browser-reported active time/help/tab changes and parent-started observed mode. Legacy browser-reported events are separate from server-graded insights.
 - Copies of all three original games at `/games/math/`, `/reading/`, `/stories/`, with their original storage keys and cloud save synchronization. Their own stars/unlocks remain separate from the LMS wallet.
 - Story pass requires 4/5. Only three different consecutive passed stories unlock the next rank. Failure clears the current streak; previously earned unlocks remain.
 - Private material inventory with SHA-256 fingerprints, dated local snapshots, review notes and source-linked assignments. Changed files are new versions; re-imports retain existing notes and quests.
-- Parent authentication with salted scrypt password hashes, signed HttpOnly cookies, role checks, same-origin mutations and persistent login throttling. Child pairing locks the admin session.
+- Account authentication with salted scrypt password hashes, signed HttpOnly cookies, server-enforced roles and learner links, same-origin mutations and persistent login throttling. Resetting credentials or changing access revokes older sessions. Opening a learner's world signs the grown-up out and starts that student's scoped session.
 
 ## Run locally
 
@@ -33,7 +33,7 @@ node scripts/create-secrets.mjs
 npm run dev
 ```
 
-Open `http://127.0.0.1:3000`. Initial parent username: `admin`; password: `admin1234`. Set a unique password in Settings before using a hosted deployment with real records. Parent sessions last 12 hours; child sessions last 30 days. Open Oliver's world to pair a device and lock the parent session.
+Open `http://127.0.0.1:3000`. Initial administrator username: `admin`; password: `admin1234`. Existing hosted administrator credentials are preserved. A fresh database creates the six parent/student account records without passwords; set passwords in **Admin → User accounts** before using those logins. Starter production credentials are provisioned privately and are never committed. Grown-up sessions last 12 hours; student sessions last 30 days.
 
 Without `DATABASE_URL`, development uses ignored `.data/family.json` with serialized atomic writes. This is single-process local development storage. It is **never used in production**. Keep `.env.local` stable so sessions remain valid. Do not delete `.data` to update the app.
 
@@ -46,7 +46,7 @@ Without `DATABASE_URL`, development uses ignored `.data/family.json` with serial
 5. Sign in, import the private material manifest, then set a new parent password. For initial setup only, run `materials:sync -- --initial-plan` against the hosted URL with `LMS_URL` and `LMS_ADMIN_PASSWORD` in your local environment. The first run adds five material-based quests; later runs never overwrite an existing plan.
 6. Verify login, answer a question, reload, complete a round, and read the result from another signed-in device. Test a deployment restart/redeploy before depending on cloud persistence.
 
-PostgreSQL schema initialization is additive and runs automatically. Version 6 adds reward completion dates and parent notes while retaining previous statuses and balances; earlier migrations retain Star Dash progress, legacy completion logs, calendars and the three learner profiles. The database uses a single family row with JSONB data. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves one family, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
+PostgreSQL schema initialization is additive and runs automatically. Version 7 adds account records and retains all learning profiles and prior authentication settings. Earlier migrations retain reward completion dates/notes, Star Dash progress, legacy completion logs and calendars. The database uses a single family row with JSONB data. Each update locks that row in a transaction, making scoring, approvals and reward deductions atomic across instances. This intentionally serves a small family club, not a public multi-tenant school platform. Database backups should be enabled with your provider. The admin export omits authentication hashes and includes learning history; it is an export, not a restore tool.
 
 ## Materials and future additions
 
