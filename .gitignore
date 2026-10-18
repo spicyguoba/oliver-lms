@@ -1,6 +1,7 @@
 node_modules/
 .next/
 .next-http-test/
+.next-release-check/
 .env*
 !.env.example
 .vercel/

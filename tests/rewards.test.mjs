@@ -25,7 +25,7 @@ test("schema six preserves old approval states and balances; never invents compl
   for (const x of [d, ...Object.values(d.learners)]) request(x, "approved");
   const before = structuredClone(d);
   migrateFamily(d);
-  assert.equal(d.version, 7);
+  assert.equal(d.version, 8);
   for (const id of ["oliver", "test1", "test2"]) {
     const x = learnerData(d, id),
       old = learnerData(before, id),
@@ -139,4 +139,84 @@ test("invalid dates/notes are rejected before mutation; concurrent-style refunds
       reviewReward(learnerData(d, "test2"), { id: r.id, action: "note" }, now),
     /not found/,
   );
+});
+import { requestReward, rewardShop } from "../lib/rewards.mjs";
+test("daily story and board rewards refresh at local midnight, retain history and never reset wallets", () => {
+  const d = seed();
+  d.stars = 200;
+  const first = Date.parse("2026-10-18T03:59:59Z"),
+    next = Date.parse("2026-10-18T04:00:00Z");
+  assert.ok(
+    d.rewards
+      .filter((r) => ["choose-story", "family-game"].includes(r.id))
+      .every((r) => r.daily),
+  );
+  for (const id of ["choose-story", "family-game"]) {
+    requestReward(d, id, first);
+    assert.throws(() => requestReward(d, id, first + 100), /already chose/);
+    assert.equal(
+      rewardShop(d, first).find((r) => r.id === id).available,
+      false,
+    );
+    assert.equal(rewardShop(d, next).find((r) => r.id === id).available, true);
+    requestReward(d, id, next);
+    assert.throws(() => requestReward(d, id, next + 100), /already chose/);
+  }
+  assert.equal(d.redemptions.length, 4);
+  assert.equal(d.stars, 110);
+  const r = d.redemptions.at(-1);
+  reviewReward(
+    d,
+    { id: r.id, action: "complete", parentNote: "Played together" },
+    next,
+  );
+  assert.throws(
+    () => requestReward(d, "family-game", next + 200),
+    /already chose/,
+  );
+  assert.equal(d.stars, 110);
+  assert.equal(r.parentNote, "Played together");
+  assert.equal(
+    rewardShop(learnerData(d, "test1"), next).find(
+      (r) => r.id === "family-game",
+    ).available,
+    true,
+  );
+});
+test("refund reopens that day; regular rewards retain pending-request rule; migration preserves custom costs", () => {
+  const d = seed();
+  d.stars = 100;
+  d.version = 7;
+  d.rewards[0].cost = 22;
+  delete d.rewards[0].daily;
+  const before = structuredClone(d);
+  migrateFamily(d);
+  assert.equal(d.rewards[0].daily, true);
+  assert.equal(d.rewards[0].cost, 22);
+  assert.deepEqual(d.redemptions, before.redemptions);
+  assert.equal(d.stars, 100);
+  requestReward(d, "choose-story", now);
+  reviewReward(d, { id: d.redemptions.at(-1).id, action: "refund" }, now);
+  assert.equal(d.stars, 100);
+  requestReward(d, "choose-story", now);
+  assert.equal(d.stars, 78);
+  d.rewards.push({
+    id: "special",
+    title: "Special outing",
+    cost: 1,
+    daily: false,
+  });
+  requestReward(d, "special", requestedAt);
+  assert.throws(() => requestReward(d, "special", now), /already with/);
+  // A full 25-hour DST day remains one reward day, not an elapsed-24h timer.
+  const dst = seed();
+  dst.stars = 100;
+  requestReward(dst, "choose-story", Date.parse("2026-11-01T04:05:00Z"));
+  assert.throws(
+    () =>
+      requestReward(dst, "choose-story", Date.parse("2026-11-02T04:55:00Z")),
+    /already chose/,
+  );
+  requestReward(dst, "choose-story", Date.parse("2026-11-02T05:00:00Z"));
+  assert.equal(dst.stars, 70);
 });

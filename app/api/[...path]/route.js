@@ -12,7 +12,12 @@ import {
   streaks,
 } from "../../../lib/calendar.mjs";
 import { validMonth } from "../../../lib/dates.mjs";
-import { rewardRequests, reviewReward } from "../../../lib/rewards.mjs";
+import {
+  rewardRequests,
+  reviewReward,
+  rewardShop,
+  requestReward,
+} from "../../../lib/rewards.mjs";
 import {
   isManager,
   loginAccount,
@@ -159,7 +164,7 @@ function safeState(d, role, family, session) {
     dailyPlan: dailyPlan(d),
     streak: streaks(d),
     today: localDay(Date.now(), d.settings.timezone),
-    rewards: d.rewards,
+    rewards: rewardShop(d),
     redemptions: rewardRequests(d, isManager(role)),
     assignments: d.assignments
       .filter((x) => !x.archived)
@@ -483,30 +488,8 @@ export async function POST(req, context) {
         }
         return NextResponse.json({ ok: true });
       }
-      if (route === "redeem") {
-        const r = d.rewards.find((r) => r.id === body.id);
-        if (!r) fail("Reward not found.");
-        if (
-          d.redemptions.some(
-            (x) => x.rewardId === r.id && x.status === "pending",
-          )
-        )
-          fail("Your request is already with your grown-up.");
-        if (d.stars < r.cost) fail("Keep collecting stars for this reward.");
-        d.stars -= r.cost;
-        d.redemptions.push({
-          id: randomBytes(12).toString("hex"),
-          rewardId: r.id,
-          title: r.title,
-          cost: r.cost,
-          status: "pending",
-          at: Date.now(),
-          parentNote: "",
-          completedAt: null,
-          completedDay: null,
-        });
-        return NextResponse.json({ ok: true });
-      }
+      if (route === "redeem")
+        return NextResponse.json(requestReward(d, body.id));
       if (route === "assignment/request") {
         if (!d.assignments.some((a) => a.id === body.id && !a.archived))
           fail("Quest not available.");
@@ -728,6 +711,10 @@ export async function POST(req, context) {
             id: body.id || randomBytes(12).toString("hex"),
             title: String(body.title || "Family reward").slice(0, 120),
             cost: Math.min(10000, Math.max(1, Number(body.cost) || 10)),
+            daily:
+              body.daily === undefined
+                ? d.rewards.find((x) => x.id === body.id)?.daily || false
+                : body.daily === "true" || body.daily === true,
           };
           const i = d.rewards.findIndex((x) => x.id === r.id);
           if (i >= 0) d.rewards[i] = r;

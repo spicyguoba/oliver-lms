@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { api, ErrorBox, Loading, Login } from "./ui";
-import { DASH_LEVELS, dashLevel } from "../lib/dash-engine.mjs";
+import { DASH_LEVELS, dashLevel, DASH_LESSONS } from "../lib/dash-engine.mjs";
 import DashCanvas from "./DashCanvas";
 import { speakParts } from "./WordLesson";
 import { createDashAudio } from "../lib/dash-audio.mjs";
@@ -86,10 +86,13 @@ export default function StarDash() {
       setBusy(false);
     }
   }
-  async function finish(jumps) {
+  async function finish(trace) {
     setError("");
     try {
-      const r = await api("dash/finish", { id: run.id, jumps });
+      const r = await api("dash/finish", {
+        id: run.id,
+        ...(run.engineVersion === 1 ? { jumps: trace } : { inputs: trace }),
+      });
       setRun(r);
       await load();
     } catch (e) {
@@ -182,7 +185,7 @@ export default function StarDash() {
         <p>
           {config
             ? `Level ${run.level} of 20 · ${run.level === 20 ? "The ultimate challenge · 3 study stars" : "1 study star"}`
-            : "An original rhythm runner. Clear a course, then answer a question from your study games."}
+            : "Tap, flip gravity, fly and zigzag through twenty worlds. Clear a course, then answer a study question."}
         </p>
       </div>
       <div className="dash-toolbar">
@@ -397,6 +400,7 @@ export default function StarDash() {
                       {locked ? "🔒" : l.icon}
                     </span>
                     <strong>{l.title}</strong>
+                    <small>{DASH_LESSONS[l.level - 1]}</small>
                     <small>
                       {p?.starredAt
                         ? `✓ ${l.reward} ★ collected`
@@ -438,9 +442,9 @@ export default function StarDash() {
             })}
           </ol>
           <p className="dash-hint">
-            Tap or hold to jump. Keyboard: Space / ↑. Pause anytime. Music and
-            effects are original generated sounds; switch either off above.
-            Level 20 is deliberately very difficult.
+            Cube: timed taps. Ship and wave: hold and release. Keyboard: Space /
+            ↑. Pause anytime. Music and effects are original generated sounds;
+            switch either off above. Level 20 is deliberately very difficult.
           </p>
         </>
       )}

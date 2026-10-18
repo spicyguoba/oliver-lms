@@ -171,7 +171,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("redeem", { id: "test-reward" }),
     request("redeem", { id: "test-reward" }),
   ]);
-  assert.deepEqual(requests.map((r) => r.status).sort(), [200, 400]);
+  assert.deepEqual(requests.map((r) => r.status).sort(), [200, 409]);
   report = await (await request("admin")).json();
   assert.equal(report.stars, 1);
   assert.equal(report.redemptions.length, 1);
@@ -182,6 +182,33 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   ]);
   report = await (await request("admin")).json();
   assert.equal(report.stars, 4);
+  // A daily reward stays claimed today after approval/completion; requests are atomic.
+  await request("admin/reward", {
+    id: "daily-http",
+    title: "Daily shared story",
+    cost: 1,
+    daily: true,
+  });
+  const dailyRequests = await Promise.all([
+    request("redeem", { id: "daily-http" }),
+    request("redeem", { id: "daily-http" }),
+  ]);
+  assert.deepEqual(dailyRequests.map((r) => r.status).sort(), [200, 409]);
+  report = await (await request("admin")).json();
+  const dailyRecord = report.redemptions.find(
+    (r) => r.rewardId === "daily-http",
+  );
+  await request("admin/redemption", {
+    id: dailyRecord.id,
+    action: "complete",
+    completedDay: report.today,
+  });
+  assert.equal((await request("redeem", { id: "daily-http" })).status, 409);
+  const todayShop = await (await request("state")).json();
+  assert.equal(
+    todayShop.rewards.find((r) => r.id === "daily-http").available,
+    false,
+  );
   const beforeLesson = report.history.length;
   const lesson = await (await request("lesson/zh-usage-001")).json();
   assert.equal(lesson.cards.length, 20);
@@ -205,12 +232,12 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 7);
+  assert.equal(exportData.version, 8);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
   );
-  assert.equal(exportData.stars, 4);
+  assert.equal(exportData.stars, 3);
   assert.equal(
     (
       await request("legacy", {
@@ -250,7 +277,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     total: 5,
   });
   assert.equal(card.completedRounds, 1);
-  assert.equal(completed.stars, 4 + score);
+  assert.equal(completed.stars, 3 + score);
   await request(`session/${round.id}/next`, {});
   const again = await (await request("state")).json();
   assert.equal(again.stars, completed.stars);
@@ -518,19 +545,19 @@ test("Star Dash HTTP gates the question behind a verified clear and awards its s
     400,
   );
   assert.equal(
-    (await request("dash/finish", { id: run.id, jumps: p.jumps })).status,
+    (await request("dash/finish", { id: run.id, inputs: p.inputs })).status,
     400,
   );
   await new Promise((resolve) =>
     setTimeout(resolve, (p.course.durationFrames / 60) * 1000 + 50),
   );
   assert.equal(
-    (await request("dash/finish", { id: run.id, jumps: [] })).status,
+    (await request("dash/finish", { id: run.id, inputs: [] })).status,
     400,
   );
   const finishes = await Promise.all([
-    request("dash/finish", { id: run.id, jumps: p.jumps }),
-    request("dash/finish", { id: run.id, jumps: p.jumps }),
+    request("dash/finish", { id: run.id, inputs: p.inputs }),
+    request("dash/finish", { id: run.id, inputs: p.inputs }),
   ]);
   run = await finishes[0].json();
   assert.equal(run.question.id, (await finishes[1].json()).question.id);
@@ -573,7 +600,7 @@ test("Star Dash HTTP gates the question behind a verified clear and awards its s
     .split(";")[0];
   assert.equal((await (await request("state")).json()).stars, rootStars);
   assert.equal(
-    (await request("dash/finish", { id: run.id, jumps: p.jumps })).status,
+    (await request("dash/finish", { id: run.id, inputs: p.inputs })).status,
     404,
   );
 });

@@ -699,14 +699,14 @@ export default function ChildWorld() {
             </section>
             <div className="kid-topic-grid">
               {data.rewards.map((r) => {
-                const pending = data.redemptions.some(
-                  (x) => x.rewardId === r.id && x.status === "pending",
-                );
+                const pending = !r.available;
                 return (
                   <section className="kid-paper" key={r.id}>
                     <span className="kid-paper-icon">🎁</span>
                     <h2>{r.title}</h2>
-                    <p>★ {r.cost} stars</p>
+                    <p>
+                      ★ {r.cost} stars{r.daily ? " · Fresh each day" : ""}
+                    </p>
                     <button
                       className="button"
                       disabled={busy || pending || data.stars < r.cost}
@@ -719,7 +719,9 @@ export default function ChildWorld() {
                       }
                     >
                       {pending
-                        ? "✓ Asked your grown-up"
+                        ? r.daily
+                          ? "✓ Chosen today · back tomorrow"
+                          : "✓ Asked your grown-up"
                         : data.stars < r.cost
                           ? `${r.cost - data.stars} more stars to go`
                           : "Ask for this reward"}
@@ -736,7 +738,13 @@ export default function ChildWorld() {
                   .reverse()
                   .map((r) => (
                     <p key={r.id}>
-                      {r.title} —{" "}
+                      {r.title} ·{" "}
+                      {new Date(r.at).toLocaleDateString("en-US", {
+                        timeZone: data.timezone,
+                        month: "short",
+                        day: "numeric",
+                      })}{" "}
+                      —{" "}
                       {r.status === "pending"
                         ? "Waiting for your grown-up"
                         : r.status === "completed"

@@ -663,6 +663,20 @@ export default function Dashboard({ parent = false }) {
                       required
                     />
                   </label>
+                  <label>
+                    Availability
+                    <select
+                      name="daily"
+                      defaultValue={String(editReward?.daily ?? false)}
+                    >
+                      <option value="true">
+                        Once each day · refresh at midnight
+                      </option>
+                      <option value="false">
+                        After pending request is reviewed
+                      </option>
+                    </select>
+                  </label>
                   <button className="button" disabled={busy}>
                     <Plus size={17} />
                     {editReward ? "Save reward" : "Add reward"}
@@ -679,6 +693,7 @@ export default function Dashboard({ parent = false }) {
                     <p>
                       <Star size={17} fill="currentColor" /> {r.cost} stars
                     </p>
+                    {r.daily && <p>Refreshes each day at midnight.</p>}
                     {parent ? (
                       <div className="row">
                         <button
@@ -706,14 +721,7 @@ export default function Dashboard({ parent = false }) {
                     ) : (
                       <button
                         className="button"
-                        disabled={
-                          busy ||
-                          data.stars < r.cost ||
-                          data.redemptions.some(
-                            (x) =>
-                              x.rewardId === r.id && x.status === "pending",
-                          )
-                        }
+                        disabled={busy || data.stars < r.cost || !r.available}
                         onClick={() =>
                           act(
                             "redeem",

@@ -22,7 +22,7 @@ test("schema seven creates role metadata without changing any learning records o
   d.stars = 19;
   const before = structuredClone(d);
   migrateFamily(d);
-  assert.equal(d.version, 7);
+  assert.equal(d.version, 8);
   assert.equal(d.accounts.length, 7);
   assert.deepEqual(
     { ...d, version: 6, accounts: undefined },
