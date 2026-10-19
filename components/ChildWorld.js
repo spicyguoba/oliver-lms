@@ -309,6 +309,14 @@ export default function ChildWorld() {
               </span>
             </section>
             <StreakTrail streak={data.streak} />
+            <a href="/chess" className="kid-dash-link">
+              <span>♞</span>
+              <div>
+                <strong>Chess Club</strong>
+                <p>Make a castle. Find checkmate. Play a computer friend!</p>
+              </div>
+              <span>→</span>
+            </a>
             <a href="/dash" className="kid-dash-link">
               <span>⚡</span>
               <div>
@@ -358,6 +366,11 @@ export default function ChildWorld() {
         )}
         {screen === "games" && (
           <div className="kid-world-grid">
+            <a href="/chess" className="kid-choice mint">
+              <span>♞</span>
+              <strong>Chess Club</strong>
+              <small>Learn clever moves. Play a computer friend.</small>
+            </a>
             <a href="/dash" className="kid-choice lilac">
               <span>⚡</span>
               <strong>Star Dash</strong>

@@ -25,7 +25,7 @@ test("schema six preserves old approval states and balances; never invents compl
   for (const x of [d, ...Object.values(d.learners)]) request(x, "approved");
   const before = structuredClone(d);
   migrateFamily(d);
-  assert.equal(d.version, 8);
+  assert.equal(d.version, 9);
   for (const id of ["oliver", "test1", "test2"]) {
     const x = learnerData(d, id),
       old = learnerData(before, id),

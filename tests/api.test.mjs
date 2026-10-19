@@ -232,7 +232,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 8);
+  assert.equal(exportData.version, 9);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
@@ -977,4 +977,279 @@ test("student, parent and admin logins enforce account isolation, scoped exports
   const accounts = await (await request("admin/accounts")).json();
   assert.equal(accounts.accounts.length, 8);
   assert.ok(!JSON.stringify(accounts).includes("passwordHash"));
+});
+test("Chess HTTP validates moves and binds quiz-earned hints/undo to one learner and position", async () => {
+  async function loginAs(username, password) {
+    const r = await request("login", { username, password });
+    assert.equal(r.status, 200);
+    return r.headers
+      .getSetCookie()
+      .find((c) =>
+        c.startsWith(
+          username === "admin" || username.endsWith("parent")
+            ? "oliver-admin="
+            : "oliver-child=",
+        ),
+      )
+      .split(";")[0];
+  }
+  const adminCookie = await loginAs("admin", "admin1234");
+  const studentCookie = await loginAs("test2", "isolated-test2-password"),
+    parentCookie = await loginAs(
+      "test2parent",
+      "isolated-test2parent-password",
+    );
+  const call = (route, body, extra = {}) =>
+    request(route, body, { Cookie: studentCookie, ...extra });
+  assert.equal((await request("chess", undefined, { Cookie: "" })).status, 401);
+  assert.equal(
+    (
+      await call(
+        "chess/start",
+        { mode: "computer", difficulty: 2, color: "w" },
+        { Origin: "https://other.example" },
+      )
+    ).status,
+    403,
+  );
+  let state = await (await call("chess")).json();
+  const beforeStars = state.stars;
+  assert.equal(state.game, null);
+  const beforeNative = (
+    await (
+      await request("admin/export", undefined, { Cookie: parentCookie })
+    ).json()
+  ).sessions.length;
+  state = await (
+    await call("chess/start", { mode: "computer", difficulty: 2, color: "w" })
+  ).json();
+  let g = state.game;
+  assert.equal(g.moves.length, 0);
+  assert.equal(g.hint, null);
+  assert.equal(
+    (
+      await call("chess/move", {
+        id: g.id,
+        version: g.version,
+        from: "e2",
+        to: "e5",
+      })
+    ).status,
+    400,
+  );
+  const moves = await Promise.all([
+    call("chess/move", { id: g.id, version: g.version, from: "e2", to: "e4" }),
+    call("chess/move", { id: g.id, version: g.version, from: "e2", to: "e4" }),
+  ]);
+  assert.deepEqual(moves.map((r) => r.status).sort(), [200, 409]);
+  state = await (await call("chess")).json();
+  g = state.game;
+  assert.equal(g.moves.length, 2);
+  const gameId = g.id;
+  state = await (
+    await call("chess/quiz", { id: g.id, version: g.version, action: "hint" })
+  ).json();
+  g = state.game;
+  const quizId = g.quiz.id;
+  assert.ok(!("answer" in g.quiz.question));
+  assert.ok(!("explanation" in g.quiz.question));
+  assert.equal(g.hint, null);
+  assert.equal(
+    (
+      await call("chess/move", {
+        id: g.id,
+        version: g.version,
+        from: "d2",
+        to: "d4",
+      })
+    ).status,
+    409,
+  );
+  assert.equal(
+    (await call("chess/quiz-read", { id: g.id, version: g.version, quizId }))
+      .status,
+    200,
+  );
+  const exported = await (
+      await request("admin/export", undefined, { Cookie: parentCookie })
+    ).json(),
+    raw = exported.chess.quizzes.find((q) => q.id === quizId);
+  for (let i = 0; i < 3; i++) {
+    const q = raw.questions[i],
+      answer =
+        i === 0
+          ? q.options
+            ? String((Number(q.answer) + 1) % q.options.length)
+            : "999999"
+          : q.answer;
+    const body = {
+      id: g.id,
+      version: g.version,
+      quizId,
+      questionId: q.id,
+      answer,
+      activeMs: 25,
+    };
+    const responses = await Promise.all([
+      call("chess/quiz-answer", body),
+      call("chess/quiz-answer", body),
+    ]);
+    assert.ok(responses.every((r) => r.status === 200));
+    state = await responses[0].json();
+    g = state.game;
+    if (i === 0) {
+      const retry = await (
+        await call("chess/quiz-answer", {
+          ...body,
+          version: g.version,
+          answer: q.answer,
+        })
+      ).json();
+      assert.equal(retry.game.quiz.feedback.correct, false);
+    }
+    if (i < 2) {
+      state = await (
+        await call("chess/quiz-next", { id: g.id, version: g.version, quizId })
+      ).json();
+      g = state.game;
+    }
+  }
+  assert.equal(g.quiz.status, "passed");
+  assert.equal(g.quiz.correct, 2);
+  assert.ok(g.hint?.from);
+  assert.equal(g.quiz.earned, 2);
+  const quizWallet = state.stars;
+  assert.equal(
+    quizWallet,
+    beforeStars + 2 + g.quiz.bonuses.reduce((n, b) => n + b.stars, 0),
+  );
+  state = await (
+    await call("chess/quiz-close", { id: g.id, version: g.version, quizId })
+  ).json();
+  g = state.game;
+  assert.equal(
+    (await call("chess/undo", { id: g.id, version: g.version })).status,
+    404,
+  );
+  state = await (
+    await call("chess/quiz", { id: g.id, version: g.version, action: "undo" })
+  ).json();
+  g = state.game;
+  const undoRaw = (
+    await (
+      await request("admin/export", undefined, { Cookie: parentCookie })
+    ).json()
+  ).chess.quizzes.at(-1);
+  for (let i = 0; i < 3; i++) {
+    const q = undoRaw.questions[i];
+    state = await (
+      await call("chess/quiz-answer", {
+        id: g.id,
+        version: g.version,
+        quizId: undoRaw.id,
+        questionId: q.id,
+        answer: q.answer,
+      })
+    ).json();
+    g = state.game;
+    if (i < 2) {
+      state = await (
+        await call("chess/quiz-next", {
+          id: g.id,
+          version: g.version,
+          quizId: undoRaw.id,
+        })
+      ).json();
+      g = state.game;
+    }
+  }
+  assert.equal(g.moves.length, 0);
+  assert.equal(g.quiz.status, "passed");
+  assert.equal(g.turn, "w");
+  state = await (
+    await call("chess/quiz-close", {
+      id: g.id,
+      version: g.version,
+      quizId: undoRaw.id,
+    })
+  ).json();
+  g = state.game;
+  assert.equal(
+    (await call("chess/preferences", { board: "cosmos", pieces: "storybook" }))
+      .status,
+    200,
+  );
+  state = await (await call("chess")).json();
+  assert.deepEqual(state.preferences, { board: "cosmos", pieces: "storybook" });
+  assert.equal(
+    (await call("chess", undefined, { "x-lms-learner": "oliver" })).status,
+    409,
+  );
+  const parentReport = await (
+    await request("admin", undefined, { Cookie: parentCookie })
+  ).json();
+  assert.equal(parentReport.chessHistory.games[0].undoCount, 1);
+  assert.equal(
+    parentReport.chessHistory.quizzes.find((q) => q.id === quizId).attempts[0]
+      .correct,
+    false,
+  );
+  assert.equal(
+    parentReport.chessHistory.quizzes.find((q) => q.id === quizId).attempts[0]
+      .helped,
+    true,
+  );
+  assert.equal((await call("admin/export")).status, 401);
+  const calendar = await (await call("calendar")).json();
+  assert.ok(!JSON.stringify(calendar).includes("expected"));
+  assert.ok(!JSON.stringify(calendar).includes("wallMs"));
+  const parentExport = await (
+    await request("admin/export", undefined, { Cookie: parentCookie })
+  ).json();
+  assert.equal(parentExport.sessions.length, beforeNative);
+  assert.equal(parentExport.chess.games[0].undoEvents.length, 1);
+  const selected = await request(
+    "learner/select",
+    { id: "test1" },
+    { Cookie: adminCookie },
+  );
+  const otherCookie = selected.headers
+    .getSetCookie()
+    .find((c) => c.startsWith("oliver-admin="))
+    .split(";")[0];
+  assert.equal(
+    (await request("chess/open", { id: gameId }, { Cookie: otherCookie }))
+      .status,
+    404,
+  );
+  const otherState = await (
+    await request("chess", undefined, { Cookie: otherCookie })
+  ).json();
+  assert.equal(otherState.game, null);
+  assert.deepEqual(otherState.preferences, {
+    board: "forest",
+    pieces: "classic",
+  });
+  state = await (
+    await call("chess/start", { mode: "lesson", lessonId: "castle-king" })
+  ).json();
+  g = state.game;
+  state = await (
+    await call("chess/move", {
+      id: g.id,
+      version: g.version,
+      from: "e1",
+      to: "g1",
+    })
+  ).json();
+  assert.equal(state.game.status, "lesson-complete");
+  assert.equal(state.game.board.find((p) => p.square === "g1").type, "k");
+  assert.equal(state.game.board.find((p) => p.square === "f1").type, "r");
+  assert.equal(state.game.earned, 1);
+  const saved = await (await call("chess")).json();
+  assert.equal(saved.game.status, "lesson-complete");
+  assert.equal(
+    saved.lessons["castle-king"].firstCompletedAt,
+    saved.lessons["castle-king"].lastCompletedAt,
+  );
 });

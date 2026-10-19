@@ -268,17 +268,19 @@ export default function LearningCalendar({ today, parent = false }) {
                         {e.title}
                       </strong>
                       <p>
-                        {e.type === "game"
-                          ? `${e.correct}/${e.total} first answers correct · round finished`
-                          : e.type === "practice"
-                            ? `${e.correct}/${e.total} first answers correct · practice recorded, no round finished this day`
-                            : e.type === "reward"
-                              ? `Reward enjoyed · ${e.cost} stars spent when requested`
-                              : e.type === "legacy"
-                                ? `${e.correct}/${e.total} reported score`
-                                : e.type === "quest"
-                                  ? `Parent review: ${e.status}`
-                                  : "Consistency bonus"}
+                        {e.type === "chess"
+                          ? e.summary
+                          : e.type === "game"
+                            ? `${e.correct}/${e.total} first answers correct · round finished`
+                            : e.type === "practice"
+                              ? `${e.correct}/${e.total} first answers correct · practice recorded, no round finished this day`
+                              : e.type === "reward"
+                                ? `Reward enjoyed · ${e.cost} stars spent when requested`
+                                : e.type === "legacy"
+                                  ? `${e.correct}/${e.total} reported score`
+                                  : e.type === "quest"
+                                    ? `Parent review: ${e.status}`
+                                    : "Consistency bonus"}
                         {e.stars ? ` · +${e.stars} ★` : ""}
                       </p>
                       {parent && e.parentNote && (

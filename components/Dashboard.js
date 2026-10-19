@@ -1,4 +1,5 @@
 "use client";
+import ChessActivity from "./ChessActivity";
 import { useEffect, useState } from "react";
 import {
   Home,
@@ -1758,6 +1759,7 @@ function Reports({ data, play, busy, difficulty, setDifficulty }) {
       </section>
       <section className="white-card section">
         <h2>More game activity</h2>
+        <ChessActivity history={data.chessHistory} timezone={data.timezone} />
         <details className="section">
           <summary>
             Star Dash study questions ({data.dashHistory.length})

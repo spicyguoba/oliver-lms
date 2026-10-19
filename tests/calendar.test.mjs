@@ -50,7 +50,7 @@ test("migration retains wallets, first answers, saved question snapshots, auth, 
   beginSession(d, "regrouping", 1, "practice", noon("2026-10-16"));
   const before = structuredClone(d);
   migrateFamily(d, noon("2026-10-17"));
-  assert.equal(d.version, 8);
+  assert.equal(d.version, 9);
   assert.equal(d.learningProgram.startDay, "2026-10-17");
   assert.deepEqual(
     {

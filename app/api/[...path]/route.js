@@ -36,6 +36,20 @@ import {
 } from "../../../lib/dash.mjs";
 import { sanitizeLegacyMap } from "../../../lib/legacy-save.mjs";
 import {
+  chessState,
+  startChess,
+  openChess,
+  moveChess,
+  retryChessLesson,
+  chessPreferences,
+  beginChessQuiz,
+  answerChessQuiz,
+  nextChessQuiz,
+  readChessQuiz,
+  closeChessQuiz,
+  chessParentHistory,
+} from "../../../lib/chess.mjs";
+import {
   learnerData,
   learnerList,
   validLearner,
@@ -237,6 +251,7 @@ export async function GET(req, context) {
         });
       }
       if (route === "dash") return NextResponse.json(dashState(d));
+      if (route === "chess") return NextResponse.json(chessState(d));
       if (route === "calendar") {
         const month =
           req.nextUrl.searchParams.get("month") ||
@@ -271,6 +286,7 @@ export async function GET(req, context) {
             defaultPassword: session.account.defaultPassword,
           },
           allAssignments: d.assignments,
+          chessHistory: chessParentHistory(d),
           dashHistory: d.dash.runs
             .filter((r) => r.attempt)
             .map(({ question, ...r }) => r)
@@ -409,6 +425,25 @@ export async function POST(req, context) {
         return res;
       }
       checkLearner(req, d, route === "admin/account" ? undefined : body);
+      if (route === "chess/start")
+        return NextResponse.json(startChess(d, body));
+      if (route === "chess/open")
+        return NextResponse.json(openChess(d, body.id));
+      if (route === "chess/move") return NextResponse.json(moveChess(d, body));
+      if (route === "chess/retry")
+        return NextResponse.json(retryChessLesson(d, body));
+      if (route === "chess/preferences")
+        return NextResponse.json(chessPreferences(d, body));
+      if (route === "chess/quiz")
+        return NextResponse.json(beginChessQuiz(d, body));
+      if (route === "chess/quiz-answer")
+        return NextResponse.json(answerChessQuiz(d, body));
+      if (route === "chess/quiz-next")
+        return NextResponse.json(nextChessQuiz(d, body));
+      if (route === "chess/quiz-read")
+        return NextResponse.json(readChessQuiz(d, body));
+      if (route === "chess/quiz-close")
+        return NextResponse.json(closeChessQuiz(d, body));
       if (route === "dash/start")
         return NextResponse.json(startDash(d, body.level));
       if (route === "dash/finish")

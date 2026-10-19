@@ -7,7 +7,7 @@
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
-    "test": "node --test tests/learning.test.mjs tests/legacy.test.mjs tests/library.test.mjs tests/calendar.test.mjs tests/learners.test.mjs tests/dash.test.mjs tests/rewards.test.mjs tests/accounts.test.mjs",
+    "test": "node --test tests/learning.test.mjs tests/legacy.test.mjs tests/library.test.mjs tests/calendar.test.mjs tests/learners.test.mjs tests/dash.test.mjs tests/rewards.test.mjs tests/accounts.test.mjs tests/chess.test.mjs",
     "test:api": "node scripts/test-api.mjs",
     "materials:snapshot": "node scripts/snapshot-materials.mjs",
     "materials:sync": "node scripts/sync-materials.mjs"
@@ -16,6 +16,7 @@
     "node": "24.x"
   },
   "dependencies": {
+    "chess.js": "1.4.0",
     "lucide-react": "^1.58.0",
     "next": "^16.4.2",
     "postgres": "^3.4.9",
