@@ -4057,6 +4057,215 @@ legend {
   display: flex;
   max-width: 240px;
 }
+.explorer-lesson {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #cedbcb;
+  background: #f5f7ec;
+  border-radius: 24px;
+  text-align: left;
+}
+.explorer-lesson > p {
+  line-height: 1.7;
+}
+.explorer-search {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0;
+  font-weight: 800;
+}
+.explorer-search input,
+.explorer-card-heading select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #b4c7bc;
+  border-radius: 12px;
+  background: white;
+  font: inherit;
+  color: #294f44;
+  min-width: 0;
+}
+.explorer-card-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  margin: 12px 0;
+}
+.person-learning-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 300px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.person-picture {
+  margin: 18px auto;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+}
+.person-picture > img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 20px;
+  background: #e9e7dc;
+  border: 6px solid white;
+  box-shadow: 0 3px 16px #1e493c12;
+}
+.person-picture figcaption {
+  font-size: 13px;
+  color: #526b5e;
+  margin: 8px 0;
+}
+.person-no-picture {
+  min-height: 230px;
+  border-radius: 20px;
+  background: #e8e7dc;
+  display: grid;
+  place-content: center;
+}
+.person-no-picture span {
+  font-size: 56px;
+}
+.picture-credit {
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.picture-credit summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.picture-credit p {
+  margin: 4px 0;
+}
+.person-dates {
+  color: #52745e;
+  font-weight: 800;
+}
+.explorer-fact-card {
+  border-radius: 18px;
+  padding: 22px;
+  background: white;
+}
+.explorer-fact-card h3 {
+  margin: 0 0 14px;
+  font-size: 27px;
+}
+.explorer-fact-card p {
+  line-height: 1.8;
+  font-size: 18px;
+}
+.explorer-fact-card details {
+  margin-top: 18px;
+  font-size: 13px;
+}
+.explorer-fact-card summary {
+  cursor: pointer;
+  padding: 12px 0;
+}
+.explorer-card-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+.explorer-card-nav button,
+.atlas-controls button {
+  min-height: 46px;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #b4cbbd;
+  background: white;
+  font: inherit;
+  font-weight: 800;
+  color: #31574b;
+  cursor: pointer;
+}
+.explorer-ready {
+  font-weight: 800;
+  color: #41634c;
+}
+.atlas-scene {
+  margin: 18px 0;
+  width: 100%;
+  text-align: left;
+}
+.atlas-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+.atlas-controls > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.atlas-controls button {
+  min-width: 46px;
+}
+.atlas-viewport {
+  width: 100%;
+  max-height: 550px;
+  min-height: 150px;
+  overflow: auto;
+  border: 2px solid #a9c6bf;
+  border-radius: 20px;
+  background: #e1f0f3;
+}
+.atlas-viewport svg {
+  display: block;
+  height: auto;
+  max-width: none;
+}
+.atlas-marker {
+  cursor: pointer;
+}
+.atlas-marker:focus-visible circle {
+  stroke: #21254d;
+  stroke-width: 5px;
+}
+.atlas-marker[aria-disabled="true"] {
+  cursor: default;
+}
+.atlas-map-caption {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.atlas-scene > small {
+  font-size: 11px;
+  color: #607c73;
+}
+@media (max-width: 650px) {
+  .explorer-lesson {
+    padding: 14px;
+  }
+  .person-learning-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .explorer-card-heading {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .explorer-fact-card {
+    padding: 18px;
+  }
+  .explorer-card-nav button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
 .account-search {
   display: flex;
   align-items: end;

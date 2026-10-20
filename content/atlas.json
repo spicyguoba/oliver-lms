@@ -1,0 +1,1147 @@
+{
+  "edition": 1,
+  "checked": "2026-10-19",
+  "continents": [
+    {
+      "id": "africa",
+      "name": "Africa",
+      "fact": "The Sahara is a vast desert in northern Africa."
+    },
+    {
+      "id": "antarctica",
+      "name": "Antarctica",
+      "fact": "Antarctica surrounds the South Pole and has no countries."
+    },
+    {
+      "id": "asia",
+      "name": "Asia",
+      "fact": "Asia is the largest continent by land area."
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "fact": "Europe and Asia share one connected landmass called Eurasia."
+    },
+    {
+      "id": "north-america",
+      "name": "North America",
+      "fact": "North America includes Canada, the United States, Mexico and more."
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "fact": "The Andes form a long mountain chain in western South America."
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "fact": "Australia is a continent; Oceania is a wider region of Pacific lands."
+    }
+  ],
+  "countries": [
+    {
+      "id": "840",
+      "name": "United States",
+      "capital": "Washington, D.C.",
+      "fact": "The Grand Canyon is a huge canyon in Arizona.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/United%20States"
+    },
+    {
+      "id": "124",
+      "name": "Canada",
+      "capital": "Ottawa",
+      "fact": "Canada has land beside the Atlantic, Pacific and Arctic oceans.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Canada"
+    },
+    {
+      "id": "484",
+      "name": "Mexico",
+      "capital": "Mexico City",
+      "fact": "The ancient Maya city of Chichén Itzá is in Mexico.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Mexico"
+    },
+    {
+      "id": "320",
+      "name": "Guatemala",
+      "capital": "Guatemala City",
+      "fact": "Guatemala contains the ancient Maya city of Tikal.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Guatemala"
+    },
+    {
+      "id": "188",
+      "name": "Costa Rica",
+      "capital": "San José",
+      "fact": "Costa Rica protects tropical forests and is home to sloths.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Costa%20Rica"
+    },
+    {
+      "id": "192",
+      "name": "Cuba",
+      "capital": "Havana",
+      "fact": "Cuba is the largest island in the Caribbean.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Cuba"
+    },
+    {
+      "id": "332",
+      "name": "Haiti",
+      "capital": "Port-au-Prince",
+      "fact": "Haiti shares the island of Hispaniola with the Dominican Republic.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Haiti"
+    },
+    {
+      "id": "214",
+      "name": "Dominican Republic",
+      "capital": "Santo Domingo",
+      "fact": "The Dominican Republic occupies the eastern part of Hispaniola.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Dominican%20Republic"
+    },
+    {
+      "id": "591",
+      "name": "Panama",
+      "capital": "Panama City",
+      "fact": "The Panama Canal provides a route between two oceans.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Panama"
+    },
+    {
+      "id": "388",
+      "name": "Jamaica",
+      "capital": "Kingston",
+      "fact": "Jamaica is the Caribbean island where reggae music developed.",
+      "region": "north-america",
+      "source": "https://en.wikipedia.org/wiki/Jamaica"
+    },
+    {
+      "id": "032",
+      "name": "Argentina",
+      "capital": "Buenos Aires",
+      "fact": "Patagonia stretches across southern Argentina and Chile.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Argentina"
+    },
+    {
+      "id": "068",
+      "name": "Bolivia",
+      "capital": "Sucre",
+      "fact": "Sucre is Bolivia's constitutional capital; government also works in La Paz.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Bolivia"
+    },
+    {
+      "id": "076",
+      "name": "Brazil",
+      "capital": "Brasília",
+      "fact": "Brazil contains a large part of the Amazon rainforest.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Brazil"
+    },
+    {
+      "id": "152",
+      "name": "Chile",
+      "capital": "Santiago",
+      "fact": "Chile is a long, narrow country beside the Pacific Ocean.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Chile"
+    },
+    {
+      "id": "170",
+      "name": "Colombia",
+      "capital": "Bogotá",
+      "fact": "Colombia has coasts on both the Pacific and the Caribbean.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Colombia"
+    },
+    {
+      "id": "218",
+      "name": "Ecuador",
+      "capital": "Quito",
+      "fact": "The equator crosses Ecuador; the Galápagos Islands belong to it.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Ecuador"
+    },
+    {
+      "id": "328",
+      "name": "Guyana",
+      "capital": "Georgetown",
+      "fact": "Guyana is the only mainland South American country with English as its official language.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Guyana"
+    },
+    {
+      "id": "600",
+      "name": "Paraguay",
+      "capital": "Asunción",
+      "fact": "Paraguay is a landlocked country with no ocean coast.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Paraguay"
+    },
+    {
+      "id": "604",
+      "name": "Peru",
+      "capital": "Lima",
+      "fact": "Peru contains the Inca site of Machu Picchu.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Peru"
+    },
+    {
+      "id": "858",
+      "name": "Uruguay",
+      "capital": "Montevideo",
+      "fact": "Uruguay lies between Argentina and Brazil on the Atlantic side.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Uruguay"
+    },
+    {
+      "id": "862",
+      "name": "Venezuela",
+      "capital": "Caracas",
+      "fact": "Angel Falls, a very tall waterfall, is in Venezuela.",
+      "region": "south-america",
+      "source": "https://en.wikipedia.org/wiki/Venezuela"
+    },
+    {
+      "id": "826",
+      "name": "United Kingdom",
+      "capital": "London",
+      "fact": "The United Kingdom includes England, Scotland, Wales and Northern Ireland.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/United%20Kingdom"
+    },
+    {
+      "id": "250",
+      "name": "France",
+      "capital": "Paris",
+      "fact": "The Eiffel Tower stands in Paris, France.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/France"
+    },
+    {
+      "id": "276",
+      "name": "Germany",
+      "capital": "Berlin",
+      "fact": "The Rhine is one of Germany's important rivers.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Germany"
+    },
+    {
+      "id": "380",
+      "name": "Italy",
+      "capital": "Rome",
+      "fact": "Italy has a peninsula often described as boot-shaped.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Italy"
+    },
+    {
+      "id": "724",
+      "name": "Spain",
+      "capital": "Madrid",
+      "fact": "Spain and Portugal share the Iberian Peninsula.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Spain"
+    },
+    {
+      "id": "620",
+      "name": "Portugal",
+      "capital": "Lisbon",
+      "fact": "Portugal lies on the Atlantic side of the Iberian Peninsula.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Portugal"
+    },
+    {
+      "id": "372",
+      "name": "Ireland",
+      "capital": "Dublin",
+      "fact": "The country of Ireland occupies most of the island of Ireland.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Ireland"
+    },
+    {
+      "id": "528",
+      "name": "Netherlands",
+      "capital": "Amsterdam",
+      "fact": "Amsterdam is the capital; the Dutch government works in The Hague.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Netherlands"
+    },
+    {
+      "id": "056",
+      "name": "Belgium",
+      "capital": "Brussels",
+      "fact": "Belgium has Dutch, French and German as official languages.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Belgium"
+    },
+    {
+      "id": "756",
+      "name": "Switzerland",
+      "capital": "Bern",
+      "fact": "Bern is Switzerland's federal city; the Alps cross the country.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Switzerland"
+    },
+    {
+      "id": "040",
+      "name": "Austria",
+      "capital": "Vienna",
+      "fact": "Vienna is known for its long tradition of classical music.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Austria"
+    },
+    {
+      "id": "616",
+      "name": "Poland",
+      "capital": "Warsaw",
+      "fact": "The Vistula River flows through Poland.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Poland"
+    },
+    {
+      "id": "203",
+      "name": "Czechia",
+      "capital": "Prague",
+      "fact": "Prague is known for its historic Charles Bridge.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Czechia"
+    },
+    {
+      "id": "300",
+      "name": "Greece",
+      "capital": "Athens",
+      "fact": "Ancient Olympic Games took place in Greece.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Greece"
+    },
+    {
+      "id": "752",
+      "name": "Sweden",
+      "capital": "Stockholm",
+      "fact": "Sweden occupies part of the Scandinavian Peninsula.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Sweden"
+    },
+    {
+      "id": "578",
+      "name": "Norway",
+      "capital": "Oslo",
+      "fact": "Norway's coast is known for deep sea inlets called fjords.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Norway"
+    },
+    {
+      "id": "246",
+      "name": "Finland",
+      "capital": "Helsinki",
+      "fact": "Finland has many lakes and extensive forests.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Finland"
+    },
+    {
+      "id": "208",
+      "name": "Denmark",
+      "capital": "Copenhagen",
+      "fact": "Denmark includes the Jutland Peninsula and many islands.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Denmark"
+    },
+    {
+      "id": "804",
+      "name": "Ukraine",
+      "capital": "Kyiv",
+      "fact": "The Dnipro River flows through Ukraine and its capital.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Ukraine"
+    },
+    {
+      "id": "643",
+      "name": "Russia",
+      "capital": "Moscow",
+      "fact": "Russia stretches across both Europe and Asia.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Russia"
+    },
+    {
+      "id": "352",
+      "name": "Iceland",
+      "capital": "Reykjavík",
+      "fact": "Iceland has volcanoes, glaciers and hot springs.",
+      "region": "europe",
+      "source": "https://en.wikipedia.org/wiki/Iceland"
+    },
+    {
+      "id": "156",
+      "name": "China",
+      "capital": "Beijing",
+      "fact": "The Great Wall extends across parts of northern China.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/China"
+    },
+    {
+      "id": "356",
+      "name": "India",
+      "capital": "New Delhi",
+      "fact": "The Taj Mahal is a famous building in Agra, India.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/India"
+    },
+    {
+      "id": "392",
+      "name": "Japan",
+      "capital": "Tokyo",
+      "fact": "Japan is an island country; Mount Fuji is its highest mountain.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Japan"
+    },
+    {
+      "id": "410",
+      "name": "South Korea",
+      "capital": "Seoul",
+      "fact": "South Korea occupies the southern part of the Korean Peninsula.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/South%20Korea"
+    },
+    {
+      "id": "408",
+      "name": "North Korea",
+      "capital": "Pyongyang",
+      "fact": "North Korea occupies the northern part of the Korean Peninsula.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/North%20Korea"
+    },
+    {
+      "id": "496",
+      "name": "Mongolia",
+      "capital": "Ulaanbaatar",
+      "fact": "Mongolia has wide grasslands and part of the Gobi Desert.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Mongolia"
+    },
+    {
+      "id": "360",
+      "name": "Indonesia",
+      "capital": "Jakarta (capital transition)",
+      "fact": "Indonesia is building Nusantara as a new capital; Jakarta continues in a transitional role.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Indonesia"
+    },
+    {
+      "id": "608",
+      "name": "Philippines",
+      "capital": "Manila",
+      "fact": "The Philippines is an archipelago in the western Pacific Ocean.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Philippines"
+    },
+    {
+      "id": "704",
+      "name": "Vietnam",
+      "capital": "Hanoi",
+      "fact": "Vietnam's long coast runs beside the South China Sea.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Vietnam"
+    },
+    {
+      "id": "764",
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "fact": "Thailand is the Southeast Asian country whose capital is Bangkok.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Thailand"
+    },
+    {
+      "id": "458",
+      "name": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "fact": "Kuala Lumpur is the capital; Putrajaya is the administrative center.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Malaysia"
+    },
+    {
+      "id": "702",
+      "name": "Singapore",
+      "capital": "Singapore",
+      "fact": "Singapore is both a city and an island country.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Singapore"
+    },
+    {
+      "id": "050",
+      "name": "Bangladesh",
+      "capital": "Dhaka",
+      "fact": "Bangladesh contains part of the large Ganges-Brahmaputra river delta.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Bangladesh"
+    },
+    {
+      "id": "586",
+      "name": "Pakistan",
+      "capital": "Islamabad",
+      "fact": "The Indus River is an important river in Pakistan.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Pakistan"
+    },
+    {
+      "id": "524",
+      "name": "Nepal",
+      "capital": "Kathmandu",
+      "fact": "Mount Everest lies on the border of Nepal and China.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Nepal"
+    },
+    {
+      "id": "144",
+      "name": "Sri Lanka",
+      "capital": "Sri Jayawardenepura Kotte",
+      "fact": "Sri Lanka is an island south of India; Colombo also has government offices.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Sri%20Lanka"
+    },
+    {
+      "id": "364",
+      "name": "Iran",
+      "capital": "Tehran",
+      "fact": "Iran was historically known to many outsiders as Persia.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Iran"
+    },
+    {
+      "id": "368",
+      "name": "Iraq",
+      "capital": "Baghdad",
+      "fact": "The Tigris and Euphrates rivers cross Iraq.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Iraq"
+    },
+    {
+      "id": "682",
+      "name": "Saudi Arabia",
+      "capital": "Riyadh",
+      "fact": "Saudi Arabia occupies much of the Arabian Peninsula.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Saudi%20Arabia"
+    },
+    {
+      "id": "792",
+      "name": "Türkiye",
+      "capital": "Ankara",
+      "fact": "Türkiye spans parts of Europe and Asia.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Turkey"
+    },
+    {
+      "id": "400",
+      "name": "Jordan",
+      "capital": "Amman",
+      "fact": "The ancient rock-cut city of Petra is in Jordan.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Jordan"
+    },
+    {
+      "id": "004",
+      "name": "Afghanistan",
+      "capital": "Kabul",
+      "fact": "The Hindu Kush mountains cross Afghanistan.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Afghanistan"
+    },
+    {
+      "id": "398",
+      "name": "Kazakhstan",
+      "capital": "Astana",
+      "fact": "Kazakhstan is the world's largest landlocked country.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Kazakhstan"
+    },
+    {
+      "id": "860",
+      "name": "Uzbekistan",
+      "capital": "Tashkent",
+      "fact": "Samarkand in Uzbekistan was an important Silk Road city.",
+      "region": "asia",
+      "source": "https://en.wikipedia.org/wiki/Uzbekistan"
+    },
+    {
+      "id": "818",
+      "name": "Egypt",
+      "capital": "Cairo",
+      "fact": "The Nile River and the pyramids of Giza are in Egypt.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Egypt"
+    },
+    {
+      "id": "504",
+      "name": "Morocco",
+      "capital": "Rabat",
+      "fact": "Morocco is in northwest Africa beside the Atlantic and Mediterranean.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Morocco"
+    },
+    {
+      "id": "012",
+      "name": "Algeria",
+      "capital": "Algiers",
+      "fact": "Algeria is Africa's largest country by land area.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Algeria"
+    },
+    {
+      "id": "788",
+      "name": "Tunisia",
+      "capital": "Tunis",
+      "fact": "Tunisia contains the ruins of the ancient city of Carthage.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Tunisia"
+    },
+    {
+      "id": "686",
+      "name": "Senegal",
+      "capital": "Dakar",
+      "fact": "Senegal is on the western Atlantic coast of Africa.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Senegal"
+    },
+    {
+      "id": "288",
+      "name": "Ghana",
+      "capital": "Accra",
+      "fact": "Ghana was historically associated with the name Gold Coast.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Ghana"
+    },
+    {
+      "id": "566",
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "fact": "Nigeria has the largest population of any African country.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Nigeria"
+    },
+    {
+      "id": "120",
+      "name": "Cameroon",
+      "capital": "Yaoundé",
+      "fact": "Cameroon has tropical forests, grasslands and the volcano Mount Cameroon.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Cameroon"
+    },
+    {
+      "id": "180",
+      "name": "Democratic Republic of the Congo",
+      "capital": "Kinshasa",
+      "fact": "The Congo River forms a major waterway in this large central African country.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Democratic%20Republic%20of%20the%20Congo"
+    },
+    {
+      "id": "404",
+      "name": "Kenya",
+      "capital": "Nairobi",
+      "fact": "Kenya is known for savannas and wildlife such as elephants and giraffes.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Kenya"
+    },
+    {
+      "id": "800",
+      "name": "Uganda",
+      "capital": "Kampala",
+      "fact": "Uganda shares Lake Victoria with Kenya and Tanzania.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Uganda"
+    },
+    {
+      "id": "834",
+      "name": "Tanzania",
+      "capital": "Dodoma",
+      "fact": "Mount Kilimanjaro, Africa's highest mountain, is in Tanzania.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Tanzania"
+    },
+    {
+      "id": "231",
+      "name": "Ethiopia",
+      "capital": "Addis Ababa",
+      "fact": "Ethiopia has highlands and the ancient rock-cut churches of Lalibela.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Ethiopia"
+    },
+    {
+      "id": "710",
+      "name": "South Africa",
+      "capital": "Pretoria",
+      "fact": "Pretoria is the executive capital; Cape Town and Bloemfontein have other capital roles.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/South%20Africa"
+    },
+    {
+      "id": "450",
+      "name": "Madagascar",
+      "capital": "Antananarivo",
+      "fact": "Madagascar is an island with many kinds of lemurs.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Madagascar"
+    },
+    {
+      "id": "508",
+      "name": "Mozambique",
+      "capital": "Maputo",
+      "fact": "Mozambique has a long coast beside the Indian Ocean.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Mozambique"
+    },
+    {
+      "id": "894",
+      "name": "Zambia",
+      "capital": "Lusaka",
+      "fact": "Zambia shares Victoria Falls with Zimbabwe.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Zambia"
+    },
+    {
+      "id": "716",
+      "name": "Zimbabwe",
+      "capital": "Harare",
+      "fact": "Zimbabwe is home to the stone ruins of Great Zimbabwe.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Zimbabwe"
+    },
+    {
+      "id": "516",
+      "name": "Namibia",
+      "capital": "Windhoek",
+      "fact": "The Namib Desert runs along much of Namibia's Atlantic coast.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Namibia"
+    },
+    {
+      "id": "072",
+      "name": "Botswana",
+      "capital": "Gaborone",
+      "fact": "Botswana contains the Okavango Delta, an inland wetland.",
+      "region": "africa",
+      "source": "https://en.wikipedia.org/wiki/Botswana"
+    },
+    {
+      "id": "036",
+      "name": "Australia",
+      "capital": "Canberra",
+      "fact": "Australia is both a country and the name of a continent.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Australia"
+    },
+    {
+      "id": "554",
+      "name": "New Zealand",
+      "capital": "Wellington",
+      "fact": "New Zealand's two largest islands are the North and South islands.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/New%20Zealand"
+    },
+    {
+      "id": "598",
+      "name": "Papua New Guinea",
+      "capital": "Port Moresby",
+      "fact": "Papua New Guinea occupies the eastern part of New Guinea.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Papua%20New%20Guinea"
+    },
+    {
+      "id": "242",
+      "name": "Fiji",
+      "capital": "Suva",
+      "fact": "Fiji is a Pacific island country with more than 300 islands.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Fiji"
+    },
+    {
+      "id": "090",
+      "name": "Solomon Islands",
+      "capital": "Honiara",
+      "fact": "The Solomon Islands form a Pacific island chain east of Papua New Guinea.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Solomon%20Islands"
+    },
+    {
+      "id": "548",
+      "name": "Vanuatu",
+      "capital": "Port Vila",
+      "fact": "Vanuatu is a Pacific island country with active volcanoes.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Vanuatu"
+    },
+    {
+      "id": "882",
+      "name": "Samoa",
+      "capital": "Apia",
+      "fact": "Samoa is an independent country in the Polynesian region of the Pacific.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Samoa"
+    },
+    {
+      "id": "776",
+      "name": "Tonga",
+      "capital": "Nukuʻalofa",
+      "fact": "Tonga is a Pacific island kingdom in Polynesia.",
+      "region": "oceania",
+      "source": "https://en.wikipedia.org/wiki/Tonga"
+    }
+  ],
+  "states": [
+    {
+      "id": "01",
+      "name": "Alabama",
+      "capital": "Montgomery",
+      "fact": "Huntsville is home to the U.S. Space and Rocket Center.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/alabama"
+    },
+    {
+      "id": "02",
+      "name": "Alaska",
+      "capital": "Juneau",
+      "fact": "Alaska is the largest U.S. state by land area.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/alaska"
+    },
+    {
+      "id": "04",
+      "name": "Arizona",
+      "capital": "Phoenix",
+      "fact": "The Grand Canyon is in Arizona.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/arizona"
+    },
+    {
+      "id": "05",
+      "name": "Arkansas",
+      "capital": "Little Rock",
+      "fact": "Arkansas has a state park where visitors can search for diamonds.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/arkansas"
+    },
+    {
+      "id": "06",
+      "name": "California",
+      "capital": "Sacramento",
+      "fact": "California contains the tall coast redwood trees.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/california"
+    },
+    {
+      "id": "08",
+      "name": "Colorado",
+      "capital": "Denver",
+      "fact": "Colorado is known for its Rocky Mountain peaks.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/colorado"
+    },
+    {
+      "id": "09",
+      "name": "Connecticut",
+      "capital": "Hartford",
+      "fact": "Connecticut is one of the six New England states.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/connecticut"
+    },
+    {
+      "id": "10",
+      "name": "Delaware",
+      "capital": "Dover",
+      "fact": "Delaware was the first state to ratify the U.S. Constitution.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/delaware"
+    },
+    {
+      "id": "12",
+      "name": "Florida",
+      "capital": "Tallahassee",
+      "fact": "The Everglades wetland is in southern Florida.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/florida"
+    },
+    {
+      "id": "13",
+      "name": "Georgia",
+      "capital": "Atlanta",
+      "fact": "Georgia's capital Atlanta hosted the 1996 Summer Olympics.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/georgia"
+    },
+    {
+      "id": "15",
+      "name": "Hawaii",
+      "capital": "Honolulu",
+      "fact": "Hawaii is the only U.S. state made entirely of islands.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/hawaii"
+    },
+    {
+      "id": "16",
+      "name": "Idaho",
+      "capital": "Boise",
+      "fact": "Idaho is known for growing potatoes.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/idaho"
+    },
+    {
+      "id": "17",
+      "name": "Illinois",
+      "capital": "Springfield",
+      "fact": "Chicago, beside Lake Michigan, is in Illinois.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/illinois"
+    },
+    {
+      "id": "18",
+      "name": "Indiana",
+      "capital": "Indianapolis",
+      "fact": "The Indianapolis 500 motor race takes place in Indiana.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/indiana"
+    },
+    {
+      "id": "19",
+      "name": "Iowa",
+      "capital": "Des Moines",
+      "fact": "Iowa lies between the Missouri and Mississippi rivers.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/iowa"
+    },
+    {
+      "id": "20",
+      "name": "Kansas",
+      "capital": "Topeka",
+      "fact": "Kansas is known for its wheat fields on the Great Plains.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/kansas"
+    },
+    {
+      "id": "21",
+      "name": "Kentucky",
+      "capital": "Frankfort",
+      "fact": "Mammoth Cave is part of a very long cave system in Kentucky.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/kentucky"
+    },
+    {
+      "id": "22",
+      "name": "Louisiana",
+      "capital": "Baton Rouge",
+      "fact": "New Orleans, an important city in jazz history, is in Louisiana.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/louisiana"
+    },
+    {
+      "id": "23",
+      "name": "Maine",
+      "capital": "Augusta",
+      "fact": "Maine is the northeasternmost U.S. state.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/maine"
+    },
+    {
+      "id": "24",
+      "name": "Maryland",
+      "capital": "Annapolis",
+      "fact": "Maryland borders much of the Chesapeake Bay.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/maryland"
+    },
+    {
+      "id": "25",
+      "name": "Massachusetts",
+      "capital": "Boston",
+      "fact": "Boston and the Plymouth settlement are in Massachusetts.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/massachusetts"
+    },
+    {
+      "id": "26",
+      "name": "Michigan",
+      "capital": "Lansing",
+      "fact": "Michigan has two large peninsulas beside the Great Lakes.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/michigan"
+    },
+    {
+      "id": "27",
+      "name": "Minnesota",
+      "capital": "Saint Paul",
+      "fact": "Minnesota is nicknamed the Land of 10,000 Lakes.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/minnesota"
+    },
+    {
+      "id": "28",
+      "name": "Mississippi",
+      "capital": "Jackson",
+      "fact": "The Mississippi Delta region is known for blues music.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/mississippi"
+    },
+    {
+      "id": "29",
+      "name": "Missouri",
+      "capital": "Jefferson City",
+      "fact": "The Gateway Arch is in St. Louis, Missouri.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/missouri"
+    },
+    {
+      "id": "30",
+      "name": "Montana",
+      "capital": "Helena",
+      "fact": "Glacier National Park is in Montana.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/montana"
+    },
+    {
+      "id": "31",
+      "name": "Nebraska",
+      "capital": "Lincoln",
+      "fact": "Nebraska contains a large region of grassy sand dunes called the Sandhills.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/nebraska"
+    },
+    {
+      "id": "32",
+      "name": "Nevada",
+      "capital": "Carson City",
+      "fact": "Much of Nevada lies in the dry Great Basin region.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/nevada"
+    },
+    {
+      "id": "33",
+      "name": "New Hampshire",
+      "capital": "Concord",
+      "fact": "Mount Washington is in New Hampshire's White Mountains.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/new-hampshire"
+    },
+    {
+      "id": "34",
+      "name": "New Jersey",
+      "capital": "Trenton",
+      "fact": "New Jersey lies between the Hudson and Delaware rivers.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/new-jersey"
+    },
+    {
+      "id": "35",
+      "name": "New Mexico",
+      "capital": "Santa Fe",
+      "fact": "White Sands National Park is in New Mexico.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/new-mexico"
+    },
+    {
+      "id": "36",
+      "name": "New York",
+      "capital": "Albany",
+      "fact": "The Statue of Liberty stands in New York Harbor.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/new-york"
+    },
+    {
+      "id": "37",
+      "name": "North Carolina",
+      "capital": "Raleigh",
+      "fact": "The Wright brothers' first powered flights took place in North Carolina.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/north-carolina"
+    },
+    {
+      "id": "38",
+      "name": "North Dakota",
+      "capital": "Bismarck",
+      "fact": "Theodore Roosevelt National Park is in North Dakota.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/north-dakota"
+    },
+    {
+      "id": "39",
+      "name": "Ohio",
+      "capital": "Columbus",
+      "fact": "The National Museum of the U.S. Air Force is near Dayton, Ohio.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/ohio"
+    },
+    {
+      "id": "40",
+      "name": "Oklahoma",
+      "capital": "Oklahoma City",
+      "fact": "Oklahoma has land in the Great Plains and is home to many Tribal Nations.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/oklahoma"
+    },
+    {
+      "id": "41",
+      "name": "Oregon",
+      "capital": "Salem",
+      "fact": "Crater Lake, formed in a volcanic basin, is in Oregon.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/oregon"
+    },
+    {
+      "id": "42",
+      "name": "Pennsylvania",
+      "capital": "Harrisburg",
+      "fact": "The Declaration of Independence was adopted in Philadelphia, Pennsylvania.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/pennsylvania"
+    },
+    {
+      "id": "44",
+      "name": "Rhode Island",
+      "capital": "Providence",
+      "fact": "Rhode Island is the smallest U.S. state by area.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/rhode-island"
+    },
+    {
+      "id": "45",
+      "name": "South Carolina",
+      "capital": "Columbia",
+      "fact": "Fort Sumter is in Charleston Harbor, South Carolina.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/south-carolina"
+    },
+    {
+      "id": "46",
+      "name": "South Dakota",
+      "capital": "Pierre",
+      "fact": "The Black Hills and Badlands are in South Dakota.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/south-dakota"
+    },
+    {
+      "id": "47",
+      "name": "Tennessee",
+      "capital": "Nashville",
+      "fact": "Nashville is known as an important center of country music.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/tennessee"
+    },
+    {
+      "id": "48",
+      "name": "Texas",
+      "capital": "Austin",
+      "fact": "Texas is the largest state in the contiguous United States.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/texas"
+    },
+    {
+      "id": "49",
+      "name": "Utah",
+      "capital": "Salt Lake City",
+      "fact": "Utah has five national parks, including Zion and Arches.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/utah"
+    },
+    {
+      "id": "50",
+      "name": "Vermont",
+      "capital": "Montpelier",
+      "fact": "Vermont is known for its Green Mountains and maple syrup.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/vermont"
+    },
+    {
+      "id": "51",
+      "name": "Virginia",
+      "capital": "Richmond",
+      "fact": "Richmond is Virginia's capital; Jamestown was founded in Virginia in 1607.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/virginia"
+    },
+    {
+      "id": "53",
+      "name": "Washington",
+      "capital": "Olympia",
+      "fact": "Mount Rainier is a volcano in Washington state.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/washington"
+    },
+    {
+      "id": "54",
+      "name": "West Virginia",
+      "capital": "Charleston",
+      "fact": "West Virginia is known for Appalachian mountains and deep river valleys.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/west-virginia"
+    },
+    {
+      "id": "55",
+      "name": "Wisconsin",
+      "capital": "Madison",
+      "fact": "Wisconsin is known for dairy farming and cheese making.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/wisconsin"
+    },
+    {
+      "id": "56",
+      "name": "Wyoming",
+      "capital": "Cheyenne",
+      "fact": "Most of Yellowstone National Park lies in Wyoming.",
+      "source": "https://kids.nationalgeographic.com/geography/states/article/wyoming"
+    }
+  ]
+}

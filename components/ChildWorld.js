@@ -23,6 +23,7 @@ import LearningCalendar, { DailyFive, StreakTrail } from "./LearningCalendar";
 import { localDay } from "../lib/dates.mjs";
 import LearnerPicker from "./LearnerPicker";
 import useTodayStars from "./useTodayStars";
+import ExplorerLesson from "./ExplorerLesson";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -30,6 +31,7 @@ const worlds = [
   ["Science", "Science lab", "🔬", "Animals, space, and more", "sky"],
   ["Geography", "Our world", "🌍", "Places and people", "mint"],
   ["History", "Time machine", "🦣", "Travel into the past", "lilac"],
+  ["People", "Amazing people", "🖼️", "Faces, ideas, and discoveries", "peach"],
   ["Chinese", "Chinese garden", "🌸", "Learn Chinese words", "peach"],
 ];
 const oldGames = [
@@ -369,6 +371,15 @@ export default function ChildWorld() {
         )}
         {screen === "games" && (
           <div className="kid-world-grid">
+            <a href="/#course-maps" className="kid-choice sky">
+              <span>🗺️</span>
+              <strong>Map games</strong>
+              <small>Tap continents, countries & all 50 states</small>
+              <ProgressCount
+                exercises={data.stats.filter((s) => s.course === "maps")}
+                compact
+              />
+            </a>
             <a href="/chess" className="kid-choice mint">
               <span>♞</span>
               <strong>Chess Club</strong>
@@ -382,7 +393,7 @@ export default function ChildWorld() {
             {worlds.map(([id, label, icon, desc, color]) => (
               <a
                 key={id}
-                href={"/#world-" + id}
+                href={id === "People" ? "/#course-people" : "/#world-" + id}
                 className={"kid-choice " + color}
               >
                 <span>{icon}</span>
@@ -504,14 +515,16 @@ export default function ChildWorld() {
             key={course.id}
             exercises={data.stats.filter((s) => s.course === course.id)}
             timezone={data.timezone}
-            vocabulary
+            vocabulary={["Reading", "Chinese"].includes(course.subject)}
           />
         )}
         {topic && (
           <section className="kid-learn">
-            <div className="kid-lesson-picture" aria-hidden="true">
-              {topic.icon}
-            </div>
+            {topic.kind !== "explorer" && (
+              <div className="kid-lesson-picture" aria-hidden="true">
+                {topic.icon}
+              </div>
+            )}
             {topic.era && <p className="kid-era">{topic.era}</p>}
             {topic.lastCompletion && (
               <CompletionLabel
@@ -521,6 +534,9 @@ export default function ChildWorld() {
             )}
             {topic.kind === "vocabulary" && (
               <WordLesson key={topic.id} id={topic.id} />
+            )}
+            {topic.kind === "explorer" && (
+              <ExplorerLesson key={topic.id} id={topic.id} />
             )}
             {topic.lesson ? (
               <>
@@ -534,11 +550,11 @@ export default function ChildWorld() {
                   ))}
                 </div>
               </>
-            ) : (
+            ) : topic.kind !== "explorer" ? (
               <p className="kid-subtitle">
                 {topic.description} Five questions. Go at your own pace.
               </p>
-            )}
+            ) : null}
             {topic.visual === "world" && <WorldPicture />}
             {topic.id === "states" && (
               <>

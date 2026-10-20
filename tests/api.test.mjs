@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { skills } from "../lib/questions.mjs";
+import { peopleBank } from "../lib/explorers.mjs";
 import { pilot } from "./dash-helper.mjs";
 const base = process.env.LMS_TEST_URL || "http://127.0.0.1:3001";
 let cookie = "";
@@ -1288,4 +1289,109 @@ test("Chess HTTP validates moves and binds quiz-earned hints/undo to one learner
     saved.lessons["castle-king"].firstCompletedAt,
     saved.lessons["castle-king"].lastCompletedAt,
   );
+});
+
+test("visual map and people rounds retain server grading, first answers, stars, calendars and learner boundaries", async () => {
+  async function login(username, password) {
+    const r = await request("login", { username, password });
+    assert.equal(r.status, 200);
+    return r.headers
+      .getSetCookie()
+      .find((c) =>
+        c.startsWith(username === "admin" ? "oliver-admin=" : "oliver-child="),
+      )
+      .split(";")[0];
+  }
+  const adminCookie = await login("admin", "admin1234"),
+    studentCookie = await login("test1", "isolated-test1-password");
+  const call = (route, body, headers = {}) =>
+    request(route, body, { Cookie: studentCookie, ...headers });
+  assert.equal(
+    (await call("explore/map-continents", undefined, { Cookie: "" })).status,
+    401,
+  );
+  assert.equal((await call("explore/no-such-pack")).status, 404);
+  const bank = await (await call("explore/people-world-mix")).json();
+  assert.equal(bank.items.length, 500);
+  assert.ok(bank.items.filter((p) => p.image).length >= 300);
+  const places = await (await call("explore/map-states-locate")).json();
+  assert.equal(places.items.length, 50);
+  const map = await fetch(base + "/maps/states.json");
+  assert.equal(map.status, 200);
+  assert.equal((await map.json()).shapes.length, 50);
+  const unknown = await fetch(base + "/portraits/not-a-person");
+  assert.equal(unknown.status, 200);
+  assert.match(await unknown.text(), /Picture unavailable/);
+  const before = await (await call("state")).json();
+  let view = await (
+    await call("session/start", { skill: "map-states-locate" })
+  ).json();
+  assert.ok(view.question.map);
+  assert.ok(!("visualAnswer" in view.question));
+  assert.ok(!("answer" in view.question));
+  const exported = await (
+    await request("admin/export", undefined, { Cookie: adminCookie })
+  ).json();
+  const raw = exported.learners.test1.sessions.find((s) => s.id === view.id);
+  const otherStars = exported.stars;
+  for (let i = 0; i < 5; i++) {
+    const q = raw.questions[i],
+      answer = i === 0 ? String((Number(q.answer) + 1) % 4) : q.answer;
+    view = await (
+      await call(`session/${raw.id}/answer`, {
+        questionId: q.id,
+        answer,
+        activeMs: 1000,
+      })
+    ).json();
+    assert.equal(view.feedback.map.highlight, q.visualAnswer);
+    if (i === 0) {
+      const again = await (
+        await call(`session/${raw.id}/answer`, {
+          questionId: q.id,
+          answer: q.answer,
+        })
+      ).json();
+      assert.equal(again.feedback.correct, false);
+    }
+    view = await (await call(`session/${raw.id}/next`, {})).json();
+  }
+  assert.equal(view.correct, 4);
+  assert.equal(view.stars, 4);
+  const after = await (await call("state")).json();
+  assert.equal(
+    after.stars,
+    before.stars + 4 + view.bonuses.reduce((sum, b) => sum + b.stars, 0),
+  );
+  assert.equal(
+    after.stats.find((s) => s.id === raw.skill).lastCompletion.correct,
+    4,
+  );
+  const calendar = await (await call("calendar")).json();
+  assert.equal(
+    calendar.days.flatMap((d) => d.events).find((e) => e.id === raw.id).correct,
+    4,
+  );
+  assert.equal(
+    (await call(`session/${raw.id}`, undefined, { "x-lms-learner": "test2" }))
+      .status,
+    409,
+  );
+  const remaining = await (
+    await request("admin/export", undefined, { Cookie: adminCookie })
+  ).json();
+  assert.equal(remaining.stars, otherStars);
+  assert.equal(
+    remaining.learners.test1.sessions.find((s) => s.id === raw.id).attempts[0]
+      .correct,
+    false,
+  );
+  const faces = await (
+    await call("session/start", { skill: "people-science-1" })
+  ).json();
+  assert.ok(faces.question.photo);
+  assert.ok(!("answer" in faces.question));
+  const who = peopleBank.people.find((p) => p.id === faces.question.photo.id);
+  assert.ok(who);
+  await call(`session/${faces.id}/leave`, {});
 });

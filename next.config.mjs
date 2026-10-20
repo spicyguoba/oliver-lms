@@ -2,11 +2,14 @@ export default {
   poweredByHeader: false,
   distDir: process.env.LMS_NEXT_DIST_DIR || ".next",
   outputFileTracingIncludes: {
+    "/portraits/*": ["./content/people.json"],
     "/api/*": [
       "./legacy/*.html",
       "./content/stories.json",
       "./content/discoveries.json",
       "./content/additions.json",
+      "./content/atlas.json",
+      "./content/people.json",
       "./content/vocabulary/*.json",
     ],
   },

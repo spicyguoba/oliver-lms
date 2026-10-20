@@ -5,6 +5,7 @@ import { createHash, randomBytes } from "node:crypto";
 import { transact, databaseMode } from "../../../lib/store.mjs";
 import { legacyProgress } from "../../../lib/progress.mjs";
 import { vocabularyLesson } from "../../../lib/vocabulary.mjs";
+import { explorerLesson } from "../../../lib/explorers.mjs";
 import { dailyPlan } from "../../../lib/planner.mjs";
 import {
   learningCalendar,
@@ -254,6 +255,11 @@ export async function GET(req, context) {
       }
       if (route === "dash") return NextResponse.json(dashState(d));
       if (route === "chess") return NextResponse.json(chessState(d));
+      if (p[0] === "explore" && p.length === 2) {
+        const lesson = explorerLesson(p[1]);
+        if (!lesson) fail("Discovery not found.", 404);
+        return NextResponse.json(lesson);
+      }
       if (route === "calendar") {
         const month =
           req.nextUrl.searchParams.get("month") ||

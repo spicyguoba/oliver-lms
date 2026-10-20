@@ -295,7 +295,8 @@ test(
       }
     }
     assert.equal(count, 10000);
-    assert.equal(subjects.size, 6);
+    assert.equal(subjects.size, 7);
+    assert.ok(subjects.has("People"));
     assert.ok(exercised.size >= 300, `${exercised.size} activities`);
   },
 );

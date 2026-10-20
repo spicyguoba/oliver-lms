@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { api, Brand, ErrorBox, Login, Loading } from "./ui";
 import { speakParts } from "./WordLesson";
+import MapScene from "./MapScene";
+import PersonPicture from "./PersonPicture";
 export default function Adventure({ id }) {
   const [session, setSession] = useState(null),
     [error, setError] = useState(""),
@@ -249,6 +251,20 @@ export default function Adventure({ id }) {
           {q && (
             <>
               <h1>{q.prompt}</h1>
+              {q.map && (
+                <MapScene
+                  map={q.map}
+                  onAnswer={q.map.choices?.length ? submit : undefined}
+                  disabled={busy}
+                />
+              )}
+              {q.photo && (
+                <PersonPicture
+                  key={q.id}
+                  person={q.photo}
+                  hideName={!q.targetName}
+                />
+              )}
               {q.context && (
                 <div className="kid-quiz-context">
                   {q.vocabWord && (
@@ -369,6 +385,18 @@ export default function Adventure({ id }) {
                   : "Good try. Let’s work it out. 🌱"}
               </h2>
               <p>{session.feedback.explanation}</p>
+              {session.feedback.map && (
+                <MapScene
+                  map={session.feedback.map}
+                  caption="The correct place is highlighted in gold."
+                />
+              )}
+              {session.feedback.photo && (
+                <PersonPicture
+                  key={session.feedback.photo.id}
+                  person={session.feedback.photo}
+                />
+              )}
               <button
                 className="text-button"
                 onClick={() => {

@@ -43,6 +43,9 @@ const subjectClass = {
   Reading: "sage",
   Chinese: "lavender",
   Science: "blue",
+  Geography: "blue",
+  History: "lavender",
+  People: "peach",
 };
 function dayNumber() {
   return new Date(
@@ -472,7 +475,16 @@ export default function Dashboard({ parent = false }) {
                 </label>
               </div>
               <div className="filters">
-                {["All", "Math", "Reading", "Chinese", "Science"].map((x) => (
+                {[
+                  "All",
+                  "Math",
+                  "Reading",
+                  "Chinese",
+                  "Science",
+                  "Geography",
+                  "History",
+                  "People",
+                ].map((x) => (
                   <button
                     key={x}
                     className={filter === x ? "selected" : ""}

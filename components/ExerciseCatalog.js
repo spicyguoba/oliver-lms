@@ -5,6 +5,20 @@ import { categoryProgress } from "../lib/progress.mjs";
 
 export const courses = [
   {
+    id: "maps",
+    subject: "Geography",
+    title: "Map games",
+    icon: "🗺️",
+    description: "Continents · countries · all 50 states · capitals & clues",
+  },
+  {
+    id: "people",
+    subject: "People",
+    title: "People who changed the world",
+    icon: "🖼️",
+    description: "500 people · pictures, achievements and life timelines",
+  },
+  {
     id: "en-words",
     subject: "Reading",
     title: "Word explorers",
@@ -102,6 +116,8 @@ export function ExerciseCatalog({ exercises, timezone, vocabulary = false }) {
   const [band, setBand] = useState("All");
   const [status, setStatus] = useState("All");
   const [search, setSearch] = useState("");
+  const [group, setGroup] = useState("All");
+  const groups = [...new Set(exercises.map((s) => s.group).filter(Boolean))];
   const [page, setPage] = useState(0);
   const result = useRef(null);
   function changePage(next) {
@@ -111,6 +127,7 @@ export function ExerciseCatalog({ exercises, timezone, vocabulary = false }) {
   const matches = exercises.filter(
     (s) =>
       (band === "All" || s.band === band) &&
+      (group === "All" || s.group === group) &&
       (status === "All" ||
         (status === "Finished" ? !!s.lastCompletion : !s.lastCompletion)) &&
       `${s.title} ${s.keywords || s.description}`
@@ -129,6 +146,23 @@ export function ExerciseCatalog({ exercises, timezone, vocabulary = false }) {
       )}
       <ProgressCount exercises={exercises} />
       <div className="kid-catalog-tools">
+        {groups.length > 1 && (
+          <label>
+            Pick a topic
+            <select
+              value={group}
+              onChange={(e) => {
+                setGroup(e.target.value);
+                setPage(0);
+              }}
+            >
+              <option value="All">All topics</option>
+              {groups.map((g) => (
+                <option key={g}>{g}</option>
+              ))}
+            </select>
+          </label>
+        )}
         {vocabulary && (
           <label>
             Choose your path
@@ -160,9 +194,9 @@ export function ExerciseCatalog({ exercises, timezone, vocabulary = false }) {
             <option>Finished</option>
           </select>
         </label>
-        {vocabulary && (
+        {
           <label>
-            Find a word
+            {vocabulary ? "Find a word" : "Find a game or person"}
             <input
               value={search}
               onChange={(e) => {
@@ -170,12 +204,16 @@ export function ExerciseCatalog({ exercises, timezone, vocabulary = false }) {
                 setPage(0);
               }}
               placeholder={
-                exercises[0]?.language === "zh" ? "e.g. 学校" : "e.g. garden"
+                vocabulary
+                  ? exercises[0]?.language === "zh"
+                    ? "e.g. 学校"
+                    : "e.g. garden"
+                  : "e.g. states, science, Curie"
               }
               type="search"
             />
           </label>
-        )}
+        }
       </div>
       <p className="kid-catalog-result" role="status" ref={result}>
         {matches.length
