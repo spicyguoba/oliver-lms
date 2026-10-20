@@ -110,6 +110,16 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
   ).json();
   assert.equal(attempt.mode, "practice");
   assert.equal((await request("game/math")).status, 200);
+  for (const game of ["reading", "stories"]) {
+    const html = await (await request("game/" + game)).text();
+    assert.ok(html.includes('type="module" src="/read-along.js"'));
+    assert.ok(html.includes("LMSReadAlong?.speakParts"));
+    assert.ok(html.includes('src="/game-bridge.js"'));
+  }
+  const readerScript = await fetch(base + "/read-along.js");
+  assert.equal(readerScript.status, 200);
+  assert.match(readerScript.headers.get("content-type"), /javascript/);
+  assert.ok((await readerScript.text()).includes("u.onboundary"));
   assert.equal(
     (await request("admin/materials/import", { files: [] })).status,
     401,

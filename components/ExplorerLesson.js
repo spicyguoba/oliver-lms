@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { api, ErrorBox } from "./ui";
 import MapScene from "./MapScene";
 import PersonPicture from "./PersonPicture";
-import { speakParts } from "./WordLesson";
+import { speakParts, stopReading } from "../public/read-along.js";
 export default function ExplorerLesson({ id }) {
   const [lesson, setLesson] = useState(null),
     [error, setError] = useState(""),
@@ -20,8 +20,12 @@ export default function ExplorerLesson({ id }) {
       });
     return () => {
       active = false;
+      stopReading();
     };
   }, [id]);
+  useEffect(() => {
+    stopReading();
+  }, [index, query]);
   if (!lesson)
     return (
       <div role="status">
@@ -108,12 +112,17 @@ export default function ExplorerLesson({ id }) {
               <button
                 className="button secondary"
                 type="button"
-                onClick={() =>
-                  speakParts([
+                onClick={(event) =>
+                  speakParts(
                     [
-                      `${current.name}. ${current.dates || ""}. ${current.capital ? "Capital: " + current.capital + ". " : ""}${current.fact}`,
+                      [current.name],
+                      [current.dates],
+                      [current.capital && "Capital:", "en-US", false],
+                      [current.capital],
+                      [current.fact],
                     ],
-                  ])
+                    event.currentTarget.closest(".explorer-fact-card"),
+                  )
                 }
               >
                 🔊 Read this card

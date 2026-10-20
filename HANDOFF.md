@@ -1,5 +1,13 @@
 # Adventure Club handoff
 
+## Read-along word highlighting (2026-10-20)
+
+All existing read-aloud controls now use public/read-along.js: discovery pages, English/Chinese word cards, map/people cards, native questions and explanations, Chess Club guides/help quizzes, Star Dash questions, and the LMS-hosted Reading Rangers/Story Star copies. Word boundary events move a gold background/underline over the original displayed word using UTF-16 offsets and Intl.Segmenter (including Mandarin). CSS Custom Highlights preserve line breaks, selection, focus and React text nodes; older browsers use noninteractive Range rectangle overlays. A 44px Stop reading control appears while speaking, inside the modal focus trap where applicable. Reading is canceled/cleared on repeat, navigation, hidden page, replaced text, card/question changes, end and error. No flashing, motion or automatic scrolling.
+
+Installed voices differ: when a voice does not emit word boundary events, its current spoken text segment is blue rather than guessing word timings with a timer. Synthetic choice numbers have no visual target; displayed prompt/context/choices have separate mapped segments and language settings. Local voices are preferred when available. Nothing is recorded about highlight events. Existing server read-aloud help flags, first-answer grading, timing, stars and learner isolation are preserved. No stored format or schema changes; the original mathquest repo/URLs are untouched.
+
+Verification: 82 domain/client checks, eight HTTP flows including hosted-reader delivery, production build; browser checks use controlled speech start/boundary/end/error events to verify actual Range text, Mandarin, formatting across DOM nodes, repeated reads, stale callbacks, card replacement, Stop, paragraph fallback and older-browser overlays. Local UI checks cover discovery text, people cards, Mandarin examples, native question/options and the hosted story/reading games. Physical iPad audio/voice-boundary support remains untested. Recheck CI, production READY and a fresh private family preservation comparison before reporting the release live.
+
 ## Visual maps and 500 people (2026-10-19)
 
 86 new ordinary native exercise IDs are defined by lib/explorers.mjs: 35 map activities and 51 people packs (fifty packs of ten, plus all-person mix). Map coverage: seven continents, 94 selected countries grouped into six inhabited regions plus world mixes, all 50 U.S. states plus five ten-state trails, capitals and factual clues. Geography contains the Map games course and Games has a direct Map games tile. Amazing people opens the People course. Both catalogs support topic filters, search (all pack names indexed), paging and the existing completed/left/last-score/date visuals.

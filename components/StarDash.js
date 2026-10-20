@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { api, ErrorBox, Loading, Login } from "./ui";
 import { DASH_LEVELS, dashLevel, DASH_LESSONS } from "../lib/dash-engine.mjs";
 import DashCanvas from "./DashCanvas";
-import { speakParts } from "./WordLesson";
+import {
+  speakParts,
+  stopReading,
+  questionSpeech,
+} from "../public/read-along.js";
 import { createDashAudio } from "../lib/dash-audio.mjs";
 import useTodayStars from "./useTodayStars";
 
@@ -47,7 +51,7 @@ export default function StarDash() {
     return () => {
       active = false;
       feedbackAudio.current?.close();
-      window.speechSynthesis?.cancel();
+      stopReading();
     };
   }, []);
   useEffect(() => {
@@ -103,7 +107,7 @@ export default function StarDash() {
     }
   }
   async function submit(value) {
-    window.speechSynthesis?.cancel();
+    stopReading();
     if (busy) return;
     setBusy(true);
     setError("");
@@ -132,19 +136,15 @@ export default function StarDash() {
   }
   async function read() {
     if (busy) return;
+    const readingTimer = timer.current;
+    const scope = document.querySelector(".dash-study");
     setBusy(true);
     try {
       await api("dash/hint", { id: run.id });
+      if (!scope?.isConnected || timer.current !== readingTimer) return;
       timer.current.helped = true;
       const q = run.question;
-      speakParts([
-        [q.prompt],
-        [q.context, q.language === "zh" ? "zh-CN" : "en-US"],
-        ...(q.options || []).map((o, i) => [
-          `${i + 1}. ${o}`,
-          q.optionsLanguage || "en-US",
-        ]),
-      ]);
+      speakParts(questionSpeech(q), scope);
     } catch (e) {
       setError(e.message);
     } finally {
@@ -202,7 +202,7 @@ export default function StarDash() {
             onClick={() => {
               setRun(null);
               setError("");
-              window.speechSynthesis?.cancel();
+              stopReading();
             }}
           >
             ▦ Level map

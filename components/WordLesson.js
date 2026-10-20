@@ -3,24 +3,8 @@ import { useEffect, useState } from "react";
 import { Volume2 } from "lucide-react";
 import { api, ErrorBox, Loading } from "./ui";
 
-export function speakParts(parts) {
-  if (!("speechSynthesis" in window)) return false;
-  window.speechSynthesis.cancel();
-  for (const [text, lang = "en-US"] of parts) {
-    if (!text) continue;
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang;
-    u.rate = lang.startsWith("zh") ? 0.75 : 0.82;
-    const voice = window.speechSynthesis
-      .getVoices()
-      .find((v) =>
-        v.lang.toLowerCase().startsWith(lang.startsWith("zh") ? "zh-cn" : "en"),
-      );
-    if (voice) u.voice = voice;
-    window.speechSynthesis.speak(u);
-  }
-  return true;
-}
+import { speakParts, stopReading } from "../public/read-along.js";
+export { speakParts } from "../public/read-along.js";
 export default function WordLesson({ id }) {
   const [lesson, setLesson] = useState(null),
     [error, setError] = useState(""),
@@ -36,14 +20,17 @@ export default function WordLesson({ id }) {
       });
     return () => {
       active = false;
-      window.speechSynthesis?.cancel();
+      stopReading();
     };
   }, [id]);
+  useEffect(() => {
+    stopReading();
+  }, [card]);
   if (error) return <ErrorBox message={error} />;
   if (!lesson) return <Loading />;
   const c = lesson.cards[card],
     chinese = lesson.language === "zh";
-  function listen() {
+  function listen(event) {
     if (
       !speakParts(
         chinese
@@ -52,6 +39,7 @@ export default function WordLesson({ id }) {
               [c.sentence, "zh-CN"],
             ]
           : [[c.word], [c.example]],
+        event.currentTarget.closest(".kid-word-card"),
       )
     )
       setError(

@@ -8,7 +8,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { api, Brand, ErrorBox, Login, Loading } from "./ui";
-import { speakParts } from "./WordLesson";
+import {
+  speakParts,
+  stopReading,
+  questionSpeech,
+} from "../public/read-along.js";
 import MapScene from "./MapScene";
 import PersonPicture from "./PersonPicture";
 export default function Adventure({ id }) {
@@ -26,7 +30,7 @@ export default function Adventure({ id }) {
         e.status === 401 ? setUnauthorized(true) : setError(e.message),
       );
   }, [id]);
-  useEffect(() => () => window.speechSynthesis?.cancel(), []);
+  useEffect(() => () => stopReading(), []);
   useEffect(() => {
     timer.current = {
       start: document.hidden ? null : performance.now(),
@@ -34,6 +38,7 @@ export default function Adventure({ id }) {
       losses: 0,
       helped: false,
     };
+    stopReading();
     setHint("");
     setAnswer("");
     function visibility() {
@@ -49,6 +54,7 @@ export default function Adventure({ id }) {
   }, [session?.question?.id]);
   async function mutate(endpoint, body) {
     if (busy) return;
+    stopReading();
     setBusy(true);
     setError("");
     try {
@@ -62,6 +68,7 @@ export default function Adventure({ id }) {
     }
   }
   async function submit(value) {
+    stopReading();
     const t = timer.current;
     await mutate("answer", {
       questionId: session.question.id,
@@ -89,42 +96,14 @@ export default function Adventure({ id }) {
   }
   async function speak() {
     if (busy) return;
+    const readingTimer = timer.current;
+    const scope = document.querySelector(".kid-quiz");
     setBusy(true);
     try {
       await api("session/" + id + "/hint", { kind: "read-aloud" });
+      if (!scope?.isConnected || timer.current !== readingTimer) return;
       timer.current.helped = true;
-      if (session.question.language) {
-        const q = session.question;
-        if (
-          !speakParts([
-            [q.prompt],
-            [q.context, q.language === "zh" ? "zh-CN" : "en-US"],
-            ...(q.options || []).flatMap((o, i) => [
-              [`Choice ${i + 1}`],
-              [o, q.optionsLanguage],
-            ]),
-          ])
-        )
-          setError(
-            "Ask your grown-up to read with you. This browser has no read-aloud voice.",
-          );
-        return;
-      }
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(
-          (session.question.passage || "") +
-            " " +
-            session.question.prompt +
-            ". " +
-            (session.question.options || [])
-              .map((o, i) => `Choice ${i + 1}. ${o}.`)
-              .join(" "),
-        );
-        u.rate = 0.8;
-        u.lang = "en-US";
-        window.speechSynthesis.speak(u);
-      } else
+      if (!speakParts(questionSpeech(session.question), scope))
         setError(
           "Ask your grown-up to read this with you. This browser has no read-aloud voice.",
         );

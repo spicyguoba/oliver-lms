@@ -5,7 +5,7 @@ import ChessBoard, { ChessPiece } from "./ChessBoard";
 import ChessHelpQuiz from "./ChessHelpQuiz";
 import ChessFriend from "./ChessFriend";
 import useTodayStars from "./useTodayStars";
-import { speakParts } from "./WordLesson";
+import { speakParts, stopReading } from "../public/read-along.js";
 import {
   CHESS_LESSONS,
   CHESS_LEVELS,
@@ -72,7 +72,7 @@ export default function ChessClub() {
       });
     return () => {
       active = false;
-      window.speechSynthesis?.cancel();
+      stopReading();
     };
   }, []);
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function ChessClub() {
     if (busy) return;
     setBusy(true);
     setError("");
-    window.speechSynthesis?.cancel();
+    stopReading();
     try {
       const r = await api(route, {
         ...(game ? { id: game.id, version: game.version } : {}),
@@ -554,7 +554,12 @@ export default function ChessClub() {
                     <h2>{lesson.icon} Coach’s guide</h2>
                     <button
                       className="text-button"
-                      onClick={() => speakParts(lesson.guide.map((p) => [p]))}
+                      onClick={(event) =>
+                        speakParts(
+                          lesson.guide.map((p) => [p]),
+                          event.currentTarget.closest(".chess-guide"),
+                        )
+                      }
                     >
                       🔊 Read guide aloud
                     </button>
@@ -597,8 +602,11 @@ export default function ChessClub() {
                         <h2>{scenario.name}</h2>
                         <button
                           className="text-button"
-                          onClick={() =>
-                            speakParts(scenario.guide.map((p) => [p]))
+                          onClick={(event) =>
+                            speakParts(
+                              scenario.guide.map((p) => [p]),
+                              event.currentTarget.closest(".chess-guide"),
+                            )
                           }
                         >
                           🔊 Read endgame guide

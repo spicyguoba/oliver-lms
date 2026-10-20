@@ -24,6 +24,7 @@ import { localDay } from "../lib/dates.mjs";
 import LearnerPicker from "./LearnerPicker";
 import useTodayStars from "./useTodayStars";
 import ExplorerLesson from "./ExplorerLesson";
+import { speakParts, stopReading } from "../public/read-along.js";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -39,15 +40,6 @@ const oldGames = [
   ["🦉", "Reading Rangers", "/reading/"],
   ["🏰", "Story Star Adventures", "/stories/"],
 ];
-function say(text) {
-  if (!("speechSynthesis" in window)) return false;
-  window.speechSynthesis.cancel();
-  const voice = new SpeechSynthesisUtterance(text);
-  voice.lang = "en-US";
-  voice.rate = 0.82;
-  window.speechSynthesis.speak(voice);
-  return true;
-}
 function currentScreen() {
   const hash = window.location.hash.slice(1);
   return /^[a-zA-Z0-9-]+$/.test(hash) ? hash : "home";
@@ -83,13 +75,13 @@ export default function ChildWorld() {
     window.addEventListener("hashchange", changed);
     return () => {
       window.removeEventListener("hashchange", changed);
-      window.speechSynthesis?.cancel();
+      stopReading();
     };
   }, []);
   useEffect(() => {
     window.scrollTo({ top: 0 });
     heading.current?.focus({ preventScroll: true });
-    window.speechSynthesis?.cancel();
+    stopReading();
   }, [screen]);
   useEffect(() => {
     if (!data) return;
@@ -103,6 +95,9 @@ export default function ChildWorld() {
       window.removeEventListener("focus", checkDay);
     };
   }, [data?.today, data?.timezone]);
+  useEffect(() => {
+    stopReading();
+  }, [stateCard, stateTrail]);
   async function act(route, body, message) {
     if (busy) return;
     setBusy(true);
@@ -120,7 +115,7 @@ export default function ChildWorld() {
     }
   }
   async function play(skill) {
-    window.speechSynthesis?.cancel();
+    stopReading();
     const s = await act("session/start", {
       skill,
       difficulty: skill === "states" ? stateTrail : level,
@@ -132,7 +127,7 @@ export default function ChildWorld() {
     if (s) window.location.href = "/adventure/" + s.id;
   }
   function listen(text) {
-    if (!say(text))
+    if (!speakParts(Array.isArray(text) ? text.map((t) => [t]) : [[text]]))
       setNotice(
         "Ask your grown-up to read this with you. Your browser has no read-aloud voice.",
       );
@@ -247,22 +242,30 @@ export default function ChildWorld() {
                       topic.title,
                       ...(topic.lesson || [topic.description]),
                       topic.tryIt || "",
-                    ].join(". ")
+                    ]
                   : subject
-                    ? `${subject[1]}. Pick a game. ${courses
-                        .filter((c) => c.subject === subject[0])
-                        .map((c) => c.title)
-                        .join(". ")}. ${data.stats
-                        .filter((s) => s.subject === subject[0] && !s.course)
-                        .slice(0, 8)
-                        .map((s) => s.title)
-                        .join(". ")}`
+                    ? [
+                        title,
+                        ...courses
+                          .filter((c) => c.subject === subject[0])
+                          .map((c) => c.title),
+                        ...data.stats
+                          .filter((s) => s.subject === subject[0] && !s.course)
+                          .slice(0, 8)
+                          .map((s) => s.title),
+                      ]
                     : course
-                      ? `${course.title}. Choose a path. Starter is a good place to begin. Tap a game to meet its words.`
+                      ? [
+                          title,
+                          "Choose a path. Starter is a good place to begin. Tap a game to meet its words.",
+                        ]
                       : screen === "games"
-                        ? "Pick a world. Numbers. Words and stories. Science lab. Our world. Time machine. Chinese garden. Old favorites."
+                        ? [title, ...worlds.map((w) => w[1]), "Old favorites"]
                         : screen === "home"
-                          ? `Hi ${data.profile.name}! Tap the big play button, or choose Games. Stars shows your rewards.`
+                          ? [
+                              title,
+                              "Tap the big play button, or choose Games. Stars shows your rewards.",
+                            ]
                           : title,
               )
             }
@@ -587,7 +590,7 @@ export default function ChildWorld() {
                   {learnCards.slice(stateCard, stateCard + 1).map((c) => (
                     <button
                       onClick={() =>
-                        listen(`${c.name}. Its capital is ${c.detail}.`)
+                        listen([c.name, "Its capital is", c.detail])
                       }
                       key={c.name}
                     >

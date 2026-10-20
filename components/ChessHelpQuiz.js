@@ -1,6 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { speakParts } from "./WordLesson";
+import {
+  speakParts,
+  stopReading,
+  questionSpeech,
+} from "../public/read-along.js";
 import { api, ErrorBox } from "./ui";
 export default function ChessHelpQuiz({ game, busy, onAct, onClose }) {
   const q = game.quiz,
@@ -11,6 +15,7 @@ export default function ChessHelpQuiz({ game, busy, onAct, onClose }) {
   const question = q.question,
     finished = q.status !== "active";
   useEffect(() => {
+    stopReading();
     setAnswer("");
     setError("");
     (
@@ -59,12 +64,13 @@ export default function ChessHelpQuiz({ game, busy, onAct, onClose }) {
     return () => {
       document.removeEventListener("keydown", trap);
       document.removeEventListener("visibilitychange", visibility);
-      window.speechSynthesis?.cancel();
+      stopReading();
       prior?.focus();
     };
   }, []);
   async function send(value) {
     if (busy) return;
+    stopReading();
     const t = timer.current;
     await onAct("chess/quiz-answer", {
       quizId: q.id,
@@ -78,21 +84,17 @@ export default function ChessHelpQuiz({ game, busy, onAct, onClose }) {
     });
   }
   async function read() {
+    const readingTimer = timer.current;
+    const scope = dialog.current;
     try {
       await api("chess/quiz-read", {
         id: game.id,
         version: game.version,
         quizId: q.id,
       });
+      if (!scope?.isConnected || timer.current !== readingTimer) return;
       timer.current.helped = true;
-      speakParts([
-        [question.prompt],
-        [question.context, question.language === "zh" ? "zh-CN" : "en-US"],
-        ...(question.options || []).map((s, i) => [
-          `${i + 1}. ${s}`,
-          question.optionsLanguage || "en-US",
-        ]),
-      ]);
+      speakParts(questionSpeech(question), scope);
     } catch (e) {
       setError(e.message);
     }

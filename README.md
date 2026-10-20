@@ -6,6 +6,8 @@ Live family site: https://oliver-lms-david-ferlemann.vercel.app . Students sign 
 
 ## What works
 
+- Read aloud highlights the spoken word in gold across lessons, cards, quizzes, chess guides and hosted story games. **Stop reading** clears it immediately. English and Mandarin use the device's voices; voices without word timing highlight the current passage in blue.
+
 - **Map games**: 35 visual exercises covering seven continents, 94 selected countries by region and in world mixes, all 50 U.S. states, capitals and place facts. Explore cards first, then tap numbered map shapes in short star-earning rounds. Zoom, large matching buttons and simplified map outlines support touch play.
 - **Amazing people**: 500 scientists, computer pioneers, inventors, leaders, thinkers, writers, artists and explorers in fifty ten-person packs plus a mixed game. Cards include contributions, life dates, sources and 425 reusable photos/portraits with individual credits; other cards clearly show that a picture is unavailable. Picture, achievement and timeline questions use the normal saved progress/calendar/star system. See [sources, image rights and teaching choices](content/EXPLORERS.md).
 
