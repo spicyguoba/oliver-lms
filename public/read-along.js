@@ -102,6 +102,7 @@ export function createReader(win) {
         .read-along-tools{position:fixed;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:10000;display:flex;align-items:center;gap:12px;width:max-content;max-width:calc(100vw - 24px);padding:8px 12px;background:#fffdf3;color:#172344;border:2px solid #d2a944;border-radius:16px;box-shadow:0 3px 14px #17234425;font:600 15px/1.35 system-ui}
         .read-along-tools button{font:inherit;min-height:44px;padding:8px 14px;border:2px solid #956000;border-radius:12px;color:#172344;background:#ffe16b;cursor:pointer;white-space:nowrap}
         .read-along-tools button:focus-visible{outline:3px solid #155ac5;outline-offset:3px}
+        .read-along-tools.read-along-above-nav{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
         .read-along-ink{position:fixed;pointer-events:none;z-index:9999;background:#ffd44c66;border-bottom:2px solid #956000;border-radius:3px;mix-blend-mode:multiply}
         @media(max-width:480px){.read-along-tools{font-size:13px;gap:8px}}
       `;
@@ -111,6 +112,8 @@ export function createReader(win) {
       label = doc.createElement("span"),
       button = doc.createElement("button");
     tools.className = "read-along-tools";
+    if (doc.querySelector(".kid-bottom"))
+      tools.classList.add("read-along-above-nav");
     label.textContent = "Listening… follow the blue text.";
     button.type = "button";
     button.textContent = "■ Stop reading";
