@@ -22,6 +22,7 @@ import WordLesson from "./WordLesson";
 import LearningCalendar, { DailyFive, StreakTrail } from "./LearningCalendar";
 import { localDay } from "../lib/dates.mjs";
 import LearnerPicker from "./LearnerPicker";
+import useTodayStars from "./useTodayStars";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -51,6 +52,7 @@ function currentScreen() {
 }
 export default function ChildWorld() {
   const [data, setData] = useState(null);
+  const todayStars = useTodayStars(data);
   const [login, setLogin] = useState(false);
   const [screen, setScreen] = useState("home");
   const [busy, setBusy] = useState(false);
@@ -195,11 +197,12 @@ export default function ChildWorld() {
         <a
           href="/#stars"
           className="kid-wallet"
-          aria-label={`My stars: ${data.stars}`}
+          aria-label={`${todayStars} stars earned today. Open my star wallet.`}
+          title="Stars earned since midnight, including bonuses. Open your wallet to spend stars."
         >
           <Star fill="currentColor" size={26} />
-          <strong>{data.stars}</strong>
-          <span>stars</span>
+          <strong>{todayStars}</strong>
+          <span>today</span>
         </a>
       </header>
       <main className="kid-main" id="kid-main">

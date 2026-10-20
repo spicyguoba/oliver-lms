@@ -3,22 +3,37 @@ export const CHESS_LEVELS = [
   {
     id: 1,
     name: "Friendly Fox",
-    description: "A gentle partner who explores and sometimes misses a chance.",
+    animal: "fox",
+    label: "Thoughtful starter",
+    description:
+      "I guard my pieces and watch your next move. Let’s make a plan!",
   },
-  { id: 2, name: "Curious Owl", description: "Looks for captures and checks." },
+  {
+    id: 2,
+    name: "Curious Owl",
+    animal: "owl",
+    label: "Getting wiser",
+    description: "Hoot! I look for captures, checks and little tricks.",
+  },
   {
     id: 3,
     name: "Clever Badger",
+    animal: "badger",
+    label: "Clever planner",
     description: "Looks ahead and protects its pieces.",
   },
   {
     id: 4,
     name: "Brave Dragon",
+    animal: "dragon",
+    label: "Big challenge",
     description: "Plans deeper. A good challenge after some practice.",
   },
   {
     id: 5,
     name: "Castle Champion",
+    animal: "lion",
+    label: "Club champion",
     description: "Our toughest club opponent. Take your time!",
   },
 ];

@@ -15,6 +15,39 @@ const token = (a, learnerId = a.learnerId || "oliver") => ({
   role: a.role,
   learnerId,
 });
+test("renaming an account and resetting its password keep its stable ID, learner and history while revoking old logins", () => {
+  const d = seed();
+  manageAccount(d, { id: "test1", password: "initial-test-password" }, "admin");
+  const a = d.accounts.find((a) => a.id === "test1"),
+    before = token(a);
+  d.learners.test1.stars = 47;
+  const history = structuredClone(d.learners);
+  manageAccount(
+    d,
+    { id: a.id, username: "test-one", password: "updated-test-password" },
+    "admin",
+  );
+  assert.equal(a.id, "test1");
+  assert.equal(a.learnerId, "test1");
+  assert.equal(resolveAccountSession(d, before), null);
+  assert.equal(loginAccount(d, "test1", "initial-test-password"), null);
+  assert.equal(loginAccount(d, "test-one", "initial-test-password"), null);
+  assert.equal(
+    loginAccount(d, "test-one", "updated-test-password").id,
+    "test1",
+  );
+  assert.deepEqual(d.learners, history);
+  assert.throws(
+    () => manageAccount(d, { id: "test2", username: "TEST-ONE" }, "admin"),
+    /already in use/,
+  );
+  const hash = a.passwordHash,
+    version = a.version;
+  manageAccount(d, { id: a.id, password: "" }, "admin");
+  assert.equal(a.passwordHash, hash);
+  assert.equal(a.version, version);
+});
+
 test("schema seven creates role metadata without changing any learning records or existing admin password", () => {
   const d = seed();
   d.version = 6;

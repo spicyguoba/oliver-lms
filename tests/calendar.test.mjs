@@ -7,6 +7,7 @@ import {
   learningCalendar,
   awardConsistency,
   streaks,
+  dailyStarSummary,
 } from "../lib/calendar.mjs";
 import { dailyPlan, scheduleDay, PROGRAM_DAYS } from "../lib/planner.mjs";
 import {
@@ -16,7 +17,58 @@ import {
   grade,
 } from "../lib/questions.mjs";
 import { beginSession, submitAnswer, nextQuestion } from "../lib/learning.mjs";
+import { chessState } from "../lib/chess.mjs";
+import { dashState } from "../lib/dash.mjs";
+import { learnerData } from "../lib/learners.mjs";
 const noon = (day) => Date.parse(day + "T16:00:00Z");
+test("today's gross counter follows civil midnight and calendar earnings, independently of the wallet", () => {
+  const d = seed();
+  d.settings.timezone = "America/New_York";
+  for (const day of ["2026-10-19", "2026-11-01", "2027-03-14"]) {
+    const start =
+      day === "2026-10-19"
+        ? "2026-10-19T04:00:00Z"
+        : day === "2026-11-01"
+          ? "2026-11-01T04:00:00Z"
+          : "2027-03-14T05:00:00Z";
+    const end =
+      day === "2026-10-19"
+        ? "2026-10-20T04:00:00Z"
+        : day === "2026-11-01"
+          ? "2026-11-02T05:00:00Z"
+          : "2027-03-15T04:00:00Z";
+    const at = Date.parse(start);
+    d.chess.completions.push({
+      id: day,
+      lessonId: "castle-king",
+      at,
+      earned: 1,
+    });
+    d.consistencyAwards.push({
+      day,
+      kind: "five",
+      at,
+      stars: 5,
+      label: "Today's five",
+    });
+    assert.equal(dailyStarSummary(d, at - 1).todayStars, 0);
+    assert.deepEqual(dailyStarSummary(d, at), { today: day, todayStars: 6 });
+    assert.equal(dailyStarSummary(d, Date.parse(end) - 1).todayStars, 6);
+    assert.equal(dailyStarSummary(d, Date.parse(end)).todayStars, 0);
+    assert.equal(chessState(d, at).todayStars, 6);
+    assert.equal(dashState(d, at).todayStars, 6);
+    assert.equal(
+      learningCalendar(d, day.slice(0, 7), at).days.find((x) => x.day === day)
+        .stars,
+      6,
+    );
+    d.stars = 0;
+    assert.equal(dailyStarSummary(d, at).todayStars, 6);
+    d.stars = 150;
+    assert.equal(dailyStarSummary(d, at).todayStars, 6);
+    assert.equal(dailyStarSummary(learnerData(d, "test1"), at).todayStars, 0);
+  }
+});
 function finish(data, skill, day, difficulty = 1, correct = true) {
   let now = noon(day),
     view = beginSession(data, skill, difficulty, "practice", now);

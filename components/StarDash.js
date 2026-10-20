@@ -5,6 +5,7 @@ import { DASH_LEVELS, dashLevel, DASH_LESSONS } from "../lib/dash-engine.mjs";
 import DashCanvas from "./DashCanvas";
 import { speakParts } from "./WordLesson";
 import { createDashAudio } from "../lib/dash-audio.mjs";
+import useTodayStars from "./useTodayStars";
 
 export default function StarDash() {
   const [data, setData] = useState(null),
@@ -15,6 +16,7 @@ export default function StarDash() {
     [answer, setAnswer] = useState(""),
     [music, setMusic] = useState(true),
     [sfx, setSfx] = useState(true);
+  const todayStars = useTodayStars(data);
   const timer = useRef({ start: 0, active: 0, losses: 0, helped: false }),
     feedbackAudio = useRef(null);
   async function load() {
@@ -172,7 +174,7 @@ export default function StarDash() {
         <a href="/#games">← Adventure home</a>
         <strong>✦ STAR DASH</strong>
         <span>
-          {data.learnerName} · ★ {data.stars}
+          {data.learnerName} · ★ {todayStars} today
         </span>
       </header>
       <div className="dash-intro">

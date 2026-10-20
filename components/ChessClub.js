@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { api, ErrorBox, Loading, Login } from "./ui";
 import ChessBoard, { ChessPiece } from "./ChessBoard";
 import ChessHelpQuiz from "./ChessHelpQuiz";
+import ChessFriend from "./ChessFriend";
+import useTodayStars from "./useTodayStars";
 import { speakParts } from "./WordLesson";
 import {
   CHESS_LESSONS,
@@ -23,6 +25,7 @@ export default function ChessClub() {
     [notice, setNotice] = useState(""),
     [setupScenario, setSetupScenario] = useState("standard");
   const promotionDialog = useRef(null);
+  const todayStars = useTodayStars(data);
   const game = data?.game;
   useEffect(() => {
     if (!promotion) return;
@@ -180,7 +183,7 @@ export default function ChessClub() {
         <a href="/#games">← Adventure home</a>
         <strong>♞ CHESS CLUB</strong>
         <span>
-          {data.learnerName} · ★ {data.stars}
+          {data.learnerName} · ★ {todayStars} today
         </span>
       </header>
       <div className="chess-intro">
@@ -253,11 +256,14 @@ export default function ChessClub() {
         <>
           <section className="chess-new-game">
             <div>
-              <span className="chess-big-knight">♞</span>
+              <div className="chess-friends-welcome" aria-hidden="true">
+                <ChessFriend animal="fox" />
+                <ChessFriend animal="owl" />
+              </div>
               <h2>Play a computer friend</h2>
               <p>
-                Five club difficulty settings. Start gently, then try a deeper
-                thinker. These are practice levels, not chess ratings.
+                Pick your chess buddy! Fox thinks about your next move, too.
+                Meet a new friend when you’re ready for a bigger challenge.
               </p>
               {data.activeGameId && (
                 <button
@@ -282,16 +288,32 @@ export default function ChessClub() {
                 });
               }}
             >
-              <label>
-                Computer level
-                <select name="difficulty" defaultValue="1">
-                  {CHESS_LEVELS.map((l) => (
-                    <option key={l.id} value={l.id}>
-                      {l.id} · {l.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <fieldset className="chess-friends" disabled={busy}>
+                <legend>Choose your chess buddy</legend>
+                {CHESS_LEVELS.map((l) => (
+                  <label className="chess-friend-choice" key={l.id}>
+                    <input
+                      type="radio"
+                      name="difficulty"
+                      value={l.id}
+                      defaultChecked={l.id === 1}
+                    />
+                    <span className="chess-friend-portrait">
+                      <ChessFriend animal={l.animal} />
+                    </span>
+                    <span className="chess-friend-copy">
+                      <small>
+                        Level {l.id} · {l.label}
+                      </small>
+                      <strong>{l.name}</strong>
+                      <span>{l.description}</span>
+                    </span>
+                    <span className="chess-friend-check" aria-hidden="true">
+                      ✓
+                    </span>
+                  </label>
+                ))}
+              </fieldset>
               <label>
                 Starting board
                 <select
@@ -484,6 +506,17 @@ export default function ChessClub() {
                 </p>
               </div>
               <aside className="chess-coach">
+                {game.mode === "computer" && (
+                  <div className="chess-playing-friend">
+                    <ChessFriend
+                      animal={CHESS_LEVELS[game.difficulty - 1].animal}
+                    />
+                    <span>
+                      Your chess buddy
+                      <strong>{CHESS_LEVELS[game.difficulty - 1].name}</strong>
+                    </span>
+                  </div>
+                )}
                 {game.hint && (
                   <section className="chess-earned-tip">
                     <h2>💡 Your earned hint</h2>

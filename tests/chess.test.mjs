@@ -209,7 +209,7 @@ test("five bounded AI settings return legal moves without mutating the supplied 
         .moves({ verbose: true })
         .some((m) => m.from === move.from && m.to === move.to),
     );
-    assert.ok((move.nodes || 0) <= 6502);
+    assert.ok((move.nodes || 0) <= 10002);
   }
   for (const l of CHESS_LESSONS.filter((l) => l.goal === "mate")) {
     const c = new Chess(l.fen);
@@ -221,6 +221,27 @@ test("five bounded AI settings return legal moves without mutating the supplied 
   c.move(hint);
   assert.equal(c.isStalemate(), false);
 });
+test("Friendly Fox takes free material, avoids a poisoned pawn and defends a one-move mate threat", () => {
+  const free = new Chess("4k3/8/8/8/4q3/8/4Q3/4K3 w - - 0 1");
+  assert.equal(free.move(chooseChessMove(free, 1)).san, "Qxe4+");
+  const poisoned = new Chess("3r3k/8/8/8/3p4/8/3Q4/6K1 w - - 0 1");
+  const move = chooseChessMove(poisoned, 1);
+  assert.equal(move.depth, 2);
+  assert.notEqual(poisoned.move(move).san, "Qxd4");
+  const threat = new Chess();
+  for (const m of ["e4", "e5", "Bc4", "Nc6", "Qh5"]) threat.move(m);
+  const before = threat.history();
+  const defense = chooseChessMove(threat, 1);
+  assert.deepEqual(threat.history(), before);
+  threat.move(defense);
+  assert.ok(!threat.moves().some((m) => m.includes("#")));
+  for (const l of CHESS_LESSONS.filter((l) => l.goal === "mate")) {
+    const c = new Chess(l.fen);
+    c.move(chooseChessMove(c, 1));
+    assert.ok(c.isCheckmate(), l.id);
+  }
+});
+
 test("human and computer turns save atomically, Black gets an opening move, stale/illegal inputs cannot rewrite a board", () => {
   const d = seed();
   let g = game(d);

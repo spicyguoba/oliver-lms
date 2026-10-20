@@ -29,6 +29,7 @@ import LearningCalendar, { DailyFive } from "./LearningCalendar";
 import LearnerPicker from "./LearnerPicker";
 import RewardRecord from "./RewardRecord";
 import AccountsPanel from "./AccountsPanel";
+import useTodayStars from "./useTodayStars";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -59,6 +60,7 @@ export default function Dashboard({ parent = false }) {
     [difficulty, setDifficulty] = useState(1),
     [editQuest, setEditQuest] = useState(null),
     [editReward, setEditReward] = useState(null);
+  const todayStars = useTodayStars(data);
   async function load() {
     try {
       setData(await api(parent ? "admin" : "state"));
@@ -225,9 +227,13 @@ export default function Dashboard({ parent = false }) {
             <span className="account-caption">
               {data.account.username} · {data.role}
             </span>
-            <span className="star-pill">
+            <span
+              className="star-pill"
+              title="Stars earned today, including bonuses. Wallet balance is shown in Rewards."
+              aria-label={`${todayStars} stars earned today`}
+            >
               <Star size={18} fill="currentColor" />
-              {data.stars} <span>stars</span>
+              {todayStars} <span>today</span>
             </span>
             <a
               className="small-avatar"

@@ -10,6 +10,7 @@ import {
   learningCalendar,
   awardConsistency,
   streaks,
+  dailyStarSummary,
 } from "../../../lib/calendar.mjs";
 import { validMonth } from "../../../lib/dates.mjs";
 import {
@@ -173,6 +174,7 @@ function safeState(d, role, family, session) {
     legacyProgress: legacyProgress(d),
     profile: d.profile,
     stars: d.stars,
+    ...dailyStarSummary(d),
     stats: stats(d),
     recommendations: recommendations(d),
     dailyPlan: dailyPlan(d),

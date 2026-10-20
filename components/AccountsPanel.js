@@ -6,9 +6,18 @@ export default function AccountsPanel({ busy, act, learners }) {
   const formHeading = useRef(null);
   const [accounts, setAccounts] = useState([]),
     [edit, setEdit] = useState(null),
+    [query, setQuery] = useState(""),
+    [roleFilter, setRoleFilter] = useState("all"),
+    [statusFilter, setStatusFilter] = useState("all"),
     [error, setError] = useState("");
   useEffect(() => {
-    if (edit) formHeading.current?.scrollIntoView({ block: "start" });
+    if (edit) {
+      formHeading.current?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+      formHeading.current?.focus({ preventScroll: true });
+    }
   }, [edit?.id]);
   async function load() {
     const d = await api("admin/accounts");
@@ -27,6 +36,18 @@ export default function AccountsPanel({ busy, act, learners }) {
       active = false;
     };
   }, []);
+  const visibleAccounts = accounts.filter((a) => {
+    const learner =
+      learners.find((l) => l.id === a.learnerId)?.name || "All learners";
+    return (
+      `${a.username} ${learner}`
+        .toLowerCase()
+        .includes(query.trim().toLowerCase()) &&
+      (roleFilter === "all" || a.role === roleFilter) &&
+      (statusFilter === "all" ||
+        (statusFilter === "enabled" ? a.enabled : !a.enabled))
+    );
+  });
   return (
     <section>
       <p className="eyebrow">ADMINISTRATOR ACCESS</p>
@@ -36,8 +57,60 @@ export default function AccountsPanel({ busy, act, learners }) {
         student. Admin manages every account and learner.
       </p>
       <ErrorBox message={error} />
+      <div className="white-card account-search">
+        <label>
+          Find an account
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Username or learner name"
+          />
+        </label>
+        <label>
+          Role
+          <select
+            value={roleFilter}
+            onChange={(e) => setRoleFilter(e.target.value)}
+          >
+            <option value="all">All roles</option>
+            <option value="admin">Admin</option>
+            <option value="parent">Parent</option>
+            <option value="student">Student</option>
+          </select>
+        </label>
+        <label>
+          Status
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="all">All statuses</option>
+            <option value="enabled">Enabled</option>
+            <option value="disabled">Disabled</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          className="button secondary"
+          disabled={busy}
+          onClick={() => {
+            setEdit(null);
+            formHeading.current?.scrollIntoView({ block: "start" });
+            formHeading.current?.focus({ preventScroll: true });
+          }}
+        >
+          + Add account
+        </button>
+      </div>
+      <p role="status">
+        {visibleAccounts.length} of {accounts.length} accounts shown
+      </p>
       <div className="white-card account-list">
-        {accounts.map((a) => (
+        {!visibleAccounts.length && (
+          <p>No accounts match. Try another name or clear the filters.</p>
+        )}
+        {visibleAccounts.map((a) => (
           <div className="list-row" key={a.id}>
             <div className="grow">
               <strong>{a.username}</strong>
@@ -64,7 +137,7 @@ export default function AccountsPanel({ busy, act, learners }) {
           </div>
         ))}
       </div>
-      <h2 className="section" ref={formHeading}>
+      <h2 className="section" ref={formHeading} tabIndex={-1}>
         {edit ? `Manage ${edit.username}` : "Add an account"}
       </h2>
       <AccountForm
@@ -125,6 +198,10 @@ function AccountForm({ account: a, learners, busy, onSave, onCancel }) {
           maxLength={32}
           required
         />
+        <small>
+          3–32 characters: start with a letter, then use letters, numbers, _ or
+          -.
+        </small>
       </label>
       <label>
         Account role
@@ -180,7 +257,8 @@ function AccountForm({ account: a, learners, busy, onSave, onCancel }) {
       </label>
       <p>
         Disabling an account keeps all learning history. Each login is linked to
-        an existing learning profile.
+        an existing learning profile. Changing a username or password signs that
+        account out on its other devices. Leave the password blank to keep it.
       </p>
       <div className="row">
         <button className="button" disabled={busy}>

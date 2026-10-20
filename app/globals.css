@@ -4053,6 +4053,159 @@ legend {
 .chess-new-game small {
   line-height: 1.5;
 }
+.chess-friends-welcome {
+  display: flex;
+  max-width: 240px;
+}
+.account-search {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.account-search label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+  flex: 1;
+  min-width: 150px;
+}
+.account-search label:first-child {
+  flex: 2;
+}
+.account-search input,
+.account-search select {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid #bed2c4;
+  border-radius: 10px;
+  padding: 10px;
+  font: inherit;
+  color: inherit;
+  background: white;
+}
+.chess-friends-welcome svg {
+  width: 120px;
+}
+.chess-friends-welcome svg + svg {
+  margin-left: -12px;
+  transform: rotate(8deg);
+}
+.chess-friends {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.chess-friends legend {
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.chess-friends .chess-friend-choice {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #c9dbcd;
+  border-radius: 20px;
+  padding: 10px 12px;
+  background: #fffdf7;
+  cursor: pointer;
+  min-height: 104px;
+  font-weight: 400;
+}
+.chess-friend-choice:has(input:checked) {
+  border-color: #32775e;
+  background: #f2ffed;
+  box-shadow: 0 3px 0 #32775e;
+}
+.chess-friend-choice:has(input:focus-visible) {
+  outline: 3px solid #9463cb;
+  outline-offset: 3px;
+}
+.chess-friend-choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.chess-friend-portrait {
+  display: block;
+  width: 78px;
+  flex-shrink: 0;
+}
+.chess-friend-portrait svg {
+  display: block;
+  width: 100%;
+}
+.chess-friend-copy {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.chess-friend-copy small {
+  color: #456754;
+  font-size: 11px;
+  font-weight: 800;
+}
+.chess-friend-copy strong {
+  font-size: 17px;
+}
+.chess-friend-copy > span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.chess-friend-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #bdd0c0;
+  border-radius: 50%;
+  color: transparent;
+  flex-shrink: 0;
+  text-align: center;
+}
+.chess-friend-choice:has(input:checked) .chess-friend-check {
+  background: #32775e;
+  color: white;
+  border-color: #32775e;
+}
+.chess-playing-friend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 12px;
+  background: #fff4db;
+  border-radius: 20px;
+}
+.chess-playing-friend svg {
+  width: 76px;
+  flex-shrink: 0;
+}
+.chess-playing-friend span {
+  font-size: 12px;
+}
+.chess-playing-friend strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .chess-friend-portrait {
+    width: 60px;
+  }
+  .chess-friends .chess-friend-choice {
+    padding: 10px;
+    gap: 8px;
+  }
+  .chess-friend-copy strong {
+    font-size: 16px;
+  }
+}
 .chess-lessons-heading {
   display: flex;
   gap: 16px;

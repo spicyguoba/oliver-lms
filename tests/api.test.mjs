@@ -977,6 +977,36 @@ test("student, parent and admin logins enforce account isolation, scoped exports
   const accounts = await (await request("admin/accounts")).json();
   assert.equal(accounts.accounts.length, 8);
   assert.ok(!JSON.stringify(accounts).includes("passwordHash"));
+  const extra = accounts.accounts.find((a) => a.username === "qa-extra-parent");
+  await signIn("qa-extra-parent", "extra-parent-test-password");
+  const extraCookie = cookie;
+  await signIn("admin", "admin1234");
+  assert.equal(
+    (
+      await request("admin/account", {
+        id: extra.id,
+        username: "qa-renamed-parent",
+        password: "renamed-parent-test-password",
+      })
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await request("admin", undefined, { Cookie: extraCookie })).status,
+    401,
+  );
+  assert.equal(
+    (
+      await request("login", {
+        username: "qa-extra-parent",
+        password: "extra-parent-test-password",
+      })
+    ).status,
+    401,
+  );
+  await signIn("qa-renamed-parent", "renamed-parent-test-password");
+  assert.equal((await (await request("state")).json()).learnerId, "test2");
+  await signIn("admin", "admin1234");
 });
 test("Chess HTTP validates moves and binds quiz-earned hints/undo to one learner and position", async () => {
   async function loginAs(username, password) {
@@ -1201,6 +1231,12 @@ test("Chess HTTP validates moves and binds quiz-earned hints/undo to one learner
   );
   assert.equal((await call("admin/export")).status, 401);
   const calendar = await (await call("calendar")).json();
+  const today = calendar.days.find((d) => d.day === calendar.today)?.stars || 0;
+  for (const route of ["state", "chess", "dash"]) {
+    const counter = await (await call(route)).json();
+    assert.equal(counter.todayStars, today, route);
+    assert.equal(counter.today, calendar.today, route);
+  }
   assert.ok(!JSON.stringify(calendar).includes("expected"));
   assert.ok(!JSON.stringify(calendar).includes("wallMs"));
   const parentExport = await (
