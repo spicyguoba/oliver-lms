@@ -4925,3 +4925,67 @@ legend {
     padding: 18px;
   }
 }
+.star-award-panel {
+  margin-block: 20px;
+}
+.star-award-ideas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-block: 18px;
+}
+.star-award-ideas button {
+  text-align: left;
+  justify-content: flex-start;
+  min-height: 56px;
+}
+.star-award-form {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+}
+.star-award-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+.star-award-form input,
+.star-award-form textarea {
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  padding: 12px;
+  border: 1px solid #b7c7b8;
+  border-radius: 12px;
+  background: white;
+  color: #243e3b;
+}
+.star-award-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.star-award-history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.star-award-history li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  justify-content: space-between;
+  padding-block: 16px;
+  border-bottom: 1px solid #e1e8df;
+}
+.star-award-history li > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.star-award-history li > b {
+  flex-shrink: 0;
+  color: #876200;
+}
+.star-award-history p {
+  margin: 6px 0 0;
+}

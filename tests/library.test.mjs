@@ -37,7 +37,7 @@ test("version four migration is additive and idempotent with existing family pro
   beginSession(old, "phonics");
   const original = structuredClone(old);
   assert.strictEqual(migrateFamily(old), old);
-  assert.equal(old.version, 9);
+  assert.equal(old.version, 10);
   assert.deepEqual(old.legacyCompletions, []);
   assert.deepEqual(
     { ...old, version: 1, legacyCompletions: undefined },

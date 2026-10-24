@@ -83,7 +83,7 @@ test("schema nine adds independent chess records without changing any existing f
   d.stars = 57;
   const old = structuredClone(d);
   migrateFamily(d);
-  assert.equal(d.version, 9);
+  assert.equal(d.version, 10);
   const strip = (x) => {
     const { chess, ...rest } = x;
     return rest;

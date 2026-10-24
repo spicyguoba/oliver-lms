@@ -243,7 +243,7 @@ test("HTTP access boundaries, CSRF, child pairing and server-owned scoring", asy
     request("legacy", legacyBody),
   ]);
   const exportData = await (await request("admin/export")).json();
-  assert.equal(exportData.version, 9);
+  assert.equal(exportData.version, 10);
   assert.equal(
     exportData.legacyCompletions.filter((c) => c.id === legacyId).length,
     1,
@@ -1404,4 +1404,198 @@ test("visual map and people rounds retain server grading, first answers, stars, 
   const who = peopleBank.people.find((p) => p.id === faces.question.photo.id);
   assert.ok(who);
   await call(`session/${faces.id}/leave`, {});
+});
+
+test("parent accomplishment awards are private, retry safe and scoped; Robux redemption is whole-package only", async () => {
+  async function signIn(username, password) {
+    const r = await request("login", { username, password });
+    assert.equal(r.status, 200);
+    cookie = r.headers
+      .getSetCookie()
+      .find((c) =>
+        c.startsWith(
+          username === "admin" || username.endsWith("parent")
+            ? "oliver-admin="
+            : "oliver-child=",
+        ),
+      )
+      .split(";")[0];
+  }
+  const select = async (id) => {
+    const selected = await request("learner/select", { id });
+    assert.equal(selected.status, 200);
+    cookie = selected.headers
+      .getSetCookie()
+      .find((c) => c.startsWith("oliver-admin="))
+      .split(";")[0];
+  };
+  await signIn("admin", "admin1234");
+  await select("oliver");
+  for (const [id, password] of [
+    ["oliverparent", "award-parent-password"],
+    ["oliver", "award-student-password"],
+  ])
+    assert.equal(
+      (await request("admin/account", { id, password, enabled: true })).status,
+      200,
+    );
+  const before = await (await request("state")).json();
+  const award = {
+    id: crypto.randomUUID(),
+    title: "Brushed my teeth on my own",
+    stars: 10,
+    day: before.today,
+    parentNote: "Award-specific private parent note",
+  };
+  await signIn("oliverparent", "award-parent-password");
+  const duplicate = await Promise.all([
+    request("admin/star-award", award),
+    request("admin/star-award", award),
+  ]);
+  assert.ok(duplicate.every((r) => r.status === 200));
+  const parent = await (await request("state")).json();
+  assert.equal(parent.stars, before.stars + 10);
+  assert.equal(parent.starAwards.filter((a) => a.id === award.id).length, 1);
+  assert.equal(
+    parent.starAwards.find((a) => a.id === award.id).parentNote,
+    award.parentNote,
+  );
+  assert.equal(
+    (await request("admin/star-award", { ...award, stars: 20 })).status,
+    409,
+  );
+  assert.equal(
+    (
+      await request(
+        "admin/star-award",
+        { ...award, id: crypto.randomUUID() },
+        { "x-lms-learner": "test1" },
+      )
+    ).status,
+    409,
+  );
+  assert.equal((await request("learner/select", { id: "test1" })).status, 403);
+  const exported = await (await request("admin/export")).json();
+  assert.equal(exported.starAwards.find((a) => a.id === award.id).stars, 10);
+  assert.equal(exported.learners, undefined);
+  await signIn("oliver", "award-student-password");
+  assert.equal(
+    (await request("admin/star-award", { ...award, id: crypto.randomUUID() }))
+      .status,
+    401,
+  );
+  const child = await (await request("state")).json();
+  assert.equal(child.stars, before.stars + 10);
+  assert.ok(!JSON.stringify(child).includes(award.parentNote));
+  assert.ok(!JSON.stringify(child.starAwards).includes("awardedBy"));
+  const calendar = await (
+    await request("calendar?month=" + before.today.slice(0, 7))
+  ).json();
+  assert.ok(
+    calendar.days.some((d) =>
+      d.events.some((e) => e.type === "accomplishment" && e.id === award.id),
+    ),
+  );
+  assert.ok(!JSON.stringify(calendar).includes(award.parentNote));
+  await signIn("admin", "admin1234");
+  await select("test1");
+  const one = await (await request("state")).json();
+  assert.ok(!one.starAwards.some((a) => a.id === award.id));
+  assert.ok(one.stars < 4999);
+  assert.equal(
+    (
+      await request("admin/star-award", {
+        id: crypto.randomUUID(),
+        title: "Independent morning routine",
+        stars: 4999 - one.stars,
+        day: one.today,
+      })
+    ).status,
+    200,
+  );
+  assert.equal((await request("redeem", { id: "robux-1000" })).status, 400);
+  assert.equal(
+    (await request("redeem", { id: "robux-1000", quantity: 100, cost: 500 }))
+      .status,
+    400,
+  );
+  assert.equal((await (await request("state")).json()).stars, 4999);
+  assert.equal(
+    (
+      await request("admin/star-award", {
+        id: crypto.randomUUID(),
+        title: "Washed my face on my own",
+        stars: 1,
+        day: one.today,
+      })
+    ).status,
+    200,
+  );
+  const race = await Promise.all([
+    request("redeem", { id: "robux-1000" }),
+    request("redeem", { id: "robux-1000" }),
+  ]);
+  assert.deepEqual(race.map((r) => r.status).sort(), [200, 409]);
+  const reserved = await (await request("state")).json(),
+    r = reserved.redemptions.find((r) => r.rewardId === "robux-1000");
+  assert.equal(reserved.stars, 0);
+  assert.equal(r.cost, 5000);
+  assert.equal(r.quantity, 1000);
+  assert.equal(
+    (
+      await request("admin/reward", {
+        id: "robux-1000",
+        cost: 500,
+        daily: false,
+        title: "Partial",
+      })
+    ).status,
+    400,
+  );
+  assert.equal(
+    (await request("admin/redemption", { id: r.id, action: "approve" })).status,
+    200,
+  );
+  assert.equal((await request("redeem", { id: "robux-1000" })).status, 409);
+  assert.equal(
+    (
+      await request("admin/redemption", {
+        id: r.id,
+        action: "complete",
+        quantity: 100,
+      })
+    ).status,
+    400,
+  );
+  for (let i = 0; i < 2; i++)
+    assert.equal(
+      (
+        await request("admin/redemption", {
+          id: r.id,
+          action: "complete",
+          quantity: 1000,
+        })
+      ).status,
+      200,
+    );
+  const complete = await (await request("state")).json();
+  assert.equal(complete.stars, 0);
+  assert.equal(
+    complete.redemptions.find((x) => x.id === r.id).status,
+    "completed",
+  );
+  await select("test2");
+  const two = await (await request("state")).json();
+  assert.ok(!two.starAwards.some((a) => a.id === award.id));
+  assert.ok(!two.redemptions.some((x) => x.id === r.id));
+  assert.equal(
+    (
+      await request("admin/redemption", {
+        id: r.id,
+        action: "complete",
+        quantity: 1000,
+      })
+    ).status,
+    404,
+  );
 });

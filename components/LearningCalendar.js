@@ -240,10 +240,15 @@ export default function LearningCalendar({ today, parent = false }) {
                   : ""}
               </p>
               <p>{picked.topics.join(" · ")}</p>
+              {picked.parentStars > 0 && (
+                <p>
+                  🌟 {picked.parentStars} stars for everyday accomplishments.
+                </p>
+              )}
               <p>
                 {picked.studyStars} / 21 study stars toward the streak goal
-                {picked.qualifying ? " · Goal reached ✓" : ""}. Bonus stars
-                don’t count toward the 21.
+                {picked.qualifying ? " · Goal reached ✓" : ""}. Bonus stars and
+                accomplishment stars don’t count toward the 21.
               </p>
               {picked.unknownQuestStars && (
                 <p>
@@ -256,15 +261,17 @@ export default function LearningCalendar({ today, parent = false }) {
                   <li key={`${e.type}-${e.id}`}>
                     <div>
                       <strong>
-                        {e.type === "bonus"
+                        {e.type === "accomplishment"
                           ? "🌟 "
-                          : e.type === "quest"
-                            ? "📘 "
-                            : e.type === "reward"
-                              ? "🎁 "
-                              : e.type === "legacy"
-                                ? "🏰 "
-                                : "🎮 "}
+                          : e.type === "bonus"
+                            ? "🌟 "
+                            : e.type === "quest"
+                              ? "📘 "
+                              : e.type === "reward"
+                                ? "🎁 "
+                                : e.type === "legacy"
+                                  ? "🏰 "
+                                  : "🎮 "}
                         {e.title}
                       </strong>
                       <p>
@@ -280,7 +287,9 @@ export default function LearningCalendar({ today, parent = false }) {
                                   ? `${e.correct}/${e.total} reported score`
                                   : e.type === "quest"
                                     ? `Parent review: ${e.status}`
-                                    : "Consistency bonus"}
+                                    : e.type === "accomplishment"
+                                      ? "Parent-awarded everyday win"
+                                      : "Consistency bonus"}
                         {e.stars ? ` · +${e.stars} ★` : ""}
                       </p>
                       {parent && e.parentNote && (

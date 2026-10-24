@@ -50,6 +50,13 @@ export default function RewardRecord({
         Requested{" "}
         {new Date(r.at).toLocaleDateString("en-US", { timeZone: timezone })}
       </p>
+      {r.fullOnly && (
+        <p>
+          Complete package: {r.quantity.toLocaleString()} Robux for{" "}
+          {r.cost.toLocaleString()} stars. Mark completed only after all Robux
+          are delivered. Partial delivery is not available.
+        </p>
+      )}
       {completed ? (
         <p>
           <strong>
@@ -101,7 +108,7 @@ export default function RewardRecord({
             value="complete"
             disabled={busy}
           >
-            ✓ Mark completed
+            {r.fullOnly ? "✓ Delivered all 1,000 Robux" : "✓ Mark completed"}
           </button>
         )}
         <button
@@ -131,6 +138,16 @@ export default function RewardRecord({
               Refund stars
             </button>
           </>
+        )}
+        {r.fullOnly && r.status === "approved" && (
+          <button
+            className="text-button"
+            name="action"
+            value="refund"
+            disabled={busy}
+          >
+            Cancel undelivered reward & refund all stars
+          </button>
         )}
       </div>
     </form>

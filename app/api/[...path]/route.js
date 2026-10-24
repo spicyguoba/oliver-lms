@@ -19,7 +19,9 @@ import {
   reviewReward,
   rewardShop,
   requestReward,
+  ROBUX_REWARD,
 } from "../../../lib/rewards.mjs";
+import { awardStars, starAwardHistory } from "../../../lib/star-awards.mjs";
 import {
   isManager,
   loginAccount,
@@ -175,6 +177,7 @@ function safeState(d, role, family, session) {
     legacyProgress: legacyProgress(d),
     profile: d.profile,
     stars: d.stars,
+    starAwards: starAwardHistory(d, isManager(role)),
     ...dailyStarSummary(d),
     stats: stats(d),
     recommendations: recommendations(d),
@@ -532,7 +535,9 @@ export async function POST(req, context) {
         return NextResponse.json({ ok: true });
       }
       if (route === "redeem")
-        return NextResponse.json(requestReward(d, body.id));
+        return NextResponse.json(
+          requestReward(d, body.id, Date.now(), body.quantity),
+        );
       if (route === "assignment/request") {
         if (!d.assignments.some((a) => a.id === body.id && !a.archived))
           fail("Quest not available.");
@@ -620,6 +625,8 @@ export async function POST(req, context) {
         }
         return NextResponse.json({ ok: true });
       }
+      if (route === "admin/star-award")
+        return NextResponse.json(awardStars(d, body, session.account));
       if (route === "admin/profile") {
         d.profile = {
           ...d.profile,
@@ -750,15 +757,28 @@ export async function POST(req, context) {
         if (body.archive) {
           d.rewards = d.rewards.filter((r) => r.id !== body.id);
         } else {
+          const cost = Number(body.cost);
+          if (!Number.isSafeInteger(cost) || cost < 1 || cost > 100000)
+            fail("Choose a whole star cost from 1 to 100,000.");
+          if (
+            body.id === ROBUX_REWARD.id &&
+            (cost !== ROBUX_REWARD.cost ||
+              body.daily === true ||
+              body.daily === "true")
+          )
+            fail(
+              "The Robux reward is a complete 1,000-Robux package costing 5,000 stars.",
+            );
           const r = {
             id: body.id || randomBytes(12).toString("hex"),
             title: String(body.title || "Family reward").slice(0, 120),
-            cost: Math.min(10000, Math.max(1, Number(body.cost) || 10)),
+            cost,
             daily:
               body.daily === undefined
                 ? d.rewards.find((x) => x.id === body.id)?.daily || false
                 : body.daily === "true" || body.daily === true,
           };
+          if (r.id === ROBUX_REWARD.id) Object.assign(r, ROBUX_REWARD);
           const i = d.rewards.findIndex((x) => x.id === r.id);
           if (i >= 0) d.rewards[i] = r;
           else d.rewards.push(r);

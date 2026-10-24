@@ -30,6 +30,7 @@ import LearnerPicker from "./LearnerPicker";
 import RewardRecord from "./RewardRecord";
 import AccountsPanel from "./AccountsPanel";
 import useTodayStars from "./useTodayStars";
+import StarAwards from "./StarAwards";
 const skillIcons = {
   fractions: "🍕",
   regrouping: "🧱",
@@ -125,6 +126,7 @@ export default function Dashboard({ parent = false }) {
             ]
           : []),
         ["plan", "Study plan", BookOpen],
+        ["awards", "Award stars", Sparkles],
         ["rewards", "Rewards", Star],
         ["settings", "Settings", Settings],
       ]
@@ -255,6 +257,14 @@ export default function Dashboard({ parent = false }) {
               <Check size={18} />
               {notice}
             </div>
+          )}
+          {parent && section === "awards" && (
+            <StarAwards
+              key={data.learnerId}
+              data={data}
+              busy={busy}
+              onAward={act}
+            />
           )}
           {!parent && section === "home" && (
             <>
@@ -678,6 +688,8 @@ export default function Dashboard({ parent = false }) {
                       name="cost"
                       type="number"
                       min="1"
+                      max="100000"
+                      step="1"
                       defaultValue={editReward?.cost || 20}
                       required
                     />
@@ -706,24 +718,32 @@ export default function Dashboard({ parent = false }) {
                 {data.rewards.map((r) => (
                   <div className="white-card reward-card" key={r.id}>
                     <span className="reward-icon">
-                      {r.cost >= 30 ? "🎲" : "🌟"}
+                      {r.kind === "robux" ? "🎮" : r.cost >= 30 ? "🎲" : "🌟"}
                     </span>
                     <h3>{r.title}</h3>
                     <p>
                       <Star size={17} fill="currentColor" /> {r.cost} stars
                     </p>
                     {r.daily && <p>Refreshes each day at midnight.</p>}
+                    {r.fullOnly && (
+                      <p>
+                        One complete 1,000-Robux reward for 5,000 stars. Mark
+                        completed after delivering all 1,000 Robux.
+                      </p>
+                    )}
                     {parent ? (
                       <div className="row">
-                        <button
-                          className="text-button"
-                          onClick={() => {
-                            setEditReward(r);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                        >
-                          Edit reward
-                        </button>
+                        {!r.fullOnly && (
+                          <button
+                            className="text-button"
+                            onClick={() => {
+                              setEditReward(r);
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                          >
+                            Edit reward
+                          </button>
+                        )}
                         <button
                           className="text-button muted"
                           onClick={() =>

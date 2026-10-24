@@ -25,6 +25,7 @@ import LearnerPicker from "./LearnerPicker";
 import useTodayStars from "./useTodayStars";
 import ExplorerLesson from "./ExplorerLesson";
 import { speakParts, stopReading } from "../public/read-along.js";
+import { StarAwardList } from "./StarAwards";
 
 const worlds = [
   ["Math", "Numbers", "🍕", "Count, build, and share", "peach"],
@@ -710,8 +711,15 @@ export default function ChildWorld() {
               <p>stars to spend</p>
             </div>
             <p className="kid-subtitle">
-              Play, learn, and collect. Ask your grown-up for a reward.
+              Learn, celebrate everyday wins, and collect stars. Ask your
+              grown-up for a reward.
             </p>
+            {data.starAwards.length > 0 && (
+              <section className="kid-paper">
+                <h2>🌟 My everyday wins</h2>
+                <StarAwardList awards={data.starAwards} />
+              </section>
+            )}
             <section className="kid-paper kid-stickers">
               <h2>My discovery stickers</h2>
               <p>
@@ -737,11 +745,20 @@ export default function ChildWorld() {
                 const pending = !r.available;
                 return (
                   <section className="kid-paper" key={r.id}>
-                    <span className="kid-paper-icon">🎁</span>
+                    <span className="kid-paper-icon">
+                      {r.kind === "robux" ? "🎮" : "🎁"}
+                    </span>
                     <h2>{r.title}</h2>
                     <p>
-                      ★ {r.cost} stars{r.daily ? " · Fresh each day" : ""}
+                      ★ {r.cost.toLocaleString()} stars
+                      {r.daily ? " · Fresh each day" : ""}
                     </p>
+                    {r.fullOnly && (
+                      <p>
+                        Save all 5,000 stars for one 1,000-Robux reward. Your
+                        grown-up gives you the full reward after approval.
+                      </p>
+                    )}
                     <button
                       className="button"
                       disabled={busy || pending || data.stars < r.cost}
